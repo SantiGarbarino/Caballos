@@ -1,49 +1,80 @@
-# Web app mobile-first
+# App mobile (PWA) — principios, diseño, navegación, Inicio y accesos
 
-> **Pendiente:** sumar el mockup/prototipo de Santi en `02-producto/mockups/` y ajustar este doc a partir de él.
+> Refleja el mockup final ([mockups](mockups/README.md)). Capturas en [`mockups/capturas/`](mockups/capturas/).
 
 ## Principios
-- **Diseñada para el celular** (375–430 px). No se diseña para desktop en el MVP; en desktop se ve la versión mobile centrada.
-- **PWA**: se puede "instalar" en la pantalla de inicio desde el link de WhatsApp.
-- **Login sin contraseña**: link mágico por WhatsApp.
-- **Para mirar, no para cargar.** La carga es por WhatsApp. En la app solo se edita/corrige.
-- Botón flotante **"Cargar por WhatsApp"** que abre el chat.
-- Números grandes, poco texto, jerga del polo.
 
-## Navegación (tab bar inferior)
+- **Web app mobile instalable (PWA)**, se abre desde un link de WhatsApp. No es app nativa. No hay versión de escritorio: en una computadora se ve la versión de celular.
+- **Login sin contraseña**: link de un solo uso por WhatsApp (Queiros ya lo tiene).
+- **Para mirar y decidir.** Se puede cargar desde la app (Agregar, Nuevo, Agendar, Recordatorio, Registrar pago), pero cada formulario muestra primero el atajo de WhatsApp ("Por WhatsApp: «…»").
+- **Limpia.** Sin KPIs decorativos, sin "% vs mes anterior", sin botones de acción en alertas.
+- **Números grandes, todos del mismo tamaño**, por moneda.
 
-| Tab | Contenido |
-|---|---|
-| 🏠 **Inicio** | Gasto e ingreso del mes por moneda, saldo, vs. mes anterior, top categorías, últimos movimientos, "te deben" |
-| 📋 **Movimientos** | Lista cronológica, filtros (categoría, caballo, patrón, moneda, fecha), búsqueda. Tap → detalle con comprobante y mensaje original |
-| 🐴 **Caballos** | Lista con foto, estado y costo del mes/acumulado. Tap → ficha |
-| 🤝 **Patrones** | Por patrón: gastos imputados, ingresos, saldo → botón "Compartir rendición" |
-| ⚙️ **Más** | Categorías, monedas, usuarios que cargan, exportar a Excel, perfil |
+## Diseño — "Cancha de noche"
 
-## Pantallas clave — detalle
+| Token | Valor | Uso |
+|---|---|---|
+| `--grad` | `linear-gradient(145deg, #082419, #0F3D2B, #1C6B4B)` | Fondo de la tarjeta *hero* de Inicio, tarjetas de totales y botones principales (`.btn-g`) |
+| Dorado | `#D9B565` | Saludo "Buen día, Tomás", barra de la pestaña activa |
+| Verde | `#155C3F` | Acentos, estados "Jugando", barras de stock OK |
+| Crema | `#F3F0E8` | Fondo de la app |
+| Otros | azul, violeta, "saddle" (marrón cuero) | Estados Campo, Exterior, Recuperación; alertas de stock bajo |
 
-### Inicio
-```
-Noviembre ▾
-┌─────────────────────────┐
-│ Gastos      $2.340.000  │
-│             USD 3.500   │
-│ Ingresos    USD 12.000  │
-└─────────────────────────┘
-[ barras por categoría ]
-Te deben: Martín $850.000 + USD 2.000 →
-Últimos movimientos …
-```
+- Clases: `.hero` (tarjeta con degradado), `.glass` (cajas translúcidas sobre el degradado), `.btn-g` (botón con degradado).
+- **Tipografías**: Manrope (texto y números), Instrument Serif (títulos), Lexend (disponible). Para la marca se probaron Lexend negrita y Caveat negrita: **se descartaron** y no se muestra la palabra PROGRAMON.
+- **Números**: en el *hero* de Inicio, todos en **blanco y a 17 px**, sin colores distintos por moneda (pedido explícito: los colores distintos para US$ y € metían ruido).
+- Pestaña activa: barra dorada.
+- Hojas inferiores (*sheets*) con fondo oscurecido (*scrim*) para formularios y detalles.
 
-### Ficha de caballo
-- Foto, nombre, pelaje, edad, estado.
-- Costo del mes / del año / desde que lo tenés.
-- Movimientos asignados (vete, herraje…).
-- (Fase 2) último herraje, sanidad, historial de traslados.
+## Navegación
 
-### Rendición al patrón (vista pública por link)
-- Período, totales por categoría y moneda, detalle de movimientos con comprobantes.
-- Sin login para el patrón (link con token). **Potencial gancho viral**: cada patrón que recibe una rendición ve el producto.
+Barra inferior: **Inicio · Caballos · Caballeriza · Gastos · Ingresos**.
 
-## Stack sugerido
-Ver [arquitectura](../03-tecnico/arquitectura.md). Reutilizar el front de Queiros si es mobile-friendly.
+> Historia: hubo un módulo **Día** (vareos, prácticas, plan de chukkers). Primero se le sacó lo futuro (plan de chukkers, "mañana tormenta…") y quedó solo lo pasado. Después **se eliminó** y su lugar lo ocupó **Ingresos**. Ver [historial](historial-iteraciones.md).
+
+## Inicio
+
+Arriba, el **hero** con degradado:
+
+- **"Buen día, Tomás"** en dorado. A la derecha, el botón redondo **"T"** abre **Quién ve tu cuenta**.
+- Dos cajas *glass*:
+  - **Gastado · [período]** (ej. "Este mes"): US$ 38.690 · $ 5.625.000 · € 4.000.
+  - **Por cobrar**: US$ 366.200 · € 45.000.
+- Sin palabra PROGRAMON, sin fecha y sin botón "Vista piloto".
+
+Debajo, en este orden:
+
+1. **Necesita tu atención** (solo informativo, sin botones de acción). Cada ítem lleva a su pantalla:
+   - "Rockstar renguea de la mano izquierda" · Ramón · hoy 9:40 · con foto → **ficha de Rockstar**.
+   - "Avena para 6 días" · 18 bolsas en Pilar · se usan 3 por día → **hoja del insumo**.
+   - "Herraje vencido en 3 caballos" · Chiquita, Rubia y Malcriada · Cacho viene el jueves 29 → **lista de Caballos**.
+2. **Gastos**: botón de período ("Este mes · Octubre, al día 22 · todos los lugares"), totales por moneda (Dólares, Pesos, Euros) y **Últimos** 3 gastos (fecha · categoría · lugar · monto). Lleva a Gastos.
+3. **Lo que viene** (agenda) con botón **Agendar**:
+   - SÁB 24 · Partido · Cancha 2, Pilar · 16:00.
+   - LUN 26 · Dra. Ibarra, veterinaria · Control de Rockstar · vacunas de las de doma.
+   - JUE 29 · Cacho, herrero · Chiquita, Rubia, Malcriada y 3 más.
+   - Hoja **Agendar visita**: Quién viene (Herrero / Veterinaria / Proveedor / Otro), Qué día (Vie 23 / Lun 26 / Mié 28 / Elegir fecha), Para qué. Atajo: «El miércoles viene la veterinaria a ver a la Patria.»
+4. **Pagos que vienen** · US$ 8.000: DOM 1/11 Alquiler caballeriza Pilar US$ 1.900 · DOM 1/11 Alquiler de la casa en Pilar US$ 2.500 · JUE 5/11 Sueldos de los petiseros US$ 3.000 · JUE 5/11 Sueldo del puestero US$ 600. Nota: "Los pagos que se repiten todos los meses, según tus gastos cargados."
+
+**Se sacó de Inicio:** el plantel (tiles por estado), "Hoy en la caballeriza", el banner de WhatsApp y los KPIs. Las visitas pasaron de Caballeriza a Inicio ("Lo que viene").
+
+## Quién ve tu cuenta
+
+Hoja que se abre con el botón "T":
+
+| Persona | Rol | Acceso |
+|---|---|---|
+| Tomás | Vos · dueño de la cuenta | Todo |
+| Sofía | Lleva las cuentas | Gastos e ingresos: ve y carga |
+| Estudio Ruiz | Contador | Solo gastos, para exportar |
+| Pedro | Piloto | Solo WhatsApp: tareas y caballeriza · no ve plata |
+
+Nota: "Tus montos los ven solo estas personas. Nadie más, tampoco tus patrones." Botón **Invitar a alguien**.
+
+## Vista del piloto (fuera del recorrido)
+
+Existe en el código del mockup pero **no se llega desde Inicio** (decisión: al piloto le alcanza WhatsApp). Contenido, por si se retoma: "Hola, Pedro · Piloto · Caballeriza Pilar"; "Todo lo de acá también te llega por WhatsApp. Gastos y sueldos los ve solo Tomás."; **Lo que te pidió Tomás** (tareas con origen: audio o WhatsApp y hora); **Rutina de hoy** (ración, vareo, herraje, Rockstar al box); **Lo que se hizo hoy**; **Stock**; **Agenda**. Se le sacó la sección Avisos.
+
+## Pendiente de diseño
+- [ ] Logo y pantalla de carga con la palabra PROGRAMON.
+- [ ] Instalación como PWA (ícono, *splash*).

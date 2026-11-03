@@ -4,12 +4,16 @@
 
 | # | Hipótesis | Cómo la validamos | Criterio de éxito |
 |---|---|---|---|
-| H1 | El control de gastos es un dolor top-3 del polista profesional | Entrevistas | ≥ 70% lo menciona sin que lo sugiramos |
-| H2 | Están dispuestos a mandar cada gasto por WhatsApp (hábito) | Concierge MVP 2–3 semanas | ≥ 60% sigue mandando en la semana 3 |
-| H3 | La rendición al patrón es un dolor fuerte | Entrevistas a polistas y patrones | ≥ 50% rinde cuentas a un patrón y le cuesta |
-| H4 | Pagarían ~USD 20–50/mes | Pregunta de precio + pre-venta | ≥ 5 "sí, cobrame" |
-| H5 | El beachhead es el profesional de mediano handicap | Comparar segmentos | Mayor dolor × disposición × facilidad de acceso |
-| H6 | La IA entiende ≥ 90% de los mensajes reales | Set de evaluación con mensajes del concierge | ≥ 90% de campos correctos |
+| H1 | Saber cuánto gasta (en qué, dónde, en qué moneda) es un dolor top-3 del polista profesional | 15 entrevistas con polistas que **no sean familia** | ≥ 10 de 15 lo mencionan sin que lo sugiramos |
+| H2 | Saber cuánto le deben (patrones, ventas, reintegros) es un dolor fuerte | Entrevistas | ≥ 50% tiene acuerdos con pagos parciales y le cuesta seguirlos |
+| H3 | Mandan cada gasto por WhatsApp (hábito), y el equipo (piloto, petiseros) también reporta | Concierge test 2–3 semanas con resumen semanal | ≥ 3 de 5 siguen en la semana 3 |
+| H4 | Se comprometen a pagar | Preventa, seña o fecha de arranque | ≥ 5 compromisos |
+| H5 | El ICP es el profesional de alto handicap sin manager (persona del mockup) | Comparar con mediano handicap y con quienes tienen manager | Mayor dolor × disposición × acceso |
+| H6 | Haras/cría es un mercado más grande y con dolor parecido | 3–5 entrevistas a haras | Dolor claro y disposición a pagar |
+| H7 | La IA entiende ≥ 90% de los mensajes reales y pregunta bien cuando duda | Set de evaluación con mensajes del concierge | ≥ 90% de campos correctos |
+| H8 | La privacidad no frena la carga (plata informal) | Entrevistas + concierge | Nadie abandona por miedo a registrar |
+
+> **Cuidado con la validación familiar:** el cuñado (polista) es el primer contacto, pero sus respuestas no cuentan para los criterios de éxito.
 
 ## Guía de entrevista (30 min)
 
@@ -27,20 +31,26 @@
 7. ¿Cómo pagás: efectivo, transferencia, en qué monedas?
 
 **Patrón e ingresos**
-8. ¿Algún patrón te paga gastos? ¿Cómo le rendís? ¿Cada cuánto? ¿Hubo discusiones?
-9. ¿Cómo cobrás por jugar? ¿Te pasó de olvidarte de cobrar algo?
+8. ¿Cómo arreglás con un patrón? ¿Te paga en partes? ¿Cómo seguís lo que te falta cobrar?
+9. ¿Algún patrón te cubre gastos (fletes, pasajes)? ¿Cómo se los pedís? ¿Te pasó de olvidarte?
+9b. Cuando vendés un caballo, ¿cobrás todo junto o en partes?
+9c. ¿Sabés si una temporada te dejó plata?
 
-**Caballos**
+**Caballos, caballeriza y equipo**
 10. ¿Cómo llevás el registro de los caballos (herraje, vacunas, lesiones, quién está dónde)?
+10b. ¿Cómo te reportan el piloto, los petiseros y el puestero? ¿Qué se pierde?
+10c. ¿Te pasó quedarte sin avena, fardos o viruta? ¿Quién avisa?
+10d. Cuando estás afuera (Inglaterra, España, EE.UU.), ¿cómo seguís lo que pasa acá?
 
 **Herramientas**
 11. ¿Usás alguna app o sistema? ¿Probaste alguna y la dejaste? ¿Por qué?
 12. ¿Usás la compu para algo de esto?
 
 **Cierre**
-13. [Mostrar mockup] ¿Qué te parece? ¿Qué le falta? ¿Qué sobra?
+13. [Mostrar el mockup **al final**: link en [mockups](../02-producto/mockups/README.md)] ¿Qué te parece? ¿Qué le falta? ¿Qué sobra? ¿Quién de tu equipo lo usaría?
 14. Si esto existiera, ¿cuánto pagarías por mes?
-15. ¿Querés probarlo mandándonos tus gastos por WhatsApp estas semanas?
+15. ¿Querés probarlo mandándonos tus gastos por WhatsApp estas semanas? (concierge test)
+15b. Si arrancamos en [fecha], ¿te anotás? ¿Dejarías una seña? (compromiso concreto, no "me encanta")
 16. ¿A quién más le tendríamos que preguntar?
 
 ## Plantilla de notas (crear un archivo por entrevista en `04-plan/entrevistas/`)
@@ -64,3 +74,10 @@ Mantener en este doc una tabla resumen de todas las entrevistas a medida que se 
 | Fecha | Perfil | # caballos | Dolor gastos (1–5) | Rinde a patrón | Precio dispuesto | Concierge | Notas |
 |---|---|---|---|---|---|---|---|
 | | | | | | | | |
+
+## Guía corta para haras (20 min)
+1. ¿Cuántos caballos tenés y de qué categorías (madres, receptoras, potrillos, doma, a la venta)?
+2. ¿Cómo llevás reproducción (servicios, ET, clonación, ICSI), sanidad y documentación?
+3. ¿Cómo llevás los gastos y las ventas? ¿Exportás?
+4. ¿Qué te preocupa de la libreta sanitaria digital y el microchip obligatorio (Res. SENASA 831/2026)?
+5. ¿Usás algún software? ¿Cuánto pagás?

@@ -1,79 +1,101 @@
-# PRD — MVP
+# PRD — PROGRAMON
 
-**Estado:** borrador v0.1 · 2026-11-03 · Pendiente: sumar el mockup de Santi.
+**Estado:** v0.2 · 2026-11-03 · Basado en el mockup final de las sesiones 22–27/10/2026 ([mockup](mockups/README.md)). La verdad de producto es el mockup y lo que dice este documento. Lo previo de la v0.1 que lo contradecía se reemplazó.
 
-## Objetivo del MVP
+## Objetivo
 
-Que un **polista profesional** pueda registrar **todos los gastos e ingresos de su organización desde WhatsApp** y ver en el celular **cuánto gasta, en qué, por caballo y por patrón**, sin cargar ni un formulario.
+Que un **polista profesional** tenga **toda su organización en el celular**, cargada por WhatsApp por él y su equipo:
 
-**Métrica norte:** % de usuarios que cargan movimientos **4 de 4 semanas** del mes (hábito).
+- **Cuánto gastó**, en qué, dónde y en qué moneda.
+- **Cuánto le deben** (patrones, ventas de caballos, reintegros).
+- **Qué pasa con cada caballo** y qué tiene pendiente.
+- **Para cuántos días alcanza el stock** y qué reporta el equipo.
 
-## Usuarios del MVP
+Gastos es el centro: el dolor número uno y el gancho de adopción.
 
-- **Principal:** polista profesional dueño de la organización (carga y mira).
-- **Secundario (nice-to-have en MVP):** un "cargador" extra por organización (capataz / manager / pareja) que solo carga por WhatsApp.
-- **Fuera del MVP:** patrón con login propio, petiseros, haras.
+**Métrica norte [HIPÓTESIS]:** organizaciones que cargan gastos **4 de 4 semanas** del mes.
 
-## Alcance
+## Usuarios
 
-### ✅ Dentro (MVP)
+| Usuario | Canal | Ve plata |
+|---|---|---|
+| Polista (dueño de la cuenta) | WhatsApp + app | Todo |
+| Quien lleva las cuentas (Sofía) | WhatsApp + app | Gastos e ingresos: ve y carga |
+| Contador (Estudio Ruiz) | App / export | Solo gastos, para exportar |
+| Piloto (Pedro) | **Solo WhatsApp** | No |
+| Petiseros y puestero | Solo WhatsApp | No |
+| Patrones | No tienen acceso | No |
 
-**WhatsApp**
-1. Registrar **gasto** o **ingreso** por texto, audio o foto de ticket/comprobante/transferencia.
-2. La IA extrae: tipo (gasto/ingreso), monto, **moneda**, categoría, subcategoría, fecha, proveedor/persona, caballo(s) (opcional), patrón/centro de costo (opcional), medio de pago (efectivo/transferencia/cuenta corriente).
-3. **Confirmación** en un mensaje con resumen + opción de corregir respondiendo ("no, eran dólares").
-4. Pedir **solo el dato faltante crítico** (ej. el monto). Nunca un cuestionario.
-5. Entender la **jerga** (lucas, palo, verdes, vete, herraje, petisero…).
-6. **Consultas simples**: "¿cuánto gasté este mes?", "¿cuánto en vete en octubre?", "¿cuánto me debe Martín?".
-7. **Resumen semanal/mensual automático** por WhatsApp.
-8. Alta de **caballos** básica por WhatsApp ("tengo la Pampa, yegua zaina de 8 años") — para poder asignar gastos.
+## Estructura de la app
 
-**Web app mobile-first**
-1. Login por link mágico enviado por WhatsApp (sin contraseñas).
-2. **Home**: gasto e ingreso del mes, saldo, comparación con mes anterior, por moneda.
-3. **Movimientos**: lista con filtros (categoría, caballo, patrón, moneda, fecha), editar/borrar.
-4. **Por categoría**: torta/barras del mes.
-5. **Caballos**: lista + ficha con costo acumulado y movimientos asignados.
-6. **Patrones**: gastos imputados a cada patrón, ingresos cobrados y pendientes → **resumen para rendir** (compartible por WhatsApp como link o PDF).
-7. Exportar a Excel/CSV (para el contador).
+Barra inferior con cinco pestañas: **Inicio · Caballos · Caballeriza · Gastos · Ingresos**. Ver el detalle de cada una:
 
-### ❌ Fuera del MVP (backlog)
-- Módulo completo de caballos (sanidad, herraje con recordatorios, movimientos/traslados, reproducción) → [modulo-caballos.md](modulo-caballos.md).
-- Multiusuario con roles (patrón, petiseros).
-- Presupuestos y alertas de desvío.
-- Conversión automática de monedas con tipo de cambio del día.
-- Integraciones (bancos, Mercado Pago, AFIP/ARCA).
-- App nativa (el MVP es web app/PWA).
-- Inglés (evaluar si los primeros usuarios lo necesitan en temporada afuera).
+- [App mobile: principios, diseño, navegación, Inicio y accesos](app-mobile.md)
+- [Caballos](modulo-caballos.md)
+- [Caballeriza](modulo-caballeriza.md)
+- [Gastos e Ingresos](modulo-gastos-ingresos.md)
+- [Flujos de WhatsApp](flujos-whatsapp.md)
+- [Modelo de datos](modelo-de-datos.md)
 
-## Requerimientos funcionales clave
+## Requerimientos funcionales
+
+### WhatsApp (carga, consultas y avisos)
 
 | ID | Requerimiento | Prioridad |
 |---|---|---|
-| F1 | Registrar gasto por texto con ≥90% de campos correctos sin repreguntar | Must |
-| F2 | Registrar gasto por audio (transcripción + extracción) | Must |
-| F3 | Registrar gasto por foto de ticket / comprobante de transferencia | Must |
-| F4 | Registrar ingreso (cobro de patrón, venta de caballo, alquiler, clínica) | Must |
-| F5 | Multimoneda (ARS, USD; GBP/EUR) — se guarda la original, se reporta por moneda | Must |
-| F6 | Confirmar y corregir por WhatsApp | Must |
-| F7 | Asignar gasto a 1, varios o todos los caballos; prorrateo simple | Should |
-| F8 | Asignar gasto/ingreso a un patrón o "propio" | Must |
-| F9 | Consultas en lenguaje natural por WhatsApp | Should |
-| F10 | Resumen automático semanal/mensual | Should |
-| F11 | Web app: home, movimientos, categorías, caballos, patrones | Must |
-| F12 | Rendición al patrón compartible (link/PDF) | Should — **candidata a killer feature** |
-| F13 | Exportar CSV/Excel | Should |
-| F14 | Cobros pendientes ("me deben") | Could |
+| W1 | Cargar un **gasto** por mensaje, audio o foto (factura, remito, ticket, comprobante). La IA detecta monto, moneda, grupo › categoría, **lugar** y fecha | Must |
+| W2 | **Ante la duda, preguntar**: si no sabe el lugar, la categoría o los caballos, pregunta (ej. "¿Son para acá o para la temporada de Inglaterra?"). Nunca adivina | Must |
+| W3 | Entender la jerga y los montos ("180 lucas", "40 mil", "un millón doscientos") y las monedas (dólares, pesos, euros, libras) | Must |
+| W4 | Confirmar cada carga y permitir corregir respondiendo | Must |
+| W5 | Cargar **acuerdos con patrones**, **pagos recibidos** ("Me pagó 40 mil Halvorsen") y **ventas de caballos** | Must |
+| W6 | Marcar un gasto como **cubierto por un patrón** ("Lo cubre Halvorsen") y sumarlo a lo que debe | Must |
+| W7 | **Pagos fijos**: el día que vence cada uno, preguntar "¿Lo pagaste?"; con un «sí» se carga; si es "mañana", volver a preguntar al día siguiente a las 9 | Should |
+| W8 | Reportes del equipo: vareos, herrajes, novedades de caballos (con foto a la ficha), stock ("quedan 18 bolsas") | Must |
+| W9 | **Alta de caballo** por audio, con lectura de los papeles por foto (microchip) | Should |
+| W10 | **Recordatorios** por caballo y **visitas** (herrero, veterinaria) por mensaje; asignables al piloto | Should |
+| W11 | **Tareas del piloto**: mensaje a las 7:00 con la lista del día; avisos durante el día ("Tomás te avisó…", "No te olvides…"); tachar respondiendo "Listo, hecho" | Should |
+| W12 | **Consultas** en lenguaje natural ("¿Cuánto gasté en Inglaterra este mes?", "¿Qué le falta a la Morena para viajar?") respondidas con los mismos datos de la app | Should |
+| W13 | **Cierre del día** a las 20:00: vareos, herrajes, gastos, stock, lo que viene mañana | Could |
+| W14 | Si un gasto lo pagó el piloto, preguntar "¿Lo pagaste vos o queda a pagar?" | Should |
+
+### App mobile (PWA)
+
+| ID | Requerimiento | Prioridad |
+|---|---|---|
+| A1 | **Inicio**: saludo, Gastado en el período y Por cobrar (por moneda), "Necesita tu atención", Gastos, "Lo que viene", "Pagos que vienen" | Must |
+| A2 | **Gastos**: período (mes, 30 días, temporadas, año, fechas), lugar, total por moneda, "En qué se fue" (grupo › categoría › ítems por día), detalle con comprobante, pagos fijos, exportar | Must |
+| A3 | **Ingresos**: Por cobrar (acuerdos y ventas con pagos parciales y reintegros) y Por temporada (ingresos − gastos por moneda) | Must |
+| A4 | **Caballos**: lista con estado y filtros, búsqueda, ficha con novedad, pendientes, Actividad y Salud; agregar caballo | Must |
+| A5 | **Caballeriza**: stock por sede con días que alcanza, consumo configurable, equipo con sus mensajes | Should |
+| A6 | **Quién ve tu cuenta**: accesos por persona y nota de privacidad | Must |
+| A7 | Cada total es la suma de los ítems visibles (una sola fuente de verdad) | Must |
+| A8 | Monedas siempre separadas; sin conversiones ni totales combinados; sin "% vs mes anterior" | Must |
+| A9 | Login sin contraseña (link de un solo uso por WhatsApp, como Queiros) | Must |
+
+## Fuera de alcance (por ahora)
+
+- **Onboarding** (decisión: que vean directo la versión final).
+- **Ficha con documentación oficial / SENASA** (libreta digital, pasaporte, microchip como trámite).
+- **Vista web del piloto** (el piloto usa solo WhatsApp).
+- **Costo por caballo** (se sacó la pestaña Costos).
+- **Pedidos a proveedores** desde la app.
+- Conversión de monedas.
+- Integraciones (bancos, Mercado Pago, ARCA).
+- App nativa.
+- Inglés (evaluar con los primeros usuarios que juegan afuera).
 
 ## Requerimientos no funcionales
-- **Mobile-first**: diseñado para 375px de ancho; nunca pensado para desktop.
-- **Velocidad**: confirmación por WhatsApp en < 10 s.
-- **Privacidad**: los números de plata son sensibles (informalidad). Datos cifrados, nada compartido sin acción explícita del usuario. Política clara.
-- **Tolerancia a errores**: todo editable/borrable desde WhatsApp ("borrá el último") y desde la app.
 
-## Criterios de éxito del MVP (beta)
-- 10–20 polistas activos en la temporada de otoño 2027.
-- ≥ 60% carga al menos una vez por semana durante 8 semanas.
-- ≥ 85% de movimientos registrados sin corrección manual.
-- ≥ 5 usuarios dispuestos a pagar al terminar la beta.
-- ≥ 3 referidos orgánicos (un polista que trae a otro).
+- **Mobile-first**: pensado para ~390 px de ancho. Nunca pensado para desktop.
+- **Velocidad**: confirmación por WhatsApp en menos de 10 s.
+- **Privacidad**: los montos son sensibles. Solo los ven las personas habilitadas; los patrones nunca.
+- **Trazabilidad**: cada registro guarda el mensaje original (texto, audio con transcripción, foto) y quién lo cargó.
+- **Funciona desde el exterior** (Inglaterra, España, EE.UU.) y en cualquier moneda.
+
+## Criterios de éxito (validación y beta) [HIPÓTESIS]
+
+- 15 entrevistas con polistas que no sean familia.
+- Compromisos concretos (preventa, seña o fecha de arranque) de al menos 5.
+- Concierge test: ≥ 60% sigue mandando gastos en la semana 3.
+- ≥ 85% de las cargas sin corrección manual.
+- ≥ 3 referidos orgánicos.

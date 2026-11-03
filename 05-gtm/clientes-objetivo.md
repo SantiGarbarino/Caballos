@@ -6,11 +6,11 @@
 
 | Ola | Segmento | Cantidad objetivo | Cómo llegamos |
 |---|---|---|---|
-| 1 | Profesionales de mediano handicap de la red propia | 20 entrevistas → 10 en beta | Contacto directo de Santi/Mati/Mauro |
+| 1 | Profesionales (alto y mediano handicap) de la red propia, **no familia** | 15 entrevistas → 3–5 concierge → 10 en beta | Contacto directo de Santi/Mati/Mauro |
 | 2 | Sus referidos + los que conocemos en canchas | 30–50 | Referidos, presencia en torneos |
-| 3 | Patrones de los beta-testers | 5–10 | Loop de rendición |
+| 3 | Haras y criadores | 3–5 entrevistas ya | Para dimensionar el segundo vertical |
 | 4 | Profesionales de alto handicap (con manager) | 10–20 | Embajadores + multiusuario |
-| 5 | Haras y criadores | — | Fase 3 |
+| 5 | Patrones | — | Hoy no ven la cuenta del polista; evaluar más adelante |
 
 ## 2. Dónde está el mercado (geografía en Argentina)
 
@@ -26,7 +26,7 @@
 
 | Tipo | A completar |
 |---|---|
-| Asociaciones | AAP (Asociación Argentina de Polo), AACCPA (criadores de Polo Argentino) |
+| Asociaciones | AAP (Asociación Argentina de Polo), AACCP (criadores de Polo Argentino) |
 | Clubes de polo | Listado de clubes afiliados a la AAP por zona |
 | Escuelas de polo | Listado |
 | Veterinarias equinas | Las que atienden organizaciones de polo en Pilar/Gral. Rodríguez |
@@ -44,8 +44,9 @@
 
 | Etapa | Meta Fase 0–2 |
 |---|---|
-| Contactados | 60 |
-| Entrevistados | 20+ |
-| Concierge MVP | 5–10 |
+| Contactados | 25–30 |
+| Entrevistados | 15 (no familia) + 3–5 haras |
+| Concierge test | 3–5 |
+| Compromisos (preventa/seña/fecha) | ≥ 5 |
 | Beta activos | 10–20 |
 | Pagos al fin de beta | ≥ 5 |
