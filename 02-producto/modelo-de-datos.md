@@ -27,13 +27,13 @@ Cuenta (organización del polista)
 
 **Cuenta**: id, nombre del dueño, idioma, plan.
 
-**Usuario (app)**: cuenta_id, nombre, teléfono, rol (`polista` | `manager`). **Ven y cargan lo mismo**; no hay permisos distintos.
+**Usuario (app)**: cuenta_id, nombre, teléfono, rol (`polista` | `manager` | otro con acceso habilitado). Los **owners** (quien creó la organización y a quien le dé todos los accesos) ven todo y configuran los accesos de los demás desde Equipo. *(Actualizado 2026-11-03: los permisos son por usuario.)*
 
 **Miembro (solo WhatsApp)**: id, **cuenta_id (una sola)**, nombre, rol (`piloto` | `petisero` | `puestero` | `familiar/asistente` | otro), lugar, teléfono. Carga por el bot; **nunca entra a la app**. Todo lo que carga queda con `cargado_por`. Abierto: qué puede cargar cada rol.
 
 **Proveedor**: id, nombre, rol (`veterinario` | `herrero` | otro), teléfono; relación muchos-a-muchos con Cuenta. Si escribe por privado y tiene más de un cliente, el bot pregunta para cuál.
 
-**Membresía**: teléfono, cuenta_id, rol, canales (`grupo` | `privado` | ambos), activa/inactiva. Define a qué organización va cada mensaje. Un proveedor tiene varias; el resto, una.
+**Membresía**: teléfono, cuenta_id, rol, **owner (sí/no)**, canales (`grupo` | `privado` | ambos), **accesos a la app** (ninguno = solo WhatsApp, o lista de módulos: Inicio, Caballos, Caballeriza, novedades diarias; Gastos e Ingresos solo para owners), invitada_por, activa/inactiva. Define a qué organización va cada mensaje. Un proveedor tiene varias; el resto, una.
 
 **Contexto de conversación** (privado de alguien con varias organizaciones): última organización elegida y hasta cuándo vale, para no repreguntar en cada mensaje.
 

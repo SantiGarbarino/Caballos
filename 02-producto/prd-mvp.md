@@ -17,6 +17,8 @@ Gastos es el centro: el dolor número uno y el gancho de adopción.
 
 ## Usuarios
 
+> **Actualización (2026-11-03, sesión 10):** quien crea la organización (polista o manager) es **owner** y configura desde Equipo qué ve cada usuario: solo WhatsApp (por defecto para todos salvo owners) o una parte de la plataforma (ej. el veterinario ve Caballos y las novedades de la caballeriza, nunca Gastos ni Ingresos). Lo de abajo es el caso típico.
+
 Hay **dos tipos de usuario**: los de la **app** (polista y manager) y los de **solo WhatsApp** (el resto de la organización y los proveedores: cargan por el bot, lo que mandan figura en la plataforma con su nombre, pero nunca entran a la app).
 
 | Persona | Canal | Acceso a la app | Ve plata |
@@ -78,7 +80,7 @@ Barra inferior con cinco pestañas: **Inicio · Caballos · Caballeriza · Gasto
 | A3 | **Ingresos**: Por cobrar (acuerdos y ventas con pagos parciales y reintegros) y Por temporada (ingresos − gastos en US$) | Must |
 | A4 | **Caballos**: lista con estado y filtros, búsqueda, ficha con novedad, pendientes, Actividad y Salud; agregar caballo **eligiéndolo del catálogo de la app Polo Argentino** (sangre, padre, madre, partidos) | Must (la app Polo Argentino: sujeto a la integración) |
 | A5 | **Caballeriza**: stock por sede con días que alcanza, consumo configurable, equipo con sus mensajes | Should |
-| A6 | **Quién ve tu cuenta**: polista y manager (mismo acceso) y nota de privacidad | Must |
+| A6 | **Equipo**: owners (polista y/o manager) invitan usuarios y configuran qué ve cada uno: solo WhatsApp o módulos de la app (Gastos e Ingresos, solo owners) | Must |
 | A7 | Cada total es la suma de los ítems visibles (una sola fuente de verdad) | Must |
 | A8 | Todo en US$, con la conversión explicada en cada gasto; sin "% vs mes anterior" | Must |
 | A9 | Login sin contraseña (link de un solo uso por WhatsApp) | Must |

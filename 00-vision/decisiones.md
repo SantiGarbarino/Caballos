@@ -6,6 +6,25 @@ Formato: fecha · decisión · contexto y porqué · quién. Las más nuevas arr
 
 ---
 
+## 2026-11-03 (sesión 10) · Owners, permisos por usuario y un bot que no se equivoca
+
+### Owners de la organización y permisos por usuario
+- **Quien crea la organización** (el polista o el manager) es **owner**. Puede invitar usuarios y, al invitarlos, les da el acceso que corresponde. Si el polista crea la organización e invita a su manager con el rol de manager, le da **todos los accesos** y el manager pasa a ser también owner.
+- Los owners (polista y/o manager) **configuran qué ve cada usuario** desde **Equipo**: solo WhatsApp, o una parte de la plataforma.
+- **Por defecto**: veterinario, herrero, piloto, petiseros, puestero y familiares → **solo WhatsApp**.
+- **Excepción configurable**: si un polista quiere que su veterinario vea, por ejemplo, el módulo de **Caballos** y las **novedades diarias de la caballeriza** (pero nunca Gastos ni Ingresos), un owner se lo habilita desde Equipo. "Cada organización es un mundo": en una el veterinario ve algo, en otra nada.
+- **Reemplaza** a "usuarios de la app: solo polista y manager". Eso sigue siendo el caso típico, pero ahora es configurable por usuario.
+- Los owners son también **quienes reciben las preguntas del bot** (confirmar un gasto, duplicados, trabajo de proveedores). Así se resuelve "quién maneja la operación": depende de quién creó la organización y a quién hizo owner.
+- **Quién:** Santi.
+
+### El bot nunca carga una charla
+- Un mensaje como «che, ¿cuánto te salió el flete a vos?» es una pregunta y **nunca** se carga. El modelo tiene que ser **muy inteligente** para distinguir una carga de la charla.
+- **Quién:** Santi.
+
+### Proveedores sin gastos: confirmado
+- El proveedor carga el trabajo y el bot les pregunta a los owners si lo registran como gasto y por cuánto.
+- **Quién:** Santi.
+
 ## 2026-11-03 (sesión 9) · Operatoria de WhatsApp con varias organizaciones
 
 ### Ruteo de mensajes de proveedores con varios clientes

@@ -81,3 +81,12 @@ Existe en el código del mockup pero **no se llega desde Inicio** (decisión: al
 ## Pendiente de diseño
 - [ ] Logo y pantalla de carga con la palabra PROGRAMON.
 - [ ] Instalación como PWA (ícono, *splash*).
+
+## Equipo y permisos (2026-11-03, sesión 10)
+
+- Se entra desde el botón **Equipo** de Inicio. Lo gestionan los **owners** (quien creó la organización: el polista o el manager, y a quien le hayan dado todos los accesos).
+- Al **invitar** se eligen el rol, **cómo se suma por WhatsApp** (grupo y/o privado) y **qué ve en la app**:
+  - Manager → todos los accesos (owner).
+  - Resto → **solo WhatsApp** por defecto.
+- **Accesos parciales** (configurables por usuario): ej. el veterinario ve **Caballos** y las **novedades diarias de la caballeriza**, pero nunca Gastos ni Ingresos. Cada organización decide.
+- *Pendiente en el mockup:* mostrar en la invitación y en la persona la opción "Qué ve en la app".

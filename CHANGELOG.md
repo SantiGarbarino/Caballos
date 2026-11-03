@@ -1,5 +1,8 @@
 # Changelog del brain
 
+## 2026-11-03 (sesión 10) · Owners y permisos por usuario
+- Quien crea la organización es owner; los owners invitan y configuran qué ve cada usuario (solo WhatsApp o módulos de la app). El bot nunca carga una charla. Proveedores sin gastos, confirmado. Actualizados `decisiones.md`, `preguntas-abiertas.md`, `prd-mvp.md`, `modelo-de-datos.md`, `flujos-whatsapp.md`, `app-mobile.md` y `CLAUDE.md`.
+
 ## 2026-11-03 (sesión 9) · Operatoria de WhatsApp
 - Reglas de ruteo (grupos, privados, proveedores con varias organizaciones), proveedores sin gastos, duplicados, reacción ✅ en grupos, varios grupos por organización y quién gestiona el equipo. En `flujos-whatsapp.md`, `modelo-de-datos.md`, `decisiones.md` y `preguntas-abiertas.md`.
 

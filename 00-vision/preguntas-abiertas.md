@@ -15,6 +15,8 @@ Lo que todavía no sabemos o no decidimos. Cuando se resuelve, pasa a [decisione
 
 - ~~Ingresos en otras monedas~~ → lo cobrado al euro del día de cada pago; lo que falta, al de hoy con «≈» (2026-11-03).
 
+- ~~Quién maneja la operación~~ → los **owners** (quien crea la organización y a quien le dé todos los accesos: polista y/o manager). Reciben las preguntas del bot y configuran qué ve cada usuario (2026-11-03).
+
 ## Negocio
 - [ ] **Nombre** definitivo (PROGRAMON es provisorio) y **logo**.
 - [ ] **ICP final**: ¿organizaciones grandes con manager, alto handicap sin manager, mediano handicap? Validar en entrevistas. (Tomás es solo el ejemplo del mockup.)
@@ -38,9 +40,10 @@ Lo que todavía no sabemos o no decidimos. Cuando se resuelve, pasa a [decisione
 - [ ] Recordatorios automáticos derivados (ej. "Sacar sangre para AIE" por un viaje): ¿qué reglas?
 
 - [ ] **Trabajo de proveedores → gasto**: ¿a quién le pregunta el bot (polista, manager o los dos)? ¿En el momento o en un resumen? ¿Con qué monto si el proveedor no lo dice?
-- [ ] **Quién maneja la operación**: ¿se configura por organización (polista, manager o los dos) a quién le llegan las preguntas del bot?
 - [ ] **Ruido en los grupos**: cómo distingue el bot una carga de la charla sin equivocarse, y qué hace con los mensajes dudosos.
 - [ ] Si los grupos chicos (manager + un proveedor + bot) se vuelven el patrón: ¿cuántos grupos por organización y cuántos grupos en total puede tener el número del bot? (verificar límites de Meta).
+
+- [ ] **Permisos por usuario**: ¿qué partes de la app se pueden habilitar (por módulo: Caballos, Caballeriza, novedades diarias…; Gastos e Ingresos nunca para proveedores)? ¿Por caballo o lugar (ej. el veterinario solo ve los caballos que atiende)?
 
 ## Técnico
 - [ ] **Grupos de WhatsApp con la API oficial**: según fuentes secundarias (2026-11-03), la Groups API de Meta tendría un **límite de 8 participantes por grupo** (contando el número del bot), requiere número verificado (OBA) y no permite agregar participantes por API (solo link de invitación). **Verificar en la documentación oficial de Meta.** Si se confirma, un grupo con polista, manager, vete, herrero y varios petiseros puede no entrar, y el bot no podría sumarse a grupos que ya existen.

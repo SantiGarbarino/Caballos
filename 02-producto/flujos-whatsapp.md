@@ -45,6 +45,8 @@ Valores sugeridos según el rol (se pueden cambiar): manager y piloto, las dos; 
   - Cada confirmación dice **en qué organización se cargó** («Anotado en la organización de Tomás») y se corrige con «no, era para Juan».
 - **Nunca** un proveedor (ni nadie) recibe datos de una organización que no sea la del grupo donde escribe o la que eligió.
 
+**El bot nunca carga una charla.** «Che, ¿cuánto te salió el flete a vos?» es una pregunta: no se carga **nunca**. El modelo tiene que entender la intención (pregunta, comentario, plan a futuro, chiste) y cargar solo lo que es un registro de algo que pasó. Ej.: «el flete salió 2 mil» dicho por el piloto sí es un dato; «¿el flete sale 2 mil?» no. Se valida con un set de mensajes reales de grupos (concierge test) antes de construir.
+
 **Los proveedores no registran gastos.** El veterinario, el herrero y demás cargan **el trabajo** (vacunó, herró, revisó). Si ese trabajo implica un gasto, el bot **le pregunta al polista o al manager** si lo registra como gasto y por cuánto. *(Detalle a definir: a quién le pregunta y cuándo.)*
 
 **Duplicados.** Con grupo y privado conviviendo, el mismo gasto puede llegar dos veces (el piloto en el grupo: «son 180 lucas el herraje»; el polista a la noche por privado: «pagué 180 mil al herrero»). Antes de cargar, el bot busca algo parecido (mismo monto, misma categoría, pocos días de diferencia, aunque venga de otro grupo o de otra persona) y pregunta: «¿Es el mismo que cargó Pedro el martes?». **Es clave para que los totales no se inflen.**
@@ -55,6 +57,8 @@ Valores sugeridos según el rol (se pueden cambiar): manager y piloto, las dos; 
 - Los mensajes que no son cargas (charla, chistes, coordinación) **no los toca**. Igual se les va a pedir a los usuarios que no usen esos grupos para cualquier cosa.
 
 **Una organización puede tener varios grupos** (idea de Santi). Ej.: el manager arma un grupo «manager + veterinario + bot», otro «manager + herrero + bot», etc.: conversaciones de a dos donde el bot está en el medio leyendo. Todos esos grupos son de la misma organización. Ventajas: cada conversación queda ordenada, nadie ve lo que no le corresponde y los grupos chicos no chocan con el límite de participantes de la API de grupos (a verificar). Ojo: sube el riesgo de duplicados entre grupos (ver arriba).
+
+**Owners y permisos.** Quien crea la organización (polista o manager) es **owner**; si invita al manager con ese rol, le da todos los accesos y también es owner. Las preguntas del bot les llegan a los owners. Desde Equipo, los owners deciden qué ve cada usuario: solo WhatsApp o una parte de la app.
 
 **Quién maneja la organización.** Cada polista es una mini organización. En algunas, el polista habla directamente con el veterinario, el herrero y los demás; en otras, el polista solo juega y **el manager se encarga de absolutamente todo**. El producto tiene que funcionar igual en los dos casos: las preguntas del bot (confirmar un gasto, duplicados, a qué lugar va algo) le llegan a **quien maneja la operación** (polista, manager o los dos, según se configure la organización).
 
