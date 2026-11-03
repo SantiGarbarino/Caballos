@@ -13,6 +13,8 @@ Lo que todavía no sabemos o no decidimos. Cuando se resuelve, pasa a [decisione
 - ~~¿Repo de código nuevo o fork de Queiros App?~~ → **Nuevo**: no se mezcla nada de Queiros (2026-11-03).
 - ~~¿Mismo BSP que Queiros?~~ → Número y cuenta de WhatsApp **propios**; el proveedor se elige de cero (2026-11-03).
 
+- ~~Ingresos en otras monedas~~ → lo cobrado al euro del día de cada pago; lo que falta, al de hoy con «≈» (2026-11-03).
+
 ## Negocio
 - [ ] **Nombre** definitivo (PROGRAMON es provisorio) y **logo**.
 - [ ] **ICP final**: ¿organizaciones grandes con manager, alto handicap sin manager, mediano handicap? Validar en entrevistas. (Tomás es solo el ejemplo del mockup.)
@@ -22,9 +24,8 @@ Lo que todavía no sabemos o no decidimos. Cuando se resuelve, pasa a [decisione
 - [ ] ¿Haras/cría como segundo vertical o en paralelo? Salir de las 3–5 entrevistas a haras.
 
 ## Producto
-- [ ] **Cría Polo**: confirmar nombre exacto de la app, quién es el dueño, si tiene API o acuerdo de datos, qué campos trae (sangre, padre, madre, partidos jugados) y si se puede actualizar. Alternativa o complemento: registro genealógico de la AACCP. En una búsqueda web (2026-11-03) no apareció una app con ese nombre exacto; sí catálogos de cría (La Dolfina Cría, Cría Emezeta) y una app "Criadores de Polo".
+- [ ] **App de caballos registrados** (Santi: en el App Store figura como **«Polo Argentino»**, no "Cría Polo"): confirmar quién es el dueño, si tiene API o acuerdo de datos, qué campos trae (sangre, padre, madre, partidos jugados) y si se puede actualizar. Alternativa o complemento: registro genealógico de la AACCP. En una búsqueda web (2026-11-03) no apareció una app con ese nombre exacto; sí catálogos de cría (La Dolfina Cría, Cría Emezeta) y una app "Criadores de Polo".
 - [ ] **Conversión de monedas**: ¿Qué cotización si el gasto es de una fecha pasada ("el viernes pagué…"): la de ese día? ¿Se puede corregir la cotización a mano?
-- [ ] **Ingresos en otras monedas** (acuerdos en € o £): ¿se convierten a US$ con la cotización de cada pago? ¿Cómo se muestra lo acordado en € y lo que falta cobrar?
 - [ ] ¿Qué miembros "solo WhatsApp" pueden cargar **gastos e ingresos** (ej. un familiar que ayuda con gastos) y cuáles solo novedades de caballos y caballeriza (ej. petiseros)? ¿Lo configura el polista o el manager desde la app?
 - [ ] ¿El bot responde **consultas de plata** en el grupo? Propuesta [HIPÓTESIS]: nunca; las consultas de plata solo por privado al polista o al manager.
 - [ ] **Onboarding** (postergado por decisión). Idea discutida: primera carga por WhatsApp (caballos desde Cría Polo, equipo, pagos fijos y acuerdos) más una revisión web; *white-glove* para los primeros clientes.

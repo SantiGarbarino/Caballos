@@ -6,6 +6,29 @@ Formato: fecha · decisión · contexto y porqué · quién. Las más nuevas arr
 
 ---
 
+## 2026-11-03 (sesión 6) · Ajustes del mockup para la V1
+
+### Acuerdos en euros: cómo se pasan a dólares
+- Lo **ya cobrado**: a la cotización del euro **del día de cada pago** (queda fija).
+- Lo que **falta cobrar**: a la cotización **de hoy**, con un **«≈»** adelante porque puede cambiar. En letra chica: «€ 45.000 al euro de hoy (US$ 1,09)».
+- Resuelve la pregunta abierta sobre ingresos en otras monedas.
+- **Quién:** Santi.
+
+### Datos de los caballos: en el mockup, sin nombrar la fuente
+- La ficha muestra **toda la información del caballo** (padre, madre, criador, nacimiento, registro, microchip, marca, partidos jugados) en una pestaña **Datos**.
+- Cómo se carga se define después: integración con la app de los caballos de polo registrados (según Santi se llama **«Polo Argentino»** en el App Store, no "Cría Polo") o carga manual por WhatsApp o web. En el mockup **no se nombra** ninguna app.
+- Esa información sola no le agrega valor al polista ni al veterinario (ya la ven en esa app); el valor es tenerla junto con lo operativo.
+- **Quién:** Santi.
+
+### Equipo sale de Caballeriza y pasa a su propia pantalla, desde Inicio
+- Botón **Equipo** en Inicio → pantalla para gestionar a la gente: quiénes entran a la app (polista y manager), quiénes cargan solo por WhatsApp, qué mandó cada uno, y **Invitar** (le llega un WhatsApp; con responder «Sí» queda adentro).
+- Reemplaza la hoja «Quién ve tu cuenta».
+- **Quién:** Santi.
+
+### El mockup muestra un grupo de WhatsApp de la organización
+- Con 7 personas + el bot, para no prometer más de lo que la API de grupos podría permitir (límite de 8 a verificar).
+- **Quién:** Santi.
+
 ## 2026-11-03 (sesión 3) · Correcciones de Santi a la KB
 
 > Estas decisiones **reemplazan** a las anteriores que las contradigan (están marcadas como *reemplazada* más abajo).

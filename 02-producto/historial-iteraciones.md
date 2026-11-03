@@ -112,6 +112,20 @@ No es una vuelta del mockup, pero cambia cosas que el mockup muestra:
 - **Sin tablas**: módulos con tableros.
 - Nombre provisorio; producto nuevo, no Queiros.
 
+## Vuelta 10 · Ajustes para la V1 (2026-11-03, borrador v9)
+
+Santi aprobó la lista de 32 cambios (con ajustes). Se hizo en el **borrador** (el link compartible todavía no):
+- **Todo en US$**: Inicio, Gastos (total, grupos, categorías, días), Ingresos y temporadas. Cada gasto en $ o € muestra la conversión en letra chica («$ 180.000 al dólar blue del 22/10 ($ 1.550, promedio compra y venta) = US$ 116»). Acuerdos en €: cobrado al euro del día de cada pago, lo que falta al de hoy con «≈».
+- **Resultado por temporada** en una sola línea en US$ (ingresos, gastos y resultado).
+- **«En qué se fue»** con una barrita fina por grupo y su % del total.
+- **Equipo**: botón en Inicio → pantalla propia (entran a la app: polista y manager; cargan por WhatsApp: piloto, petiseros, puestero, familiar, veterinaria, herrero), mensajes de cada uno marcados «en el grupo» o «por privado», e **Invitar** por WhatsApp. Se sacó Equipo de Caballeriza y la hoja «Quién ve tu cuenta».
+- **Manager** (ficticio: Nacho) visible: carga gastos, aparece en el grupo y tiene su chat.
+- **Recordatorio personal** en «Lo que viene» (Vie 23, «llamar a Cacho…») y en el chat de recordatorios.
+- Ficha del caballo con pestaña **Datos** (padre, madre, criador, nacimiento, registro, microchip, marca, partidos jugados), sin nombrar la fuente.
+- **Chats**: grupo de la organización (7 personas + bot, con un gasto que se registra igual), manager, piloto (solo tareas), Sofía (gasto en pesos convertido), veterinaria por privado con varios clientes, recordatorio personal; montos en US$.
+- **Se eliminó**: la vista web del piloto, el contador y la persona que lleva las cuentas como usuarios de la app.
+- **Se corrigieron** las inconsistencias: «Día» en el chat, consulta de veterinario (ahora US$ 2.206), Windsor (US$ 7.300), cierre del día sin corralón ni chukkers, herrero con 3 caballos, Sotogrande = agosto en todos lados (el pasaje Londres–Málaga pasó al 1/8). Se sumó el gasto de US$ 600 de veterinario de hoy para que coincida con el chat.
+
 ## Errores de consistencia que se corrigieron
 
 - **Días de la semana**: el 22/10/2026 es jueves. Se corrigieron las fechas (el herrero quedó el jueves 29).

@@ -1,5 +1,8 @@
 # Changelog del brain
 
+## 2026-11-03 (sesión 6) · Ajustes del mockup para la V1
+- Borrador v9 con los 32 cambios aprobados (ver `02-producto/historial-iteraciones.md`, vuelta 10). Decisiones nuevas: acuerdos en € a US$, pestaña Datos sin nombrar la fuente («Polo Argentino» como posible integración), Equipo como pantalla propia desde Inicio, grupo de 7 + bot.
+
 ## 2026-11-03 (sesión 5) · Sin usuarios personalizados
 - Se sacan los ejemplos con nombre (ej. "Sofía, hermana de Tomás") de las definiciones de usuarios: se habla de **roles**. Los nombres quedan solo en los datos ficticios del mockup. Nueva regla 14 en `CLAUDE.md`.
 
