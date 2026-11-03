@@ -9,8 +9,7 @@
 | 1 | Profesionales (alto y mediano handicap) de la red propia, **no familia** | 15 entrevistas → 3–5 concierge → 10 en beta | Contacto directo de Santi/Mati/Mauro |
 | 2 | Sus referidos + los que conocemos en canchas | 30–50 | Referidos, presencia en torneos |
 | 3 | Haras y criadores | 3–5 entrevistas ya | Para dimensionar el segundo vertical |
-| 4 | Profesionales de alto handicap (con manager) | 10–20 | Embajadores + multiusuario |
-| 5 | Patrones | — | Hoy no ven la cuenta del polista; evaluar más adelante |
+| 4 | Organizaciones grandes **con manager** | 10–20 | Embajadores; el manager como usuario principal |
 
 ## 2. Dónde está el mercado (geografía en Argentina)
 
@@ -38,7 +37,7 @@
 
 ## 4. Plantilla de prospecto (columnas del CSV)
 
-`nombre, rol (profesional/amateur/patrón/haras/canal), handicap, zona, club, #caballos, patrones, contacto_whatsapp, instagram, quién lo conoce, estado (por contactar/entrevistado/concierge/beta/pago), próximos pasos, notas`
+`nombre, rol (profesional/manager/amateur/haras/canal), handicap, zona, club, #caballos, patrones, contacto_whatsapp, instagram, quién lo conoce, estado (por contactar/entrevistado/concierge/beta/pago), próximos pasos, notas`
 
 ## 5. Embudo y métricas
 

@@ -1,6 +1,6 @@
 # Instrucciones para agentes (Claude y otros)
 
-Este repo es el **brain / knowledge base** del proyecto Caballos. El producto se llama **PROGRAMON** (marca vertical sobre el motor de Queiros): gestión de la organización del polista (y luego haras y el resto del mundo del caballo) con WhatsApp como interfaz y una web app mobile (PWA).
+Este repo es el **brain / knowledge base** del proyecto Caballos. El producto se llama provisoriamente **PROGRAMON** (nombre no definido). Es un **producto nuevo**, no es Queiros: gestión de la organización del polista (y luego haras y el resto del mundo del caballo) con WhatsApp como interfaz y una web app mobile (PWA).
 
 ## Al trabajar en este repo
 
@@ -12,16 +12,16 @@ Este repo es el **brain / knowledge base** del proyecto Caballos. El producto se
 6. **Hipótesis vs. validado**: marcá **[HIPÓTESIS]** lo que suponemos y **[VALIDADO]** lo que confirmamos con entrevistas o datos (citando la fuente: "entrevista a polista 4 goles, 2026-11-10").
 7. **CHANGELOG**: anotá cada sesión de trabajo relevante en `CHANGELOG.md` (fecha + qué cambió).
 8. **Principio rector del producto**: el usuario es un polista que *no usa computadora*. Todo se diseña **WhatsApp-first y mobile-first**. Si una feature requiere desktop o un formulario largo, está mal planteada.
-9. **Herencia Queiros**: el producto reutiliza la lógica de Queiros (WhatsApp → IA → datos estructurados → tablero/alertas → consultas en lenguaje natural). Ver `03-tecnico/reuso-queiros.md`.
-10. **Reglas de producto que no se discuten sin Santi** (ver `00-vision/decisiones.md`): ante la duda el bot **pregunta**; **monedas siempre separadas** (sin conversiones, sin totales combinados, sin "% vs mes anterior"); los gastos se clasifican por **destino (lugar)**; **todo total es la suma de los ítems visibles**; UX limpia (sin KPIs decorativos, sin botones de acción en alertas); el piloto usa **solo WhatsApp**; los patrones **no ven** la cuenta.
+9. **Queiros: solo know-how.** Es un producto totalmente nuevo. **No mezclar nada de Queiros**: ni código, ni marca, ni sus restricciones (si algo se sacó de Queiros, acá puede existir). Lo único que se comparte es el equipo y lo aprendido. Ver `03-tecnico/aprendizajes-queiros.md`.
+10. **Reglas de producto que no se discuten sin Santi** (ver `00-vision/decisiones.md`): ante la duda el bot **pregunta** (pero **nunca** el tipo de cambio de los pesos); **todo se muestra en US$**: pesos al dólar blue del día automático, con el detalle de la conversión en letra chica; euros con cotización online o, si no hay, se pregunta; sin "% vs mes anterior"; los gastos se clasifican por **destino (lugar)**; **todo total es la suma de los ítems visibles**; cada gasto muestra su foto o, si no hay, el audio o mensaje que lo generó; UX limpia **sin tablas** (módulos con tableros), sin KPIs decorativos ni botones de acción en alertas; **usuarios de la app: polista y manager** (ven lo mismo); piloto, petiseros y proveedores **solo WhatsApp**; el **patrón no existe** para la plataforma; operación en el **grupo de WhatsApp**, plata por **chat privado**.
 11. **Antes de proponer algo nuevo**, revisá `02-producto/historial-iteraciones.md`: muchas cosas ya se probaron y se sacaron (módulo Día, pestaña Costos, minutos de vareo, plantel en Inicio, etc.).
-12. **Mockup**: la referencia es `02-producto/mockups/`. Se edita el borrador en Claude y el link compartible se actualiza solo cuando Santi lo pide. Si cambia, actualizá la copia `programon.html`, las capturas y el historial.
+12. **Mockup**: la referencia es `02-producto/mockups/`. Está en construcción: los datos (Tomás, sus caballos, patrones) son **ficticios** y no definen el ICP. Se edita el borrador en Claude y el link compartible se actualiza solo cuando Santi lo pide. Si cambia, actualizá la copia `programon.html`, las capturas y el historial.
 13. **Cuando Santi pide análisis de una idea**: riesgos y preguntas difíciles primero, sin suavizar.
 
 ## Equipo
 
 - **Santi** (Santiago Garbarino) — Lic. en Administración y Sistemas (ITBA)
-- **Mati** (Matías) — Lic. en Administración y Sistemas (ITBA), CEO de Queiros
+- **Mati** (Matías) — Lic. en Administración y Sistemas (ITBA)
 - **Mauro** — Ingeniero Informático (ITBA)
 
 Roles en este proyecto: ver `04-plan/plan-ejecucion.md`.

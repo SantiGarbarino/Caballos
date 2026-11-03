@@ -6,6 +6,80 @@ Formato: fecha · decisión · contexto y porqué · quién. Las más nuevas arr
 
 ---
 
+## 2026-11-03 (sesión 3) · Correcciones de Santi a la KB
+
+> Estas decisiones **reemplazan** a las anteriores que las contradigan (están marcadas como *reemplazada* más abajo).
+
+### El nombre del producto no está definido
+- **PROGRAMON** es un **nombre provisorio** de trabajo (es el que usa el mockup). Puede cambiar.
+- **Quién:** Santi.
+
+### Producto totalmente nuevo; de Queiros solo usamos el know-how
+- No es "Queiros como motor" ni una marca vertical de Queiros. Es un **producto nuevo**, sin mezclar **nada** de Queiros (ni código, ni marca, ni producto, ni sus restricciones).
+- Se parecen en la idea: **WhatsApp como interfaz + IA + web app mobile-first con módulos**. Nos apalancamos en lo que aprendimos construyendo Queiros.
+- Si algo se sacó de Queiros (ej. recordatorios), **eso no aplica acá**. Ver [aprendizajes de Queiros](../03-tecnico/aprendizajes-queiros.md).
+- Lo único que se mantiene: **el equipo (Santi, Mati y Mauro)**.
+- **Quién:** Santi.
+
+### Es un proyecto paralelo, sin timebox atado a Queiros
+- Se saca el timebox de diciembre 2026 y el criterio de MRR (era algo personal de Santi sobre Queiros). Si el mercado responde, se encara de lleno.
+- **Quién:** Santi.
+
+### Usuarios de la plataforma: el polista y su manager (y nadie más)
+- El **manager** es la mano derecha de las organizaciones grandes y va a ser un usuario muy importante: registra todo (caballeriza, stock, lo que habla con el veterinario y el herrero, el día a día de cada yegua).
+- **El manager ve exactamente lo mismo que el polista.** No hay información que vea uno y no el otro.
+- Muchas veces el usuario no va a ser el jugador sino el manager: el producto y el vocabulario tienen que contemplarlo.
+- **Piloto, petiseros y puestero no tienen acceso a la plataforma**: solo cargan por WhatsApp.
+- Se saca «quien lleva las cuentas» y el contador como usuarios con acceso (el export al contador sigue siendo un mail, no un usuario).
+- **Quién:** Santi.
+
+### El patrón no existe para la plataforma
+- No es usuario, no es comprador, no es canal. Solo aparece como **la contraparte que le paga al polista** (acuerdos, pagos y reintegros en Ingresos).
+- **Quién:** Santi.
+
+### Grupos de WhatsApp para la operación; chat privado para la plata
+- El bot está en el **grupo de WhatsApp de la organización** (manager, polista, veterinario, herrero, algún petisero). Lo que se manda ahí sobre una yegua o la caballeriza entra a la app.
+- Gastos e ingresos que el polista no quiere que vean el veterinario o los petiseros se mandan por **chat privado con el bot**.
+- **Quién:** Santi.
+
+### Piloto y petiseros trabajan para una sola organización; los proveedores, para varias
+- Piloto, petiseros y puestero son siempre de **una** organización.
+- Un **veterinario o herrero** puede trabajar para varios polistas: carga a través del **grupo de cada cliente**. Si le escribe al bot **por privado**, el bot le pregunta **para cuál de sus clientes** es.
+- **Quién:** Santi.
+
+### Moneda de la plataforma: dólares, con conversión automática
+- **Reemplaza a** "Monedas siempre separadas; nunca se convierte".
+- La gran mayoría de los gastos del polista son en dólares. La app muestra todo **en US$**.
+- Un gasto en **pesos** se convierte **automáticamente al dólar blue del día** en que llega (consultado a una fuente online). El bot **no le pregunta el tipo de cambio** al polista: eso es fricción.
+- En el detalle del gasto, en letra chica y prolija: «$ 800.000 al dólar blue del 22/10 ($ 1.550) = US$ 516».
+- **Euros** (y otras monedas): misma lógica si hay una fuente para la cotización. Si no la hay, el bot pregunta: «Me estás cargando un gasto en euros y en la app los tengo en dólares. ¿Sabés el tipo de cambio?».
+- Se guarda siempre el **monto y la moneda originales**, la cotización usada y su fuente.
+- **Quién:** Santi.
+
+### Comprobante: si no hay foto, se ve el audio o el mensaje
+- Cada gasto muestra **lo que lo generó**: la foto (factura, remito, ticket) si hay, y si no, **el audio o el mensaje de texto** que se mandó al bot.
+- **Quién:** Santi.
+
+### Recordatorios sí
+- «Mañana haceme acordar tal cosa» → al día siguiente el bot se lo recuerda. Vale para el polista y el manager.
+- **Quién:** Santi.
+
+### Datos de los caballos desde Cría Polo (integración a explorar)
+- Cría Polo tiene la información de los caballos de polo registrados (nombre, sangre, padre, madre, partidos jugados), en Argentina y afuera.
+- Idea: integrarla para que el polista **elija sus caballos de un catálogo** en vez de cargarlos uno por uno. Ver [Caballos](../02-producto/modulo-caballos.md) y [preguntas abiertas](preguntas-abiertas.md).
+- **Quién:** Santi.
+
+### UI sin tablas: módulos con tableros
+- Nada de planillas ni tablitas (como Queiros hoy). Todo en **módulos con tableros, tarjetas y listas**, como el mockup.
+- **Quién:** Santi.
+
+### Tomás y su organización son ficticios
+- Son el ejemplo del mockup, que Santi sigue ajustando. **No definen el ICP.** Cuando el mockup esté terminado, Santi lo adjunta como referencia.
+- Pensai (Joaco) **no es referencia ni competencia**: se saca de la KB.
+- **Quién:** Santi.
+
+---
+
 ## 2026-11-03
 
 ### La KB en GitHub refleja lo charlado en las sesiones de producto
@@ -18,10 +92,10 @@ Formato: fecha · decisión · contexto y porqué · quién. Las más nuevas arr
 - **Porqué:** Queiros multi-industria complica venta y producto. El rubro mueve mucho dinero y no tiene tecnología. La red de Santi está en el polo. Haras/cría puede ser el mercado más grande.
 - **Quién:** Santi, Mati y Mauro (ya lo hablaron entre los tres).
 
-### Queiros es el motor, PROGRAMON es la marca vertical
-- Nombre elegido por Santi: **PROGRAMON** (antes "Un Programón"). Logo pendiente.
+### ~~Queiros es el motor, PROGRAMON es la marca vertical~~ (reemplazada el 2026-11-03: producto nuevo, nombre provisorio)
+- Nombre de trabajo: **PROGRAMON** (antes "Un Programón"). Logo pendiente.
 
-### Validar primero con el mockup; no testear con el producto actual de Queiros
+### Validar primero con el mockup
 - **Porqué:** el ICP es muy sensible a algo feo o engorroso. Primero mockup, después una versión web para celular simple e intuitiva. SENASA y otras funciones se suman de a poco.
 
 ### El onboarding queda fuera por ahora
@@ -33,10 +107,10 @@ Formato: fecha · decisión · contexto y porqué · quién. Las más nuevas arr
 ## Sesiones 22–27/10/2026 · Producto
 
 ### Formato: web app mobile instalable (PWA), no app nativa
-- **Porqué:** se comparte por link de WhatsApp, no pasa por tiendas y se itera rápido. Queiros hoy no tiene PWA: hay que construirla.
+- **Porqué:** se comparte por link de WhatsApp, no pasa por tiendas y se itera rápido.
 
-### Persona del mockup: profesional de alto handicap sin manager
-- El polista hace todo él mismo. Tiene ~35 caballos, todo ficticio pero creíble, con operación en Argentina y en el exterior. Ver [segmentos y personas](../01-mercado/segmentos-y-personas.md).
+### Persona del mockup: profesional de alto handicap sin manager (ejemplo ficticio)
+- Es solo el ejemplo del mockup; no define el ICP (2026-11-03). El polista hace todo él mismo. Tiene ~35 caballos, todo ficticio pero creíble, con operación en Argentina y en el exterior. Ver [segmentos y personas](../01-mercado/segmentos-y-personas.md).
 
 ### Cinco módulos: Inicio · Caballos · Caballeriza · Gastos · Ingresos
 - El módulo **Día** existió y se **eliminó**; su lugar lo ocupó **Ingresos**.
@@ -45,7 +119,7 @@ Formato: fecha · decisión · contexto y porqué · quién. Las más nuevas arr
 ### Ante la duda, el bot pregunta
 - Nunca adivina el destino ni la categoría. Ejemplo: "Le pagué 600 dólares al veterinario" → "¿Para qué caballos es: Pilar, el campo o Windsor?".
 
-### Monedas siempre separadas; nunca se convierte
+### ~~Monedas siempre separadas; nunca se convierte~~ (reemplazada el 2026-11-03: todo en US$ con conversión automática)
 - Totales por moneda (US$, $, €; £ en Ingresos). No hay total combinado. No hay "+X% vs mes anterior" (se pidió sacarlo).
 - La **moneda es independiente del lugar**: se puede pagar en US$ algo del campo estando en Sotogrande.
 
@@ -66,7 +140,7 @@ Formato: fecha · decisión · contexto y porqué · quién. Las más nuevas arr
 - Por cobrar = acordado − cobrado + gastos que cubre el patrón pendientes de reintegro.
 - Configurable por WhatsApp o desde la app.
 
-### El piloto solo usa WhatsApp
+### El piloto solo usa WhatsApp (sigue vigente: petiseros, piloto y puestero no tienen acceso a la app)
 - Le llegan tareas y avisos por WhatsApp y las tacha respondiendo. **No necesita vista web** (decisión de Santi del 27/10). En el mockup se usa "piloto" en lugar de "encargado".
 
 ### Inicio informativo, sin botones de acción en las alertas
@@ -105,8 +179,8 @@ Formato: fecha · decisión · contexto y porqué · quién. Las más nuevas arr
 ### El MVP se centra en gastos (e ingresos)
 - **Ajuste:** el mockup ya muestra cinco módulos. Gastos sigue siendo el centro. Para el primer desarrollo, ver la priorización en el [roadmap](../04-plan/roadmap.md).
 
-### Reutilizamos la base de Queiros
-- Ver [reuso de Queiros](../03-tecnico/reuso-queiros.md).
+### ~~Reutilizamos la base de Queiros~~ (reemplazada el 2026-11-03)
+- Solo el know-how. Ver [aprendizajes de Queiros](../03-tecnico/aprendizajes-queiros.md).
 
 ### El repo `Caballos` es el knowledge base del proyecto
 - Toda la info se mantiene en `.md` en este repo. Ver [CLAUDE.md](../CLAUDE.md).

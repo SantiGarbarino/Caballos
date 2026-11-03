@@ -1,5 +1,18 @@
 # Changelog del brain
 
+## 2026-11-03 (sesión 3) · Correcciones de Santi
+- **Nombre no definido**: PROGRAMON pasa a ser provisorio.
+- **Producto totalmente nuevo**: de Queiros solo el know-how y el equipo. Se saca "Queiros es el motor", el timebox de dic 2026 y el MRR. `reuso-queiros.md` → `aprendizajes-queiros.md`.
+- **Monedas**: todo en **US$**; pesos al dólar blue del día automático (sin preguntar), con el detalle en letra chica; euros con cotización online o el bot pregunta. Reemplaza "monedas siempre separadas".
+- **Usuarios**: polista y **manager** (mismo acceso). Se sacan Sofía y el contador como usuarios. El **patrón no existe** para la plataforma.
+- **WhatsApp**: bot en el **grupo de la organización** + **chat privado** para la plata; piloto y petiseros de una sola organización; vete y herrero con varios clientes (por privado, el bot pregunta el cliente).
+- **Comprobante**: si no hay foto, se ve el audio o el mensaje original.
+- **Recordatorios personales** («mañana haceme acordar»).
+- **Cría Polo**: integración para elegir los caballos de un catálogo.
+- **UI sin tablas**: módulos con tableros.
+- Tomás y su organización son ficticios (ejemplo del mockup). Se saca Pensai.
+- Nuevos riesgos y preguntas: límites de la Groups API de Meta (8 participantes, a verificar), datos y API de Cría Polo, fuente y criterio de cotización.
+
 ## 2026-11-03 (sesión 2) · Todo lo charlado en las sesiones de producto 22–27/10
 - **La verdad pasa a ser lo definido en las sesiones** (pedido de Santi). Se reescribieron los docs que lo contradecían.
 - Nombre: **PROGRAMON** (marca vertical; Queiros es el motor). Visión: mundo del caballo, entrada por polo.

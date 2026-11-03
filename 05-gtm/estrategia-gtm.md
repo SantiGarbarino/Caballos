@@ -1,7 +1,7 @@
 # Estrategia go-to-market
 
 ## Tesis
-El polo es una **comunidad chica, muy conectada y basada en la confianza**. No se gana con ads: se gana con **boca en boca entre polistas**, con **presencia en las canchas** y con **referentes** que lo usen. El patrón y los proveedores (vete, herrero, forrajería) son multiplicadores.
+El polo es una **comunidad chica, muy conectada y basada en la confianza**. No se gana con ads: se gana con **boca en boca entre polistas**, con **presencia en las canchas** y con **referentes** que lo usen. Los managers y los proveedores (vete y herrero, que trabajan para varias organizaciones y ya están en sus grupos de WhatsApp) son multiplicadores.
 
 ## Fases del GTM
 
@@ -13,7 +13,7 @@ El polo es una **comunidad chica, muy conectada y basada en la confianza**. No s
 - Objetivo: 10–20 organizaciones que lo usen y lo recomienden.
 
 ### 2. Referentes y loops virales — May → Ago 2027
-- **Loop del patrón [HIPÓTESIS, en tensión con la privacidad]**: el patrón **no ve la cuenta** del polista (decisión de producto). Si en algún momento el polista le manda un resumen de los gastos que cubre, ese resumen podría mostrar la marca. Definir antes de usarlo.
+- **Loop del proveedor [HIPÓTESIS]**: un vete o herrero que ya carga en el grupo de un cliente ve el bot funcionando y lo lleva a sus otros clientes.
 - **Programa de referidos**: un mes gratis por cada polista que traés.
 - **Embajadores**: 3–5 polistas reconocidos (mediano/alto handicap) con plan gratis a cambio de testimonio y contenido.
 
@@ -33,7 +33,7 @@ El polo es una **comunidad chica, muy conectada y basada en la confianza**. No s
 | Red propia + referidos | Confianza, conversión alta | Bajo | 🔥 |
 | Presencia en canchas / torneos | Ahí está todo el mercado en 3 meses | Medio | 🔥 |
 | Instagram (cuenta propia + polistas) | Donde consume contenido el polo | Bajo | 🔥 |
-| Patrones [HIPÓTESIS] | Uno trae a varios profesionales, pero hoy no ven la cuenta | Bajo | Medio |
+| Managers | Son los que más usan; se conocen entre ellos | Bajo | 🔥 |
 | Vetes / herreros / forrajerías | Ven a todas las organizaciones | Bajo-medio | Medio |
 | Clubes y escuelas | Acceso a amateurs y alumnos | Medio | Medio |
 | Asociaciones (AAP, AACCP) | Legitimidad, eventos | Medio | Fase 3 |
@@ -45,14 +45,15 @@ El polo es una **comunidad chica, muy conectada y basada en la confianza**. No s
 - **Cobros**: *"¿Cuánto te deben tus patrones?"*
 - **Caballeriza**: *"Que no se te termine la avena."*
 - ~~Costo por caballo~~: se sacó del producto (pestaña Costos eliminada); no usar como mensaje por ahora.
-- **Patrón**: *"Sabé exactamente en qué se va tu plata, sin pedir planillas."*
+- **Manager**: *"Mandalo al grupo como siempre. Queda todo registrado."*
+- **Monedas**: *"Pagá en pesos, miralo en dólares. Sin averiguar el blue."*
 - **Cero aprendizaje**: *"Si sabés mandar un audio, ya sabés usarlo."*
 
 ## Objeciones esperadas
 | Objeción | Respuesta |
 |---|---|
-| "No quiero que quede registro de la plata" (informalidad) | Es tuyo y privado: lo ven solo las personas que vos habilitás (pantalla «Quién ve tu cuenta»); tus patrones no. El piloto no ve plata. No es contable ni fiscal. |
-| "No tengo tiempo" | Un audio de 10 segundos. Menos que mandarle el ticket al patrón. |
+| "No quiero que quede registro de la plata" (informalidad) | Es tuyo y privado: lo ven solo vos y tu manager. La plata se manda por privado al bot, no en el grupo. Nadie más entra a la app. No es contable ni fiscal. |
+| "No tengo tiempo" | Un audio de 10 segundos, o lo manda tu manager al grupo. |
 | "Ya lo tengo en la cabeza / en Excel" | Probalo un mes gratis y comparamos. |
 | "Lo hace mi contador" | El contador lo hace a fin de mes; esto te muestra hoy cuánto gastaste y cuánto te deben. Y le mandás todo exportado, con fotos, en un toque. |
 

@@ -1,6 +1,6 @@
 # Mockup PROGRAMON
 
-Mockup navegable para celular, armado por Santi con Claude entre el 22 y el 27/10/2026. Es la referencia de producto: si algo de la KB lo contradice, revisar el [historial](../historial-iteraciones.md) y las [decisiones](../../00-vision/decisiones.md).
+Mockup navegable para celular, armado por Santi con Claude entre el 22 y el 27/10/2026. **Está en construcción**: Santi lo sigue ajustando y adjunta la versión final cuando la tenga. Todos los datos (Tomás, su equipo, caballos, patrones, montos) son **ficticios** y son un ejemplo, no definen el ICP. Es la referencia de producto: si algo de la KB lo contradice, revisar el [historial](../historial-iteraciones.md) y las [decisiones](../../00-vision/decisiones.md).
 
 ## Dónde está
 
@@ -15,6 +15,15 @@ Mockup navegable para celular, armado por Santi con Claude entre el 22 y el 27/1
 | Datos ficticios | [`dataset-ficticio.md`](dataset-ficticio.md) | Caballos, gastos, acuerdos |
 
 > Los links de claude.ai son artifacts de la cuenta de Santi. El link público lo puede abrir cualquiera que lo tenga.
+
+## Cambios pendientes en el mockup por las decisiones del 2026-11-03
+
+- [ ] Totales en **US$** (Inicio, Gastos, Ingresos, temporadas) y detalle de la conversión en letra chica en cada gasto en $ o €.
+- [ ] «Quién ve tu cuenta»: polista + manager; sacar a Sofía y a Estudio Ruiz.
+- [ ] Mostrar al **manager** como usuario (ej. gastos y novedades cargados por el manager).
+- [ ] Chats: grupo de la organización vs. privado; vete con varios clientes; recordatorio personal; gasto en pesos convertido.
+- [ ] Agregar caballo desde el catálogo de Cría Polo.
+- [ ] Nombre provisorio (PROGRAMON).
 
 ## Forma de trabajo
 

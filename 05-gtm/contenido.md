@@ -27,4 +27,4 @@
 | Mar–May 2027 | Beta: contenido de la temporada de otoño, primeros testimonios |
 | Sep–Dic 2027 | Lanzamiento con Triple Corona: campaña completa |
 
-> Usar las skills de marketing del equipo (copywriting, social, create-video) adaptadas a esta marca (PROGRAMON; logo pendiente).
+> Usar las skills de marketing del equipo (copywriting, social, create-video) adaptadas a esta marca (nombre provisorio PROGRAMON; logo pendiente). Nada de la marca Queiros.

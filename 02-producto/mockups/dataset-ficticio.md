@@ -1,5 +1,7 @@
 # Dataset ficticio del mockup
 
+> **Todo es ficticio** y es solo el ejemplo del mockup. Sofía (lleva las cuentas) y Estudio Ruiz (contador) ya no son usuarios con acceso: los usuarios son el polista y su manager (2026-11-03). Los montos en $ y € se van a mostrar convertidos a US$.
+
 > Datos inventados pero creíbles, usados en el mockup PROGRAMON. "Hoy" en el mockup es el **jueves 22/10/2026**. Generado desde el código del mockup (`programon.html`): si cambia el mockup, regenerar.
 
 ## Organización de Tomás

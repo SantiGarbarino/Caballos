@@ -1,20 +1,30 @@
 # Segmentos y personas
 
-## Segmentos (priorizados)
+> **Usuarios de la plataforma (2026-11-03):** el **polista** y su **manager**, que ven lo mismo. Piloto, petiseros, puestero y proveedores solo cargan por WhatsApp. El patrón no existe para la plataforma. Tomás y su equipo son el **ejemplo ficticio del mockup**: no definen el ICP.
+
+## Segmentos (a validar)
 
 | # | Segmento | Tamaño de organización | Dolor de gastos | Disposición a pagar | Prioridad |
 |---|---|---|---|---|---|
-| 1 | **Profesional de alto handicap sin manager** (el polista hace todo) | 30–40 caballos entre caballeriza, campo y exterior; piloto, 3–4 petiseros, puestero | Altísimo: varias monedas, varios lugares, varios patrones, montos grandes | Alta | **Persona del mockup** |
+| 1 | **Profesional de alto handicap sin manager** (el polista hace todo) | 30–40 caballos entre caballeriza, campo y exterior; piloto, 3–4 petiseros, puestero | Altísimo: varias monedas, varios lugares, varios patrones, montos grandes | Alta | Ejemplo del mockup; a validar |
 | 2 | **Profesional de mediano handicap (≈2–6 goles) con organización propia** | 15–40 caballos, 2–6 petiseros | Muy alto | Media-alta | A validar como beachhead alternativo |
-| 3 | Profesional de alto handicap **con manager/administración** | 40–100+ caballos | Altísimo, pero ya tiene a alguien que lo resuelve | Alta | Fase posterior (multiusuario) |
-| 4 | Patrón | Variable | Quiere control de lo que paga | Alta | **No ve la cuenta del polista.** Posible comprador futuro de otro producto |
+| 3 | **Organización grande con manager** (la mano derecha registra todo) | 40–100+ caballos | Altísimo; el manager es quien más usaría el producto | Alta | **Clave**: el manager es usuario principal, con el mismo acceso que el polista |
 | 5 | Amateur con caballos propios | 4–12 caballos | Medio | Baja-media | Volumen, más adelante |
 | 6 | **Haras / criador** | 50–500 caballos | Alto y más complejo | Alta | Posible mercado grande: entrevistar 3–5 ya |
 | 7 | Club / pensión de caballos | Muchos caballos de terceros | Facturar pensión y extras | Media | Más adelante |
 
-**[HIPÓTESIS]** El ICP es muy sensible: rechaza lo feo o engorroso. Por eso se valida primero con el mockup y no con el producto actual de Queiros.
+**[HIPÓTESIS]** El ICP es muy sensible: rechaza lo feo o engorroso. Por eso se valida primero con el mockup.
 
-## Persona principal (la del mockup)
+> El **patrón** no es un segmento: no usa ni compra la plataforma. Es quien le paga al polista.
+
+## El manager (usuario clave)
+
+- Es la **mano derecha** del polista en las organizaciones grandes.
+- **Registra todo**: lo que pasa en las caballerizas, el stock, lo que habla con el veterinario y el herrero, el día a día de cada yegua.
+- **Ve exactamente lo mismo que el polista** en la app. No hay información que uno vea y el otro no.
+- Muchas veces el que usa el producto **no es el jugador sino el manager**: el producto, los textos y la venta tienen que hablarle a los dos.
+
+## Persona del mockup (ejemplo ficticio)
 
 ### "Tomás", polista profesional de alto handicap
 - Hace todo él mismo: no tiene manager. Lo que no hace él lo hace su **piloto**.
@@ -34,13 +44,13 @@
 | **Lucho** | Petisero en Pilar | Audios con vareos y novedades (ej. "la Negra no terminó la ración") |
 | **Juanca** | Petisero en Windsor | Reporta las 4 de la invernada; carga gastos de Inglaterra |
 | **Don Aníbal** | **Puestero** del campo (Cnel. Suárez) | Reporta los 15 del campo; manda la foto de los rollos. Si no manda mensajes hace 2 días, se destaca |
-| **Sofía** | **Lleva las cuentas** (ej. pareja o familiar) | Ve y carga gastos e ingresos |
-| **Estudio Ruiz** | Contador | Solo gastos, para exportar (contador@estudioruiz.com.ar en el mockup) |
-| Dra. Ibarra / Cacho | Veterinaria / herrero | Proveedores: aparecen en visitas y gastos; no usan la app |
+| Dra. Ibarra / Cacho | Veterinaria / herrero | Trabajan para varios polistas. Cargan en el grupo de WhatsApp de cada cliente; si escriben por privado, el bot pregunta para qué cliente. No usan la app |
+| Estudio Ruiz | Contador | No es usuario: recibe el export por mail |
 
-### "Martín", patrón (contexto)
-- Financia el equipo y a veces cubre gastos (fletes, pasajes de petiseros) que el polista paga y le reintegra.
-- **No tiene acceso** a la cuenta del polista. En «Quién ve tu cuenta» se aclara: "Tus montos los ven solo estas personas. Nadie más, tampoco tus patrones."
+> En el mockup figura **Sofía** (lleva las cuentas) con acceso: se saca. Los usuarios son el polista y el manager.
+
+### El patrón (contexto, no es usuario)
+- Le paga al polista por jugar y a veces le reintegra gastos (fletes, pasajes de petiseros). Para la plataforma **no existe**: solo aparece en Ingresos como contraparte.
 
 ### "Laura", dueña de haras (fase posterior)
 - 150 caballos entre yeguas madre, receptoras, potrillos y caballos en doma.
@@ -49,7 +59,7 @@
 ## Jobs to be done
 
 1. *Cuando pago algo, quiero mandarlo por WhatsApp en 5 segundos (audio o foto) para no olvidarme.*
-2. *Cuando quiero saber cuánto gasté, quiero verlo por período (mes, temporada, rango) y por lugar, en cada moneda, y entender de dónde sale cada número.*
+2. *Cuando quiero saber cuánto gasté, quiero verlo por período (mes, temporada, rango) y por lugar, en dólares, y entender de dónde sale cada número (y cómo se convirtieron los pesos).*
 3. *Cuando cierro con un patrón o vendo un caballo, quiero registrar lo acordado y cada pago para saber cuánto me deben.*
 4. *Cuando pago algo que cubre el patrón, quiero que se sume a lo que me debe.*
 5. *Cuando termina una temporada, quiero ver si me quedó plata en ese lugar.*
@@ -58,3 +68,6 @@
 8. *Cuando se está terminando un insumo, quiero saberlo antes de que falte.*
 9. *Cuando llega fin de mes, quiero que los pagos fijos se carguen solos con un «sí».*
 10. *Cuando el contador me pide los gastos, quiero mandárselos con las fotos en un toque.*
+11. *Cuando algo no me lo quiero olvidar, quiero decirle al bot «mañana haceme acordar» y que me lo recuerde.*
+12. *Cuando sumo un caballo, quiero elegirlo de Cría Polo y no cargar su sangre a mano.*
+13. *(Manager) Cuando pasa algo en la caballeriza o hablo con el vete, quiero mandarlo al grupo y que quede registrado.*

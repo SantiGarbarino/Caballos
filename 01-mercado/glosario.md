@@ -53,7 +53,9 @@
 | Término | Significado |
 |---|---|
 | **Petisero** | Persona que cuida, alimenta, varea y prepara los caballos |
-| **Piloto** | Encargado de la caballeriza: coordina petiseros, herrero, veterinaria y stock. En el producto usamos **piloto** (no "encargado") |
+| **Piloto** | El mayor de los petiseros, encargado de la caballeriza: coordina petiseros, herrero, veterinaria y stock. En el producto usamos **piloto** (no "encargado"). Solo usa WhatsApp |
+| **Manager** | Mano derecha del polista en organizaciones grandes. Registra todo (caballeriza, stock, vete, herrero, cada yegua). Ve lo mismo que el polista en la app |
+| **Grupo (de la organización)** | Grupo de WhatsApp donde están el manager, el polista, el vete, el herrero y algún petisero; ahí está el bot |
 | **Puestero** | Persona que vive y trabaja en el campo y cuida los caballos que están ahí |
 | **Capataz / jefe de petiseros** | Coordina petiseros y caballeriza (similar a piloto) |
 | **Caballeriza / box / stud** | Instalación donde están los caballos |
@@ -107,6 +109,7 @@
 | **Cuenta corriente** | Deuda con el proveedor (forrajería, herrero) que se paga a fin de mes |
 | **Seña** | Anticipo al cerrar un acuerdo o reservar algo (ej. seña de caballeriza para la próxima temporada) |
 | **Pagos fijos** | Gastos que se repiten todos los meses (sueldos, alquileres, invernada) |
-| **US$ / $ / € / £** | Cómo mostramos las monedas en el producto: dólares, pesos, euros, libras. Siempre por separado |
+| **US$ / $ / € / £** | Dólares, pesos, euros, libras. En el producto **todo se muestra en US$**; un gasto en $ o € se convierte y se aclara en letra chica |
+| **Dólar blue** | Cotización informal del dólar en Argentina. Es la que usamos para pasar pesos a dólares (la del día en que llega el gasto) |
 
 > **Pendiente:** validar con polistas qué términos usan realmente y cuáles son regionales.

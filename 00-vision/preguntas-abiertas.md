@@ -2,35 +2,41 @@
 
 Lo que todavía no sabemos o no decidimos. Cuando se resuelve, pasa a [decisiones.md](decisiones.md).
 
-## Resueltas (2026-11-03)
-- ~~Nombre del producto~~ → **PROGRAMON** (logo pendiente).
-- ~~¿Cómo manejamos el tipo de cambio?~~ → **No se convierte.** Cada moneda por separado, sin totales combinados.
-- ~~Mockup de Santi~~ → en [`02-producto/mockups/`](../02-producto/mockups/README.md).
-- ~~¿Puede cargar alguien más que el polista?~~ → Sí: piloto, petiseros, puestero y quien lleva las cuentas cargan por WhatsApp. El contador solo ve gastos para exportar.
-- ~~¿Qué tan importante es lo del patrón?~~ → Es central en **Ingresos** (acuerdos, pagos parciales, gastos que cubre y reintegros). El patrón **no** ve la cuenta.
+## Resueltas
+- ~~¿Cómo manejamos el tipo de cambio?~~ → **Todo en US$**: pesos al dólar blue del día, automático; euros con cotización online o, si no hay, el bot pregunta (2026-11-03).
+- ~~Mockup de Santi~~ → en [`02-producto/mockups/`](../02-producto/mockups/README.md) (en construcción; Santi adjunta la versión final).
+- ~~¿Quién usa la plataforma?~~ → El **polista** y su **manager** (ven lo mismo). Piloto, petiseros y puestero solo cargan por WhatsApp (2026-11-03).
+- ~~¿Qué tan importante es lo del patrón?~~ → El patrón **no existe para la plataforma**: solo es la contraparte de los acuerdos y reintegros en Ingresos (2026-11-03).
+- ~~¿Empresa nueva o línea de producto de Queiros?~~ → **Producto nuevo**; de Queiros solo el know-how y el equipo (2026-11-03). La parte societaria sigue abierta (ver abajo).
+- ~~¿Repo de código nuevo o fork de Queiros App?~~ → **Nuevo**: no se mezcla nada de Queiros (2026-11-03).
+- ~~¿Mismo BSP que Queiros?~~ → Número y cuenta de WhatsApp **propios**; el proveedor se elige de cero (2026-11-03).
 
 ## Negocio
-- [ ] **ICP final**: ¿alto handicap sin manager (persona del mockup), mediano handicap o ambos? Validar en entrevistas.
-- [ ] **Logo** y pantalla de carga con la marca.
-- [ ] ¿Empresa nueva o línea de producto de Queiros? (marca, sociedad, cap table).
-- [ ] **Pricing**: ¿por organización, por cantidad de caballos, por usuario? ¿US$ mensual o anual (referencia Pensai US$ 200/año/usuario)? Ver [pricing](../05-gtm/pricing.md).
-- [ ] ¿Quién paga si el patrón quiere el producto para sus profesionales?
+- [ ] **Nombre** definitivo (PROGRAMON es provisorio) y **logo**.
+- [ ] **ICP final**: ¿organizaciones grandes con manager, alto handicap sin manager, mediano handicap? Validar en entrevistas. (Tomás es solo el ejemplo del mockup.)
+- [ ] Sociedad, marca y cap table del proyecto nuevo.
+- [ ] **Pricing**: ¿por organización o por cantidad de caballos? ¿Mensual o anual? Ver [pricing](../05-gtm/pricing.md).
 - [ ] ¿Bilingüe desde el día 1? (el polista pasa meses en Inglaterra/España; sus petiseros afuera suelen ser argentinos).
 - [ ] ¿Haras/cría como segundo vertical o en paralelo? Salir de las 3–5 entrevistas a haras.
 
 ## Producto
-- [ ] **Onboarding** (postergado por decisión). Idea discutida: primera carga por WhatsApp (lista de caballos, equipo, pagos fijos y acuerdos dictados por audio) más una revisión web; *white-glove* (lo configuramos nosotros) para los primeros clientes.
+- [ ] **Cría Polo**: confirmar nombre exacto de la app, quién es el dueño, si tiene API o acuerdo de datos, qué campos trae (sangre, padre, madre, partidos jugados) y si se puede actualizar. Alternativa o complemento: registro genealógico de la AACCP. En una búsqueda web (2026-11-03) no apareció una app con ese nombre exacto; sí catálogos de cría (La Dolfina Cría, Cría Emezeta) y una app "Criadores de Polo".
+- [ ] **Conversión de monedas**: ¿dólar blue compra, venta o promedio? ¿Qué fuente (ej. DolarApi, Bluelytics, Ámbito)? ¿Qué cotización si el gasto es de una fecha pasada ("el viernes pagué…"): la de ese día? ¿Se puede corregir la cotización a mano?
+- [ ] **Ingresos en otras monedas** (acuerdos en € o £): ¿se convierten a US$ con la cotización de cada pago? ¿Cómo se muestra lo acordado en € y lo que falta cobrar?
+- [ ] **Grupos de WhatsApp**: ¿qué hace el bot si alguien manda un gasto o un monto en el grupo (donde lo ven el vete y los petiseros)? Propuesta [HIPÓTESIS]: lo registra pero confirma sin montos, o le pide al polista que lo mande por privado. ¿El bot contesta en el grupo o solo lee?
+- [ ] ¿El bot responde **consultas de plata** en el grupo? Propuesta [HIPÓTESIS]: nunca; las consultas de plata solo por privado al polista o al manager.
+- [ ] **Onboarding** (postergado por decisión). Idea discutida: primera carga por WhatsApp (caballos desde Cría Polo, equipo, pagos fijos y acuerdos) más una revisión web; *white-glove* para los primeros clientes.
 - [ ] **Ficha digital oficial del caballo** (libreta sanitaria digital, pasaporte equino, microchip) y camino a "aplicación autorizada" de SENASA. Ver [regulación](../01-mercado/regulacion-senasa.md).
 - [ ] ¿Costo por caballo? Se sacó la pestaña Costos del mockup por ruido. ¿Vuelve en algún formato o se descarta?
-- [ ] ¿Prorrateo de gastos entre caballos (ej. herraje de 4 caballos)? Hoy el gasto se registra una vez y el herraje se anota en cada ficha.
-- [ ] ¿Cómo se registra el consumo real de stock? El mockup sugiere "según los conteos de Pedro se usan 3,4 por día": definir de dónde salen los conteos (fotos o mensajes del piloto) y cómo se ajusta.
-- [ ] ¿Pedidos a proveedores desde la app? Se sacó del mockup ("pedir al proveedor"). El cierre del día todavía menciona "ya le pediste 40 bolsas al corralón".
+- [ ] ¿Prorrateo de gastos entre caballos (ej. herraje de 4 caballos)?
+- [ ] ¿Cómo se registra el consumo real de stock? Definir de dónde salen los conteos (fotos o mensajes del piloto o del manager) y cómo se ajusta.
+- [ ] ¿Pedidos a proveedores desde la app? Se sacó del mockup.
 - [ ] Gastos que paga el piloto de su bolsillo ("lo pagué yo en efectivo"): ¿se lleva una cuenta de lo que se le debe al piloto?
-- [ ] ¿Qué ve exactamente quien lleva las cuentas (Sofía) y qué puede editar?
-- [ ] Recordatorios automáticos derivados (ej. "Sacar sangre para AIE" automático por un viaje): ¿qué reglas?
+- [ ] Recordatorios automáticos derivados (ej. "Sacar sangre para AIE" por un viaje): ¿qué reglas?
 
 ## Técnico
+- [ ] **Grupos de WhatsApp con la API oficial**: según fuentes secundarias (2026-11-03), la Groups API de Meta tendría un **límite de 8 participantes por grupo** (contando el número del bot), requiere número verificado (OBA) y no permite agregar participantes por API (solo link de invitación). **Verificar en la documentación oficial de Meta.** Si se confirma, un grupo con polista, manager, vete, herrero y varios petiseros puede no entrar, y el bot no podría sumarse a grupos que ya existen.
 - [ ] Costo y diseño de los **mensajes salientes** (plantillas de Meta, ventana de 24 h): tareas del piloto 7:00, pagos fijos, recordatorios, cierre del día 20:00.
-- [ ] ¿Mismo BSP que Queiros (SendPulse) o uno nuevo? Número de WhatsApp propio de PROGRAMON.
-- [ ] ¿Repo de código nuevo o fork/módulo de Queiros App?
-- [ ] Estimación real de Mauro sobre la brecha técnica (ver [plan](../04-plan/plan-ejecucion.md)).
+- [ ] Proveedor de WhatsApp (BSP o Cloud API directo) y número propio del producto.
+- [ ] Fuente de cotizaciones y qué pasa si no responde.
+- [ ] Estimación real de Mauro (ver [plan](../04-plan/plan-ejecucion.md)).

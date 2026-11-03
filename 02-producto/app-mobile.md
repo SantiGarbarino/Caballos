@@ -5,10 +5,11 @@
 ## Principios
 
 - **Web app mobile instalable (PWA)**, se abre desde un link de WhatsApp. No es app nativa. No hay versión de escritorio: en una computadora se ve la versión de celular.
-- **Login sin contraseña**: link de un solo uso por WhatsApp (Queiros ya lo tiene).
+- **Usuarios**: el **polista** y su **manager**, con el mismo acceso. Piloto, petiseros y proveedores no entran a la app.
+- **Login sin contraseña**: link de un solo uso por WhatsApp.
 - **Para mirar y decidir.** Se puede cargar desde la app (Agregar, Nuevo, Agendar, Recordatorio, Registrar pago), pero cada formulario muestra primero el atajo de WhatsApp ("Por WhatsApp: «…»").
-- **Limpia.** Sin KPIs decorativos, sin "% vs mes anterior", sin botones de acción en alertas.
-- **Números grandes, todos del mismo tamaño**, por moneda.
+- **Limpia y sin tablas.** Módulos con tableros, tarjetas y listas. Sin KPIs decorativos, sin "% vs mes anterior", sin botones de acción en alertas.
+- **Números grandes, en US$.** El detalle de una conversión va en letra chica dentro del gasto.
 
 ## Diseño — "Cancha de noche"
 
@@ -38,8 +39,8 @@ Arriba, el **hero** con degradado:
 
 - **"Buen día, Tomás"** en dorado. A la derecha, el botón redondo **"T"** abre **Quién ve tu cuenta**.
 - Dos cajas *glass*:
-  - **Gastado · [período]** (ej. "Este mes"): US$ 38.690 · $ 5.625.000 · € 4.000.
-  - **Por cobrar**: US$ 366.200 · € 45.000.
+  - **Gastado · [período]** (ej. "Este mes"): un total en US$ (el mockup todavía muestra US$ 38.690 · $ 5.625.000 · € 4.000; hay que pasarlo a US$).
+  - **Por cobrar**: en US$ (el mockup muestra US$ 366.200 · € 45.000).
 - Sin palabra PROGRAMON, sin fecha y sin botón "Vista piloto".
 
 Debajo, en este orden:
@@ -48,7 +49,7 @@ Debajo, en este orden:
    - "Rockstar renguea de la mano izquierda" · Ramón · hoy 9:40 · con foto → **ficha de Rockstar**.
    - "Avena para 6 días" · 18 bolsas en Pilar · se usan 3 por día → **hoja del insumo**.
    - "Herraje vencido en 3 caballos" · Chiquita, Rubia y Malcriada · Cacho viene el jueves 29 → **lista de Caballos**.
-2. **Gastos**: botón de período ("Este mes · Octubre, al día 22 · todos los lugares"), totales por moneda (Dólares, Pesos, Euros) y **Últimos** 3 gastos (fecha · categoría · lugar · monto). Lleva a Gastos.
+2. **Gastos**: botón de período ("Este mes · Octubre, al día 22 · todos los lugares"), total en US$ y **Últimos** 3 gastos (fecha · categoría · lugar · monto). Lleva a Gastos.
 3. **Lo que viene** (agenda) con botón **Agendar**:
    - SÁB 24 · Partido · Cancha 2, Pilar · 16:00.
    - LUN 26 · Dra. Ibarra, veterinaria · Control de Rockstar · vacunas de las de doma.
@@ -65,11 +66,13 @@ Hoja que se abre con el botón "T":
 | Persona | Rol | Acceso |
 |---|---|---|
 | Tomás | Vos · dueño de la cuenta | Todo |
-| Sofía | Lleva las cuentas | Gastos e ingresos: ve y carga |
-| Estudio Ruiz | Contador | Solo gastos, para exportar |
-| Pedro | Piloto | Solo WhatsApp: tareas y caballeriza · no ve plata |
+| (Manager) | Tu mano derecha | Todo, igual que vos |
 
-Nota: "Tus montos los ven solo estas personas. Nadie más, tampoco tus patrones." Botón **Invitar a alguien**.
+Abajo, informativo: "Pedro (piloto), los petiseros, el puestero, la veterinaria y el herrero cargan por WhatsApp y no entran a la app."
+
+Nota: "Tus montos los ven solo vos y tu manager. Nadie más." Botón **Invitar a tu manager**.
+
+> El mockup todavía muestra a Sofía (lleva las cuentas) y a Estudio Ruiz (contador) con acceso: se sacan (decisión del 2026-11-03).
 
 ## Vista del piloto (fuera del recorrido)
 

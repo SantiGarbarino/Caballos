@@ -1,14 +1,16 @@
-# Modelo de datos (v0.2)
+# Modelo de datos (v0.3)
 
-> Derivado del mockup final. Reemplaza la v0 (que tenía `patron_id` como centro de costo y conversión de monedas como vista). Nombres orientativos para Mauro.
+> Derivado del mockup. v0.3 (2026-11-03): monto en US$ con conversión guardada, usuarios polista + manager, grupos de WhatsApp, proveedores con varios clientes, recordatorios personales y caballos desde Cría Polo. Nombres orientativos para Mauro.
 
 ```
 Cuenta (organización del polista)
- ├──< Acceso (persona, rol, permisos)
- ├──< Persona del equipo (piloto, petisero, puestero) ── teléfono WhatsApp
+ ├──< Usuario (polista | manager: mismo acceso)
+ ├──< Persona del equipo (piloto, petisero, puestero) ── teléfono WhatsApp · una sola cuenta
+ ├──< GrupoWhatsApp (id del grupo → cuenta)
+ ├──<>── Proveedor (vete, herrero) ── teléfono · puede estar en varias cuentas
  ├──< Lugar (caballeriza, campo, exterior, temporada)
  │      └──< Insumo (stock, envase) ──< Consumo (por caballo por día)
- ├──< Caballo ──< Evento (vareo, herraje, vete, práctica, partido, novedad, traslado)
+ ├──< Caballo (ref. Cría Polo opcional) ──< Evento (vareo, herraje, vete, práctica, partido, novedad, traslado)
  │      └──< Recordatorio
  ├──< Visita (herrero, veterinaria, proveedor) >── Caballo(s)
  ├──< Gasto ── Lugar ── Comprobante ── MensajeOrigen
@@ -17,6 +19,7 @@ Cuenta (organización del polista)
  ├──< Acuerdo (patrón) ──< Pago
  ├──< Venta (caballo) ──< Pago
  ├──< Tarea (para el piloto) ── origen MensajeOrigen
+ ├──< RecordatorioPersonal (polista / manager)
  └──< MensajeOrigen (texto, audio + transcripción, foto + lectura)
 ```
 
@@ -24,9 +27,13 @@ Cuenta (organización del polista)
 
 **Cuenta**: id, nombre del dueño, idioma, plan.
 
-**Acceso**: cuenta_id, persona, rol (`dueño` | `cuentas` | `contador` | `piloto`), permisos (`todo` | `gastos_ingresos_ve_y_carga` | `solo_gastos_export` | `solo_whatsapp_sin_plata`). Los patrones **nunca** tienen acceso.
+**Usuario**: cuenta_id, nombre, teléfono, rol (`polista` | `manager`). **Ven y cargan lo mismo**; no hay permisos distintos. Nadie más tiene acceso a la app (ni el patrón, ni el contador, ni el equipo).
 
-**Persona del equipo**: id, nombre, rol (`piloto` | `petisero` | `puestero`), lugar, teléfono. Métricas derivadas: mensajes hoy y en la semana, vareos, tareas hechas, último mensaje.
+**Persona del equipo**: id, **cuenta_id (una sola)**, nombre, rol (`piloto` | `petisero` | `puestero`), lugar, teléfono.
+
+**Proveedor**: id, nombre, rol (`veterinario` | `herrero` | otro), teléfono; relación muchos-a-muchos con Cuenta. Si escribe por privado y tiene más de un cliente, el bot pregunta para cuál.
+
+**GrupoWhatsApp**: id del grupo, cuenta_id, participantes. Todo mensaje que llega desde el grupo pertenece a esa cuenta. En el grupo no se responden montos [HIPÓTESIS]. Métricas derivadas: mensajes hoy y en la semana, vareos, tareas hechas, último mensaje.
 
 **Lugar**: id, nombre corto y largo (Pilar / Caballeriza Pilar), país, tipo (`caballeriza` | `campo` | `exterior` | `temporada`), descripción ("4 caballos en invernada").
 
@@ -34,7 +41,7 @@ Cuenta (organización del polista)
 
 **Consumo**: insumo_id, cantidad por caballo por día. Derivados: por día = consumo × caballos ÷ envase; días = stock ÷ por día. Sugerencia de ajuste según los conteos reales.
 
-**Caballo**: id, nombre, sexo, edad, pelaje, estado (`jugando` | `campo` | `exterior` | `recuperacion`), lugar, línea de estado, novedad (texto, quién, cuándo, foto), microchip (opcional, leído de los papeles).
+**Caballo**: id, criapolo_id (opcional: sangre, padre, madre, partidos vienen de ahí), nombre, sexo, edad, pelaje, estado (`jugando` | `campo` | `exterior` | `recuperacion`), lugar, línea de estado, novedad (texto, quién, cuándo, foto), microchip (opcional, leído de los papeles).
 
 **Evento de caballo**: caballo_id, tipo (vareada, montada, práctica + chukkers, partido, herrada, veterinaria, al box, entró en reposo…), fecha, quién lo reportó, medio (audio, foto, mensaje), mensaje_origen_id, gasto_id opcional.
 
@@ -48,7 +55,9 @@ Cuenta (organización del polista)
 | id, cuenta_id | |
 | fecha | día/mes/año |
 | título | "Herraje de 4 caballos" |
-| monto + moneda | `usd` \| `ars` \| `eur` (\| `gbp`). **Nunca se convierte** |
+| monto_usd | Lo que se muestra y se suma |
+| monto_original + moneda_original | `usd` \| `ars` \| `eur` \| `gbp`. Se guarda siempre |
+| cotizacion | Valor, fecha, tipo (ej. dólar blue venta) y fuente (API o "la dio el usuario") |
 | grupo, categoría | Ver [taxonomía](modulo-gastos-ingresos.md) |
 | lugar_id | **destino** del gasto |
 | comprobante | `foto` (factura/remito/ticket) \| `audio` (+ transcripción) \| `texto` |
@@ -64,18 +73,20 @@ Cuenta (organización del polista)
 
 **Venta**: caballo, comprador, dónde y cuándo, precio, moneda, pagos.
 
+**RecordatorioPersonal**: usuario, qué, cuándo (fecha y hora), origen (mensaje), hecho. «Mañana haceme acordar…» → saliente a esa hora.
+
 **Tarea (piloto)**: qué, cuándo, caballos, origen (audio/WhatsApp de Tomás y hora), estado. Se envía a las 7:00 y se tacha por WhatsApp.
 
-**MensajeOrigen**: persona, tipo, contenido o URL, duración (audio), transcripción, lectura de imagen, recibido_en, qué generó.
+**MensajeOrigen**: persona, canal (`grupo` + grupo_id | `privado`), tipo, contenido o URL, duración (audio), transcripción, lectura de imagen, recibido_en, qué generó.
 
 ## Derivados (no se guardan)
 
-- **Total de gastos** por período, lugar, grupo y categoría = suma de gastos, **por moneda**.
+- **Total de gastos** por período, lugar, grupo y categoría = suma de `monto_usd`.
 - **Por cobrar** por acuerdo = acordado − Σ pagos + Σ gastos que cubre con reintegro pendiente.
-- **Resultado por temporada** (por moneda) = acuerdos y ventas de esa temporada + reintegros − gastos de ese lugar y fechas, **sin compras de caballos**.
+- **Resultado por temporada** (en US$) = acuerdos y ventas de esa temporada + reintegros − gastos de ese lugar y fechas, **sin compras de caballos**.
 - **Pagos que vienen** = pagos fijos con vencimiento próximo.
 
 ## Reglas
 - El **mensaje original siempre se guarda**.
-- **Moneda original inmutable**; sin conversiones.
+- **Monto y moneda originales inmutables**; la conversión a US$ se guarda con su cotización y fuente (no se recalcula sola).
 - Las **correcciones** se loguean (antes/después) para evaluar la IA.

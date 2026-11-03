@@ -28,14 +28,15 @@
 | Actor | Rol | Relación con el producto |
 |---|---|---|
 | **Polista profesional** | Juega cobrando. Suele tener su propia **organización** (caballos, petiseros, campo o caballeriza alquilada) | **Usuario y comprador principal** |
-| **Patrón** | Dueño/financista del equipo. Contrata profesionales, muchas veces paga caballos y gastos | Paga, quiere control y transparencia → posible comprador |
+| **Patrón** | Dueño/financista del equipo. Contrata profesionales, muchas veces paga caballos y gastos | **No es usuario ni comprador**: solo es la contraparte de los acuerdos en Ingresos |
 | **Polista amateur** | Juega por hobby, tiene pocos caballos, a veces en pensión | Segmento masivo, ticket bajo |
 | **Petisero** | Cuida, alimenta, vasea y prepara los caballos. Suele haber 1 cada ~5–8 caballos **[HIPÓTESIS]** | Puede cargar novedades por WhatsApp |
-| **Capataz / jefe de petiseros / manager** | Coordina la caballeriza y la logística | Usuario operativo, posible "cargador" |
+| **Manager** | Mano derecha del polista en organizaciones grandes; registra todo el día a día | **Usuario principal**, con el mismo acceso que el polista |
+| **Piloto / capataz / jefe de petiseros** | El mayor de los petiseros; coordina la caballeriza | Solo WhatsApp, sin acceso a la app |
 | **Haras / criador** | Cría y vende caballos; reproducción (incl. transferencia embrionaria), doma | Segmento fase 2 |
 | **Domador** | Hace los caballos (de "verde" a "hecho") | Proveedor / costo |
-| **Veterinario** | Sanidad, lesiones, reproducción, vacunas, análisis de AIE | Proveedor / canal de distribución |
-| **Herrero** | Herraje cada ~4–6 semanas | Proveedor / canal |
+| **Veterinario** | Sanidad, lesiones, reproducción, vacunas, análisis de AIE. Trabaja para varios polistas | Carga por el grupo de WhatsApp de cada cliente / canal de distribución |
+| **Herrero** | Herraje cada ~4–6 semanas. Trabaja para varios polistas | Carga por el grupo de cada cliente / canal |
 | **Transportista** | Camiones de caballos a torneos y temporadas | Proveedor |
 | **Forrajería / proveedor de alimento** | Alfalfa, fardos, avena, balanceado, viruta | Proveedor / canal / posible sponsor |
 | **Clubes y escuelas de polo** | Canchas, torneos, pensión, clínicas | Canal de distribución |
@@ -84,12 +85,13 @@ Petiseros · herrero · veterinario · comida de caballos · monturas · bozales
 ### Rasgos que condicionan el producto
 
 - **Informalidad y efectivo**: gran parte de los pagos no tiene factura. → El producto tiene que aceptar "pagué 50 lucas al Chino" sin comprobante.
-- **Multimoneda**: ARS, USD (cash y transferencia), GBP, EUR. → Cada movimiento guarda su moneda original.
+- **Multimoneda, pero piensa en dólares**: la gran mayoría de los gastos son en USD; hay gastos en ARS (nafta, comida de petiseros), EUR y GBP. → Todo se muestra en US$; los pesos se convierten solos al dólar blue del día y se guarda la moneda original.
 - **Montos en jerga**: "50 lucas", "un palo", "2 mil verdes", "500 dólares". → La IA tiene que entenderlo.
 - **Gasto colectivo vs. por caballo**: el alimento y los sueldos son de toda la caballeriza; el vete y el herrero muchas veces son por caballo. → Asignación opcional a caballo(s).
 - **Varios lugares a la vez**: caballeriza (Pilar), campo (en el mockup, Cnel. Suárez), invernada en el exterior y caballeriza de temporada. → Cada gasto lleva su **lugar (destino)**.
 - **Gastos que cubre el patrón**: fletes aéreos, pasajes de petiseros, etc. Los paga el polista y el patrón los reintegra. → Marca "lo cubre X" y seguimiento del reintegro.
-- **Equipo**: piloto (encargado de la caballeriza), petiseros, puestero en el campo, petisero en el exterior, y alguien (pareja/familia) que lleva las cuentas.
+- **Equipo**: manager (en organizaciones grandes), piloto, petiseros, puestero en el campo, petisero en el exterior. Piloto y petiseros trabajan para **una sola** organización; vete y herrero, para varias.
+- **El grupo de WhatsApp de la organización** (manager, polista, vete, herrero, petiseros) es donde hoy circula la información operativa.
 - **Centros de costo**: un mismo polista puede tener caballos propios, caballos de un patrón y caballos en sociedad. **[HIPÓTESIS, no está en el mockup]**
 
 ## 5. Tamaño de mercado — a completar

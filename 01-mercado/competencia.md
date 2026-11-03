@@ -33,18 +33,23 @@
 | **BreederHQ** | Cría | Reproducción y genealogía |
 | **Paddock Pro** | Caballerizas | Gestión operativa |
 
+### Datos de caballos (posible integración, no competencia)
+
+| Nombre | Qué hace | Relación |
+|---|---|---|
+| **Cría Polo** | Información de los caballos de polo registrados (sangre, padre, madre, partidos jugados), Argentina y exterior | Integrar como catálogo para el alta de caballos. Confirmar nombre exacto, dueño y API |
+
 ### Referentes de la mecánica (otro vertical)
 
 | Nombre | Qué hace | Por qué importa |
 |---|---|---|
-| **Pensai** (Joaco) | Ganadería (vacas) con bot de WhatsApp | Mismo modelo en otro animal. US$ 200/año/usuario; ~1.000 campos (dato del desarrollador). Ver [análisis](../00-vision/analisis-viabilidad.md) |
 | Bots de gastos por WhatsApp genéricos | Finanzas personales | Competencia en la mecánica, no en el vertical |
 
 ## Nuestro diferencial
 
-1. **Se carga por WhatsApp** (audio, foto, mensaje) y lo puede cargar todo el equipo: piloto, petiseros, puestero y quien lleva las cuentas.
-2. **Finanzas del polista profesional**: gastos por destino y moneda, acuerdos con patrones, pagos parciales, reintegros, ventas de caballos y resultado por temporada.
-3. **Caballos y caballeriza en el mismo lugar**: estado, novedades, pendientes, stock y equipo.
+1. **Se carga por WhatsApp** (audio, foto, mensaje), en el grupo de la organización o por privado: polista, manager, piloto, petiseros, puestero, vete y herrero.
+2. **Finanzas del polista profesional**: gastos por destino, todo en dólares (conversión automática), acuerdos con patrones, pagos parciales, reintegros, ventas de caballos y resultado por temporada.
+3. **Caballos y caballeriza en el mismo lugar**: estado, novedades, pendientes, stock y equipo; datos de los caballos desde Cría Polo (a integrar).
 4. **En español rioplatense y con la jerga del polo**, funcionando también desde el exterior.
 5. **Posible ángulo SENASA** (libreta sanitaria digital y pasaporte equino).
 

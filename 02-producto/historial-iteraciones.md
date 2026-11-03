@@ -99,6 +99,18 @@
   - Chats nuevos: alta de un caballo, pagos fijos, gasto que cubre el patrón, carga de un gasto.
 - Se quitaron de la ficha la pestaña Papeles/SENASA y los KPIs. De Caballeriza salieron las visitas (pasaron a Inicio), los banners de ajuste/reponer y "pedir al proveedor". Al piloto web se le sacó Avisos y se lo dejó fuera del recorrido.
 
+## Correcciones de Santi a la KB (2026-11-03, sesión 3)
+
+No es una vuelta del mockup, pero cambia cosas que el mockup muestra:
+- **Monedas**: de "siempre separadas, nunca se convierte" a **todo en US$** con conversión automática (pesos al blue del día; euros con cotización online o el bot pregunta).
+- **Usuarios**: polista y **manager** (ven lo mismo). Se sacan «quien lleva las cuentas» (Sofía) y el contador como usuarios.
+- **Patrón**: no existe para la plataforma.
+- **WhatsApp**: bot en el grupo de la organización + chat privado para la plata; vete/herrero con varios clientes.
+- **Recordatorios personales** («mañana haceme acordar»).
+- **Caballos** desde Cría Polo (catálogo).
+- **Sin tablas**: módulos con tableros.
+- Nombre provisorio; producto nuevo, no Queiros.
+
 ## Errores de consistencia que se corrigieron
 
 - **Días de la semana**: el 22/10/2026 es jueves. Se corrigieron las fechas (el herrero quedó el jueves 29).
