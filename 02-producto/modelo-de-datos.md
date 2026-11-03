@@ -33,7 +33,7 @@ Cuenta (organización del polista)
 
 **Proveedor**: id, nombre, rol (`veterinario` | `herrero` | otro), teléfono; relación muchos-a-muchos con Cuenta. Si escribe por privado y tiene más de un cliente, el bot pregunta para cuál.
 
-**Membresía**: teléfono, cuenta_id, rol, **owner (sí/no)**, canales (`grupo` | `privado` | ambos), **accesos a la app** (ninguno = solo WhatsApp, o lista de módulos: Inicio, Caballos, Caballeriza, novedades diarias; Gastos e Ingresos solo para owners), invitada_por, activa/inactiva. Define a qué organización va cada mensaje. Un proveedor tiene varias; el resto, una.
+**Membresía**: teléfono, cuenta_id, rol, **owner (sí/no)**, canales (`grupo` | `privado` | ambos), **accesos a la app**: `tipo` (`nada` = solo WhatsApp | `todo` = owner | `parte`), y si es `parte`: `secciones` (novedades, caballos, agenda, caballeriza; Gastos e Ingresos solo owners) y `alcance` de caballos (`todos` | `lugar` + lista de lugares | `caballos` + lista de caballos), invitada_por, activa/inactiva. Define a qué organización va cada mensaje. Un proveedor tiene varias; el resto, una.
 
 **Contexto de conversación** (privado de alguien con varias organizaciones): última organización elegida y hasta cuándo vale, para no repreguntar en cada mensaje.
 

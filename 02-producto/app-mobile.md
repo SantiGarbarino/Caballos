@@ -89,4 +89,8 @@ Existe en el código del mockup pero **no se llega desde Inicio** (decisión: al
   - Manager → todos los accesos (owner).
   - Resto → **solo WhatsApp** por defecto.
 - **Accesos parciales** (configurables por usuario): ej. el veterinario ve **Caballos** y las **novedades diarias de la caballeriza**, pero nunca Gastos ni Ingresos. Cada organización decide.
-- *Pendiente en el mockup:* mostrar en la invitación y en la persona la opción "Qué ve en la app".
+- **En el mockup (borrador v11):**
+  - Equipo muestra arriba **Owners · ven todo** (vos y el manager) y abajo **El resto del equipo** (cargan por WhatsApp). Cada persona muestra cómo está sumada al WhatsApp y, si tiene acceso parcial, una línea «App: …».
+  - Al tocar a alguien: tarjeta **Qué ve en la app** con un resumen (ej. «Novedades del día, Caballos, Lo que viene · 4 caballos») y botón **Cambiar**.
+  - La hoja de permisos (y la invitación) tienen: **Nada** (solo WhatsApp) · **Todo** (owner; no aparece para proveedores) · **Una parte** → secciones con tilde (Novedades del día, Caballos, Lo que viene, Caballeriza; Gastos e Ingresos bloqueado: «Solo owners») y **Qué caballos**: Todos · De un lugar (Pilar, Campo, Windsor) · Algunos caballos (se eligen uno por uno).
+  - Al invitar como Manager se preselecciona «Todo»; el resto, «Nada».

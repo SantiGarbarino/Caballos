@@ -132,6 +132,13 @@ Santi aprobó la lista de 32 cambios (con ajustes). Se hizo en el **borrador** (
 - **Invitar**: se elige *al grupo* y/o *por privado con el bot*, con sugerencia según el rol; la confirmación dice qué le llega. En la lista del equipo se ve "WhatsApp: grupo / privado / grupo y privado". Se sumó "Ver todos los chats" en Equipo.
 - **Veterinario y Herrero**: ejemplos con nombre concreto (vacunas, AIE, antiinflamatorios, placas, ecografía, medicamentos; herraje de N caballos, despalme, herraduras y clavos). Se partió «Veterinario y herrero de las de doma» en dos gastos. Cada categoría muestra debajo qué incluye.
 
+## Vuelta 12 · Owners y permisos por usuario (2026-11-03, borrador v11)
+
+- Equipo: **Owners · ven todo** (vos y el manager) y **El resto del equipo**. La nota de privacidad pasa a «Los owners ven todo y deciden qué ve cada uno. Gastos e Ingresos, solo los owners.»
+- Ficha de cada persona: tarjeta **Qué ve en la app** + **Cambiar**.
+- Invitación y hoja de permisos: **Nada / Todo / Una parte** → secciones + **qué caballos** (todos, de un lugar o algunos). «Todo» no aparece para veterinaria y herrero.
+- Ejemplo: la Dra. Ibarra ve Novedades del día, Caballos y Lo que viene de 4 caballos.
+
 ## Errores de consistencia que se corrigieron
 
 - **Días de la semana**: el 22/10/2026 es jueves. Se corrigieron las fechas (el herrero quedó el jueves 29).

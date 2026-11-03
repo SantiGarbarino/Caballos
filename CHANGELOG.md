@@ -1,5 +1,8 @@
 # Changelog del brain
 
+## 2026-11-03 (sesión 11) · Permisos finos en el mockup
+- Borrador v11: Equipo con owners y resto del equipo; «Qué ve en la app» por persona (Nada / Todo / Una parte: secciones + qué caballos: todos, de un lugar o algunos). Actualizados `decisiones.md`, `preguntas-abiertas.md`, `app-mobile.md`, `modelo-de-datos.md` e `historial-iteraciones.md`.
+
 ## 2026-11-03 (sesión 10) · Owners y permisos por usuario
 - Quien crea la organización es owner; los owners invitan y configuran qué ve cada usuario (solo WhatsApp o módulos de la app). El bot nunca carga una charla. Proveedores sin gastos, confirmado. Actualizados `decisiones.md`, `preguntas-abiertas.md`, `prd-mvp.md`, `modelo-de-datos.md`, `flujos-whatsapp.md`, `app-mobile.md` y `CLAUDE.md`.
 

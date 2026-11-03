@@ -6,6 +6,18 @@ Formato: fecha · decisión · contexto y porqué · quién. Las más nuevas arr
 
 ---
 
+## 2026-11-03 (sesión 11) · Permisos finos: qué ve cada usuario
+
+### Los permisos no son solo por módulo: se elige qué ve cada persona
+- **Contexto:** con habilitar un módulo entero no alcanza (ej. el veterinario no tiene por qué ver los 35 caballos).
+- **Decisión:** al invitar o desde la ficha de la persona en Equipo, un owner elige **Qué ve en la app**:
+  - **Nada** → solo WhatsApp (por defecto para todos los que no son owners).
+  - **Todo** → owner (no se ofrece para proveedores).
+  - **Una parte** → elige **secciones** (Novedades del día, Caballos, Lo que viene, Caballeriza) y **qué caballos**: todos, **los de un lugar** (Pilar, Campo, Windsor) o **algunos caballos** elegidos uno por uno.
+  - **Gastos e Ingresos: solo owners**, nunca para proveedores.
+- **Ejemplo del mockup:** la veterinaria ve Novedades del día, Caballos y Lo que viene, solo de 4 caballos (Rockstar, Patria, Nube y Negra).
+- **Quién:** Santi.
+
 ## 2026-11-03 (sesión 10) · Owners, permisos por usuario y un bot que no se equivoca
 
 ### Owners de la organización y permisos por usuario
