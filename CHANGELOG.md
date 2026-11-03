@@ -1,5 +1,8 @@
 # Changelog del brain
 
+## 2026-11-03 (sesión 8) · Chats, invitación y categorías
+- Borrador v10: chats como lista (grupo + privados), invitación al grupo y/o por privado, Veterinario y Herrero redefinidos con ejemplos claros. Ver `decisiones.md`, `flujos-whatsapp.md`, `modulo-gastos-ingresos.md` e `historial-iteraciones.md` (vuelta 11).
+
 ## 2026-11-03 (sesión 7) · Aclaración: app Polo Argentino
 - «Polo Argentino» es una **app de terceros** que ya existe (App Store) con la info de los caballos registrados; es la posible integración. **No es el nombre de nuestro producto**, que sigue sin definirse. Se reemplazó "Cría Polo" por "app Polo Argentino" en toda la KB y se sumó al glosario.
 

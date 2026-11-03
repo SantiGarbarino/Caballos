@@ -6,6 +6,22 @@ Formato: fecha · decisión · contexto y porqué · quién. Las más nuevas arr
 
 ---
 
+## 2026-11-03 (sesión 8) · Chats, invitaciones y categorías
+
+### Al invitar, se elige si va al grupo, al privado o a los dos
+- **Contexto:** Santi preguntó cómo saber si una invitación era para el grupo o para hablar con el bot por privado.
+- **Decisión:** la invitación tiene «Cómo lo sumás»: *al grupo de la organización* (link del grupo) y/o *por privado con el bot* (el bot le escribe para que lo agende), con valores sugeridos por rol. Ver [flujos de WhatsApp](../02-producto/flujos-whatsapp.md).
+- **Quién:** Santi.
+
+### Los chats de ejemplo se muestran como en WhatsApp
+- **Contexto:** con una fila de 12 conversaciones no se entendía qué era cada una.
+- **Decisión:** lista de chats: el grupo y un privado por persona. Los ejemplos del polista van todos en **su** chat privado, separados por fecha.
+- **Quién:** Santi.
+
+### Veterinario y Herrero: qué incluyen
+- **Veterinario**: visitas, medicamentos, vacunas, desparasitaciones, análisis y estudios. **Herrero**: herrajes, despalmes, herraduras y clavos. Un pago mixto se separa en dos gastos. Las demás categorías se afinan con las entrevistas. Ver [Gastos](../02-producto/modulo-gastos-ingresos.md).
+- **Quién:** Santi.
+
 ## 2026-11-03 (sesión 6) · Ajustes del mockup para la V1
 
 ### Acuerdos en euros: cómo se pasan a dólares

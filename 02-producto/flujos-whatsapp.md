@@ -2,6 +2,21 @@
 
 > Los 9 chats de demo del mockup (vista WhatsApp) son la referencia de tono y comportamiento. El remitente del bot es **PROGRAMON** (nombre provisorio).
 
+## Cómo se ve en WhatsApp (mockup, 2026-11-03)
+
+En el WhatsApp de cada persona hay **dos tipos de conversación**:
+1. **El grupo de la organización** (uno solo): ahí todos cuentan lo de los caballos y la caballeriza, y el bot confirma.
+2. **Un chat privado de cada persona con el bot**: la plata, las tareas, las consultas y los recordatorios.
+
+El mockup muestra la lista de chats como en WhatsApp: el grupo, **tu chat privado** (el del polista, que junta en un solo chat los ejemplos de distintos días: gasto que cubre el patrón, pagos fijos, visitas, carga con foto, alta de un caballo, recordatorio, cobros, consultas y cierre del día) y los privados del **manager**, el **piloto**, la **persona que ayuda con los gastos** y la **veterinaria**. Desde la app, "Ver la conversación" abre el chat justo en el ejemplo.
+
+### Cómo se suma a alguien (pantalla Equipo › Invitar)
+Al invitar se elige **cómo se suma**, una o las dos opciones:
+- **Al grupo de la organización**: le llega el link para entrar al grupo.
+- **Por privado con el bot**: el bot le escribe para que lo agende.
+
+Valores sugeridos según el rol (se pueden cambiar): manager y piloto, las dos; petisero, puestero, veterinaria y herrero, solo el grupo; familiar o asistente, solo privado. El manager además recibe el link de la app. En la lista del equipo se ve cómo está sumado cada uno ("WhatsApp: grupo y privado").
+
 ## Dónde se habla con el bot (decisión del 2026-11-03)
 
 | Canal | Quiénes | Qué se manda | Qué responde el bot |

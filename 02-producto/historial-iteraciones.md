@@ -126,6 +126,12 @@ Santi aprobó la lista de 32 cambios (con ajustes). Se hizo en el **borrador** (
 - **Se eliminó**: la vista web del piloto, el contador y la persona que lleva las cuentas como usuarios de la app.
 - **Se corrigieron** las inconsistencias: «Día» en el chat, consulta de veterinario (ahora US$ 2.206), Windsor (US$ 7.300), cierre del día sin corralón ni chukkers, herrero con 3 caballos, Sotogrande = agosto en todos lados (el pasaje Londres–Málaga pasó al 1/8). Se sumó el gasto de US$ 600 de veterinario de hoy para que coincida con el chat.
 
+## Vuelta 11 · Chats, invitación y categorías (2026-11-03, borrador v10)
+
+- **Chats**: la vista de WhatsApp pasa a ser una **lista de chats** (grupo + un privado por persona) con una explicación arriba. Los ejemplos del polista se juntan en su chat privado, por fecha. Desde la app, "Ver la conversación" abre el chat en el ejemplo justo.
+- **Invitar**: se elige *al grupo* y/o *por privado con el bot*, con sugerencia según el rol; la confirmación dice qué le llega. En la lista del equipo se ve "WhatsApp: grupo / privado / grupo y privado". Se sumó "Ver todos los chats" en Equipo.
+- **Veterinario y Herrero**: ejemplos con nombre concreto (vacunas, AIE, antiinflamatorios, placas, ecografía, medicamentos; herraje de N caballos, despalme, herraduras y clavos). Se partió «Veterinario y herrero de las de doma» en dos gastos. Cada categoría muestra debajo qué incluye.
+
 ## Errores de consistencia que se corrigieron
 
 - **Días de la semana**: el 22/10/2026 es jueves. Se corrigieron las fechas (el herrero quedó el jueves 29).

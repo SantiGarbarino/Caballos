@@ -53,6 +53,18 @@ Notas:
 - Seña de una caballeriza de la próxima temporada → Caballerizas y casa › Caballerizas (lugar de esa caballeriza).
 - **Compra de caballos** se ve en Gastos como grupo aparte, pero **no entra en el resultado por temporada** (es inversión).
 
+### Qué entra en Veterinario y en Herrero (2026-11-03)
+
+Las categorías se van a afinar con las entrevistas, pero estas dos quedan definidas así (en la app, cada categoría muestra debajo qué incluye):
+
+| Categoría | Incluye | Ejemplos del mockup |
+|---|---|---|
+| **Caballos › Veterinario** | Todo lo que se paga por la salud de los caballos: **visitas y honorarios** del veterinario, **medicamentos** (antiinflamatorios, antibióticos, vendas), **vacunas**, **desparasitaciones**, **análisis** (AIE) y **estudios** (ecografías, placas) | «Vacunas de influenza y encefalomielitis · 16 caballos», «Análisis de AIE · 16 caballos», «Antiinflamatorios y vendas», «Revisación y placas para el viaje a Inglaterra», «Ecografía de un tendón», «Medicamentos de la veterinaria», «Visita del veterinario al campo» |
+| **Caballos › Herrero** | Todo lo de los cascos: **herrajes**, **despalmes**, **herraduras y clavos** | «Herraje de 14 caballos», «Herraje de 10 caballos», «Despalme y herraje de las 5 de doma», «Herraduras y clavos» |
+
+- Un pago que mezcla veterinario y herrero **se separa en dos gastos** (antes el mockup tenía «Veterinario y herrero de las de doma» en un solo gasto: se partió en vacunas y desparasitación por un lado y despalme y herraje por el otro).
+- Los títulos dicen **qué se hizo** (y a cuántos caballos), no solo "Veterinario" o "Herrero".
+
 ## Conversión a dólares
 
 - **Pesos → US$**: automático, con el **dólar blue del día** en que llega el gasto: **promedio entre compra y venta** (ej. compra 1.530 / venta 1.570 → 1.550), de cualquier sitio que lo publique (Rava Bursátil, DólarHoy u otro). El bot **no pregunta** el tipo de cambio.
