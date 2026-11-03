@@ -1,5 +1,8 @@
 # Changelog del brain
 
+## 2026-11-03 (sesión 9) · Operatoria de WhatsApp
+- Reglas de ruteo (grupos, privados, proveedores con varias organizaciones), proveedores sin gastos, duplicados, reacción ✅ en grupos, varios grupos por organización y quién gestiona el equipo. En `flujos-whatsapp.md`, `modelo-de-datos.md`, `decisiones.md` y `preguntas-abiertas.md`.
+
 ## 2026-11-03 (sesión 8) · Chats, invitación y categorías
 - Borrador v10: chats como lista (grupo + privados), invitación al grupo y/o por privado, Veterinario y Herrero redefinidos con ejemplos claros. Ver `decisiones.md`, `flujos-whatsapp.md`, `modulo-gastos-ingresos.md` e `historial-iteraciones.md` (vuelta 11).
 

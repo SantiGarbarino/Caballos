@@ -31,6 +31,35 @@ Valores sugeridos según el rol (se pueden cambiar): manager y piloto, las dos; 
 - Un vete o herrero que trabaja para varios polistas carga en el **grupo de cada cliente**; el grupo ya define la organización.
 - **Riesgo técnico:** la API de grupos de Meta tendría un límite de 8 participantes y no permitiría sumar al bot a grupos existentes (a verificar; ver [preguntas abiertas](../00-vision/preguntas-abiertas.md)).
 
+## Reglas de ruteo: grupos, privados y varias organizaciones (2026-11-03)
+
+**Quién es quién.** Cada número de WhatsApp tiene sus **membresías**: a qué organizaciones pertenece, con qué rol y por dónde carga (grupo, privado o los dos). Cada grupo pertenece a **una sola** organización, pero **una organización puede tener varios grupos** (ver abajo).
+
+**A qué organización va cada mensaje**
+- **Mensaje en un grupo** → a la organización de ese grupo. Sin preguntas.
+- **Mensaje por privado de alguien con una sola organización** (polista, manager, piloto, petiseros, puestero, familiar) → a esa organización. Sin preguntas.
+- **Mensaje por privado de alguien con varias organizaciones** (veterinario, herrero) → el bot **solo pregunta si no lo puede deducir**:
+  - Deduce por el **caballo** que se nombra (si existe en una sola de sus organizaciones) o por el **cliente** que se nombra ("lo de Tomás…").
+  - Si tiene que preguntar, ofrece como **botones los clientes con los que habló últimamente**.
+  - **Recuerda la elección un rato**: cinco audios seguidos del mismo cliente → pregunta una vez.
+  - Cada confirmación dice **en qué organización se cargó** («Anotado en la organización de Tomás») y se corrige con «no, era para Juan».
+- **Nunca** un proveedor (ni nadie) recibe datos de una organización que no sea la del grupo donde escribe o la que eligió.
+
+**Los proveedores no registran gastos.** El veterinario, el herrero y demás cargan **el trabajo** (vacunó, herró, revisó). Si ese trabajo implica un gasto, el bot **le pregunta al polista o al manager** si lo registra como gasto y por cuánto. *(Detalle a definir: a quién le pregunta y cuándo.)*
+
+**Duplicados.** Con grupo y privado conviviendo, el mismo gasto puede llegar dos veces (el piloto en el grupo: «son 180 lucas el herraje»; el polista a la noche por privado: «pagué 180 mil al herrero»). Antes de cargar, el bot busca algo parecido (mismo monto, misma categoría, pocos días de diferencia, aunque venga de otro grupo o de otra persona) y pregunta: «¿Es el mismo que cargó Pedro el martes?». **Es clave para que los totales no se inflen.**
+
+**El bot en los grupos, sin ruido**
+- Cuando carga algo, **confirma con una reacción (✅)**, sin mensaje.
+- Solo **contesta por escrito si tiene una duda**, y en ese caso dice qué cargó y qué le falta.
+- Los mensajes que no son cargas (charla, chistes, coordinación) **no los toca**. Igual se les va a pedir a los usuarios que no usen esos grupos para cualquier cosa.
+
+**Una organización puede tener varios grupos** (idea de Santi). Ej.: el manager arma un grupo «manager + veterinario + bot», otro «manager + herrero + bot», etc.: conversaciones de a dos donde el bot está en el medio leyendo. Todos esos grupos son de la misma organización. Ventajas: cada conversación queda ordenada, nadie ve lo que no le corresponde y los grupos chicos no chocan con el límite de participantes de la API de grupos (a verificar). Ojo: sube el riesgo de duplicados entre grupos (ver arriba).
+
+**Quién maneja la organización.** Cada polista es una mini organización. En algunas, el polista habla directamente con el veterinario, el herrero y los demás; en otras, el polista solo juega y **el manager se encarga de absolutamente todo**. El producto tiene que funcionar igual en los dos casos: las preguntas del bot (confirmar un gasto, duplicados, a qué lugar va algo) le llegan a **quien maneja la operación** (polista, manager o los dos, según se configure la organización).
+
+**Altas y bajas.** El polista o el manager (cualquiera de los dos) suman y sacan gente desde Equipo. Cuando alguien deja la organización (cambio de veterinario, un petisero que se va), el bot deja de aceptarle mensajes para esa organización; lo que cargó antes queda con su nombre.
+
 ## Principios
 
 1. **Ante la duda, preguntar.** Nunca adivinar destino, categoría ni caballos. Ej.: "US$ 600 de veterinaria. ¿Para qué caballos es: Pilar, el campo o Windsor?"

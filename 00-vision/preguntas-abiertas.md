@@ -37,6 +37,11 @@ Lo que todavía no sabemos o no decidimos. Cuando se resuelve, pasa a [decisione
 - [ ] Gastos que paga el piloto de su bolsillo ("lo pagué yo en efectivo"): ¿se lleva una cuenta de lo que se le debe al piloto?
 - [ ] Recordatorios automáticos derivados (ej. "Sacar sangre para AIE" por un viaje): ¿qué reglas?
 
+- [ ] **Trabajo de proveedores → gasto**: ¿a quién le pregunta el bot (polista, manager o los dos)? ¿En el momento o en un resumen? ¿Con qué monto si el proveedor no lo dice?
+- [ ] **Quién maneja la operación**: ¿se configura por organización (polista, manager o los dos) a quién le llegan las preguntas del bot?
+- [ ] **Ruido en los grupos**: cómo distingue el bot una carga de la charla sin equivocarse, y qué hace con los mensajes dudosos.
+- [ ] Si los grupos chicos (manager + un proveedor + bot) se vuelven el patrón: ¿cuántos grupos por organización y cuántos grupos en total puede tener el número del bot? (verificar límites de Meta).
+
 ## Técnico
 - [ ] **Grupos de WhatsApp con la API oficial**: según fuentes secundarias (2026-11-03), la Groups API de Meta tendría un **límite de 8 participantes por grupo** (contando el número del bot), requiere número verificado (OBA) y no permite agregar participantes por API (solo link de invitación). **Verificar en la documentación oficial de Meta.** Si se confirma, un grupo con polista, manager, vete, herrero y varios petiseros puede no entrar, y el bot no podría sumarse a grupos que ya existen.
 - [ ] Costo y diseño de los **mensajes salientes** (plantillas de Meta, ventana de 24 h): tareas del piloto 7:00, pagos fijos, recordatorios, cierre del día 20:00.

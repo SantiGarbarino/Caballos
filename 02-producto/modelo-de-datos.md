@@ -6,7 +6,7 @@
 Cuenta (organización del polista)
  ├──< Usuario (polista | manager: mismo acceso)
  ├──< Miembro solo WhatsApp (piloto, petisero, puestero, familiar o asistente) ── teléfono · una sola cuenta
- ├──< GrupoWhatsApp (id del grupo → cuenta)
+ ├──< GrupoWhatsApp (varios por cuenta; cada grupo → una sola cuenta)
  ├──<>── Proveedor (vete, herrero) ── teléfono · puede estar en varias cuentas
  ├──< Lugar (caballeriza, campo, exterior, temporada)
  │      └──< Insumo (stock, envase) ──< Consumo (por caballo por día)
@@ -33,7 +33,13 @@ Cuenta (organización del polista)
 
 **Proveedor**: id, nombre, rol (`veterinario` | `herrero` | otro), teléfono; relación muchos-a-muchos con Cuenta. Si escribe por privado y tiene más de un cliente, el bot pregunta para cuál.
 
-**GrupoWhatsApp**: id del grupo, cuenta_id, participantes. Todo mensaje que llega desde el grupo pertenece a esa cuenta. Lo que se habla de plata en el grupo se registra igual. Métricas derivadas: mensajes hoy y en la semana, vareos, tareas hechas, último mensaje.
+**Membresía**: teléfono, cuenta_id, rol, canales (`grupo` | `privado` | ambos), activa/inactiva. Define a qué organización va cada mensaje. Un proveedor tiene varias; el resto, una.
+
+**Contexto de conversación** (privado de alguien con varias organizaciones): última organización elegida y hasta cuándo vale, para no repreguntar en cada mensaje.
+
+**TrabajoProveedor**: lo que carga un veterinario o herrero (qué hizo, caballos, fecha). No es un gasto: si corresponde, genera una **pregunta** al polista o al manager para registrarlo como gasto.
+
+**GrupoWhatsApp**: id del grupo, cuenta_id, participantes. **Una cuenta puede tener varios grupos** (ej. manager + veterinario + bot, manager + herrero + bot). Todo mensaje que llega desde un grupo pertenece a la cuenta de ese grupo. Lo que se habla de plata en el grupo se registra igual. Métricas derivadas: mensajes hoy y en la semana, vareos, tareas hechas, último mensaje.
 
 **Lugar**: id, nombre corto y largo (Pilar / Caballeriza Pilar), país, tipo (`caballeriza` | `campo` | `exterior` | `temporada`), descripción ("4 caballos en invernada").
 

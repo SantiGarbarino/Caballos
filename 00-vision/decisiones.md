@@ -6,6 +6,32 @@ Formato: fecha · decisión · contexto y porqué · quién. Las más nuevas arr
 
 ---
 
+## 2026-11-03 (sesión 9) · Operatoria de WhatsApp con varias organizaciones
+
+### Ruteo de mensajes de proveedores con varios clientes
+- Grupo → organización del grupo. Privado de alguien con una sola organización → esa. Privado de un proveedor con varias → el bot deduce por caballo o cliente; si no puede, pregunta con botones de clientes recientes, recuerda la elección un rato, cada confirmación dice la organización y se puede corregir. Nunca se muestran datos de otra organización.
+- **Quién:** Santi ("es correcto y espero que así sea en el producto").
+
+### Los proveedores no registran gastos
+- Veterinario, herrero, etc. cargan **el trabajo**; si implica un gasto, el bot le pregunta al polista o al manager si lo registra. Detalle a definir.
+- **Quién:** Santi.
+
+### Detección de duplicados, con este nivel de detalle
+- Antes de cargar un gasto, buscar uno parecido (monto, categoría, fecha cercana, de cualquier grupo o persona) y preguntar si es el mismo.
+- **Quién:** Santi ("muy importante").
+
+### En los grupos, el bot confirma con una reacción
+- ✅ cuando carga; contesta por escrito solo si tiene una duda, diciendo qué cargó. No toca la charla. Se les pedirá a los usuarios no usar los grupos para cualquier cosa.
+- **Quién:** Santi.
+
+### Una organización puede tener varios grupos de WhatsApp
+- Ej.: manager + veterinario + bot, manager + herrero + bot. Cada grupo pertenece a una sola organización.
+- **Quién:** Santi (idea propia).
+
+### Altas y bajas del equipo: polista o manager
+- Cada polista es una mini organización: en algunas el polista habla con todos; en otras solo juega y el manager hace todo. Cualquiera de los dos gestiona el equipo y recibe las preguntas del bot, según cómo se configure.
+- **Quién:** Santi.
+
 ## 2026-11-03 (sesión 8) · Chats, invitaciones y categorías
 
 ### Al invitar, se elige si va al grupo, al privado o a los dos
