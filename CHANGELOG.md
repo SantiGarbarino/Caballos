@@ -1,7 +1,10 @@
 # Changelog del brain
 
+## 2026-11-03 (sesión 5) · Sin usuarios personalizados
+- Se sacan los ejemplos con nombre (ej. "Sofía, hermana de Tomás") de las definiciones de usuarios: se habla de **roles**. Los nombres quedan solo en los datos ficticios del mockup. Nueva regla 14 en `CLAUDE.md`.
+
 ## 2026-11-03 (sesión 4) · Aclaraciones de Santi
-- **Dos tipos de usuario**: los de la **app** (polista y manager) y los de **solo WhatsApp** (resto de la organización, ej. Sofía, petiseros, piloto, puestero, y proveedores): cargan por el bot, figura quién lo cargó, nunca entran a la app.
+- **Dos tipos de usuario**: los de la **app** (polista y manager) y los de **solo WhatsApp** (resto de la organización: manager de los petiseros, petiseros, piloto, puestero, familiares o asistentes, y proveedores): cargan por el bot, figura quién lo cargó, nunca entran a la app.
 - **Plata en el grupo**: en general va por privado, pero si se habla en el grupo **se registra igual**.
 - **Cotización**: dólar blue **promedio entre compra y venta**, de cualquier fuente (Rava, DólarHoy…).
 
@@ -9,7 +12,7 @@
 - **Nombre no definido**: PROGRAMON pasa a ser provisorio.
 - **Producto totalmente nuevo**: de Queiros solo el know-how y el equipo. Se saca "Queiros es el motor", el timebox de dic 2026 y el MRR. `reuso-queiros.md` → `aprendizajes-queiros.md`.
 - **Monedas**: todo en **US$**; pesos al dólar blue del día automático (sin preguntar), con el detalle en letra chica; euros con cotización online o el bot pregunta. Reemplaza "monedas siempre separadas".
-- **Usuarios**: polista y **manager** (mismo acceso). Se sacan Sofía y el contador como usuarios. El **patrón no existe** para la plataforma.
+- **Usuarios**: polista y **manager** (mismo acceso). Se saca el contador como usuario. El **patrón no existe** para la plataforma.
 - **WhatsApp**: bot en el **grupo de la organización** + **chat privado** para la plata; piloto y petiseros de una sola organización; vete y herrero con varios clientes (por privado, el bot pregunta el cliente).
 - **Comprobante**: si no hay foto, se ve el audio o el mensaje original.
 - **Recordatorios personales** («mañana haceme acordar»).

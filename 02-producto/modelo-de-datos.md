@@ -5,7 +5,7 @@
 ```
 Cuenta (organización del polista)
  ├──< Usuario (polista | manager: mismo acceso)
- ├──< Miembro solo WhatsApp (piloto, petisero, puestero, familiar como Sofía) ── teléfono · una sola cuenta
+ ├──< Miembro solo WhatsApp (piloto, petisero, puestero, familiar o asistente) ── teléfono · una sola cuenta
  ├──< GrupoWhatsApp (id del grupo → cuenta)
  ├──<>── Proveedor (vete, herrero) ── teléfono · puede estar en varias cuentas
  ├──< Lugar (caballeriza, campo, exterior, temporada)
@@ -29,7 +29,7 @@ Cuenta (organización del polista)
 
 **Usuario (app)**: cuenta_id, nombre, teléfono, rol (`polista` | `manager`). **Ven y cargan lo mismo**; no hay permisos distintos.
 
-**Miembro (solo WhatsApp)**: id, **cuenta_id (una sola)**, nombre, rol (`piloto` | `petisero` | `puestero` | `familiar/asistente` (ej. Sofía) | otro), lugar, teléfono. Carga por el bot; **nunca entra a la app**. Todo lo que carga queda con `cargado_por`. Abierto: qué puede cargar cada rol.
+**Miembro (solo WhatsApp)**: id, **cuenta_id (una sola)**, nombre, rol (`piloto` | `petisero` | `puestero` | `familiar/asistente` | otro), lugar, teléfono. Carga por el bot; **nunca entra a la app**. Todo lo que carga queda con `cargado_por`. Abierto: qué puede cargar cada rol.
 
 **Proveedor**: id, nombre, rol (`veterinario` | `herrero` | otro), teléfono; relación muchos-a-muchos con Cuenta. Si escribe por privado y tiene más de un cliente, el bot pregunta para cuál.
 

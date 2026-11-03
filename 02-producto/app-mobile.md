@@ -68,11 +68,11 @@ Hoja que se abre con el botón "T":
 | Tomás | Vos · dueño de la cuenta | Todo |
 | (Manager) | Tu mano derecha | Todo, igual que vos |
 
-Abajo, **Cargan por WhatsApp** (no entran a la app): Sofía, Pedro (piloto), los petiseros, el puestero, la veterinaria y el herrero. Botón **Sumar a alguien** (para que el bot lo reconozca).
+Abajo, **Cargan por WhatsApp** (no entran a la app): el piloto, los petiseros, el puestero, la veterinaria y el herrero, y cualquier otra persona de la organización (ej. un familiar o asistente que lo ayuda con gastos y compras). Botón **Sumar a alguien** (para que el bot lo reconozca).
 
 Nota: "Tus montos los ven solo vos y tu manager. Nadie más." Botón **Invitar a tu manager**.
 
-> El mockup muestra a Sofía con acceso a la app: pasa a **solo WhatsApp** (carga gastos, no entra). Estudio Ruiz (contador) se saca (decisión del 2026-11-03).
+> El mockup muestra a una persona que lleva las cuentas con acceso a la app: pasa a **solo WhatsApp** (carga gastos, no entra). Estudio Ruiz (contador) se saca (decisión del 2026-11-03).
 
 ## Vista del piloto (fuera del recorrido)
 

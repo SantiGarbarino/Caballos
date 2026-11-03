@@ -29,7 +29,7 @@
 | **Cotización** | Si se convirtió: valor, fecha y fuente (ej. dólar blue del 22/10, $ 1.550) |
 | **Fecha** | Día y mes |
 | **Comprobante / origen** | Foto (factura, remito o ticket) si hay; si no, el audio (con transcripción) o el mensaje que lo generó |
-| **Lo cargó** | Polista, manager, Sofía, Pedro (piloto), Juanca, Don Aníbal, Dra. Ibarra… "por WhatsApp" (grupo o privado). Los de solo WhatsApp figuran aunque no entren a la app |
+| **Lo cargó** | Polista, manager, un familiar o asistente, el piloto, un petisero, el puestero, la veterinaria… "por WhatsApp" (grupo o privado). Los de solo WhatsApp figuran aunque no entren a la app |
 | **Lo cubre** (opcional) | Acuerdo con un patrón + estado del reintegro (a reintegrar / reintegrado) |
 
 ## Taxonomía (grupo › categoría)

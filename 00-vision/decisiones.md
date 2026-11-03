@@ -31,8 +31,9 @@ Formato: fecha · decisión · contexto y porqué · quién. Las más nuevas arr
 - Muchas veces el usuario no va a ser el jugador sino el manager: el producto y el vocabulario tienen que contemplarlo.
 - **Usuarios de la app** (ven e interactúan con los datos en la web): **polista y manager**.
 - **Usuarios de solo WhatsApp** (*aclarado por Santi*): son **parte de la organización** y cargan por el bot, pero **nunca entran a la app**. Lo que mandan se registra y figura en la plataforma con **quién lo cargó**. Ejemplos:
-  - **Sofía**, hermana de Tomás, que a veces trabaja para él: le manda un gasto al bot y queda registrado como "lo cargó Sofía".
+  - **Un familiar o asistente** que ayuda al polista con gastos y compras: le manda un gasto al bot y queda registrado con su nombre como quien lo cargó.
   - Un **petisero** avisa que una yegua no comió: queda como alerta en la plataforma, cargada por ese petisero.
+- Cada polista tiene su **organización**: una mini organización con la gente que trabaja para él (manager, petiseros, piloto, puestero, algún familiar) y quiere registrar todo.
   - También piloto, puestero, y los proveedores (vete, herrero) desde el grupo.
 - El contador no es usuario: recibe el export por mail.
 - **Quién:** Santi.

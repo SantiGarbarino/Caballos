@@ -1,6 +1,6 @@
 # Segmentos y personas
 
-> **Usuarios de la plataforma (2026-11-03):** el **polista** y su **manager**, que ven lo mismo. El resto de la organización (ej. Sofía, piloto, petiseros, puestero) y los proveedores son **usuarios de solo WhatsApp**: cargan por el bot y figura quién lo cargó, pero no entran a la app. El patrón no existe para la plataforma. Tomás y su equipo son el **ejemplo ficticio del mockup**: no definen el ICP.
+> **Usuarios de la plataforma (2026-11-03):** el **polista** y su **manager**, que ven lo mismo. El resto de la organización (piloto, petiseros, puestero, un familiar o asistente) y los proveedores son **usuarios de solo WhatsApp**: cargan por el bot y figura quién lo cargó, pero no entran a la app. El patrón no existe para la plataforma. Tomás y su equipo son el **ejemplo ficticio del mockup**: no definen el ICP.
 
 ## Segmentos (a validar)
 
@@ -44,11 +44,10 @@
 | **Lucho** | Petisero en Pilar | Audios con vareos y novedades (ej. "la Negra no terminó la ración") |
 | **Juanca** | Petisero en Windsor | Reporta las 4 de la invernada; carga gastos de Inglaterra |
 | **Don Aníbal** | **Puestero** del campo (Cnel. Suárez) | Reporta los 15 del campo; manda la foto de los rollos. Si no manda mensajes hace 2 días, se destaca |
-| **Sofía** | Hermana de Tomás; a veces trabaja para él | Solo WhatsApp: le manda gastos al bot y quedan como "lo cargó Sofía". No entra a la app |
 | Dra. Ibarra / Cacho | Veterinaria / herrero | Trabajan para varios polistas. Cargan en el grupo de WhatsApp de cada cliente; si escriben por privado, el bot pregunta para qué cliente. No usan la app |
 | Estudio Ruiz | Contador | No es usuario: recibe el export por mail |
 
-> En el mockup Sofía tiene acceso a la app: pasa a ser de solo WhatsApp. Los usuarios de la app son el polista y el manager.
+> En el mockup hay una persona que lleva las cuentas con acceso a la app: pasa a ser de solo WhatsApp. Los usuarios de la app son el polista y el manager.
 
 ### El patrón (contexto, no es usuario)
 - Le paga al polista por jugar y a veces le reintegra gastos (fletes, pasajes de petiseros). Para la plataforma **no existe**: solo aparece en Ingresos como contraparte.

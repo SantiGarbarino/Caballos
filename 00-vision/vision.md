@@ -73,7 +73,7 @@ que vencen, recordatorios, cierre del día (20:00)
 |---|---|
 | **Polista profesional** (comprador y usuario) | Sabe cuánto gastó (en dólares), en qué y dónde; cuánto le deben y quién; qué pasa con cada caballo; para cuántos días le alcanza el stock; sin abrir una computadora |
 | **Manager** (mano derecha en organizaciones grandes; usuario) | Ve **lo mismo** que el polista. Registra todo el día a día (caballeriza, stock, lo que habla con el vete y el herrero, cada yegua) mandándolo por WhatsApp. Muchas veces es el que más usa el producto |
-| **Miembros de la organización de solo WhatsApp** (ej. Sofía, hermana de Tomás, que a veces trabaja para él) | Sin acceso a la app. Le mandan gastos o novedades al bot y quedan registrados con su nombre |
+| **Miembros de la organización de solo WhatsApp** (ej. un familiar o asistente que lo ayuda con gastos y compras) | Sin acceso a la app. Le mandan gastos o novedades al bot y quedan registrados con su nombre |
 | **Piloto** (el mayor de los petiseros) | Sin acceso a la app. Recibe tareas y avisos por WhatsApp y las tacha respondiendo |
 | **Petiseros / puestero** | Sin acceso a la app. Reportan por audio en el grupo, como hoy (ej. "la yegua no comió" → alerta en la plataforma, "la cargó Ramón") |
 | **Veterinario / herrero** (trabajan para varios polistas) | Sin acceso a la app. Mandan novedades al grupo de cada cliente; si escriben por privado, el bot pregunta para qué cliente es |

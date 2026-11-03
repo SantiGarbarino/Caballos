@@ -1,6 +1,6 @@
 # Dataset ficticio del mockup
 
-> **Todo es ficticio** y es solo el ejemplo del mockup. Sofía (hermana de Tomás) pasa a ser de **solo WhatsApp**: carga gastos por el bot pero no entra a la app. Estudio Ruiz (contador) no es usuario. Los usuarios de la app son el polista y su manager (2026-11-03). Los montos en $ y € se van a mostrar convertidos a US$.
+> **Todo es ficticio** y es solo el ejemplo del mockup. La persona que lleva las cuentas en el mockup (Sofía) pasa a ser de **solo WhatsApp**: carga gastos por el bot pero no entra a la app. Estudio Ruiz (contador) no es usuario. Los usuarios de la app son el polista y su manager (2026-11-03). Los montos en $ y € se van a mostrar convertidos a US$.
 
 > Datos inventados pero creíbles, usados en el mockup PROGRAMON. "Hoy" en el mockup es el **jueves 22/10/2026**. Generado desde el código del mockup (`programon.html`): si cambia el mockup, regenerar.
 

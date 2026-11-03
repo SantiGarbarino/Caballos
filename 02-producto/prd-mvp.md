@@ -23,7 +23,7 @@ Hay **dos tipos de usuario**: los de la **app** (polista y manager) y los de **s
 |---|---|---|---|
 | **Polista** (dueño de la cuenta) | WhatsApp (grupo + privado) + app | Sí | Todo |
 | **Manager** (mano derecha; en organizaciones grandes, el que más usa) | WhatsApp (grupo + privado) + app | Sí, **igual que el polista** | Todo |
-| Otros de la organización (ej. Sofía, hermana del polista, que a veces le carga gastos) | Solo WhatsApp (privado o grupo) | No | No (carga, no ve) |
+| Otros de la organización (ej. un familiar o asistente que lo ayuda con gastos y compras) | Solo WhatsApp (privado o grupo) | No | No (carga, no ve) |
 | Piloto | Solo WhatsApp (grupo y tareas por privado) | No | No |
 | Petiseros y puestero | Solo WhatsApp (grupo) | No | No |
 | Veterinario / herrero (varios clientes) | Solo WhatsApp (grupo de cada cliente; por privado el bot pregunta el cliente) | No | No |
@@ -66,7 +66,7 @@ Barra inferior con cinco pestañas: **Inicio · Caballos · Caballeriza · Gasto
 | W14 | Si un gasto lo pagó el piloto, preguntar "¿Lo pagaste vos o queda a pagar?" | Should |
 | W15 | **Bot en el grupo de WhatsApp** de la organización (manager, polista, vete, herrero, petiseros): lo que se manda sobre caballos y caballeriza entra a la app | Must |
 | W16 | **Chat privado** con el bot para gastos, ingresos y consultas de plata (lo que no tienen que ver el vete ni los petiseros). Si se habla de plata en el grupo, **se registra igual** | Must |
-| W18 | **Miembros de solo WhatsApp**: cualquier persona de la organización registrada (ej. Sofía, petiseros) puede cargar por el bot; en la app figura "lo cargó X" | Must |
+| W18 | **Miembros de solo WhatsApp**: cualquier persona de la organización registrada (ej. un familiar, petiseros) puede cargar por el bot; en la app figura "lo cargó X" | Must |
 | W17 | **Proveedores con varios clientes** (vete, herrero): en el grupo de cada cliente se asigna solo; por privado, el bot pregunta para qué cliente es | Must |
 
 ### App mobile (PWA)

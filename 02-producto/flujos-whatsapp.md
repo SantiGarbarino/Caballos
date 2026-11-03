@@ -8,11 +8,11 @@
 |---|---|---|---|
 | **Grupo de WhatsApp de la organización** | Manager, polista, veterinario, herrero, algún petisero o el piloto (+ el bot) | Novedades de caballos, vareos, herrajes, visitas, stock, el día a día de la caballeriza. **También precios o gastos** si se hablan ahí | Confirmaciones cortas; lo que se habla de plata en el grupo **se registra igual** |
 | **Chat privado polista ↔ bot** y **manager ↔ bot** | Polista, manager | Gastos, ingresos, acuerdos, consultas de plata, recordatorios personales | Todo, con montos |
-| **Chat privado miembro ↔ bot** | Otros de la organización (ej. Sofía, hermana del polista) | Gastos que paga o le pasan | Confirmación con monto; figura "lo cargó Sofía" |
+| **Chat privado miembro ↔ bot** | Otros de la organización (ej. un familiar o asistente que lo ayuda con gastos y compras) | Gastos que paga o le pasan | Confirmación con monto; en la app figura que lo cargó esa persona |
 | **Chat privado piloto ↔ bot** | Piloto | Tareas del día, avisos, "Listo, hecho" | Tareas y avisos (sin plata) |
 | **Chat privado proveedor ↔ bot** | Veterinario, herrero (trabajan para varios polistas) | Novedades o visitas | **Pregunta para cuál cliente es**: «¿Esto es para la organización de Tomás o la de Juan?» |
 
-- Piloto, petiseros, puestero y los demás miembros de solo WhatsApp (ej. Sofía) son de **una sola** organización: el bot sabe de quién son. Lo que cargan figura en la app con su nombre, aunque ellos no entren.
+- Piloto, petiseros, puestero y los demás miembros de solo WhatsApp (ej. un familiar) son de **una sola** organización: el bot sabe de quién son. Lo que cargan figura en la app con su nombre, aunque ellos no entren.
 - Un vete o herrero que trabaja para varios polistas carga en el **grupo de cada cliente**; el grupo ya define la organización.
 - **Riesgo técnico:** la API de grupos de Meta tendría un límite de 8 participantes y no permitiría sumar al bot a grupos existentes (a verificar; ver [preguntas abiertas](../00-vision/preguntas-abiertas.md)).
 
