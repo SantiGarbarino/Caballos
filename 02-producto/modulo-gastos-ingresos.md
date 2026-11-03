@@ -29,7 +29,7 @@
 | **Cotización** | Si se convirtió: valor, fecha y fuente (ej. dólar blue del 22/10, $ 1.550) |
 | **Fecha** | Día y mes |
 | **Comprobante / origen** | Foto (factura, remito o ticket) si hay; si no, el audio (con transcripción) o el mensaje que lo generó |
-| **Lo cargó** | Polista, manager, Pedro (piloto), Juanca, Don Aníbal, Dra. Ibarra… "por WhatsApp" (grupo o privado) |
+| **Lo cargó** | Polista, manager, Sofía, Pedro (piloto), Juanca, Don Aníbal, Dra. Ibarra… "por WhatsApp" (grupo o privado). Los de solo WhatsApp figuran aunque no entren a la app |
 | **Lo cubre** (opcional) | Acuerdo con un patrón + estado del reintegro (a reintegrar / reintegrado) |
 
 ## Taxonomía (grupo › categoría)
@@ -55,11 +55,11 @@ Notas:
 
 ## Conversión a dólares
 
-- **Pesos → US$**: automático, con el **dólar blue del día** en que llega el gasto, consultado a una fuente online. El bot **no pregunta** el tipo de cambio.
+- **Pesos → US$**: automático, con el **dólar blue del día** en que llega el gasto: **promedio entre compra y venta** (ej. compra 1.530 / venta 1.570 → 1.550), de cualquier sitio que lo publique (Rava Bursátil, DólarHoy u otro). El bot **no pregunta** el tipo de cambio.
 - **Euros (u otra moneda) → US$**: con una cotización online si hay fuente. Si no la hay, el bot pregunta: «Me estás cargando un gasto en euros y en la app los tengo en dólares. ¿Sabés el tipo de cambio?».
 - **En la app** se ve el monto en US$. En el detalle del gasto, en letra chica y prolija: «$ 800.000 al dólar blue del 22/10 ($ 1.550) = US$ 516».
 - **Confirmación por WhatsApp**: corta, con el resultado. Ej.: «Nafta, $ 85.000 → US$ 55 (blue de hoy, $ 1.550). Anotado en Pilar.»
-- Se guardan el monto y la moneda originales, la cotización, la fecha y la fuente. Abierto: compra/venta, fuente, fechas pasadas, ingresos en € (ver [preguntas abiertas](../00-vision/preguntas-abiertas.md)).
+- Se guardan el monto y la moneda originales, la cotización, la fecha y la fuente. Abierto: fechas pasadas, ingresos en € (ver [preguntas abiertas](../00-vision/preguntas-abiertas.md)).
 
 ## Pantalla Gastos
 

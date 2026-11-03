@@ -19,7 +19,7 @@ Mockup navegable para celular, armado por Santi con Claude entre el 22 y el 27/1
 ## Cambios pendientes en el mockup por las decisiones del 2026-11-03
 
 - [ ] Totales en **US$** (Inicio, Gastos, Ingresos, temporadas) y detalle de la conversión en letra chica en cada gasto en $ o €.
-- [ ] «Quién ve tu cuenta»: polista + manager; sacar a Sofía y a Estudio Ruiz.
+- [ ] «Quién ve tu cuenta»: polista + manager en la app; Sofía, piloto, petiseros, puestero y proveedores como "cargan por WhatsApp"; sacar a Estudio Ruiz.
 - [ ] Mostrar al **manager** como usuario (ej. gastos y novedades cargados por el manager).
 - [ ] Chats: grupo de la organización vs. privado; vete con varios clientes; recordatorio personal; gasto en pesos convertido.
 - [ ] Agregar caballo desde el catálogo de Cría Polo.

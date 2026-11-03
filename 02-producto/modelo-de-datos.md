@@ -5,7 +5,7 @@
 ```
 Cuenta (organización del polista)
  ├──< Usuario (polista | manager: mismo acceso)
- ├──< Persona del equipo (piloto, petisero, puestero) ── teléfono WhatsApp · una sola cuenta
+ ├──< Miembro solo WhatsApp (piloto, petisero, puestero, familiar como Sofía) ── teléfono · una sola cuenta
  ├──< GrupoWhatsApp (id del grupo → cuenta)
  ├──<>── Proveedor (vete, herrero) ── teléfono · puede estar en varias cuentas
  ├──< Lugar (caballeriza, campo, exterior, temporada)
@@ -27,13 +27,13 @@ Cuenta (organización del polista)
 
 **Cuenta**: id, nombre del dueño, idioma, plan.
 
-**Usuario**: cuenta_id, nombre, teléfono, rol (`polista` | `manager`). **Ven y cargan lo mismo**; no hay permisos distintos. Nadie más tiene acceso a la app (ni el patrón, ni el contador, ni el equipo).
+**Usuario (app)**: cuenta_id, nombre, teléfono, rol (`polista` | `manager`). **Ven y cargan lo mismo**; no hay permisos distintos.
 
-**Persona del equipo**: id, **cuenta_id (una sola)**, nombre, rol (`piloto` | `petisero` | `puestero`), lugar, teléfono.
+**Miembro (solo WhatsApp)**: id, **cuenta_id (una sola)**, nombre, rol (`piloto` | `petisero` | `puestero` | `familiar/asistente` (ej. Sofía) | otro), lugar, teléfono. Carga por el bot; **nunca entra a la app**. Todo lo que carga queda con `cargado_por`. Abierto: qué puede cargar cada rol.
 
 **Proveedor**: id, nombre, rol (`veterinario` | `herrero` | otro), teléfono; relación muchos-a-muchos con Cuenta. Si escribe por privado y tiene más de un cliente, el bot pregunta para cuál.
 
-**GrupoWhatsApp**: id del grupo, cuenta_id, participantes. Todo mensaje que llega desde el grupo pertenece a esa cuenta. En el grupo no se responden montos [HIPÓTESIS]. Métricas derivadas: mensajes hoy y en la semana, vareos, tareas hechas, último mensaje.
+**GrupoWhatsApp**: id del grupo, cuenta_id, participantes. Todo mensaje que llega desde el grupo pertenece a esa cuenta. Lo que se habla de plata en el grupo se registra igual. Métricas derivadas: mensajes hoy y en la semana, vareos, tareas hechas, último mensaje.
 
 **Lugar**: id, nombre corto y largo (Pilar / Caballeriza Pilar), país, tipo (`caballeriza` | `campo` | `exterior` | `temporada`), descripción ("4 caballos en invernada").
 
@@ -57,7 +57,7 @@ Cuenta (organización del polista)
 | título | "Herraje de 4 caballos" |
 | monto_usd | Lo que se muestra y se suma |
 | monto_original + moneda_original | `usd` \| `ars` \| `eur` \| `gbp`. Se guarda siempre |
-| cotizacion | Valor, fecha, tipo (ej. dólar blue venta) y fuente (API o "la dio el usuario") |
+| cotizacion | Valor, fecha, tipo (dólar blue **promedio compra/venta**; compra y venta guardadas), fuente (ej. Rava, DólarHoy, o "la dio el usuario") |
 | grupo, categoría | Ver [taxonomía](modulo-gastos-ingresos.md) |
 | lugar_id | **destino** del gasto |
 | comprobante | `foto` (factura/remito/ticket) \| `audio` (+ transcripción) \| `texto` |

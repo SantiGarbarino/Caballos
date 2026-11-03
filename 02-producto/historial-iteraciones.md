@@ -103,7 +103,8 @@
 
 No es una vuelta del mockup, pero cambia cosas que el mockup muestra:
 - **Monedas**: de "siempre separadas, nunca se convierte" a **todo en US$** con conversión automática (pesos al blue del día; euros con cotización online o el bot pregunta).
-- **Usuarios**: polista y **manager** (ven lo mismo). Se sacan «quien lleva las cuentas» (Sofía) y el contador como usuarios.
+- **Usuarios**: en la app, polista y **manager** (ven lo mismo). El resto de la organización (Sofía, petiseros, piloto, puestero) y los proveedores: **solo WhatsApp**, figura quién cargó. El contador no es usuario.
+- **Cotización**: blue promedio entre compra y venta. La plata en el grupo se registra igual.
 - **Patrón**: no existe para la plataforma.
 - **WhatsApp**: bot en el grupo de la organización + chat privado para la plata; vete/herrero con varios clientes.
 - **Recordatorios personales** («mañana haceme acordar»).

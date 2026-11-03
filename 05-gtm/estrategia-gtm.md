@@ -52,7 +52,7 @@ El polo es una **comunidad chica, muy conectada y basada en la confianza**. No s
 ## Objeciones esperadas
 | Objeción | Respuesta |
 |---|---|
-| "No quiero que quede registro de la plata" (informalidad) | Es tuyo y privado: lo ven solo vos y tu manager. La plata se manda por privado al bot, no en el grupo. Nadie más entra a la app. No es contable ni fiscal. |
+| "No quiero que quede registro de la plata" (informalidad) | Es tuyo y privado: lo ven solo vos y tu manager. La plata se manda en general por privado al bot. Nadie más entra a la app. No es contable ni fiscal. |
 | "No tengo tiempo" | Un audio de 10 segundos, o lo manda tu manager al grupo. |
 | "Ya lo tengo en la cabeza / en Excel" | Probalo un mes gratis y comparamos. |
 | "Lo hace mi contador" | El contador lo hace a fin de mes; esto te muestra hoy cuánto gastaste y cuánto te deben. Y le mandás todo exportado, con fotos, en un toque. |

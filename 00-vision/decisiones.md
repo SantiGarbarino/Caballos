@@ -25,21 +25,26 @@ Formato: fecha · decisión · contexto y porqué · quién. Las más nuevas arr
 - Se saca el timebox de diciembre 2026 y el criterio de MRR (era algo personal de Santi sobre Queiros). Si el mercado responde, se encara de lleno.
 - **Quién:** Santi.
 
-### Usuarios de la plataforma: el polista y su manager (y nadie más)
+### Dos tipos de usuario: los de la app (polista y manager) y los de solo WhatsApp
 - El **manager** es la mano derecha de las organizaciones grandes y va a ser un usuario muy importante: registra todo (caballeriza, stock, lo que habla con el veterinario y el herrero, el día a día de cada yegua).
 - **El manager ve exactamente lo mismo que el polista.** No hay información que vea uno y no el otro.
 - Muchas veces el usuario no va a ser el jugador sino el manager: el producto y el vocabulario tienen que contemplarlo.
-- **Piloto, petiseros y puestero no tienen acceso a la plataforma**: solo cargan por WhatsApp.
-- Se saca «quien lleva las cuentas» y el contador como usuarios con acceso (el export al contador sigue siendo un mail, no un usuario).
+- **Usuarios de la app** (ven e interactúan con los datos en la web): **polista y manager**.
+- **Usuarios de solo WhatsApp** (*aclarado por Santi*): son **parte de la organización** y cargan por el bot, pero **nunca entran a la app**. Lo que mandan se registra y figura en la plataforma con **quién lo cargó**. Ejemplos:
+  - **Sofía**, hermana de Tomás, que a veces trabaja para él: le manda un gasto al bot y queda registrado como "lo cargó Sofía".
+  - Un **petisero** avisa que una yegua no comió: queda como alerta en la plataforma, cargada por ese petisero.
+  - También piloto, puestero, y los proveedores (vete, herrero) desde el grupo.
+- El contador no es usuario: recibe el export por mail.
 - **Quién:** Santi.
 
 ### El patrón no existe para la plataforma
 - No es usuario, no es comprador, no es canal. Solo aparece como **la contraparte que le paga al polista** (acuerdos, pagos y reintegros en Ingresos).
 - **Quién:** Santi.
 
-### Grupos de WhatsApp para la operación; chat privado para la plata
+### Grupos de WhatsApp y chat privado
 - El bot está en el **grupo de WhatsApp de la organización** (manager, polista, veterinario, herrero, algún petisero). Lo que se manda ahí sobre una yegua o la caballeriza entra a la app.
 - Gastos e ingresos que el polista no quiere que vean el veterinario o los petiseros se mandan por **chat privado con el bot**.
+- *Aclarado por Santi:* la plata **en general** va por privado, **pero no obligatoriamente**. Si en el grupo se habla de un precio o un gasto, **se registra igual**.
 - **Quién:** Santi.
 
 ### Piloto y petiseros trabajan para una sola organización; los proveedores, para varias
@@ -50,7 +55,8 @@ Formato: fecha · decisión · contexto y porqué · quién. Las más nuevas arr
 ### Moneda de la plataforma: dólares, con conversión automática
 - **Reemplaza a** "Monedas siempre separadas; nunca se convierte".
 - La gran mayoría de los gastos del polista son en dólares. La app muestra todo **en US$**.
-- Un gasto en **pesos** se convierte **automáticamente al dólar blue del día** en que llega (consultado a una fuente online). El bot **no le pregunta el tipo de cambio** al polista: eso es fricción.
+- Un gasto en **pesos** se convierte **automáticamente al dólar blue del día** en que llega. El bot **no le pregunta el tipo de cambio** al polista: eso es fricción.
+- **Cotización = promedio entre el blue compra y el blue venta**, de cualquier sitio que lo publique (Rava Bursátil, DólarHoy u otro: el que sea más fácil de integrar). Ej.: compra 1.530 y venta 1.570 → 1.550.
 - En el detalle del gasto, en letra chica y prolija: «$ 800.000 al dólar blue del 22/10 ($ 1.550) = US$ 516».
 - **Euros** (y otras monedas): misma lógica si hay una fuente para la cotización. Si no la hay, el bot pregunta: «Me estás cargando un gasto en euros y en la app los tengo en dólares. ¿Sabés el tipo de cambio?».
 - Se guarda siempre el **monto y la moneda originales**, la cotización usada y su fuente.

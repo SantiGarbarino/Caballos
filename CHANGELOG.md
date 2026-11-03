@@ -1,5 +1,10 @@
 # Changelog del brain
 
+## 2026-11-03 (sesión 4) · Aclaraciones de Santi
+- **Dos tipos de usuario**: los de la **app** (polista y manager) y los de **solo WhatsApp** (resto de la organización, ej. Sofía, petiseros, piloto, puestero, y proveedores): cargan por el bot, figura quién lo cargó, nunca entran a la app.
+- **Plata en el grupo**: en general va por privado, pero si se habla en el grupo **se registra igual**.
+- **Cotización**: dólar blue **promedio entre compra y venta**, de cualquier fuente (Rava, DólarHoy…).
+
 ## 2026-11-03 (sesión 3) · Correcciones de Santi
 - **Nombre no definido**: PROGRAMON pasa a ser provisorio.
 - **Producto totalmente nuevo**: de Queiros solo el know-how y el equipo. Se saca "Queiros es el motor", el timebox de dic 2026 y el MRR. `reuso-queiros.md` → `aprendizajes-queiros.md`.

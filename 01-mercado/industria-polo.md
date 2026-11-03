@@ -85,7 +85,7 @@ Petiseros · herrero · veterinario · comida de caballos · monturas · bozales
 ### Rasgos que condicionan el producto
 
 - **Informalidad y efectivo**: gran parte de los pagos no tiene factura. → El producto tiene que aceptar "pagué 50 lucas al Chino" sin comprobante.
-- **Multimoneda, pero piensa en dólares**: la gran mayoría de los gastos son en USD; hay gastos en ARS (nafta, comida de petiseros), EUR y GBP. → Todo se muestra en US$; los pesos se convierten solos al dólar blue del día y se guarda la moneda original.
+- **Multimoneda, pero piensa en dólares**: la gran mayoría de los gastos son en USD; hay gastos en ARS (nafta, comida de petiseros), EUR y GBP. → Todo se muestra en US$; los pesos se convierten solos al dólar blue del día (promedio compra/venta) y se guarda la moneda original.
 - **Montos en jerga**: "50 lucas", "un palo", "2 mil verdes", "500 dólares". → La IA tiene que entenderlo.
 - **Gasto colectivo vs. por caballo**: el alimento y los sueldos son de toda la caballeriza; el vete y el herrero muchas veces son por caballo. → Asignación opcional a caballo(s).
 - **Varios lugares a la vez**: caballeriza (Pilar), campo (en el mockup, Cnel. Suárez), invernada en el exterior y caballeriza de temporada. → Cada gasto lleva su **lugar (destino)**.

@@ -24,7 +24,7 @@
 ## Lo que hay que construir (todo de cero)
 
 1. **PWA mobile-first** con el diseño del mockup. Lo más grande: el ICP no tolera algo feo.
-2. **Conversión a US$**: cotización del dólar blue del día (fuente online), euros, y guardar original + cotización.
+2. **Conversión a US$**: cotización del dólar blue del día (promedio compra/venta, de Rava, DólarHoy u otra), euros, y guardar original + cotización.
 3. **Bot en grupos de WhatsApp** + chats privados, y ruteo de proveedores con varios clientes (verificar límites de la Groups API de Meta).
 4. **Programador de salientes**: recordatorios personales, tareas del piloto (7:00), pagos fijos, avisos, cierre del día (20:00).
 5. **Integración con Cría Polo** (catálogo de caballos).

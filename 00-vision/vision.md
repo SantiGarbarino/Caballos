@@ -62,10 +62,10 @@ que vencen, recordatorios, cierre del día (20:00)
 2. **La app es para mirar y decidir.** Mobile-first, pensada para el celular. No hay versión de escritorio.
 3. **Ante la duda, pregunta.** Si la IA no sabe el destino (lugar), la categoría o los caballos, **pregunta**. Nunca adivina. (Decisión explícita de Santi: "tal cual, ante la duda que pregunte".)
 4. **Cada número se explica.** Todo total es la suma de los ítems que se ven debajo. Cada gasto muestra lo que lo generó: la foto del comprobante si hay, y si no, el audio (con transcripción) o el mensaje; y quién lo cargó.
-5. **Todo en dólares, sin fricción.** Un gasto en pesos se convierte solo al dólar blue del día; el bot no le pregunta el tipo de cambio al polista. En el detalle, en letra chica: «$ 800.000 al dólar blue del 22/10 ($ 1.550) = US$ 516». Euros: cotización online o, si no hay, el bot pregunta.
+5. **Todo en dólares, sin fricción.** Un gasto en pesos se convierte solo al dólar blue del día (promedio entre compra y venta); el bot no le pregunta el tipo de cambio al polista. En el detalle, en letra chica: «$ 800.000 al dólar blue del 22/10 ($ 1.550) = US$ 516». Euros: cotización online o, si no hay, el bot pregunta.
 6. **Sin ruido y sin tablas.** Módulos con tableros, tarjetas y listas; nada de planillas ni tablitas. Nada de KPIs decorativos, minutos de vareo, "% vs mes anterior" ni botones de acción en las alertas. UX limpia y simple (preferencia explícita de Santi).
 7. **Hablamos como habla el polo.** Petisero, piloto, puestero, vareo, herraje, chukker, patrón, invernada.
-8. **Privacidad de la plata.** Los montos los ven solo el polista y su manager. La plata se manda por **chat privado** con el bot, no en el grupo donde están el vete y los petiseros. Piloto, petiseros y proveedores no tienen acceso a la app.
+8. **Privacidad de la plata.** En la app, los montos los ven solo el polista y su manager. En general la plata se manda por **chat privado** con el bot; si se habla de precios en el grupo, se registra igual. Los usuarios de solo WhatsApp no entran a la app.
 
 ## Propuesta de valor por actor
 
@@ -73,8 +73,9 @@ que vencen, recordatorios, cierre del día (20:00)
 |---|---|
 | **Polista profesional** (comprador y usuario) | Sabe cuánto gastó (en dólares), en qué y dónde; cuánto le deben y quién; qué pasa con cada caballo; para cuántos días le alcanza el stock; sin abrir una computadora |
 | **Manager** (mano derecha en organizaciones grandes; usuario) | Ve **lo mismo** que el polista. Registra todo el día a día (caballeriza, stock, lo que habla con el vete y el herrero, cada yegua) mandándolo por WhatsApp. Muchas veces es el que más usa el producto |
+| **Miembros de la organización de solo WhatsApp** (ej. Sofía, hermana de Tomás, que a veces trabaja para él) | Sin acceso a la app. Le mandan gastos o novedades al bot y quedan registrados con su nombre |
 | **Piloto** (el mayor de los petiseros) | Sin acceso a la app. Recibe tareas y avisos por WhatsApp y las tacha respondiendo |
-| **Petiseros / puestero** | Sin acceso a la app. Reportan por audio en el grupo, como hoy |
+| **Petiseros / puestero** | Sin acceso a la app. Reportan por audio en el grupo, como hoy (ej. "la yegua no comió" → alerta en la plataforma, "la cargó Ramón") |
 | **Veterinario / herrero** (trabajan para varios polistas) | Sin acceso a la app. Mandan novedades al grupo de cada cliente; si escriben por privado, el bot pregunta para qué cliente es |
 | **Contador** | No es usuario: recibe el export (Excel/PDF con fotos) por mail |
 | **Haras / criador** (fase posterior) | Stock por categoría, reproducción, doma, ventas, sanidad y documentación |

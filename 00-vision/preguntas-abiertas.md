@@ -5,7 +5,9 @@ Lo que todavía no sabemos o no decidimos. Cuando se resuelve, pasa a [decisione
 ## Resueltas
 - ~~¿Cómo manejamos el tipo de cambio?~~ → **Todo en US$**: pesos al dólar blue del día, automático; euros con cotización online o, si no hay, el bot pregunta (2026-11-03).
 - ~~Mockup de Santi~~ → en [`02-producto/mockups/`](../02-producto/mockups/README.md) (en construcción; Santi adjunta la versión final).
-- ~~¿Quién usa la plataforma?~~ → El **polista** y su **manager** (ven lo mismo). Piloto, petiseros y puestero solo cargan por WhatsApp (2026-11-03).
+- ~~¿Quién usa la plataforma?~~ → **App**: polista y manager (ven lo mismo). **Solo WhatsApp**: el resto de la organización (ej. Sofía, piloto, petiseros, puestero) y los proveedores; cargan por el bot y figura quién lo cargó (2026-11-03).
+- ~~¿Qué cotización del blue?~~ → **Promedio entre compra y venta**, de cualquier fuente (Rava, DólarHoy u otra) (2026-11-03).
+- ~~¿Qué hace el bot con un gasto mandado en el grupo?~~ → **Lo registra igual.** La plata va en general por privado, pero no es obligatorio (2026-11-03).
 - ~~¿Qué tan importante es lo del patrón?~~ → El patrón **no existe para la plataforma**: solo es la contraparte de los acuerdos y reintegros en Ingresos (2026-11-03).
 - ~~¿Empresa nueva o línea de producto de Queiros?~~ → **Producto nuevo**; de Queiros solo el know-how y el equipo (2026-11-03). La parte societaria sigue abierta (ver abajo).
 - ~~¿Repo de código nuevo o fork de Queiros App?~~ → **Nuevo**: no se mezcla nada de Queiros (2026-11-03).
@@ -21,9 +23,9 @@ Lo que todavía no sabemos o no decidimos. Cuando se resuelve, pasa a [decisione
 
 ## Producto
 - [ ] **Cría Polo**: confirmar nombre exacto de la app, quién es el dueño, si tiene API o acuerdo de datos, qué campos trae (sangre, padre, madre, partidos jugados) y si se puede actualizar. Alternativa o complemento: registro genealógico de la AACCP. En una búsqueda web (2026-11-03) no apareció una app con ese nombre exacto; sí catálogos de cría (La Dolfina Cría, Cría Emezeta) y una app "Criadores de Polo".
-- [ ] **Conversión de monedas**: ¿dólar blue compra, venta o promedio? ¿Qué fuente (ej. DolarApi, Bluelytics, Ámbito)? ¿Qué cotización si el gasto es de una fecha pasada ("el viernes pagué…"): la de ese día? ¿Se puede corregir la cotización a mano?
+- [ ] **Conversión de monedas**: ¿Qué cotización si el gasto es de una fecha pasada ("el viernes pagué…"): la de ese día? ¿Se puede corregir la cotización a mano?
 - [ ] **Ingresos en otras monedas** (acuerdos en € o £): ¿se convierten a US$ con la cotización de cada pago? ¿Cómo se muestra lo acordado en € y lo que falta cobrar?
-- [ ] **Grupos de WhatsApp**: ¿qué hace el bot si alguien manda un gasto o un monto en el grupo (donde lo ven el vete y los petiseros)? Propuesta [HIPÓTESIS]: lo registra pero confirma sin montos, o le pide al polista que lo mande por privado. ¿El bot contesta en el grupo o solo lee?
+- [ ] ¿Qué miembros "solo WhatsApp" pueden cargar **gastos e ingresos** (ej. Sofía sí) y cuáles solo novedades de caballos y caballeriza (ej. petiseros)? ¿Lo configura el polista o el manager desde la app?
 - [ ] ¿El bot responde **consultas de plata** en el grupo? Propuesta [HIPÓTESIS]: nunca; las consultas de plata solo por privado al polista o al manager.
 - [ ] **Onboarding** (postergado por decisión). Idea discutida: primera carga por WhatsApp (caballos desde Cría Polo, equipo, pagos fijos y acuerdos) más una revisión web; *white-glove* para los primeros clientes.
 - [ ] **Ficha digital oficial del caballo** (libreta sanitaria digital, pasaporte equino, microchip) y camino a "aplicación autorizada" de SENASA. Ver [regulación](../01-mercado/regulacion-senasa.md).

@@ -17,10 +17,13 @@ Gastos es el centro: el dolor número uno y el gancho de adopción.
 
 ## Usuarios
 
+Hay **dos tipos de usuario**: los de la **app** (polista y manager) y los de **solo WhatsApp** (el resto de la organización y los proveedores: cargan por el bot, lo que mandan figura en la plataforma con su nombre, pero nunca entran a la app).
+
 | Persona | Canal | Acceso a la app | Ve plata |
 |---|---|---|---|
 | **Polista** (dueño de la cuenta) | WhatsApp (grupo + privado) + app | Sí | Todo |
 | **Manager** (mano derecha; en organizaciones grandes, el que más usa) | WhatsApp (grupo + privado) + app | Sí, **igual que el polista** | Todo |
+| Otros de la organización (ej. Sofía, hermana del polista, que a veces le carga gastos) | Solo WhatsApp (privado o grupo) | No | No (carga, no ve) |
 | Piloto | Solo WhatsApp (grupo y tareas por privado) | No | No |
 | Petiseros y puestero | Solo WhatsApp (grupo) | No | No |
 | Veterinario / herrero (varios clientes) | Solo WhatsApp (grupo de cada cliente; por privado el bot pregunta el cliente) | No | No |
@@ -46,7 +49,7 @@ Barra inferior con cinco pestañas: **Inicio · Caballos · Caballeriza · Gasto
 | ID | Requerimiento | Prioridad |
 |---|---|---|
 | W1 | Cargar un **gasto** por mensaje, audio o foto (factura, remito, ticket, comprobante). La IA detecta monto, moneda, grupo › categoría, **lugar** y fecha | Must |
-| W1b | **Conversión a US$**: si el gasto es en pesos, se convierte solo al **dólar blue del día** (fuente online), sin preguntar. Si es en euros u otra moneda, se usa una cotización online; si no hay fuente, el bot pregunta el tipo de cambio | Must |
+| W1b | **Conversión a US$**: si el gasto es en pesos, se convierte solo al **dólar blue del día** (**promedio entre compra y venta**, de Rava, DólarHoy u otra fuente), sin preguntar. Si es en euros u otra moneda, se usa una cotización online; si no hay fuente, el bot pregunta el tipo de cambio | Must |
 | W2 | **Ante la duda, preguntar**: si no sabe el lugar, la categoría o los caballos, pregunta (ej. "¿Son para acá o para la temporada de Inglaterra?"). Nunca adivina. **Nunca** pregunta el tipo de cambio de los pesos | Must |
 | W3 | Entender la jerga y los montos ("180 lucas", "40 mil", "un millón doscientos") y las monedas (dólares, pesos, euros, libras) | Must |
 | W4 | Confirmar cada carga y permitir corregir respondiendo | Must |
@@ -62,7 +65,8 @@ Barra inferior con cinco pestañas: **Inicio · Caballos · Caballeriza · Gasto
 | W13 | **Cierre del día** a las 20:00: vareos, herrajes, gastos, stock, lo que viene mañana | Could |
 | W14 | Si un gasto lo pagó el piloto, preguntar "¿Lo pagaste vos o queda a pagar?" | Should |
 | W15 | **Bot en el grupo de WhatsApp** de la organización (manager, polista, vete, herrero, petiseros): lo que se manda sobre caballos y caballeriza entra a la app | Must |
-| W16 | **Chat privado** con el bot para gastos, ingresos y consultas de plata (lo que no tienen que ver el vete ni los petiseros) | Must |
+| W16 | **Chat privado** con el bot para gastos, ingresos y consultas de plata (lo que no tienen que ver el vete ni los petiseros). Si se habla de plata en el grupo, **se registra igual** | Must |
+| W18 | **Miembros de solo WhatsApp**: cualquier persona de la organización registrada (ej. Sofía, petiseros) puede cargar por el bot; en la app figura "lo cargó X" | Must |
 | W17 | **Proveedores con varios clientes** (vete, herrero): en el grupo de cada cliente se asigna solo; por privado, el bot pregunta para qué cliente es | Must |
 
 ### App mobile (PWA)
@@ -95,7 +99,7 @@ Barra inferior con cinco pestañas: **Inicio · Caballos · Caballeriza · Gasto
 
 - **Mobile-first**: pensado para ~390 px de ancho. Nunca pensado para desktop.
 - **Velocidad**: confirmación por WhatsApp en menos de 10 s.
-- **Privacidad**: los montos son sensibles. Solo los ven el polista y el manager; en el grupo de WhatsApp no se muestran montos.
+- **Privacidad**: los montos son sensibles. En la app solo los ven el polista y el manager. Lo que se registra desde el grupo lo ven, en el chat, los que están en el grupo.
 - **Trazabilidad**: cada registro guarda el mensaje original (texto, audio con transcripción, foto) y quién lo cargó.
 - **Funciona desde el exterior** (Inglaterra, España, EE.UU.) y acepta cualquier moneda (se muestra en US$).
 

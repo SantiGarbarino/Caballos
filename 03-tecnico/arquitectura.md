@@ -36,8 +36,8 @@
 ```
 
 ## Componentes
-1. **Ingesta**: si viene de un **grupo**, la cuenta sale del grupo; si es **privado**, de la persona (piloto, petiseros y puestero tienen una sola cuenta; un proveedor con varios clientes recibe la pregunta "¿para qué cliente es?"). Guarda el mensaje original.
-1b. **Cotizaciones**: consulta el dólar blue del día (y euro) y guarda valor, fecha y fuente. Si no hay cotización para la moneda, se repregunta al usuario.
+1. **Ingesta**: si viene de un **grupo**, la cuenta sale del grupo; si es **privado**, de la persona (piloto, petiseros, puestero y demás miembros de solo WhatsApp tienen una sola cuenta; un proveedor con varios clientes recibe la pregunta "¿para qué cliente es?"). Guarda el mensaje original.
+1b. **Cotizaciones**: consulta el dólar blue del día en cualquier sitio que lo publique (Rava Bursátil, DólarHoy u otro), usa el **promedio entre compra y venta** (y euro) y guarda compra, venta, promedio, fecha y fuente. Si no hay cotización para la moneda, se repregunta al usuario.
 2. **Router de intención** y **extractor** con schema estricto.
 3. **Repregunta** cuando falta el lugar, la categoría o los caballos ("ante la duda, pregunta").
 4. **Confirmador**: respuesta corta y correcciones sobre lo último.
@@ -61,4 +61,4 @@
 - Si se confirma: el bot no podría entrar a los grupos que ya existen y los grupos grandes no entran. Evaluar alternativas (grupo nuevo creado por el bot con los clave, o carga por privado).
 
 ## Seguridad y privacidad
-- Datos financieros sensibles. Solo polista y manager entran a la app; en los grupos no se muestran montos [HIPÓTESIS]; patrón, contador y equipo no tienen acceso. Cifrado en reposo.
+- Datos financieros sensibles. Solo polista y manager entran a la app; lo que se habla de plata en el grupo se registra igual; patrón, contador y miembros de solo WhatsApp no entran a la app. Cifrado en reposo.

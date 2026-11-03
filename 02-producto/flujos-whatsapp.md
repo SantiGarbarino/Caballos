@@ -6,12 +6,13 @@
 
 | Canal | Quiénes | Qué se manda | Qué responde el bot |
 |---|---|---|---|
-| **Grupo de WhatsApp de la organización** | Manager, polista, veterinario, herrero, algún petisero o el piloto (+ el bot) | Novedades de caballos, vareos, herrajes, visitas, stock, el día a día de la caballeriza | Confirmaciones cortas, **sin montos** [HIPÓTESIS] |
+| **Grupo de WhatsApp de la organización** | Manager, polista, veterinario, herrero, algún petisero o el piloto (+ el bot) | Novedades de caballos, vareos, herrajes, visitas, stock, el día a día de la caballeriza. **También precios o gastos** si se hablan ahí | Confirmaciones cortas; lo que se habla de plata en el grupo **se registra igual** |
 | **Chat privado polista ↔ bot** y **manager ↔ bot** | Polista, manager | Gastos, ingresos, acuerdos, consultas de plata, recordatorios personales | Todo, con montos |
+| **Chat privado miembro ↔ bot** | Otros de la organización (ej. Sofía, hermana del polista) | Gastos que paga o le pasan | Confirmación con monto; figura "lo cargó Sofía" |
 | **Chat privado piloto ↔ bot** | Piloto | Tareas del día, avisos, "Listo, hecho" | Tareas y avisos (sin plata) |
 | **Chat privado proveedor ↔ bot** | Veterinario, herrero (trabajan para varios polistas) | Novedades o visitas | **Pregunta para cuál cliente es**: «¿Esto es para la organización de Tomás o la de Juan?» |
 
-- Piloto, petiseros y puestero trabajan para **una sola** organización: el bot sabe de quién son.
+- Piloto, petiseros, puestero y los demás miembros de solo WhatsApp (ej. Sofía) son de **una sola** organización: el bot sabe de quién son. Lo que cargan figura en la app con su nombre, aunque ellos no entren.
 - Un vete o herrero que trabaja para varios polistas carga en el **grupo de cada cliente**; el grupo ya define la organización.
 - **Riesgo técnico:** la API de grupos de Meta tendría un límite de 8 participantes y no permitiría sumar al bot a grupos existentes (a verificar; ver [preguntas abiertas](../00-vision/preguntas-abiertas.md)).
 
@@ -21,7 +22,7 @@
 2. **Confirmar corto y con el dato clave.** "Listo Ramón, 4 vareos cargados."
 3. **Decir qué se generó** ("Guardada en la ficha de Rockstar", "Se lo agrego a las tareas de Pedro").
 4. **Montos como los dice el polo**: "180 lucas" → $ 180.000; "40 mil" → 40.000 en la moneda del acuerdo; "un millón doscientos" → $ 1.200.000.
-4b. **Pesos → dólares sin preguntar**: el bot convierte al dólar blue del día y lo dice en la confirmación («$ 180.000 → US$ 116, blue de hoy $ 1.550»). **Nunca** le pide al polista el tipo de cambio de los pesos. Para euros sin cotización disponible, sí pregunta.
+4b. **Pesos → dólares sin preguntar**: el bot convierte al dólar blue del día (promedio compra/venta) y lo dice en la confirmación («$ 180.000 → US$ 116, blue de hoy $ 1.550»). **Nunca** le pide al polista el tipo de cambio de los pesos. Para euros sin cotización disponible, sí pregunta.
 5. **Tono**: rioplatense, breve, sin emojis de más (el mockup no usa emojis).
 6. **Mensajes salientes** (fuera de la ventana de 24 h) necesitan **plantillas aprobadas por Meta** y se pagan por mensaje: tareas del piloto a las 7:00, pagos fijos, recordatorios, avisos al piloto, cierre del día a las 20:00. Ver [arquitectura](../03-tecnico/arquitectura.md).
 7. Cada chat de la demo cierra con **qué se ve en la app** (efecto), y algunos tienen botón "Ver en Ingresos" o "Ver este gasto en la app".
@@ -203,6 +204,6 @@ PROGRAMON     17:31  Anotado en la ficha de Patria (organización de Tomás): al
 - Comprobante ilegible → pedir el monto.
 - Mismo comprobante dos veces → avisar duplicado.
 - Correcciones ("no, eran dólares", "borrá el último", "eso era para el campo").
-- Gasto o monto mandado **en el grupo** (lo ven el vete y los petiseros) → definir: registrarlo sin repetir el monto o pedir que lo manden por privado [HIPÓTESIS].
+- Gasto o precio mandado **en el grupo** → se registra igual (la plata va en general por privado, pero no es obligatorio).
 - Consulta de plata en el grupo → no se responde ahí; se contesta por privado [HIPÓTESIS].
 - Persona del equipo que deja de reportar (ej. Don Aníbal, 2 días sin mensajes) → destacarlo en la app.
