@@ -2,15 +2,15 @@
 
 > Refleja el mockup (en construcción). Las novedades, los pendientes y la actividad se cargan sobre todo por WhatsApp, en el **grupo de la organización** (manager, polista, piloto, petiseros, vete, herrero).
 
-## Datos del caballo desde Cría Polo (integración a explorar)
+## Datos del caballo desde la app Polo Argentino (integración a explorar)
 
-**Cría Polo** es una aplicación que tiene la información de los caballos de polo registrados, en Argentina y en el exterior: nombre, sangre, padre, madre y hasta los partidos que jugó.
+**La app Polo Argentino** (de terceros, no es nuestro producto) tiene la información de los caballos de polo registrados, en Argentina y en el exterior: nombre, sangre, padre, madre y hasta los partidos que jugó.
 
-Idea (Santi, 2026-11-03): **no hacer que cada polista cargue sus caballos**. Integrarnos con Cría Polo, mostrarle un **catálogo** y que el polista (o el manager) **elija cuáles son suyos**. Nosotros sumamos lo operativo: estado, lugar, novedades, pendientes, actividad, salud y gastos.
+Idea (Santi, 2026-11-03): **no hacer que cada polista cargue sus caballos**. Integrarnos con la app Polo Argentino, mostrarle un **catálogo** y que el polista (o el manager) **elija cuáles son suyos**. Nosotros sumamos lo operativo: estado, lugar, novedades, pendientes, actividad, salud y gastos.
 
-- Lo que viene de Cría Polo: nombre, sexo, edad, pelaje, sangre (padre, madre), criador, partidos jugados **[a confirmar qué campos expone]**.
+- Lo que viene de la app Polo Argentino: nombre, sexo, edad, pelaje, sangre (padre, madre), criador, partidos jugados **[a confirmar qué campos expone]**.
 - Lo que es nuestro: estado, ubicación, novedades, pendientes, actividad, salud, gastos.
-- Caballos que no estén en Cría Polo (ej. caballos en doma sin registrar): alta por WhatsApp como hoy.
+- Caballos que no estén en la app Polo Argentino (ej. caballos en doma sin registrar): alta por WhatsApp como hoy.
 - **Pendiente:** confirmar nombre exacto y dueño de la app, si tiene API o acuerdo de datos, y condiciones de uso (ver [preguntas abiertas](../00-vision/preguntas-abiertas.md)). Alternativa: registro de la AACCP.
 
 ## Lista
@@ -31,8 +31,8 @@ Idea (Santi, 2026-11-03): **no hacer que cada polista cargue sus caballos**. Int
 
 ## Agregar caballo (hoja)
 
-- **Objetivo: elegirlo del catálogo de Cría Polo** (buscar por nombre, ver sangre y foto, "Es mío"). Todavía no está en el mockup.
-- **Si no está en Cría Polo, mandalo por WhatsApp.** "Un audio o un mensaje con nombre, sexo, edad y pelaje alcanza. Si mandás foto de los papeles, sacamos el microchip de ahí." Ejemplo: «Nuevo caballo: Fortuna, yegua, 6 años, zaina. Llega el sábado a Pilar.» → **Ver ejemplo en WhatsApp**.
+- **Objetivo: elegirlo del catálogo de la app Polo Argentino** (buscar por nombre, ver sangre y foto, "Es mío"). Todavía no está en el mockup.
+- **Si no está en la app Polo Argentino, mandalo por WhatsApp.** "Un audio o un mensaje con nombre, sexo, edad y pelaje alcanza. Si mandás foto de los papeles, sacamos el microchip de ahí." Ejemplo: «Nuevo caballo: Fortuna, yegua, 6 años, zaina. Llega el sábado a Pilar.» → **Ver ejemplo en WhatsApp**.
 - **O cargalo acá**: Nombre, Sexo, Edad, Pelaje → Guardar caballo.
 - Si es una compra, el monto queda en Gastos › Compra de caballos (aparte de los gastos del mes).
 

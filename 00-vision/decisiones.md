@@ -16,7 +16,7 @@ Formato: fecha · decisión · contexto y porqué · quién. Las más nuevas arr
 
 ### Datos de los caballos: en el mockup, sin nombrar la fuente
 - La ficha muestra **toda la información del caballo** (padre, madre, criador, nacimiento, registro, microchip, marca, partidos jugados) en una pestaña **Datos**.
-- Cómo se carga se define después: integración con la app de los caballos de polo registrados (según Santi se llama **«Polo Argentino»** en el App Store, no "Cría Polo") o carga manual por WhatsApp o web. En el mockup **no se nombra** ninguna app.
+- Cómo se carga se define después: integración con la app de los caballos de polo registrados **«Polo Argentino»**: una app **de terceros** que ya existe en el App Store con la info de los caballos registrados (no confundir con "Cría Polo", nombre que se usó antes por error, ni con nuestro producto, que todavía no tiene nombre) o carga manual por WhatsApp o web. En el mockup **no se nombra** ninguna app.
 - Esa información sola no le agrega valor al polista ni al veterinario (ya la ven en esa app); el valor es tenerla junto con lo operativo.
 - **Quién:** Santi.
 
@@ -94,8 +94,8 @@ Formato: fecha · decisión · contexto y porqué · quién. Las más nuevas arr
 - «Mañana haceme acordar tal cosa» → al día siguiente el bot se lo recuerda. Vale para el polista y el manager.
 - **Quién:** Santi.
 
-### Datos de los caballos desde Cría Polo (integración a explorar)
-- Cría Polo tiene la información de los caballos de polo registrados (nombre, sangre, padre, madre, partidos jugados), en Argentina y afuera.
+### Datos de los caballos desde la app Polo Argentino (integración a explorar)
+- La app Polo Argentino tiene la información de los caballos de polo registrados (nombre, sangre, padre, madre, partidos jugados), en Argentina y afuera.
 - Idea: integrarla para que el polista **elija sus caballos de un catálogo** en vez de cargarlos uno por uno. Ver [Caballos](../02-producto/modulo-caballos.md) y [preguntas abiertas](preguntas-abiertas.md).
 - **Quién:** Santi.
 

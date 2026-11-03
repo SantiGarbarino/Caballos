@@ -22,7 +22,7 @@ Mockup navegable para celular, armado por Santi con Claude entre el 22 y el 27/1
 - [ ] «Quién ve tu cuenta»: polista + manager en la app; la persona que lleva las cuentas, piloto, petiseros, puestero y proveedores como "cargan por WhatsApp"; sacar a Estudio Ruiz.
 - [ ] Mostrar al **manager** como usuario (ej. gastos y novedades cargados por el manager).
 - [ ] Chats: grupo de la organización vs. privado; vete con varios clientes; recordatorio personal; gasto en pesos convertido.
-- [ ] Agregar caballo desde el catálogo de Cría Polo.
+- [ ] Agregar caballo desde el catálogo de la app Polo Argentino.
 - [ ] Nombre provisorio (PROGRAMON).
 
 ## Forma de trabajo

@@ -1,6 +1,6 @@
 # Modelo de datos (v0.3)
 
-> Derivado del mockup. v0.3 (2026-11-03): monto en US$ con conversión guardada, usuarios polista + manager, grupos de WhatsApp, proveedores con varios clientes, recordatorios personales y caballos desde Cría Polo. Nombres orientativos para Mauro.
+> Derivado del mockup. v0.3 (2026-11-03): monto en US$ con conversión guardada, usuarios polista + manager, grupos de WhatsApp, proveedores con varios clientes, recordatorios personales y caballos desde la app Polo Argentino. Nombres orientativos para Mauro.
 
 ```
 Cuenta (organización del polista)
@@ -10,7 +10,7 @@ Cuenta (organización del polista)
  ├──<>── Proveedor (vete, herrero) ── teléfono · puede estar en varias cuentas
  ├──< Lugar (caballeriza, campo, exterior, temporada)
  │      └──< Insumo (stock, envase) ──< Consumo (por caballo por día)
- ├──< Caballo (ref. Cría Polo opcional) ──< Evento (vareo, herraje, vete, práctica, partido, novedad, traslado)
+ ├──< Caballo (ref. app Polo Argentino, opcional) ──< Evento (vareo, herraje, vete, práctica, partido, novedad, traslado)
  │      └──< Recordatorio
  ├──< Visita (herrero, veterinaria, proveedor) >── Caballo(s)
  ├──< Gasto ── Lugar ── Comprobante ── MensajeOrigen

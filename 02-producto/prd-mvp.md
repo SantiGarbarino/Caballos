@@ -1,6 +1,6 @@
 # PRD — PROGRAMON
 
-**Estado:** v0.3 · 2026-11-03 (sesión 3: monedas, manager, grupos, Cría Polo, recordatorios) · Basado en el mockup final de las sesiones 22–27/10/2026 ([mockup](mockups/README.md)). La verdad de producto es el mockup y lo que dice este documento. Lo previo de la v0.1 que lo contradecía se reemplazó.
+**Estado:** v0.3 · 2026-11-03 (sesión 3: monedas, manager, grupos, integración con la app Polo Argentino, recordatorios) · Basado en el mockup final de las sesiones 22–27/10/2026 ([mockup](mockups/README.md)). La verdad de producto es el mockup y lo que dice este documento. Lo previo de la v0.1 que lo contradecía se reemplazó.
 
 ## Objetivo
 
@@ -76,7 +76,7 @@ Barra inferior con cinco pestañas: **Inicio · Caballos · Caballeriza · Gasto
 | A1 | **Inicio**: saludo, Gastado en el período y Por cobrar (en US$), "Necesita tu atención", Gastos, "Lo que viene", "Pagos que vienen" | Must |
 | A2 | **Gastos**: período (mes, 30 días, temporadas, año, fechas), lugar, total en US$, "En qué se fue" (grupo › categoría › ítems por día), detalle con comprobante (foto, o si no hay, el audio o mensaje original) y, si se convirtió, el detalle de la conversión en letra chica; pagos fijos, exportar | Must |
 | A3 | **Ingresos**: Por cobrar (acuerdos y ventas con pagos parciales y reintegros) y Por temporada (ingresos − gastos en US$) | Must |
-| A4 | **Caballos**: lista con estado y filtros, búsqueda, ficha con novedad, pendientes, Actividad y Salud; agregar caballo **eligiéndolo del catálogo de Cría Polo** (sangre, padre, madre, partidos) | Must (Cría Polo: sujeto a la integración) |
+| A4 | **Caballos**: lista con estado y filtros, búsqueda, ficha con novedad, pendientes, Actividad y Salud; agregar caballo **eligiéndolo del catálogo de la app Polo Argentino** (sangre, padre, madre, partidos) | Must (la app Polo Argentino: sujeto a la integración) |
 | A5 | **Caballeriza**: stock por sede con días que alcanza, consumo configurable, equipo con sus mensajes | Should |
 | A6 | **Quién ve tu cuenta**: polista y manager (mismo acceso) y nota de privacidad | Must |
 | A7 | Cada total es la suma de los ítems visibles (una sola fuente de verdad) | Must |

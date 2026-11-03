@@ -1,7 +1,10 @@
 # Changelog del brain
 
+## 2026-11-03 (sesión 7) · Aclaración: app Polo Argentino
+- «Polo Argentino» es una **app de terceros** que ya existe (App Store) con la info de los caballos registrados; es la posible integración. **No es el nombre de nuestro producto**, que sigue sin definirse. Se reemplazó "Cría Polo" por "app Polo Argentino" en toda la KB y se sumó al glosario.
+
 ## 2026-11-03 (sesión 6) · Ajustes del mockup para la V1
-- Borrador v9 con los 32 cambios aprobados (ver `02-producto/historial-iteraciones.md`, vuelta 10). Decisiones nuevas: acuerdos en € a US$, pestaña Datos sin nombrar la fuente («Polo Argentino» como posible integración), Equipo como pantalla propia desde Inicio, grupo de 7 + bot.
+- Borrador v9 con los 32 cambios aprobados (ver `02-producto/historial-iteraciones.md`, vuelta 10). Decisiones nuevas: acuerdos en € a US$, pestaña Datos sin nombrar la fuente («Polo Argentino», app de terceros, como posible integración), Equipo como pantalla propia desde Inicio, grupo de 7 + bot.
 
 ## 2026-11-03 (sesión 5) · Sin usuarios personalizados
 - Se sacan los ejemplos con nombre (ej. "Sofía, hermana de Tomás") de las definiciones de usuarios: se habla de **roles**. Los nombres quedan solo en los datos ficticios del mockup. Nueva regla 14 en `CLAUDE.md`.
@@ -19,10 +22,10 @@
 - **WhatsApp**: bot en el **grupo de la organización** + **chat privado** para la plata; piloto y petiseros de una sola organización; vete y herrero con varios clientes (por privado, el bot pregunta el cliente).
 - **Comprobante**: si no hay foto, se ve el audio o el mensaje original.
 - **Recordatorios personales** («mañana haceme acordar»).
-- **Cría Polo**: integración para elegir los caballos de un catálogo.
+- **App Polo Argentino** (de terceros): integración para elegir los caballos de un catálogo.
 - **UI sin tablas**: módulos con tableros.
 - Tomás y su organización son ficticios (ejemplo del mockup). Se saca Pensai.
-- Nuevos riesgos y preguntas: límites de la Groups API de Meta (8 participantes, a verificar), datos y API de Cría Polo, fuente y criterio de cotización.
+- Nuevos riesgos y preguntas: límites de la Groups API de Meta (8 participantes, a verificar), datos y API de la app Polo Argentino, fuente y criterio de cotización.
 
 ## 2026-11-03 (sesión 2) · Todo lo charlado en las sesiones de producto 22–27/10
 - **La verdad pasa a ser lo definido en las sesiones** (pedido de Santi). Se reescribieron los docs que lo contradecían.

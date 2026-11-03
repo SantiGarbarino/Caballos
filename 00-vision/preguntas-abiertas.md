@@ -24,11 +24,11 @@ Lo que todavía no sabemos o no decidimos. Cuando se resuelve, pasa a [decisione
 - [ ] ¿Haras/cría como segundo vertical o en paralelo? Salir de las 3–5 entrevistas a haras.
 
 ## Producto
-- [ ] **App de caballos registrados** (Santi: en el App Store figura como **«Polo Argentino»**, no "Cría Polo"): confirmar quién es el dueño, si tiene API o acuerdo de datos, qué campos trae (sangre, padre, madre, partidos jugados) y si se puede actualizar. Alternativa o complemento: registro genealógico de la AACCP. En una búsqueda web (2026-11-03) no apareció una app con ese nombre exacto; sí catálogos de cría (La Dolfina Cría, Cría Emezeta) y una app "Criadores de Polo".
+- [ ] **App de caballos registrados** **«Polo Argentino»** (app **de terceros** del App Store con la info de los caballos registrados; no es nuestro producto, que todavía no tiene nombre): confirmar quién es el dueño, si tiene API o acuerdo de datos, qué campos trae (sangre, padre, madre, partidos jugados) y si se puede actualizar. Alternativa o complemento: registro genealógico de la AACCP. En una búsqueda web (2026-11-03) no apareció una app con ese nombre exacto; sí catálogos de cría (La Dolfina Cría, Cría Emezeta) y una app "Criadores de Polo".
 - [ ] **Conversión de monedas**: ¿Qué cotización si el gasto es de una fecha pasada ("el viernes pagué…"): la de ese día? ¿Se puede corregir la cotización a mano?
 - [ ] ¿Qué miembros "solo WhatsApp" pueden cargar **gastos e ingresos** (ej. un familiar que ayuda con gastos) y cuáles solo novedades de caballos y caballeriza (ej. petiseros)? ¿Lo configura el polista o el manager desde la app?
 - [ ] ¿El bot responde **consultas de plata** en el grupo? Propuesta [HIPÓTESIS]: nunca; las consultas de plata solo por privado al polista o al manager.
-- [ ] **Onboarding** (postergado por decisión). Idea discutida: primera carga por WhatsApp (caballos desde Cría Polo, equipo, pagos fijos y acuerdos) más una revisión web; *white-glove* para los primeros clientes.
+- [ ] **Onboarding** (postergado por decisión). Idea discutida: primera carga por WhatsApp (caballos desde la app Polo Argentino, equipo, pagos fijos y acuerdos) más una revisión web; *white-glove* para los primeros clientes.
 - [ ] **Ficha digital oficial del caballo** (libreta sanitaria digital, pasaporte equino, microchip) y camino a "aplicación autorizada" de SENASA. Ver [regulación](../01-mercado/regulacion-senasa.md).
 - [ ] ¿Costo por caballo? Se sacó la pestaña Costos del mockup por ruido. ¿Vuelve en algún formato o se descarta?
 - [ ] ¿Prorrateo de gastos entre caballos (ej. herraje de 4 caballos)?

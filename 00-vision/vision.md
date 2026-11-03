@@ -82,7 +82,7 @@ que vencen, recordatorios, cierre del día (20:00)
 
 ## Visión a largo plazo
 
-1. **Polo profesional**: gastos, cobros, caballos (con datos de Cría Polo), caballeriza (lo que muestra el mockup).
+1. **Polo profesional**: gastos, cobros, caballos (con datos de la app Polo Argentino), caballeriza (lo que muestra el mockup).
 2. **Ficha digital del caballo** con documentación sanitaria (libreta sanitaria digital, pasaporte equino, microchip). Eventualmente **habilitación de SENASA** como "aplicación autorizada".
 3. **Haras y cría**, después **carrera, criollos y salto**.
 4. **La capa de datos del ecosistema**: veterinarios, herreros, transportistas, forrajerías, compraventa y exportación de caballos.

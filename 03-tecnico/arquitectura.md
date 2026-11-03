@@ -32,7 +32,7 @@
           ▼
  PWA mobile (polista y manager): Inicio · Caballos · Caballeriza · Gastos · Ingresos
  (login por link de un solo uso)          ▲
-                                          └── Cría Polo (catálogo de caballos, a integrar)
+                                          └── App Polo Argentino, de terceros (catálogo de caballos, a integrar)
 ```
 
 ## Componentes
@@ -44,7 +44,7 @@
 5. **Consultas** en lenguaje natural sobre los mismos datos de la app.
 6. **Programador de salientes**: recordatorios personales («mañana haceme acordar…»), tareas del piloto (7:00), pagos fijos (el día del vencimiento; si responde "mañana", reintenta al día siguiente a las 9), recordatorios, avisos al piloto, cierre del día (20:00), aviso si una persona deja de reportar.
 7. **PWA** de lectura y carga para polista y manager (mismo acceso). Sin tablas: módulos con tableros.
-7b. **Integración Cría Polo**: catálogo para elegir los caballos propios (a confirmar API/acuerdo).
+7b. **Integración con la app Polo Argentino**: catálogo para elegir los caballos propios (a confirmar API/acuerdo).
 8. **Export** a Excel/PDF con fotos y envío al mail del contador.
 
 ## WhatsApp saliente: restricciones y costo

@@ -108,7 +108,7 @@ No es una vuelta del mockup, pero cambia cosas que el mockup muestra:
 - **Patrón**: no existe para la plataforma.
 - **WhatsApp**: bot en el grupo de la organización + chat privado para la plata; vete/herrero con varios clientes.
 - **Recordatorios personales** («mañana haceme acordar»).
-- **Caballos** desde Cría Polo (catálogo).
+- **Caballos** desde la app Polo Argentino (catálogo).
 - **Sin tablas**: módulos con tableros.
 - Nombre provisorio; producto nuevo, no Queiros.
 

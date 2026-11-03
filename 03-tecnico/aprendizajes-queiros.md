@@ -27,7 +27,7 @@
 2. **Conversión a US$**: cotización del dólar blue del día (promedio compra/venta, de Rava, DólarHoy u otra), euros, y guardar original + cotización.
 3. **Bot en grupos de WhatsApp** + chats privados, y ruteo de proveedores con varios clientes (verificar límites de la Groups API de Meta).
 4. **Programador de salientes**: recordatorios personales, tareas del piloto (7:00), pagos fijos, avisos, cierre del día (20:00).
-5. **Integración con Cría Polo** (catálogo de caballos).
+5. **Integración con la app Polo Argentino** (catálogo de caballos).
 6. Estado del caballo y eventos por caballo.
 7. Cobertura de stock: consumo por caballo × caballos ÷ envase → días.
 8. Ingresos: acuerdos, pagos parciales, reintegros y resultado por temporada.

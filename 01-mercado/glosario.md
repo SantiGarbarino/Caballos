@@ -38,6 +38,7 @@
 | **Pelaje** | Color del caballo (zaino, alazán, tordillo, moro, overo, colorado, picazo, bayo…) |
 | **Marca** | Marca a fuego del propietario/haras |
 | **Polo Argentino** | Raza; registro en AACCP (Asociación Argentina de Criadores de Caballos de Polo) |
+| **App Polo Argentino** | App **de terceros** (App Store) con la información de los caballos de polo registrados. Posible integración para traer los datos de los caballos. **No es nuestro producto**, que todavía no tiene nombre |
 | **ET / clonación / ICSI** | Técnicas reproductivas (transferencia embrionaria, clonación, inyección intracitoplasmática); ~90% de los nacimientos de polo actuales |
 | **Donante / receptora** | Yegua que aporta el embrión / yegua que lo gesta (transferencia embrionaria) |
 | **Servicio** | Monta o inseminación de un padrillo |

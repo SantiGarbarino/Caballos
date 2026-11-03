@@ -14,7 +14,7 @@
 6. **Costo de WhatsApp saliente.** Los avisos fuera de la ventana de 24 h necesitan plantillas aprobadas por Meta y se pagan por mensaje. Tareas del piloto, pagos fijos, recordatorios y cierre del día son todos salientes. Ver [arquitectura](../03-tecnico/arquitectura.md).
 7. **Grupos de WhatsApp.** La carga por grupo es central, pero la API oficial de grupos de Meta tendría límites fuertes (8 participantes, sin sumar al bot a grupos existentes). A verificar. Ver [arquitectura](../03-tecnico/arquitectura.md).
 8. **Todo se construye de cero.** Es un producto nuevo: solo traemos el know-how. Ver la estimación en [plan de ejecución](../04-plan/plan-ejecucion.md).
-9. **Dependencia de Cría Polo.** Si la integración no es posible (sin API o sin acuerdo), el alta de caballos vuelve a ser manual.
+9. **Dependencia de la app Polo Argentino.** Si la integración no es posible (sin API o sin acuerdo), el alta de caballos vuelve a ser manual.
 
 ## 2. La oportunidad
 

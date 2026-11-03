@@ -69,5 +69,5 @@
 9. *Cuando llega fin de mes, quiero que los pagos fijos se carguen solos con un «sí».*
 10. *Cuando el contador me pide los gastos, quiero mandárselos con las fotos en un toque.*
 11. *Cuando algo no me lo quiero olvidar, quiero decirle al bot «mañana haceme acordar» y que me lo recuerde.*
-12. *Cuando sumo un caballo, quiero elegirlo de Cría Polo y no cargar su sangre a mano.*
+12. *Cuando sumo un caballo, quiero elegirlo de la app Polo Argentino y no cargar su sangre a mano.*
 13. *(Manager) Cuando pasa algo en la caballeriza o hablo con el vete, quiero mandarlo al grupo y que quede registrado.*

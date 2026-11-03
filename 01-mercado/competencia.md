@@ -37,7 +37,7 @@
 
 | Nombre | Qué hace | Relación |
 |---|---|---|
-| **Cría Polo** | Información de los caballos de polo registrados (sangre, padre, madre, partidos jugados), Argentina y exterior | Integrar como catálogo para el alta de caballos. Confirmar nombre exacto, dueño y API |
+| **Polo Argentino** (app de terceros) | Información de los caballos de polo registrados (sangre, padre, madre, partidos jugados), Argentina y exterior | Integrar como catálogo para el alta de caballos. Confirmar nombre exacto, dueño y API |
 
 ### Referentes de la mecánica (otro vertical)
 
@@ -49,7 +49,7 @@
 
 1. **Se carga por WhatsApp** (audio, foto, mensaje), en el grupo de la organización o por privado: polista, manager, piloto, petiseros, puestero, vete y herrero.
 2. **Finanzas del polista profesional**: gastos por destino, todo en dólares (conversión automática), acuerdos con patrones, pagos parciales, reintegros, ventas de caballos y resultado por temporada.
-3. **Caballos y caballeriza en el mismo lugar**: estado, novedades, pendientes, stock y equipo; datos de los caballos desde Cría Polo (a integrar).
+3. **Caballos y caballeriza en el mismo lugar**: estado, novedades, pendientes, stock y equipo; datos de los caballos desde la app Polo Argentino (a integrar).
 4. **En español rioplatense y con la jerga del polo**, funcionando también desde el exterior.
 5. **Posible ángulo SENASA** (libreta sanitaria digital y pasaporte equino).
 

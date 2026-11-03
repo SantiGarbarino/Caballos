@@ -13,7 +13,7 @@
 | H7 | La IA entiende ≥ 90% de los mensajes reales y pregunta bien cuando duda | Set de evaluación con mensajes del concierge | ≥ 90% de campos correctos |
 | H8 | La privacidad no frena la carga (plata informal) | Entrevistas + concierge | Nadie abandona por miedo a registrar |
 | H9 | La organización ya tiene un grupo de WhatsApp con manager, vete, herrero y petiseros, y aceptaría sumar al bot | Entrevistas: preguntar cómo es el grupo y cuántos son | ≥ 70% tiene un grupo así |
-| H10 | Usan Cría Polo y les sirve elegir sus caballos de ahí | Entrevistas | Mayoría la usa o la conoce |
+| H10 | Usan la app Polo Argentino y les sirve elegir sus caballos de ahí | Entrevistas | Mayoría la usa o la conoce |
 | H11 | Quieren ver todo en dólares (no por moneda) | Entrevistas + concierge | Nadie pide ver los pesos aparte |
 
 > **Cuidado con la validación familiar:** el cuñado (polista) es el primer contacto, pero sus respuestas no cuentan para los criterios de éxito.
@@ -43,7 +43,7 @@
 10. ¿Cómo llevás el registro de los caballos (herraje, vacunas, lesiones, quién está dónde)?
 10b. ¿Cómo te reportan el piloto, los petiseros y el puestero? ¿Tenés un grupo de WhatsApp con ellos, el vete y el herrero? ¿Cuántos son? ¿Qué se pierde?
 10e. ¿Tenés manager? ¿Qué hace y qué registra?
-10f. ¿Usás Cría Polo? ¿Para qué?
+10f. ¿Usás la app Polo Argentino? ¿Para qué?
 10c. ¿Te pasó quedarte sin avena, fardos o viruta? ¿Quién avisa?
 10d. Cuando estás afuera (Inglaterra, España, EE.UU.), ¿cómo seguís lo que pasa acá?
 
