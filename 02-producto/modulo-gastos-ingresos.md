@@ -12,7 +12,7 @@
 2. **Todo en dólares** (decisión del 2026-11-03, reemplaza "monedas separadas"). La gran mayoría de los gastos del polista son en US$. Los gastos en **pesos** se convierten **solos al dólar blue del día** en que llegan; los de **euros** con una cotización online o, si no hay fuente, el bot pregunta. Ver [Conversión](#conversión-a-dólares). **No hay "+X% vs mes anterior"**.
 3. **La moneda no depende del lugar.** Un gasto del campo se puede pagar en dólares estando en Sotogrande, y la nafta en Pilar en pesos.
 4. **Se clasifica por destino (lugar)**, no por dónde estaba el polista cuando pagó. US$ 2.000 para el campo pagados en Sotogrande → **Campo**.
-5. **Ante la duda, el bot pregunta** el lugar, la categoría o los caballos. Nunca adivina.
+5. **Ante la duda, el bot pregunta** la categoría o los caballos. Nunca adivina. **El lugar no se pregunta** (2026-11-04): sale del mensaje, de los caballos nombrados, del calendario (si carga un owner) o del lugar fijo de quien carga; si no, el gasto es **General** y un owner lo puede asociar a una temporada desde la app.
 6. Cada gasto muestra **de dónde salió** y **quién lo cargó**. Si hay comprobante real (foto de factura, remito o ticket), se ve la foto. **Si no hay, se ve el audio (con transcripción) o el mensaje de texto** que generó el registro.
 7. **Sin tablas**: tarjetas, listas y tableros, como el mockup.
 
@@ -23,7 +23,7 @@
 | Dimensión | Valores |
 |---|---|
 | **Grupo › categoría** | Ver taxonomía |
-| **Lugar (destino)** | Caballeriza Pilar · Campo, Cnel. Suárez · Windsor, Inglaterra · Sotogrande, España |
+| **Lugar (destino)** | Caballeriza Pilar · Campo, Cnel. Suárez · Windsor, Inglaterra · Sotogrande, España · **General** (sin lugar ni temporada) |
 | **Monto en US$** | Lo que se muestra y se suma |
 | **Monto y moneda originales** | $ · € · £ · US$ (se guardan siempre) |
 | **Cotización** | Si se convirtió: valor, fecha y fuente (ej. dólar blue del 22/10, $ 1.550) |
@@ -180,6 +180,8 @@ Se puede cargar por WhatsApp ("Me pagó 40 mil Halvorsen", "Cerré con Whitmore 
 - **Venta de caballo**: Caballo, Comprador, Dónde y cuándo, Precio + moneda → Guardar. Atajo: «Vendí a Halcona a Halvorsen, 85 mil dólares.»
 
 ### Por temporada (resultado)
+
+> **Actualizado el 2026-11-04:** resultado = ingresos de la temporada (**acordados y ya cobrados**) − gastos de sus lugares en sus fechas − gastos asociados a mano a esa temporada. **Las ventas y compras de caballos van aparte.** Los reintegros se anotan como se dicen, a la cotización de su día. La tabla de abajo es la del mockup (con la venta adentro); los números correctos con las reglas nuevas están en el [dataset de referencia](dominio/anexo-c-dataset.md), sección 7.
 
 "Lo que arreglaste con patrones y ventas (más los gastos que te reintegran), contra lo que gastaste en ese lugar y esas fechas. Todo en US$. No incluye compras de caballos."
 

@@ -14,7 +14,7 @@ Cuenta (organización del polista)
  │      └──< Recordatorio
  ├──< Visita (herrero, veterinaria, proveedor) >── Caballo(s)
  ├──< Gasto ── Lugar ── Comprobante ── MensajeOrigen
- │      └── cubre → Acuerdo (reintegro: pendiente | cobrado)
+ │      └── cubre → Acuerdo (el estado del reintegro vive en el Acuerdo)
  ├──< PagoFijo
  ├──< Acuerdo (patrón) ──< Pago
  ├──< Venta (caballo) ──< Pago
@@ -33,7 +33,7 @@ Cuenta (organización del polista)
 
 **Proveedor**: id, nombre, rol (`veterinario` | `herrero` | otro), teléfono; relación muchos-a-muchos con Cuenta. Si escribe por privado y tiene más de un cliente, el bot pregunta para cuál.
 
-**Membresía**: teléfono, cuenta_id, rol, **owner (sí/no)**, canales (`grupo` | `privado` | ambos), **accesos a la app**: `tipo` (`nada` = solo WhatsApp | `todo` = owner | `parte`), y si es `parte`: `secciones` (novedades, caballos, agenda, caballeriza; Gastos e Ingresos solo owners) y `alcance` de caballos (`todos` | `lugar` + lista de lugares | `caballos` + lista de caballos), invitada_por, activa/inactiva. Define a qué organización va cada mensaje. Un proveedor tiene varias; el resto, una.
+**Membresía**: teléfono, cuenta_id, rol, **owner (sí/no)**, canales (`grupo` | `privado` | ambos), **accesos a la app**: `tipo` (`nada` = solo WhatsApp | `todo` = owner | `parte`), y si es `parte`: `secciones` (novedades, caballos, agenda, caballeriza; Gastos e Ingresos solo owners) y `alcance` de caballos (`todos` | `lugar` + lista de lugares | `caballos` + lista de caballos), invitada_por, activa/inactiva. Define a qué organización va cada mensaje. Un proveedor tiene varias; el resto, una. *(2026-11-04: suma **lugar fijo** (opcional), **huso horario**, **permisos de carga** —gastos cualquier miembro, ingresos solo owners, proveedores nunca gastos— y **puede eliminar lo que cargó**. Rol y owner van por separado.)*
 
 **Contexto de conversación** (privado de alguien con varias organizaciones): última organización elegida y hasta cuándo vale, para no repreguntar en cada mensaje.
 
@@ -41,17 +41,19 @@ Cuenta (organización del polista)
 
 **GrupoWhatsApp**: id del grupo, cuenta_id, participantes. **Una cuenta puede tener varios grupos** (ej. manager + veterinario + bot, manager + herrero + bot). Todo mensaje que llega desde un grupo pertenece a la cuenta de ese grupo. Lo que se habla de plata en el grupo se registra igual. Métricas derivadas: mensajes hoy y en la semana, vareos, tareas hechas, último mensaje.
 
-**Lugar**: id, nombre corto y largo (Pilar / Caballeriza Pilar), país, tipo (`caballeriza` | `campo` | `exterior` | `temporada`), descripción ("4 caballos en invernada").
+**Lugar**: id, nombre corto y largo (Pilar / Caballeriza Pilar), país, tipo (`caballeriza` | `campo` | `exterior` | `temporada`), descripción ("4 caballos en invernada"). *(2026-11-04: un gasto puede no tener lugar: **General**.)*
+
+**Temporada** *(nueva, 2026-11-04)*: nombre, lugares (uno o más), **lugar principal**, desde, hasta. El conjunto de temporadas es el **calendario** del polista; no se superponen. Acuerdos y ventas se asignan a una temporada; un gasto se le puede asociar a mano.
 
 **Insumo**: lugar_id, nombre, stock, unidad (bolsas, fardos, rollos, potes), tamaño del envase + unidad de consumo (40 kg, 3000 g), caballos que lo consumen (puede ser un subconjunto: "solo las 5 de doma"), último ingreso.
 
 **Consumo**: insumo_id, cantidad por caballo por día. Derivados: por día = consumo × caballos ÷ envase; días = stock ÷ por día. Sugerencia de ajuste según los conteos reales.
 
-**Caballo**: id, polo_argentino_id (opcional, ref. a la app Polo Argentino: sangre, padre, madre, partidos vienen de ahí), nombre, sexo, edad, pelaje, estado (`jugando` | `campo` | `exterior` | `recuperacion`), lugar, línea de estado, novedad (texto, quién, cuándo, foto), microchip (opcional, leído de los papeles).
+**Caballo**: id, polo_argentino_id (opcional, ref. a la app Polo Argentino: sangre, padre, madre, partidos vienen de ahí), nombre, sexo, edad, pelaje, **situación** (`en_trabajo` | `descanso` | `doma` | `recuperacion` | `retirada`) y **lugar**, separados (2026-11-04; los filtros Jugando, Campo, Exterior y Recuperación se derivan de los dos), línea de estado, novedad (texto, quién, cuándo, foto), microchip (opcional, leído de los papeles).
 
 **Evento de caballo**: caballo_id, tipo (vareada, montada, práctica + chukkers, partido, herrada, veterinaria, al box, entró en reposo…), fecha, quién lo reportó, medio (audio, foto, mensaje), mensaje_origen_id, gasto_id opcional.
 
-**Recordatorio**: caballo_id, qué, cuándo, quién (yo / piloto / veterinaria / herrero), origen (`whatsapp` | `app` | `visita` | `automático`), hecho.
+**Recordatorio**: caballo_id, qué, cuándo, quién (yo / piloto / veterinaria / herrero), origen (`whatsapp` | `app` | `visita`), hecho. *(2026-11-04: sin pendientes automáticos en la V1.)*
 
 **Visita**: quién viene (herrero, veterinaria, proveedor, otro), nombre (Cacho, Dra. Ibarra), día y hora, para qué, caballos.
 
@@ -65,12 +67,14 @@ Cuenta (organización del polista)
 | monto_original + moneda_original | `usd` \| `ars` \| `eur` \| `gbp`. Se guarda siempre |
 | cotizacion | Valor, fecha, tipo (dólar blue **promedio compra/venta**; compra y venta guardadas), fuente (ej. Rava, DólarHoy, o "la dio el usuario") |
 | grupo, categoría | Ver [taxonomía](modulo-gastos-ingresos.md) |
-| lugar_id | **destino** del gasto |
+| lugar_id | **destino** del gasto, o vacío = **General**. Si el mensaje no lo dice, sale del calendario o del lugar fijo de quien carga |
+| temporada_id | opcional: temporada asociada a mano por un owner |
+| caballos | opcional: caballos vinculados, **sin repartir el monto** |
 | comprobante | `foto` (factura/remito/ticket) \| `audio` (+ transcripción) \| `texto` |
 | cargado_por | persona + "por WhatsApp" |
 | pagado_por | (ej. el piloto lo pagó de su bolsillo) |
 | cubre_acuerdo_id | opcional, patrón que lo cubre |
-| reintegro | `pendiente` \| `cobrado` |
+| ~~reintegro~~ | *(2026-11-04: el estado del reintegro vive en el Acuerdo; el gasto solo guarda `cubre_acuerdo_id`. El reintegro se anota como se dice, a la cotización de su día.)* |
 | mensaje_origen_id | trazabilidad |
 
 **PagoFijo**: título, monto, moneda, día del mes, lugar, grupo/categoría. Genera la pregunta mensual por WhatsApp y, con un «sí», un Gasto.
@@ -89,7 +93,7 @@ Cuenta (organización del polista)
 
 - **Total de gastos** por período, lugar, grupo y categoría = suma de `monto_usd`.
 - **Por cobrar** por acuerdo = acordado − Σ pagos + Σ gastos que cubre con reintegro pendiente.
-- **Resultado por temporada** (en US$) = acuerdos y ventas de esa temporada + reintegros − gastos de ese lugar y fechas, **sin compras de caballos**.
+- **Resultado por temporada** (en US$) = acuerdos de esa temporada + reintegros (acordados y ya cobrados) − gastos de sus lugares en sus fechas − gastos asociados a mano, **sin ventas ni compras de caballos** (van aparte) (2026-11-04).
 - **Pagos que vienen** = pagos fijos con vencimiento próximo.
 
 ## Reglas

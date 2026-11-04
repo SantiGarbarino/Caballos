@@ -45,7 +45,7 @@ Grupo de WhatsApp de la organización          Chat privado con el bot
    ▼
 IA estructura → gasto · pago de patrón · venta · novedad de caballo ·
                 vareo/herraje · stock · recordatorio · visita · consulta
-   │  (si tiene una duda, PREGUNTA: nunca adivina destino ni categoría)
+   │  (si tiene una duda, PREGUNTA: nunca adivina la categoría; el lugar sale del calendario)
    ▼
 Confirmación por WhatsApp   (montos en $ o € → US$ con la cotización del día)
    ▼
@@ -60,7 +60,7 @@ que vencen, recordatorios, cierre del día (20:00)
 
 1. **WhatsApp es la interfaz de carga.** La app también permite cargar (botones Agregar, Nuevo, Agendar, Recordatorio), pero siempre muestra el atajo de WhatsApp primero.
 2. **La app es para mirar y decidir.** Mobile-first, pensada para el celular. No hay versión de escritorio.
-3. **Ante la duda, pregunta.** Si la IA no sabe el destino (lugar), la categoría o los caballos, **pregunta**. Nunca adivina. (Decisión explícita de Santi: "tal cual, ante la duda que pregunte".)
+3. **Ante la duda, pregunta.** Si la IA no sabe la categoría o los caballos, **pregunta**. Nunca adivina. (Decisión explícita de Santi: "tal cual, ante la duda que pregunte".) **El lugar no se pregunta** (2026-11-04): sale del mensaje, de los caballos, del calendario del polista o del lugar fijo de quien carga; si no, es un gasto General.
 4. **Cada número se explica.** Todo total es la suma de los ítems que se ven debajo. Cada gasto muestra lo que lo generó: la foto del comprobante si hay, y si no, el audio (con transcripción) o el mensaje; y quién lo cargó.
 5. **Todo en dólares, sin fricción.** Un gasto en pesos se convierte solo al dólar blue del día (promedio entre compra y venta); el bot no le pregunta el tipo de cambio al polista. En el detalle, en letra chica: «$ 800.000 al dólar blue del 22/10 ($ 1.550) = US$ 516». Euros: cotización online o, si no hay, el bot pregunta.
 6. **Sin ruido y sin tablas.** Módulos con tableros, tarjetas y listas; nada de planillas ni tablitas. Nada de KPIs decorativos, minutos de vareo, "% vs mes anterior" ni botones de acción en las alertas. UX limpia y simple (preferencia explícita de Santi).

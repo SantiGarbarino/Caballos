@@ -40,7 +40,7 @@ Idea (Santi, 2026-11-03): **no hacer que cada polista cargue sus caballos**. Int
 
 1. **Encabezado**: inicial, nombre, "Yegua · 8 años · alazana", píldora de estado y ubicación ("Caballeriza Pilar").
 2. **Novedad** (si hay), con quién la reportó y cuándo. Ej.: "Renguea de la mano izquierda. La reportó Ramón hoy a las 9:40, con foto. Quedó en el box hasta que la vea la Dra. Ibarra."
-3. **Pendientes** (recordatorios), con botón **Recordatorio**. Cada uno: qué, cuándo, quién; se pueden tachar. Origen posible: "vos por WhatsApp", "vos en la app", "visita agendada", "automático por el viaje".
+3. **Pendientes** (recordatorios), con botón **Recordatorio**. Cada uno: qué, cuándo, quién; se pueden tachar. Origen posible: "vos por WhatsApp", "vos en la app", "visita agendada". *("Automático por el viaje" sale de la V1: 2026-11-04.)*
 4. Pestañas **Actividad** y **Salud** (solo esas dos).
 
 ### Pendientes del mockup
@@ -48,7 +48,6 @@ Idea (Santi, 2026-11-03): **no hacer que cada polista cargue sus caballos**. Int
 | Caballo | Qué | Cuándo | Quién | Origen |
 |---|---|---|---|---|
 | Morena | Cambiar la embocadura: probar la de goma | Mañana | Pedro (piloto) | vos por WhatsApp |
-| Morena | Sacar sangre para AIE (viaje a Inglaterra) | Febrero | Dra. Ibarra | automático por el viaje |
 | Rockstar | Hielo en la mano izquierda, mañana y tarde | Todos los días | Pedro (piloto) | vos por WhatsApp |
 | Rockstar | Control veterinario de la mano | Lun 26/10 | Dra. Ibarra | visita agendada |
 | Negra | Controlar si come la ración de la noche | Hoy | Pedro (piloto) | vos por WhatsApp |

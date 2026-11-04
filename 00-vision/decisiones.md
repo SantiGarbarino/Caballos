@@ -6,6 +6,58 @@ Formato: fecha · decisión · contexto y porqué · quién. Las más nuevas arr
 
 ---
 
+## 2026-11-04 · Modelo de dominio: decisiones para el desarrollo
+
+> Santi decidió estas 31 preguntas al armar el modelo de dominio ([anexo A](../02-producto/dominio/anexo-a-decisiones.md) tiene el detalle y el porqué de cada una). **Nada es intocable:** es lo que hoy creemos mejor y se ajusta con el MVP. Son decisiones de producto, no están validadas con usuarios.
+
+### El bot responde lo menos posible
+- **Contexto:** no estaba definido a quién le pregunta el bot ni cuándo contesta por escrito.
+- **Decisión:** si tiene una duda, le pregunta a **quien mandó el mensaje**, sea quien sea. A quien registra un **gasto o un ingreso** le contesta **siempre**, por **privado**, qué entendió y qué cargó; en el grupo solo reacciona con ✅. Para el resto (novedades, vareos, stock), solo ✅ si no hay dudas. El trabajo de un proveedor que puede ser gasto, la pregunta del pago fijo y un ingreso que manda alguien sin permiso van a los owners, por privado.
+- **Quién:** Santi.
+
+### El lugar de un gasto no se pregunta: sale del calendario
+- **Contexto:** preguntar el lugar en cada gasto se vuelve engorroso.
+- **Decisión:** en la app hay un **calendario** donde el polista carga las fechas en que va a estar en cada lugar (sus temporadas, cada una con un **lugar principal**). El lugar de un gasto sale, en orden: del **lugar nombrado** en el mensaje (siempre gana) → de los **caballos nombrados** si están todos en un lugar → del **calendario**, si lo carga un owner → del **lugar fijo** de quien lo carga (Don Aníbal → Campo) → si nada lo da, **General**. Un owner lo corrige o lo asocia a otra temporada desde la app. Hay **gastos generales**, sin lugar ni temporada.
+- **Quién:** Santi (idea del calendario: Santi).
+
+### Temporada = la estadía del polista en un lugar
+- **Decisión:** una temporada es el tiempo en que el polista estuvo (o va a estar) en uno o más lugares, con fechas y un lugar principal. Puede incluir varios torneos, patrones e ingresos; en un año hay varias. Los gastos de ese lugar fuera de esas fechas (la invernada de Windsor entre temporadas) son del **destino**, no de la temporada.
+- **Quién:** Santi.
+
+### Resultado por temporada
+- **Decisión:** ingresos de la temporada (**acordados y ya cobrados**, los dos) − gastos de sus lugares en sus fechas − gastos que un owner asoció a mano a esa temporada. Las **ventas y compras de caballos van aparte** y no entran en el resultado.
+- **Quién:** Santi.
+
+### No hay gasto por caballo
+- **Decisión:** un gasto se vincula a los caballos a los que se refiere («Herraje de 4 caballos»), pero no se reparte el monto. En la ficha de cada caballo queda **qué se le hizo** (herrado, vacunado, medicamento), **sin el monto**.
+- **Quién:** Santi.
+
+### Eliminar registros y acuerdos caídos
+- **Decisión:** un acuerdo o una venta se pueden marcar como **caídos** (lo cobrado queda, se deja de esperar el resto). **Quien cargó algo puede eliminarlo, y un owner puede eliminar cualquier registro**: desaparece de la app y de los totales; el mensaje de origen queda oculto (no se borra) para auditoría y para medir la IA.
+- **Quién:** Santi.
+
+### Reintegros: se anota lo que se dice
+- **Decisión:** un reintegro se anota tal como se dice (monto y moneda), valuado con la cotización de su día; puede haber diferencia con el gasto original. Si devuelve menos de lo pendiente, el resto queda pendiente sin preguntar. Un pago va a cuenta del acuerdo salvo que el mensaje diga que es un reintegro.
+- **Quién:** Santi.
+
+### Plata: quién carga y quién ve
+- **Decisión:** **gastos** los puede cargar cualquier miembro; **ingresos**, solo owners; los proveedores **nunca** gastos. Las consultas de plata **nunca** se contestan en el grupo; al owner, por privado. Quien tiene acceso parcial solo mira, y solo sus caballos. Manager es un **rol** y owner es un **permiso**: van por separado; siempre hay al menos un owner.
+- **Quién:** Santi.
+
+### Números, fechas y horarios
+- **Decisión:** cotización **del día del gasto** (fin de semana o feriado: último día hábil); el monto en US$ se **redondea a entero** al registrar y los totales suman esos enteros; un owner puede corregir la cotización. Si falla la fuente del blue, se usa la última de hasta 3 días y, si no hay, la conversión queda pendiente («≈»): nunca se pregunta. La fecha es la que dice el mensaje («el viernes» = el último viernes); si no dice, el día local de quien lo manda. Cada persona tiene su **huso horario**: los avisos salen a su hora local. US$ es la moneda de todas las organizaciones en la V1.
+- **Quién:** Santi.
+
+### "Lo pagué yo" y "queda a pagar"
+- **Decisión:** el gasto suma igual; se marca quién pagó o «a pagar» y la app muestra «Le debés a Pedro US$ 116». Sin cuenta corriente con comercios en la V1.
+- **Quién:** Santi.
+
+### Otras decisiones del modelo
+- Venta de caballo: sale del plantel el día que se entrega. Patrón y comprador: contraparte con nombre y apodos dentro de la organización, sin acceso. Situación del caballo (en trabajo, descanso, doma, recuperación, retirada) separada del lugar; los filtros de la app no cambian. Sin pendientes automáticos (AIE por viaje, etc.) en la V1. Sin propiedad de caballos de terceros en la V1. Una pregunta sin respuesta se repite una vez y después queda «sin terminar» en la app (no suma). Varios mensajes del mismo emisor en el mismo chat, en 5 minutos y antes de confirmar, son una carga. Los conteos de stock solo sugieren un ajuste del consumo. Días de stock truncados. «Pagos que vienen» = próximos 15 días.
+- **Quién:** Santi.
+
+---
+
 ## 2026-11-03 (sesión 11) · Permisos finos: qué ve cada usuario
 
 ### Los permisos no son solo por módulo: se elige qué ve cada persona
@@ -54,6 +106,7 @@ Formato: fecha · decisión · contexto y porqué · quién. Las más nuevas arr
 ### En los grupos, el bot confirma con una reacción
 - ✅ cuando carga; contesta por escrito solo si tiene una duda, diciendo qué cargó. No toca la charla. Se les pedirá a los usuarios no usar los grupos para cualquier cosa.
 - **Quién:** Santi.
+- *(Ajustada el 2026-11-04: un gasto o un ingreso se confirma además por escrito, **por privado**, a quien lo cargó.)*
 
 ### Una organización puede tener varios grupos de WhatsApp
 - Ej.: manager + veterinario + bot, manager + herrero + bot. Cada grupo pertenece a una sola organización.
@@ -221,6 +274,7 @@ Formato: fecha · decisión · contexto y porqué · quién. Las más nuevas arr
 
 ### Ante la duda, el bot pregunta
 - Nunca adivina el destino ni la categoría. Ejemplo: "Le pagué 600 dólares al veterinario" → "¿Para qué caballos es: Pilar, el campo o Windsor?".
+- *(Ajustada el 2026-11-04: el **lugar** ya no se pregunta; sale del mensaje, de los caballos, del calendario o del lugar fijo de quien carga. Para categoría, caballos y cliente, sigue preguntando.)*
 
 ### ~~Monedas siempre separadas; nunca se convierte~~ (reemplazada el 2026-11-03: todo en US$ con conversión automática)
 - Totales por moneda (US$, $, €; £ en Ingresos). No hay total combinado. No hay "+X% vs mes anterior" (se pidió sacarlo).
@@ -229,6 +283,7 @@ Formato: fecha · decisión · contexto y porqué · quién. Las más nuevas arr
 ### Los gastos se clasifican por destino (lugar), no por dónde estaba el polista
 - Ejemplo de Santi: US$ 2.000 para el campo pagados desde Sotogrande cuentan como **Campo**.
 - Veterinaria "afuera" y comida "afuera" no son categorías aparte: son la misma categoría con otro **lugar**.
+- *(Sigue vigente: el destino nombrado siempre gana. Desde el 2026-11-04, si el mensaje no lo dice, lo completa el calendario o el lugar fijo; si no, es un gasto General.)*
 
 ### Una sola lista de gastos como fuente de verdad
 - **Porqué:** en una versión anterior los totales no coincidían con los ítems (US$ 14.200 de tacos contra 540 + 600 visibles) y Santi no entendía cómo se formaban. Ahora todo total es la suma de los gastos visibles para el período y el lugar elegidos.
