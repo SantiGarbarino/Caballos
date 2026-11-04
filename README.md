@@ -16,7 +16,7 @@ Equipo: **Santi, Mati y Mauro**.
 |---|---|
 | [`00-vision/`](00-vision/) | Visión, análisis de viabilidad, decisiones y preguntas abiertas |
 | [`01-mercado/`](01-mercado/) | Industria del polo y del caballo, regulación SENASA, glosario, segmentos y personas, competencia |
-| [`02-producto/`](02-producto/) | PRD, app mobile, módulos (Caballos, Caballeriza, Gastos e Ingresos), flujos de WhatsApp, modelo de datos, historial de iteraciones y mockup |
+| [`02-producto/`](02-producto/) | PRD, app mobile, módulos (Caballos, Caballeriza, Gastos e Ingresos), flujos de WhatsApp, modelo de datos, historial de iteraciones, mockup y **modelo de dominio** (`dominio/`) |
 | [`03-tecnico/`](03-tecnico/) | Arquitectura y aprendizajes de Queiros (solo know-how) |
 | [`04-plan/`](04-plan/) | Roadmap, plan de ejecución, validación y entrevistas |
 | [`05-gtm/`](05-gtm/) | Go-to-market, clientes objetivo, pricing, contenido y media kit |
@@ -34,12 +34,13 @@ Equipo: **Santi, Mati y Mauro**.
 9. [Regulación SENASA](01-mercado/regulacion-senasa.md)
 10. [Roadmap y kill criteria](04-plan/roadmap.md)
 11. [Glosario](01-mercado/glosario.md): **usar siempre esta terminología**
+12. [Modelo de dominio](02-producto/dominio/analisis-dominio.md): vocabulario, contextos, reglas y eventos; con [decisiones](02-producto/dominio/anexo-a-decisiones.md), [escenarios de prueba](02-producto/dominio/anexo-b-escenarios.md), [dataset con resultados esperados](02-producto/dominio/anexo-c-dataset.md) y [manual del bot](02-producto/dominio/anexo-g-manual-del-bot.md). **Referencia para el desarrollo.**
 
 ### Índice completo
 
 - **Visión**: [vision](00-vision/vision.md) · [analisis-viabilidad](00-vision/analisis-viabilidad.md) · [decisiones](00-vision/decisiones.md) · [preguntas-abiertas](00-vision/preguntas-abiertas.md)
 - **Mercado**: [industria-polo](01-mercado/industria-polo.md) · [regulacion-senasa](01-mercado/regulacion-senasa.md) · [segmentos-y-personas](01-mercado/segmentos-y-personas.md) · [competencia](01-mercado/competencia.md) · [glosario](01-mercado/glosario.md)
-- **Producto**: [prd-mvp](02-producto/prd-mvp.md) · [app-mobile](02-producto/app-mobile.md) · [modulo-caballos](02-producto/modulo-caballos.md) · [modulo-caballeriza](02-producto/modulo-caballeriza.md) · [modulo-gastos-ingresos](02-producto/modulo-gastos-ingresos.md) · [flujos-whatsapp](02-producto/flujos-whatsapp.md) · [modelo-de-datos](02-producto/modelo-de-datos.md) · [historial-iteraciones](02-producto/historial-iteraciones.md) · [mockups](02-producto/mockups/README.md) · [dataset-ficticio](02-producto/mockups/dataset-ficticio.md)
+- **Producto**: [prd-mvp](02-producto/prd-mvp.md) · [app-mobile](02-producto/app-mobile.md) · [modulo-caballos](02-producto/modulo-caballos.md) · [modulo-caballeriza](02-producto/modulo-caballeriza.md) · [modulo-gastos-ingresos](02-producto/modulo-gastos-ingresos.md) · [flujos-whatsapp](02-producto/flujos-whatsapp.md) · [modelo-de-datos](02-producto/modelo-de-datos.md) · [historial-iteraciones](02-producto/historial-iteraciones.md) · [mockups](02-producto/mockups/README.md) · [dataset-ficticio](02-producto/mockups/dataset-ficticio.md) · [dominio](02-producto/dominio/analisis-dominio.md)
 - **Técnico**: [arquitectura](03-tecnico/arquitectura.md) · [aprendizajes-queiros](03-tecnico/aprendizajes-queiros.md)
 - **Plan**: [roadmap](04-plan/roadmap.md) · [plan-ejecucion](04-plan/plan-ejecucion.md) · [validacion-discovery](04-plan/validacion-discovery.md) · [entrevistas](04-plan/entrevistas/README.md)
 - **GTM**: [estrategia-gtm](05-gtm/estrategia-gtm.md) · [clientes-objetivo](05-gtm/clientes-objetivo.md) · [pricing](05-gtm/pricing.md) · [contenido](05-gtm/contenido.md) · [media-kit](05-gtm/media-kit.md)

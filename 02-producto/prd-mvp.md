@@ -52,7 +52,7 @@ Barra inferior con cinco pestañas: **Inicio · Caballos · Caballeriza · Gasto
 |---|---|---|
 | W1 | Cargar un **gasto** por mensaje, audio o foto (factura, remito, ticket, comprobante). La IA detecta monto, moneda, grupo › categoría, **lugar** y fecha | Must |
 | W1b | **Conversión a US$**: si el gasto es en pesos, se convierte solo al **dólar blue del día** (**promedio entre compra y venta**, de Rava, DólarHoy u otra fuente), sin preguntar. Si es en euros u otra moneda, se usa una cotización online; si no hay fuente, el bot pregunta el tipo de cambio | Must |
-| W2 | **Ante la duda, preguntar**: si no sabe el lugar, la categoría o los caballos, pregunta (ej. "¿Son para acá o para la temporada de Inglaterra?"). Nunca adivina. **Nunca** pregunta el tipo de cambio de los pesos | Must |
+| W2 | **Ante la duda, preguntar**: si no sabe la categoría o los caballos, pregunta. Nunca adivina. **Nunca** pregunta el tipo de cambio de los pesos **ni el lugar**: el lugar sale del mensaje, de los caballos nombrados, del calendario (si carga un owner) o del lugar fijo de quien carga; si no, el gasto es **General** (2026-11-04) | Must |
 | W3 | Entender la jerga y los montos ("180 lucas", "40 mil", "un millón doscientos") y las monedas (dólares, pesos, euros, libras) | Must |
 | W4 | Confirmar cada carga y permitir corregir respondiendo | Must |
 | W5 | Cargar **acuerdos con patrones**, **pagos recibidos** ("Me pagó 40 mil Halvorsen") y **ventas de caballos** | Must |
@@ -85,6 +85,7 @@ Barra inferior con cinco pestañas: **Inicio · Caballos · Caballeriza · Gasto
 | A8 | Todo en US$, con la conversión explicada en cada gasto; sin "% vs mes anterior" | Must |
 | A9 | Login sin contraseña (link de un solo uso por WhatsApp) | Must |
 | A10 | **Sin tablas**: módulos con tableros, tarjetas y listas | Must |
+| A11 | **Calendario** de temporadas: el polista carga dónde va a estar y en qué fechas (lugar principal de cada temporada); de ahí sale el lugar de los gastos que carga sin decirlo. Un owner puede corregir el lugar de un gasto o asociarlo a otra temporada (2026-11-04, ver [modelo de dominio](dominio/analisis-dominio.md)) | Must |
 
 ## Fuera de alcance (por ahora)
 

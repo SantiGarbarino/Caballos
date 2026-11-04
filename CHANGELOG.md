@@ -1,5 +1,11 @@
 # Changelog del brain
 
+## 2026-11-04 · Modelo de dominio y decisiones para el desarrollo
+- Nueva carpeta `02-producto/dominio/`: análisis de dominio (lenguaje ubicuo, contextos acotados, agregados, eventos), anexo A con 31 decisiones de Santi, anexo B con 120 escenarios de aceptación, anexo C con el dataset del mockup y sus resultados esperados, y anexo G con el manual del bot. Enlazados desde el `README.md`.
+- Decisiones nuevas en `decisiones.md`: el bot responde lo menos posible y confirma gastos e ingresos por privado; el lugar no se pregunta (calendario de temporadas, lugar fijo, gastos generales); temporada = estadía; resultado por temporada sin ventas de caballos; sin gasto por caballo; eliminar registros; reintegros como se dicen; reglas de cotización, redondeo, fechas y huso horario.
+- `preguntas-abiertas.md`: 10 preguntas resueltas y 3 nuevas (supuestos a confirmar, datos del mockup, set de evaluación).
+- Ajustados `CLAUDE.md` (regla 10), `vision.md`, `prd-mvp.md`, `modulo-gastos-ingresos.md`, `flujos-whatsapp.md`, `modelo-de-datos.md` y `modulo-caballos.md`.
+
 ## 2026-11-04 · Limpieza: owners y permisos en toda la KB
 - Se corrigieron los docs que seguían diciendo "solo polista y manager, con el mismo acceso" o «Quién ve tu cuenta»: `app-mobile.md`, `segmentos-y-personas.md`, `industria-polo.md`, `analisis-viabilidad.md`, `arquitectura.md`, `modelo-de-datos.md` (también `criapolo_id` → `polo_argentino_id`) y `preguntas-abiertas.md`. Ahora hablan de owners y permisos por usuario.
 - `mockups/README.md`: pendientes del mockup marcados como hechos en la v11 (queda el catálogo de caballos y actualizar link y capturas). `CLAUDE.md` regla 12: la referencia para el desarrollo es `programon-borrador.html`.

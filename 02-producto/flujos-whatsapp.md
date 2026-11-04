@@ -52,7 +52,7 @@ Valores sugeridos según el rol (se pueden cambiar): manager y piloto, las dos; 
 **Duplicados.** Con grupo y privado conviviendo, el mismo gasto puede llegar dos veces (el piloto en el grupo: «son 180 lucas el herraje»; el polista a la noche por privado: «pagué 180 mil al herrero»). Antes de cargar, el bot busca algo parecido (mismo monto, misma categoría, pocos días de diferencia, aunque venga de otro grupo o de otra persona) y pregunta: «¿Es el mismo que cargó Pedro el martes?». **Es clave para que los totales no se inflen.**
 
 **El bot en los grupos, sin ruido**
-- Cuando carga algo, **confirma con una reacción (✅)**, sin mensaje.
+- Cuando carga algo, **confirma con una reacción (✅)**, sin mensaje. Si es un **gasto o un ingreso**, además le confirma **por privado** a quien lo cargó qué entendió y qué cargó (2026-11-04).
 - Solo **contesta por escrito si tiene una duda**, y en ese caso dice qué cargó y qué le falta.
 - Los mensajes que no son cargas (charla, chistes, coordinación) **no los toca**. Igual se les va a pedir a los usuarios que no usen esos grupos para cualquier cosa.
 
@@ -66,7 +66,7 @@ Valores sugeridos según el rol (se pueden cambiar): manager y piloto, las dos; 
 
 ## Principios
 
-1. **Ante la duda, preguntar.** Nunca adivinar destino, categoría ni caballos. Ej.: "US$ 600 de veterinaria. ¿Para qué caballos es: Pilar, el campo o Windsor?"
+1. **Ante la duda, preguntar.** Nunca adivinar categoría ni caballos. **El lugar no se pregunta** (2026-11-04): sale del mensaje, de los caballos, del calendario o del lugar fijo de quien carga; si no, es General. Ver el [manual del bot](dominio/anexo-g-manual-del-bot.md).
 2. **Confirmar corto y con el dato clave.** "Listo Ramón, 4 vareos cargados."
 3. **Decir qué se generó** ("Guardada en la ficha de Rockstar", "Se lo agrego a las tareas de Pedro").
 4. **Montos como los dice el polo**: "180 lucas" → $ 180.000; "40 mil" → 40.000 en la moneda del acuerdo; "un millón doscientos" → $ 1.200.000.
@@ -129,9 +129,9 @@ PROGRAMON 14:15  Anotado: Tormenta pasa de Pilar al campo mañana. ¿Va en el ca
 Tomás     14:15  Sí
 PROGRAMON 14:15  Listo. Se lo agrego a las tareas de Pedro.
 Tomás 🎤  16:40  «Le pagué 600 dólares al veterinario.»
-PROGRAMON 16:40  US$ 600 de veterinaria. ¿Para qué caballos es: Pilar, el campo o Windsor?
-Tomás     16:41  Las de doma del campo
-PROGRAMON 16:41  Anotado: US$ 600, veterinaria, destino Campo.
+PROGRAMON 16:40  Veterinario, US$ 600. Anotado en Pilar.
+Tomás     16:41  Era para las de doma del campo
+PROGRAMON 16:41  Listo, lo pasé al campo.
 PROGRAMON 20:00  Cierre de hoy:
                  • 12 de 14 vareados (falta Rubia, Rockstar en el box con hielo)
                  • Herraje de 4 caballos: $ 180.000
@@ -206,11 +206,10 @@ PROGRAMON 11:02  Dale, te lo vuelvo a preguntar mañana a las 9.
 
 ```
 Tomás 📷 18:40  [Foto de la factura de los tacos] Te paso la factura de los tacos
-PROGRAMON 18:40 3 tacos, US$ 540. Lo anoto en Equipo de polo › Tacos. ¿Son para acá o para la
-                temporada de Inglaterra?
-Tomás    18:41  Para acá
-PROGRAMON 18:41 Listo, anotado en Pilar con la foto de la factura.
+PROGRAMON 18:40 3 tacos, US$ 540, en Equipo de polo › Tacos. Anotado en Pilar, con la foto de la
+                factura.
 ```
+(El lugar sale del calendario: el 22/10 Tomás está en la temporada Argentina, lugar principal Pilar. Antes el bot preguntaba «¿Son para acá o para la temporada de Inglaterra?»; desde el 2026-11-04 no pregunta el lugar.)
 Efecto: aparece en Gastos › Equipo de polo › Tacos y al abrirlo se ve la foto. Botón "Ver este gasto en la app".
 
 ## 9. Alta de un caballo
