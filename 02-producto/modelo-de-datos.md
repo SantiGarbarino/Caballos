@@ -4,7 +4,7 @@
 
 ```
 Cuenta (organización del polista)
- ├──< Usuario (polista | manager: mismo acceso)
+ ├──< Usuario (owners: polista y/o manager; otros con acceso parcial)
  ├──< Miembro solo WhatsApp (piloto, petisero, puestero, familiar o asistente) ── teléfono · una sola cuenta
  ├──< GrupoWhatsApp (varios por cuenta; cada grupo → una sola cuenta)
  ├──<>── Proveedor (vete, herrero) ── teléfono · puede estar en varias cuentas
@@ -47,7 +47,7 @@ Cuenta (organización del polista)
 
 **Consumo**: insumo_id, cantidad por caballo por día. Derivados: por día = consumo × caballos ÷ envase; días = stock ÷ por día. Sugerencia de ajuste según los conteos reales.
 
-**Caballo**: id, criapolo_id (opcional: sangre, padre, madre, partidos vienen de ahí), nombre, sexo, edad, pelaje, estado (`jugando` | `campo` | `exterior` | `recuperacion`), lugar, línea de estado, novedad (texto, quién, cuándo, foto), microchip (opcional, leído de los papeles).
+**Caballo**: id, polo_argentino_id (opcional, ref. a la app Polo Argentino: sangre, padre, madre, partidos vienen de ahí), nombre, sexo, edad, pelaje, estado (`jugando` | `campo` | `exterior` | `recuperacion`), lugar, línea de estado, novedad (texto, quién, cuándo, foto), microchip (opcional, leído de los papeles).
 
 **Evento de caballo**: caballo_id, tipo (vareada, montada, práctica + chukkers, partido, herrada, veterinaria, al box, entró en reposo…), fecha, quién lo reportó, medio (audio, foto, mensaje), mensaje_origen_id, gasto_id opcional.
 

@@ -43,7 +43,7 @@
 4. **Confirmador**: respuesta corta y correcciones sobre lo último.
 5. **Consultas** en lenguaje natural sobre los mismos datos de la app.
 6. **Programador de salientes**: recordatorios personales («mañana haceme acordar…»), tareas del piloto (7:00), pagos fijos (el día del vencimiento; si responde "mañana", reintenta al día siguiente a las 9), recordatorios, avisos al piloto, cierre del día (20:00), aviso si una persona deja de reportar.
-7. **PWA** de lectura y carga para polista y manager (mismo acceso). Sin tablas: módulos con tableros.
+7. **PWA** de lectura y carga para los owners (polista y/o manager) y quien ellos habiliten, con permisos por usuario (secciones y qué caballos). Sin tablas: módulos con tableros.
 7b. **Integración con la app Polo Argentino**: catálogo para elegir los caballos propios (a confirmar API/acuerdo).
 8. **Export** a Excel/PDF con fotos y envío al mail del contador.
 
@@ -61,4 +61,4 @@
 - Si se confirma: el bot no podría entrar a los grupos que ya existen y los grupos grandes no entran. Evaluar alternativas (grupo nuevo creado por el bot con los clave, o carga por privado).
 
 ## Seguridad y privacidad
-- Datos financieros sensibles. Solo polista y manager entran a la app; lo que se habla de plata en el grupo se registra igual; patrón, contador y miembros de solo WhatsApp no entran a la app. Cifrado en reposo.
+- Datos financieros sensibles. Los **owners** ven todo; el resto entra solo si un owner le habilita una parte (secciones y alcance de caballos), y **Gastos e Ingresos son solo de owners**. Los permisos se aplican en el backend, no solo en la UI. Lo que se habla de plata en el grupo se registra igual. El patrón y el contador no existen para la plataforma. Cifrado en reposo.

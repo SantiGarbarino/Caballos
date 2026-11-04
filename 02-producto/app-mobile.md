@@ -5,7 +5,7 @@
 ## Principios
 
 - **Web app mobile instalable (PWA)**, se abre desde un link de WhatsApp. No es app nativa. No hay versión de escritorio: en una computadora se ve la versión de celular.
-- **Usuarios**: el **polista** y su **manager**, con el mismo acceso. Piloto, petiseros y proveedores no entran a la app.
+- **Usuarios**: los **owners** (en el caso típico, el **polista** y su **manager**) ven todo. Piloto, petiseros, puestero, familiares y proveedores son **solo WhatsApp** por defecto; un owner les puede habilitar una parte (ver [Equipo y permisos](#equipo-y-permisos-2026-11-03-sesión-10)).
 - **Login sin contraseña**: link de un solo uso por WhatsApp.
 - **Para mirar y decidir.** Se puede cargar desde la app (Agregar, Nuevo, Agendar, Recordatorio, Registrar pago), pero cada formulario muestra primero el atajo de WhatsApp ("Por WhatsApp: «…»").
 - **Limpia y sin tablas.** Módulos con tableros, tarjetas y listas. Sin KPIs decorativos, sin "% vs mes anterior", sin botones de acción en alertas.
@@ -37,7 +37,7 @@ Barra inferior: **Inicio · Caballos · Caballeriza · Gastos · Ingresos**.
 
 Arriba, el **hero** con degradado:
 
-- **"Buen día, Tomás"** en dorado. A la derecha, el botón redondo **"T"** abre **Quién ve tu cuenta**.
+- **"Buen día, Tomás"** en dorado. En Inicio está el botón **Equipo** (ver [Equipo y permisos](#equipo-y-permisos-2026-11-03-sesión-10)). *(Antes, el botón "T" abría «Quién ve tu cuenta»; se reemplazó por Equipo.)*
 - Dos cajas *glass*:
   - **Gastado · [período]** (ej. "Este mes"): un total en US$ (el mockup todavía muestra US$ 38.690 · $ 5.625.000 · € 4.000; hay que pasarlo a US$).
   - **Por cobrar**: en US$ (el mockup muestra US$ 366.200 · € 45.000).
@@ -59,20 +59,9 @@ Debajo, en este orden:
 
 **Se sacó de Inicio:** el plantel (tiles por estado), "Hoy en la caballeriza", el banner de WhatsApp y los KPIs. Las visitas pasaron de Caballeriza a Inicio ("Lo que viene").
 
-## Quién ve tu cuenta
+## Quién ve tu cuenta *(reemplazada)*
 
-Hoja que se abre con el botón "T":
-
-| Persona | Rol | Acceso |
-|---|---|---|
-| Tomás | Vos · dueño de la cuenta | Todo |
-| (Manager) | Tu mano derecha | Todo, igual que vos |
-
-Abajo, **Cargan por WhatsApp** (no entran a la app): el piloto, los petiseros, el puestero, la veterinaria y el herrero, y cualquier otra persona de la organización (ej. un familiar o asistente que lo ayuda con gastos y compras). Botón **Sumar a alguien** (para que el bot lo reconozca).
-
-Nota: "Tus montos los ven solo vos y tu manager. Nadie más." Botón **Invitar a tu manager**.
-
-> El mockup muestra a una persona que lleva las cuentas con acceso a la app: pasa a **solo WhatsApp** (carga gastos, no entra). Estudio Ruiz (contador) se saca (decisión del 2026-11-03).
+Esta hoja se reemplazó por la pantalla **Equipo** con **owners y permisos por usuario** (ver más abajo). Ya no vale "solo polista y manager, con el mismo acceso": los owners configuran qué ve cada persona. Por defecto, todos los que no son owners cargan **solo por WhatsApp**. Estudio Ruiz (contador) se sacó.
 
 ## Vista del piloto (fuera del recorrido)
 

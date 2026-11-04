@@ -1,6 +1,6 @@
 # Segmentos y personas
 
-> **Usuarios de la plataforma (2026-11-03):** el **polista** y su **manager**, que ven lo mismo. El resto de la organización (piloto, petiseros, puestero, un familiar o asistente) y los proveedores son **usuarios de solo WhatsApp**: cargan por el bot y figura quién lo cargó, pero no entran a la app. El patrón no existe para la plataforma. Tomás y su equipo son el **ejemplo ficticio del mockup**: no definen el ICP.
+> **Usuarios de la plataforma (2026-11-03):** los **owners** (quien crea la organización, polista o manager, y a quien le dé todos los accesos; en el caso típico, el polista y su manager) ven todo y configuran qué ve cada usuario. El resto de la organización (piloto, petiseros, puestero, un familiar o asistente) y los proveedores son por defecto **usuarios de solo WhatsApp**: cargan por el bot y figura quién lo cargó. Un owner les puede habilitar una parte de la app (secciones y qué caballos), nunca Gastos ni Ingresos. El patrón no existe para la plataforma. Tomás y su equipo son el **ejemplo ficticio del mockup**: no definen el ICP.
 
 ## Segmentos (a validar)
 
@@ -8,7 +8,7 @@
 |---|---|---|---|---|---|
 | 1 | **Profesional de alto handicap sin manager** (el polista hace todo) | 30–40 caballos entre caballeriza, campo y exterior; piloto, 3–4 petiseros, puestero | Altísimo: varias monedas, varios lugares, varios patrones, montos grandes | Alta | Ejemplo del mockup; a validar |
 | 2 | **Profesional de mediano handicap (≈2–6 goles) con organización propia** | 15–40 caballos, 2–6 petiseros | Muy alto | Media-alta | A validar como beachhead alternativo |
-| 3 | **Organización grande con manager** (la mano derecha registra todo) | 40–100+ caballos | Altísimo; el manager es quien más usaría el producto | Alta | **Clave**: el manager es usuario principal, con el mismo acceso que el polista |
+| 3 | **Organización grande con manager** (la mano derecha registra todo) | 40–100+ caballos | Altísimo; el manager es quien más usaría el producto | Alta | **Clave**: el manager es usuario principal y owner (todos los accesos, si el polista se los da o si él crea la organización) |
 | 5 | Amateur con caballos propios | 4–12 caballos | Medio | Baja-media | Volumen, más adelante |
 | 6 | **Haras / criador** | 50–500 caballos | Alto y más complejo | Alta | Posible mercado grande: entrevistar 3–5 ya |
 | 7 | Club / pensión de caballos | Muchos caballos de terceros | Facturar pensión y extras | Media | Más adelante |

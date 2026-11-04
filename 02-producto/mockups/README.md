@@ -19,12 +19,13 @@ Mockup navegable para celular, armado por Santi con Claude entre el 22 y el 27/1
 
 ## Cambios pendientes en el mockup por las decisiones del 2026-11-03
 
-- [ ] Totales en **US$** (Inicio, Gastos, Ingresos, temporadas) y detalle de la conversión en letra chica en cada gasto en $ o €.
-- [ ] «Quién ve tu cuenta»: polista + manager en la app; la persona que lleva las cuentas, piloto, petiseros, puestero y proveedores como "cargan por WhatsApp"; sacar a Estudio Ruiz.
-- [ ] Mostrar al **manager** como usuario (ej. gastos y novedades cargados por el manager).
-- [ ] Chats: grupo de la organización vs. privado; vete con varios clientes; recordatorio personal; gasto en pesos convertido.
-- [ ] Agregar caballo desde el catálogo de la app Polo Argentino.
-- [ ] Nombre provisorio (PROGRAMON).
+- [x] Totales en **US$** y detalle de la conversión en letra chica (borrador v9–v11).
+- [x] «Quién ve tu cuenta» → reemplazada por **Equipo** con owners y permisos por usuario; Estudio Ruiz afuera (borrador v11).
+- [x] Mostrar al **manager** como usuario y owner (borrador v11).
+- [x] Chats: grupo de la organización y privados; vete con varios clientes; recordatorio personal; gasto en pesos convertido (borrador v10).
+- [ ] Agregar caballo desde un catálogo: **sin nombrar la fuente** en el mockup (decisión de la sesión 6); se define cuando se confirme la integración con la app Polo Argentino.
+- [x] Nombre provisorio (PROGRAMON).
+- [ ] Actualizar el link compartible y las capturas (siguen en v7) cuando Santi lo pida.
 
 ## Forma de trabajo
 
@@ -44,7 +45,7 @@ Mockup navegable para celular, armado por Santi con Claude entre el 22 y el 27/1
 
 | Pantalla | Captura |
 |---|---|
-| Inicio | [01](capturas/01-inicio.png) · Quién ve tu cuenta [02](capturas/02-acceso.png) · Agendar [03](capturas/03-agendar.png) |
+| Inicio | [01](capturas/01-inicio.png) · Quién ve tu cuenta, v7, hoy Equipo [02](capturas/02-acceso.png) · Agendar [03](capturas/03-agendar.png) |
 | Caballos | Lista [04](capturas/04-caballos.png) · Agregar [05](capturas/05-caballo-agregar.png) · Ficha Rockstar [06](capturas/06-ficha-rockstar.png) · Salud [07](capturas/07-ficha-rockstar-salud.png) · Recordatorio [08](capturas/08-recordatorio.png) · Ficha Patria [09](capturas/09-ficha-patria.png) |
 | Caballeriza | Pilar [10](capturas/10-caballeriza-pilar.png) · Avena [11](capturas/11-insumo-avena.png) · Consumo [12](capturas/12-consumo.png) · Campo [13](capturas/13-caballeriza-campo.png) · Pedro [14](capturas/14-persona-pedro.png) · Don Aníbal [15](capturas/15-persona-anibal.png) |
 | Gastos | Inicio [16](capturas/16-gastos.png) · Período [17](capturas/17-gastos-rango.png) · Lugar [18](capturas/18-gastos-lugar.png) · Grupo Caballos [19](capturas/19-gastos-grupo-caballos.png) · Veterinario [20](capturas/20-gastos-cat-veterinario.png) · Todos [21](capturas/21-gastos-todos.png) · Pagos fijos [22](capturas/22-gastos-fijos.png) · Exportar [23](capturas/23-gastos-export.png) · Temporada Inglaterra [24](capturas/24-gastos-temporada-inglaterra.png) · Traslados [24b](capturas/24b-gastos-grupo-traslados.png) · Flete que cubre el patrón [25](capturas/25-gasto-flete-cubre.png) · Tacos con foto [25b](capturas/25b-gasto-tacos.png) · Herraje con audio [25c](capturas/25c-gasto-herraje-audio.png) |

@@ -1,5 +1,9 @@
 # Changelog del brain
 
+## 2026-11-04 · Limpieza: owners y permisos en toda la KB
+- Se corrigieron los docs que seguían diciendo "solo polista y manager, con el mismo acceso" o «Quién ve tu cuenta»: `app-mobile.md`, `segmentos-y-personas.md`, `industria-polo.md`, `analisis-viabilidad.md`, `arquitectura.md`, `modelo-de-datos.md` (también `criapolo_id` → `polo_argentino_id`) y `preguntas-abiertas.md`. Ahora hablan de owners y permisos por usuario.
+- `mockups/README.md`: pendientes del mockup marcados como hechos en la v11 (queda el catálogo de caballos y actualizar link y capturas). `CLAUDE.md` regla 12: la referencia para el desarrollo es `programon-borrador.html`.
+
 ## 2026-11-04 · Borrador v11 al repo
 - Se sube `02-producto/mockups/programon-borrador.html` (borrador v11) como referencia para arrancar el desarrollo en Claude Code. `programon.html` sigue siendo el snapshot del link compartible (v7).
 

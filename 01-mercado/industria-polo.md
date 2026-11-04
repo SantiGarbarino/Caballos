@@ -31,7 +31,7 @@
 | **Patrón** | Dueño/financista del equipo. Contrata profesionales, muchas veces paga caballos y gastos | **No es usuario ni comprador**: solo es la contraparte de los acuerdos en Ingresos |
 | **Polista amateur** | Juega por hobby, tiene pocos caballos, a veces en pensión | Segmento masivo, ticket bajo |
 | **Petisero** | Cuida, alimenta, vasea y prepara los caballos. Suele haber 1 cada ~5–8 caballos **[HIPÓTESIS]** | Puede cargar novedades por WhatsApp |
-| **Manager** | Mano derecha del polista en organizaciones grandes; registra todo el día a día | **Usuario principal**, con el mismo acceso que el polista |
+| **Manager** | Mano derecha del polista en organizaciones grandes; registra todo el día a día | **Usuario principal**; owner, con todos los accesos |
 | **Piloto / capataz / jefe de petiseros** | El mayor de los petiseros; coordina la caballeriza | Solo WhatsApp, sin acceso a la app |
 | **Haras / criador** | Cría y vende caballos; reproducción (incl. transferencia embrionaria), doma | Segmento fase 2 |
 | **Domador** | Hace los caballos (de "verde" a "hecho") | Proveedor / costo |

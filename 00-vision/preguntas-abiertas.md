@@ -5,7 +5,7 @@ Lo que todavía no sabemos o no decidimos. Cuando se resuelve, pasa a [decisione
 ## Resueltas
 - ~~¿Cómo manejamos el tipo de cambio?~~ → **Todo en US$**: pesos al dólar blue del día, automático; euros con cotización online o, si no hay, el bot pregunta (2026-11-03).
 - ~~Mockup de Santi~~ → en [`02-producto/mockups/`](../02-producto/mockups/README.md) (en construcción; Santi adjunta la versión final).
-- ~~¿Quién usa la plataforma?~~ → **App**: polista y manager (ven lo mismo). **Solo WhatsApp**: el resto de la organización (piloto, petiseros, puestero, familiares o asistentes) y los proveedores; cargan por el bot y figura quién lo cargó (2026-11-03).
+- ~~¿Quién usa la plataforma?~~ → **App**: los owners (en el caso típico polista y manager) y quien un owner habilite *(actualizado en la sesión 10)*. **Solo WhatsApp** por defecto: el resto de la organización (piloto, petiseros, puestero, familiares o asistentes) y los proveedores; cargan por el bot y figura quién lo cargó (2026-11-03).
 - ~~¿Qué cotización del blue?~~ → **Promedio entre compra y venta**, de cualquier fuente (Rava, DólarHoy u otra) (2026-11-03).
 - ~~¿Qué hace el bot con un gasto mandado en el grupo?~~ → **Lo registra igual.** La plata va en general por privado, pero no es obligatorio (2026-11-03).
 - ~~¿Qué tan importante es lo del patrón?~~ → El patrón **no existe para la plataforma**: solo es la contraparte de los acuerdos y reintegros en Ingresos (2026-11-03).
@@ -30,7 +30,7 @@ Lo que todavía no sabemos o no decidimos. Cuando se resuelve, pasa a [decisione
 ## Producto
 - [ ] **App de caballos registrados** **«Polo Argentino»** (app **de terceros** del App Store con la info de los caballos registrados; no es nuestro producto, que todavía no tiene nombre): confirmar quién es el dueño, si tiene API o acuerdo de datos, qué campos trae (sangre, padre, madre, partidos jugados) y si se puede actualizar. Alternativa o complemento: registro genealógico de la AACCP. En una búsqueda web (2026-11-03) no apareció una app con ese nombre exacto; sí catálogos de cría (La Dolfina Cría, Cría Emezeta) y una app "Criadores de Polo".
 - [ ] **Conversión de monedas**: ¿Qué cotización si el gasto es de una fecha pasada ("el viernes pagué…"): la de ese día? ¿Se puede corregir la cotización a mano?
-- [ ] ¿Qué miembros "solo WhatsApp" pueden cargar **gastos e ingresos** (ej. un familiar que ayuda con gastos) y cuáles solo novedades de caballos y caballeriza (ej. petiseros)? ¿Lo configura el polista o el manager desde la app?
+- [ ] ¿Qué miembros "solo WhatsApp" pueden **cargar** gastos e ingresos por el bot (ej. un familiar que ayuda con gastos) y cuáles solo novedades de caballos y caballeriza (ej. petiseros)? Ya se sabe que **lo configuran los owners desde Equipo** y que ver Gastos e Ingresos en la app es solo de owners; falta definir los permisos de **carga** por WhatsApp.
 - [ ] ¿El bot responde **consultas de plata** en el grupo? Propuesta [HIPÓTESIS]: nunca; las consultas de plata solo por privado al polista o al manager.
 - [ ] **Onboarding** (postergado por decisión). Idea discutida: primera carga por WhatsApp (caballos desde la app Polo Argentino, equipo, pagos fijos y acuerdos) más una revisión web; *white-glove* para los primeros clientes.
 - [ ] **Ficha digital oficial del caballo** (libreta sanitaria digital, pasaporte equino, microchip) y camino a "aplicación autorizada" de SENASA. Ver [regulación](../01-mercado/regulacion-senasa.md).
