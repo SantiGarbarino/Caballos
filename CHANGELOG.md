@@ -1,5 +1,8 @@
 # Changelog del brain
 
+## 2026-11-04 · Borrador v11 al repo
+- Se sube `02-producto/mockups/programon-borrador.html` (borrador v11) como referencia para arrancar el desarrollo en Claude Code. `programon.html` sigue siendo el snapshot del link compartible (v7).
+
 ## 2026-11-03 (sesión 11) · Permisos finos en el mockup
 - Borrador v11: Equipo con owners y resto del equipo; «Qué ve en la app» por persona (Nada / Todo / Una parte: secciones + qué caballos: todos, de un lugar o algunos). Actualizados `decisiones.md`, `preguntas-abiertas.md`, `app-mobile.md`, `modelo-de-datos.md` e `historial-iteraciones.md`.
 

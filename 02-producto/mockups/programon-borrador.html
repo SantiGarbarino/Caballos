@@ -1,0 +1,1197 @@
+<title>PROGRAMON Borrador</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Lexend:wght@700;800&display=swap">
+<style>
+/* Layout: una app de celular a pantalla completa; en compu, una columna de 430px centrada.
+   Una sola estética clara a propósito (es el mockup de una marca), con todos los colores en tokens. */
+:root{
+  --ground:#E4E0D5; --bg:#F3F0E8; --card:#FFFFFF; --line:#E2DDD2; --line2:#EFEBE2; --seg:#E7E2D7;
+  --ink:#15211B; --muted:#56615B; --faint:#8A928D;
+  --green:#155C3F; --green-soft:#E3ECE5; --green2:#3E7A5A;
+  --blue:#1F4F80; --blue-soft:#E2ECF6;
+  --purple:#5B3A80; --purple-soft:#EEE6F5;
+  --saddle:#8A4510; --saddle-dot:#B5651D; --saddle-soft:#F6E7D8; --saddle-ink:#4F2607;
+  --wa-bg:#EAE4D8;
+  --grad:linear-gradient(145deg,#082419 0%,#0F3D2B 45%,#1C6B4B 100%);
+  --grad-btn:linear-gradient(135deg,#0F3D2B 0%,#1F7A55 100%);
+  --gold:#D9B565; --gold-ink:#7A5A14; --glass:rgba(255,255,255,.10); --glass-line:rgba(255,255,255,.16); --wa-mine:#D9EBD9; --scrim:rgba(21,33,27,.45);
+  --display:'Instrument Serif',Georgia,'Times New Roman',serif;
+  --body:Manrope,system-ui,-apple-system,'Segoe UI',sans-serif;
+  color-scheme:light;
+}
+html,body{height:100%}
+body{background:radial-gradient(1200px 600px at 50% -10%,#1C6B4B 0%,#082419 55%,#05140E 100%) fixed;color:var(--ink);font-family:var(--body);font-size:14px;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+button{font-family:inherit;color:inherit}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+#app{height:100%;max-width:430px;margin:0 auto;background:var(--bg);display:flex;flex-direction:column;position:relative;overflow:hidden}
+@media (min-width:520px){#app{box-shadow:0 0 0 1px var(--line),0 20px 60px rgba(0,0,0,.12)}}
+.scr{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-top:20px;padding-bottom:24px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.scr::-webkit-scrollbar,.chips::-webkit-scrollbar{display:none}
+svg.i{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+svg.s{width:16px;height:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px}
+.lbl{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.muted{color:var(--muted)}
+.pill{display:inline-flex;align-items:center;height:22px;padding:0 9px;border-radius:999px;font-size:11.5px;font-weight:700;white-space:nowrap}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px}
+.wrap{display:flex;flex-wrap:wrap;gap:6px}
+.row{display:flex;align-items:center;gap:12px}
+.col{display:flex;flex-direction:column}
+.list{display:flex;flex-direction:column;padding:4px 14px}
+.li{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--line2)}
+.li:last-child{border-bottom:0}
+.h1{margin:0;font-size:24px;font-weight:800;letter-spacing:-.02em;text-wrap:balance}
+.brand{font-family:Lexend,Manrope,system-ui,sans-serif;font-weight:800;color:var(--green);letter-spacing:.01em;line-height:1}
+.sec{display:flex;align-items:center;justify-content:space-between;margin:0 0 10px}
+.gap8{display:flex;flex-direction:column;gap:8px}
+.mb{margin-bottom:20px}
+.btn-plain{background:none;border:0;padding:0;cursor:pointer}
+.btn-o{display:inline-flex;align-items:center;gap:4px;height:34px;padding:0 11px;border-radius:999px;border:1px solid var(--green);background:var(--card);color:var(--green);font-size:12.5px;font-weight:800;cursor:pointer}
+.btn-g{height:48px;border-radius:12px;border:0;background:var(--green);color:#fff;font-size:14px;font-weight:800;cursor:pointer;width:100%}
+.chip{height:36px;padding:0 12px;border-radius:999px;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0;background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.seg{display:grid;gap:4px;padding:4px;border-radius:12px;background:var(--seg)}
+.seg button{height:36px;border:0;border-radius:9px;font-size:12.5px;font-weight:700;cursor:pointer;background:transparent;color:#4A524D}
+.seg button.on{background:var(--card);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.back{display:inline-flex;align-items:center;gap:4px;height:40px;padding:0 8px 0 0;background:none;border:0;font-size:14px;font-weight:700;color:var(--green);cursor:pointer}
+.bar{height:8px;border-radius:999px;background:var(--line2);overflow:hidden}
+.bar>div{height:100%;border-radius:999px}
+.chk{width:26px;height:26px;flex-shrink:0;border-radius:8px;display:flex;align-items:center;justify-content:center;background:var(--card);border:2px solid #C9C3B6;padding:0;cursor:pointer}
+.chk.on{background:var(--green);border-color:var(--green);color:#fff}
+.done{color:var(--muted)!important;text-decoration:line-through}
+.alert{display:flex;gap:12px;align-items:flex-start;text-align:left;width:100%;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:13px 14px;cursor:pointer}
+.dot{width:10px;height:10px;border-radius:999px;flex-shrink:0}
+.ava{flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:var(--display)}
+nav.tabs{flex-shrink:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));background:var(--card);border-top:1px solid var(--line);padding-top:6px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));padding-left:max(6px,env(safe-area-inset-left,0px));padding-right:max(6px,env(safe-area-inset-right,0px))}
+nav.tabs button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;border:0;background:none;cursor:pointer;font-size:11px;font-weight:700;min-height:50px;color:#6B746F}
+nav.tabs button.on{color:var(--green)}
+.scrim{position:absolute;inset:0;background:var(--scrim);display:flex;flex-direction:column;justify-content:flex-end;z-index:20}
+.sheet{background:var(--card);border-radius:22px 22px 0 0;display:flex;flex-direction:column;gap:12px;max-height:88%;overflow-y:auto;padding-top:18px;padding-bottom:calc(24px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.x{width:40px;height:40px;border-radius:999px;border:0;background:var(--bg);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.inp{height:44px;padding:0 12px;border:1px solid var(--line);border-radius:12px;font:inherit;font-size:16px;font-weight:500;color:var(--ink);background:var(--card);width:100%;min-width:0}
+.field{display:flex;flex-direction:column;gap:4px;font-size:12.5px;font-weight:700}
+.hint{padding:11px 12px;border-radius:12px;background:var(--green-soft);font-size:12.5px;line-height:1.45;color:#20352A}
+.tnum{font-variant-numeric:tabular-nums}
+.wa-top{flex-shrink:0;display:flex;align-items:center;gap:10px;background:var(--green);color:#fff;padding-top:12px;padding-bottom:12px;padding-left:max(10px,env(safe-area-inset-left,0px));padding-right:max(10px,env(safe-area-inset-right,0px))}
+.wa-scr{flex:1;overflow-y:auto;background:var(--wa-bg);display:flex;flex-direction:column;gap:8px;padding-top:14px;padding-bottom:20px;padding-left:max(12px,env(safe-area-inset-left,0px));padding-right:max(12px,env(safe-area-inset-right,0px))}
+.bub{max-width:82%;padding:8px 10px 6px;border-radius:12px;box-shadow:0 1px 1px rgba(0,0,0,.06);font-size:14px;line-height:1.4;white-space:pre-line}
+.bub.me{align-self:flex-end;background:var(--wa-mine);border-top-right-radius:4px}
+.bub.bot{align-self:flex-start;background:var(--card);border-top-left-radius:4px}
+.bub.media{width:82%}
+.time{font-size:10.5px;color:#6B746F;text-align:right;margin-top:3px}
+@media (prefers-reduced-motion:no-preference){.sheet{animation:up .2s ease-out}@keyframes up{from{transform:translateY(24px);opacity:.6}to{transform:none;opacity:1}}}
+/* Dirección "cancha de noche": degradé verde profundo + acento dorado, solo en piezas clave */
+.hero{background:var(--grad);color:#fff;border:0!important;box-shadow:0 12px 30px rgba(8,36,25,.28)}
+.hero .muted,.hero .lbl{color:rgba(255,255,255,.72)!important}
+.hero [style*="border-top"]{border-top-color:var(--glass-line)!important}
+.hero svg{color:rgba(255,255,255,.75)!important}
+.glass{background:var(--glass);border:1px solid var(--glass-line);border-radius:16px;padding:12px}
+.btn-g{background:var(--grad-btn)!important;box-shadow:0 6px 16px rgba(21,92,63,.28)}
+.chip.on{background:var(--grad-btn);border-color:transparent;color:#fff}
+nav.tabs button{position:relative}
+nav.tabs button.on::after{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:22px;height:3px;border-radius:0 0 3px 3px;background:var(--gold)}
+.seg button.on{box-shadow:0 1px 3px rgba(0,0,0,.12),inset 0 -2px 0 var(--gold)}
+.gold{color:var(--gold)}
+</style>
+
+<div id="app" aria-live="polite"></div>
+
+<script>
+(function () {
+'use strict';
+var I = {
+  home:'<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/>',
+  horse:'<path d="M8 21v-5.5L5 13l1.5-5L10 4l1.5 2.5H14l4 3.5-1.5 2.5-3-.8-1 3.3V21"/><path d="M14.5 8.5h.01"/>',
+  barn:'<path d="M3 21V9l9-6 9 6v12M3 21h18M9 21v-6h6v6M9 11h6"/>',
+  wallet:'<path d="M3 7h15a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3zM3 7l12-4v4M16 14h2"/>',
+  clip:'<path d="M9 4h6v3H9zM7 5H5v16h14V5h-2M8 13l3 3 5-5"/>',
+  user:'<path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0"/>',
+  chev:'<path d="M9 6l6 6-6 6"/>', left:'<path d="M15 6l-6 6 6 6"/>', down:'<path d="M6 9l6 6 6-6"/>',
+  chat:'<path d="M4 20l1.5-4A8 8 0 1 1 9 19z"/>', plus:'<path d="M12 5v14M5 12h14"/>',
+  search:'<path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zM20 20l-4-4"/>',
+  alert:'<path d="M12 3l10 18H2zM12 10v5M12 18h.01"/>', check:'<path d="M5 12l5 5 9-10"/>',
+  mic:'<path d="M12 3a3 3 0 0 1 3 3v6a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3zM5 11a7 7 0 0 0 14 0M12 18v3"/>',
+  cam:'<path d="M4 8h3l2-3h6l2 3h3v11H4zM12 11a3 3 0 1 0 0 6 3 3 0 0 0 0-6"/>',
+  cal:'<path d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4"/>', close:'<path d="M6 6l12 12M18 6L6 18"/>',
+  cash:'<path d="M3 7h18v10H3z"/><circle cx="12" cy="12" r="2.5"/><path d="M6 10v4M18 10v4"/>',
+  download:'<path d="M12 4v11M7 10l5 5 5-5M5 20h14"/>',
+  repeat:'<path d="M4 10a7 7 0 0 1 12-4l2 2M20 14a7 7 0 0 1-12 4l-2-2M18 4v4h-4M6 20v-4h4"/>',
+  tag:'<path d="M3 12V4h8l10 10-8 8z"/><path d="M7.5 7.5h.01"/>',
+  lock:'<path d="M6 11V8a6 6 0 0 1 12 0v3M5 11h14v10H5z"/>',
+  pin:'<path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>',
+  truck:'<path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>',
+  trophy:'<path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M9 20h6"/>',
+  gift:'<path d="M4 10h16v10H4zM3 7h18v3H3zM12 7v13M12 7C10 4 7 4 7 6s5 1 5 1zm0 0c2-3 5-3 5-1s-5 1-5 1z"/>',
+  mallet:'<path d="M5 20L16.5 8.5"/><path d="M14 4l6 6-2.5 2.5-6-6z"/>'
+};
+function ic(n, cls, st) { return '<svg class="i ' + (cls || '') + '" viewBox="0 0 24 24" aria-hidden="true"' + (st ? ' style="' + st + '"' : '') + '>' + I[n] + '</svg>'; }
+function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+function A(act, v, extra) { return 'data-act="' + act + '"' + (v !== undefined ? ' data-v="' + esc(v) + '"' : '') + (extra || ''); }
+
+var S = {
+  view: 'app', tab: 'inicio', horseId: null, fichaTab: 'actividad', filtro: 'todos', sede: 'pilar', persona: null, sheet: null,
+  remTxt: '', remCuando: 'Mañana', remQuien: 'Pedro (piloto)', extraRem: {}, doneRem: {},
+  visQuien: 'Veterinaria', visDia: 'Mié 28', visNota: '', extraVis: [], rango: 'mes', dest: 'todos', chat: 'grupo',
+  equipo: false, invRol: 'Petisero', invNombre: '', invOk: false, invGrupo: true, invPriv: false
+};
+
+/* ---------------- Datos ---------------- */
+var ST = {
+  jugando: { label: 'Jugando', c: 'var(--green)', bg: 'var(--green-soft)' },
+  campo: { label: 'En el campo', c: 'var(--blue)', bg: 'var(--blue-soft)' },
+  exterior: { label: 'Exterior', c: 'var(--purple)', bg: 'var(--purple-soft)' },
+  recuperacion: { label: 'Recuperación', c: 'var(--saddle)', bg: 'var(--saddle-soft)' }
+};
+var RAW = [
+  ['morena','Morena','Yegua',9,'zaina','jugando','Vareada hoy · viaja a Inglaterra en marzo',''],
+  ['pochola','Rockstar','Yegua',8,'alazana','jugando','En el box · revisión vet. el lunes','Renguea de la mano izquierda. La reportó Ramón hoy a las 9:40, con foto. Quedó en el box hasta que la vea la Dra. Ibarra.'],
+  ['tordillo','Tordillo','Macho castrado',10,'tordillo','jugando','Vareado hoy · 2 chukkers el domingo',''],
+  ['negra','Negra','Yegua',7,'oscura','jugando','Vareada hoy · comió poco a la mañana','No terminó la ración de la mañana. Lo avisó Lucho a las 8:15.'],
+  ['bruja','Bruja','Yegua',11,'colorada','jugando','Herrada hoy · viaja a Inglaterra en marzo',''],
+  ['cautiva','Cautiva','Yegua',8,'zaina','jugando','Vareada hoy · va a la práctica',''],
+  ['lucera','Lucera','Yegua',9,'alazana','jugando','Herrada hoy · viaja a Inglaterra en marzo',''],
+  ['gitana','Gitana','Yegua',7,'tostada','jugando','Herrada hoy · va a la práctica',''],
+  ['pampa','Pampa','Yegua',10,'doradilla','jugando','Vareada hoy · va a la práctica',''],
+  ['malcriada','Malcriada','Yegua',8,'zaina','jugando','Herraje vencido (7 semanas)',''],
+  ['dinamita','Dinamita','Yegua',9,'colorada','jugando','Herrada hoy',''],
+  ['chiquita','Chiquita','Yegua',12,'tordilla','jugando','Herraje vencido (8 semanas)',''],
+  ['rubia','Rubia','Yegua',7,'alazana','jugando','Herraje vencido (7 semanas) · no se vareó',''],
+  ['tormenta','Tormenta','Yegua',6,'zaina','jugando','Pasa al campo mañana a las 7:00',''],
+  ['silvestre','Silvestre','Yegua',8,'oscura','campo','Descanso desde el 1/10',''],
+  ['mora','Mora','Yegua',13,'mora','campo','Retirada · madre',''],
+  ['picara','Pícara','Yegua',5,'zaina','campo','En doma · 2.º año',''],
+  ['india','India','Yegua',4,'overa','campo','En doma · 1.er año',''],
+  ['coqueta','Coqueta','Yegua',9,'alazana','campo','Descanso desde el 15/9',''],
+  ['luna','Luna','Yegua',6,'tordilla','campo','Vuelve a Pilar en noviembre',''],
+  ['princesa','Princesa','Yegua',14,'colorada','campo','Retirada · madre',''],
+  ['chispa','Chispa','Yegua',5,'zaina','campo','En doma · 2.º año',''],
+  ['paloma','Paloma','Yegua',7,'blanca','campo','Descanso desde el 1/10',''],
+  ['reina','Reina','Yegua',11,'zaina','campo','Preñada · pare en diciembre',''],
+  ['brava','Brava','Yegua',4,'colorada','campo','En doma · 1.er año',''],
+  ['fiera','Fiera','Yegua',6,'oscura','campo','Descanso desde el 20/9',''],
+  ['duquesa','Duquesa','Yegua',8,'alazana','campo','Vuelve a Pilar en noviembre',''],
+  ['cielo','Cielo','Yegua',5,'tordilla','campo','En doma · 2.º año',''],
+  ['rosa','La Rosa','Yegua',15,'zaina','campo','Retirada · madre',''],
+  ['guerrera','Guerrera','Yegua',9,'zaina','exterior','Windsor, Inglaterra · invernada desde el 1/9',''],
+  ['victoria','Victoria','Yegua',10,'alazana','exterior','Windsor, Inglaterra · invernada desde el 1/9',''],
+  ['martina','Martina','Yegua',8,'colorada','exterior','Windsor, Inglaterra · invernada desde el 1/9',''],
+  ['hechicera','Hechicera','Yegua',11,'oscura','exterior','Windsor, Inglaterra · invernada desde el 1/9',''],
+  ['patria','Patria','Yegua',9,'zaina','recuperacion','Tendón · reposo hasta el 15/11','Reposo de tendón (mano derecha). Control con ecografía el 5/11.'],
+  ['nube','Nube','Yegua',7,'tordilla','recuperacion','Post cólico · alta el 25/10','']
+];
+var UBIC = { jugando: 'Caballeriza Pilar', campo: 'Campo, Cnel. Suárez', exterior: 'Windsor, Inglaterra', recuperacion: 'Caballeriza Pilar · box' };
+var HORSES = RAW.map(function (r) { return { id: r[0], nombre: r[1], sexo: r[2], edad: r[3], pelaje: r[4], estado: r[5], linea: r[6], novedad: r[7], inicial: r[1].replace('La ', '').charAt(0) }; });
+function horse(id) { for (var i = 0; i < HORSES.length; i++) if (HORSES[i].id === id) return HORSES[i]; return null; }
+function count(k) { return HORSES.filter(function (h) { return h.estado === k; }).length; }
+
+var REM = {
+  morena: [{ id: 'm1', que: 'Cambiar la embocadura: probar la de goma', cuando: 'Mañana', quien: 'Pedro (piloto)', origen: 'vos por WhatsApp' }, { id: 'm2', que: 'Sacar sangre para AIE (viaje a Inglaterra)', cuando: 'Febrero', quien: 'Dra. Ibarra', origen: 'automático por el viaje' }],
+  pochola: [{ id: 'p1', que: 'Hielo en la mano izquierda, mañana y tarde', cuando: 'Todos los días', quien: 'Pedro (piloto)', origen: 'vos por WhatsApp' }, { id: 'p2', que: 'Control veterinario de la mano', cuando: 'Lun 26/10', quien: 'Dra. Ibarra', origen: 'visita agendada' }],
+  negra: [{ id: 'n1', que: 'Controlar si come la ración de la noche', cuando: 'Hoy', quien: 'Pedro (piloto)', origen: 'vos por WhatsApp' }],
+  chiquita: [{ id: 'c1', que: 'Herrar', cuando: 'Jue 29/10', quien: 'Cacho, herrero', origen: 'visita agendada' }],
+  rubia: [{ id: 'r1', que: 'Herrar', cuando: 'Jue 29/10', quien: 'Cacho, herrero', origen: 'visita agendada' }],
+  malcriada: [{ id: 'k1', que: 'Herrar', cuando: 'Jue 29/10', quien: 'Cacho, herrero', origen: 'visita agendada' }],
+  patria: [{ id: 't1', que: 'Ecografía de control del tendón', cuando: '5/11', quien: 'Dra. Ibarra', origen: 'vos en la app' }],
+  tormenta: [{ id: 'o1', que: 'Cargar en el camión al campo', cuando: 'Mañana 7:00', quien: 'Pedro (piloto)', origen: 'vos por WhatsApp' }]
+};
+function rems(id) { return (REM[id] || []).concat(S.extraRem[id] || []); }
+function pendCount(id) { return rems(id).filter(function (r) { return !S.doneRem[r.id]; }).length; }
+
+/* Gastos: tipo + destino + moneda (la moneda no depende del destino) */
+var SIM = { usd: 'US$ ', ars: '$ ', eur: '€ ', gbp: '£ ' };
+function money(c, n) { return SIM[c] + n.toLocaleString('es-AR'); }
+var RANGOS = [
+  { k: 'mes', label: 'Este mes', largo: 'Octubre, al día 22', f: { pilar: 1, campo: 1, windsor: 1, soto: 1 } },
+  { k: '30d', label: 'Últimos 30 días', largo: 'Del 23/9 al 22/10', f: { pilar: 1.08, campo: 1.05, windsor: 1.02, soto: 1 } },
+  { k: 'arg', label: 'Temporada Argentina', largo: 'Septiembre a diciembre · al 22/10', f: { pilar: 1.9, campo: 1.8, windsor: 1.5, soto: 1 } },
+  { k: 'ing', label: 'Temporada Inglaterra', largo: 'Abril a julio 2026', f: { pilar: 0.5, campo: 1.4, windsor: 5.5, soto: 0.5 } },
+  { k: 'esp', label: 'Temporada Sotogrande', largo: 'Agosto 2026', f: { pilar: 0.3, campo: 1, windsor: 1.2, soto: 5 } },
+  { k: 'anio', label: 'Todo 2026', largo: 'Del 1/1 al 22/10', f: { pilar: 6.5, campo: 8, windsor: 8.5, soto: 7 } },
+  { k: 'custom', label: '1/8 al 22/10', largo: 'Del 1/8 al 22/10', f: { pilar: 2.6, campo: 2.5, windsor: 2.4, soto: 6 }, oculto: true }
+];
+function rango() { for (var i = 0; i < RANGOS.length; i++) if (RANGOS[i].k === S.rango) return RANGOS[i]; return RANGOS[0]; }
+var DEST = [
+  ['pilar', 'Caballeriza Pilar', 'Pilar', '16 caballos · Argentina', 'var(--green)'],
+  ['campo', 'Campo, Cnel. Suárez', 'Campo', '15 caballos · Argentina', 'var(--green2)'],
+  ['windsor', 'Windsor, Inglaterra', 'Windsor', '4 caballos en invernada', 'var(--blue)'],
+  ['soto', 'Sotogrande, España', 'Sotogrande', 'Sin caballos ahora · caballeriza de temporada', 'var(--saddle-dot)']
+];
+var DN = {}; DEST.forEach(function (d) { DN[d[0]] = d; });
+/* Gastos: UNA sola lista. Todo total que se muestra es la suma de los gastos de esta lista
+   que caen en el período y el lugar elegidos. Cada gasto: grupo › categoría + lugar + moneda + comprobante. */
+var GRUPOS = [
+  ['Caballos', 'Comida, pastoreo, veterinario y herrero', ['Comida', 'Pastoreo', 'Veterinario', 'Herrero'], 'horse'],
+  ['Personal', 'Petiseros y su comida', ['Petiseros', 'Comida de los petiseros'], 'user'],
+  ['Caballerizas y casa', 'Acá y afuera', ['Caballerizas', 'Casa'], 'barn'],
+  ['Equipo de polo', 'Monturas, bozales, tacos y cascos', ['Monturas', 'Bozales y riendas', 'Tacos', 'Cascos e indumentaria'], 'mallet'],
+  ['Traslados y viajes', 'Fletes de caballos, pasajes y nafta', ['Fletes de caballos', 'Pasajes propios', 'Pasajes de los petiseros', 'Nafta y vehículos'], 'truck'],
+  ['Torneos y handicap', 'Inscripciones y pago del handicap', ['Inscripciones', 'Handicap'], 'trophy'],
+  ['Varios', 'Regalos y gastos extra', ['Regalos y extras'], 'gift']
+];
+var GICON = {}; GRUPOS.forEach(function (g) { GICON[g[0]] = g[3]; });
+var CATDESC = { Comida: 'Fardos, avena, rollos, balanceado y suplementos', Pastoreo: 'Campo ajeno para que pasten, sobre todo afuera', Veterinario: 'Visitas, medicamentos, vacunas, análisis y estudios', Herrero: 'Herrajes, despalmes, herraduras y clavos', Petiseros: 'Sueldos, adelantos y premios', 'Comida de los petiseros': 'Mercadería y comidas', Caballerizas: 'Alquiler de boxes, invernada y señas', Casa: 'Alquiler de la casa, acá y afuera', 'Fletes de caballos': 'Trailer, camión o avión contratados', 'Nafta y vehículos': 'Nafta, gomas y arreglos de los vehículos propios', Handicap: 'Pago anual del handicap (AAP, HPA)', Inscripciones: 'Inscripciones a torneos' };
+var CURS = [['usd', 'Dólares'], ['ars', 'Pesos'], ['eur', 'Euros']];
+var LEDGER = [], gid = 0;
+function add(m, d, t, amt, cur, dest, grupo, cat, src, by, nota) { LEDGER.push({ id: 'g' + (gid++), m: m, d: d, t: t, amt: amt, cur: cur, dest: dest, grupo: grupo, cat: cat, src: src || 'texto', by: by || 'Tomás', nota: nota || '' }); }
+/* Veterinario: visitas, medicamentos, vacunas, análisis y estudios. Herrero: herrajes, herraduras y despalmes. */
+var VET_MES = { 1: ['Vacunas de influenza y encefalomielitis · 16 caballos', 880000], 2: ['Análisis de AIE · 16 caballos', 720000], 3: ['Antiinflamatorios y vendas', 450000], 4: ['Revisación y placas para el viaje a Inglaterra', 1100000], 9: ['Desparasitación de los 16', 380000] };
+[1, 2, 3, 4, 9].forEach(function (m) {
+  add(m, 1, 'Alquiler caballeriza Pilar', 1900, 'usd', 'pilar', 'Caballerizas y casa', 'Caballerizas', 'texto', 'Tomás', 'Pagué el alquiler de la caballeriza, 1.900 dólares.');
+  add(m, 1, 'Alquiler de la casa en Pilar', 2500, 'usd', 'pilar', 'Caballerizas y casa', 'Casa', 'texto', 'Tomás', 'Pagué el alquiler de la casa, 2.500 dólares.');
+  add(m, 5, 'Sueldos de los petiseros', 3000, 'usd', 'pilar', 'Personal', 'Petiseros', 'texto', 'Tomás', 'Pagué los sueldos de Ramón, Lucho y Juanca.');
+  add(m, 5, 'Sueldo del puestero', 600, 'usd', 'campo', 'Personal', 'Petiseros', 'texto', 'Tomás', 'Le pagué a Don Aníbal.');
+  add(m, 6, '22 rollos', 640000, 'ars', 'campo', 'Caballos', 'Comida', 'foto', 'Don Aníbal');
+  var vt = VET_MES[m]; add(m, 14, vt[0], vt[1], 'ars', 'pilar', 'Caballos', 'Veterinario', 'foto', 'Dra. Ibarra');
+  add(m, 16, 'Herraje de 14 caballos', 1200000, 'ars', 'pilar', 'Caballos', 'Herrero', 'audio', 'Pedro', 'Le pagué a Cacho el herraje de los 14 que están jugando, un millón doscientos.');
+  add(m, 17, 'Comida para los petiseros', 650000, 'ars', 'pilar', 'Personal', 'Comida de los petiseros', 'foto', 'Pedro');
+  add(m, 18, '200 fardos de alfalfa', 2400000, 'ars', 'pilar', 'Caballos', 'Comida', 'foto', 'Pedro');
+  add(m, 20, '30 bolsas de avena', 840000, 'ars', 'pilar', 'Caballos', 'Comida', 'foto', 'Pedro');
+  add(m, 25, 'Nafta del mes', 300000, 'ars', 'pilar', 'Traslados y viajes', 'Nafta y vehículos', 'foto', 'Tomás');
+});
+[5, 6, 7].forEach(function (m) {
+  add(m, 1, 'Caballeriza en Windsor', 6000, 'usd', 'windsor', 'Caballerizas y casa', 'Caballerizas', 'foto', 'Tomás');
+  add(m, 1, 'Casa en Windsor', 5500, 'usd', 'windsor', 'Caballerizas y casa', 'Casa', 'foto', 'Tomás');
+  add(m, 5, 'Sueldos de los petiseros', 4200, 'usd', 'windsor', 'Personal', 'Petiseros', 'texto', 'Tomás', 'Pagué los sueldos de los petiseros en Inglaterra.');
+  add(m, 5, 'Sueldo del puestero', 600, 'usd', 'campo', 'Personal', 'Petiseros', 'texto', 'Tomás', 'Le pagué a Don Aníbal.');
+  add(m, 6, '22 rollos', 640000, 'ars', 'campo', 'Caballos', 'Comida', 'foto', 'Don Aníbal');
+  add(m, 10, 'Pastoreo', 1500, 'usd', 'windsor', 'Caballos', 'Pastoreo', 'foto', 'Tomás');
+  add(m, 12, 'Avena y fardos', 2800, 'usd', 'windsor', 'Caballos', 'Comida', 'foto', 'Juanca');
+  add(m, 14, { 5: 'Visita del veterinario y antibiótico', 6: 'Ecografía de un tendón', 7: 'Vacunas y medicamentos' }[m], 1200, 'usd', 'windsor', 'Caballos', 'Veterinario', 'foto', 'Tomás');
+  add(m, 16, 'Herraje de 10 caballos', 1600, 'usd', 'windsor', 'Caballos', 'Herrero', 'audio', 'Juanca', 'Vino el herrero, herró a las diez, mil seiscientos dólares.');
+  add(m, 17, 'Comida para los petiseros', 900, 'usd', 'windsor', 'Personal', 'Comida de los petiseros', 'foto', 'Juanca');
+});
+add(8, 1, 'Caballeriza en Sotogrande', 5000, 'eur', 'soto', 'Caballerizas y casa', 'Caballerizas', 'foto', 'Tomás');
+add(8, 1, 'Casa en Sotogrande', 4500, 'eur', 'soto', 'Caballerizas y casa', 'Casa', 'foto', 'Tomás');
+add(8, 5, 'Sueldos de los petiseros', 3800, 'eur', 'soto', 'Personal', 'Petiseros', 'texto', 'Tomás', 'Pagué los sueldos de los petiseros en España.');
+add(8, 5, 'Sueldo del puestero', 600, 'usd', 'campo', 'Personal', 'Petiseros', 'texto', 'Tomás', 'Le pagué a Don Aníbal.');
+add(8, 6, '22 rollos', 640000, 'ars', 'campo', 'Caballos', 'Comida', 'foto', 'Don Aníbal');
+add(8, 10, 'Pastoreo', 1800, 'eur', 'soto', 'Caballos', 'Pastoreo', 'foto', 'Tomás');
+add(8, 14, 'Revisación de llegada · 10 caballos', 900, 'eur', 'soto', 'Caballos', 'Veterinario', 'foto', 'Tomás');
+add(8, 16, 'Herraje de 10 caballos', 1100, 'eur', 'soto', 'Caballos', 'Herrero', 'foto', 'Tomás');
+add(8, 17, 'Comida para los petiseros', 800, 'eur', 'soto', 'Personal', 'Comida de los petiseros', 'foto', 'Juanca');
+add(1, 15, 'Pago del handicap 2026 · AAP', 850000, 'ars', 'pilar', 'Torneos y handicap', 'Handicap', 'texto', 'Tomás', 'Pagué el handicap de este año, 850 mil.');
+add(2, 20, '4 tacos', 900, 'usd', 'pilar', 'Equipo de polo', 'Tacos', 'foto', 'Tomás');
+add(3, 8, 'Casco nuevo', 650, 'usd', 'pilar', 'Equipo de polo', 'Cascos e indumentaria', 'foto', 'Tomás');
+add(4, 20, 'Flete aéreo de 10 caballos a Inglaterra', 38000, 'usd', 'windsor', 'Traslados y viajes', 'Fletes de caballos', 'foto', 'Tomás');
+add(4, 28, 'Pasaje Buenos Aires – Londres', 2400, 'usd', 'windsor', 'Traslados y viajes', 'Pasajes propios', 'foto', 'Tomás');
+add(4, 28, 'Pasajes de 2 petiseros a Londres', 3200, 'usd', 'windsor', 'Traslados y viajes', 'Pasajes de los petiseros', 'foto', 'Tomás');
+add(5, 3, 'Handicap en Inglaterra · HPA', 900, 'usd', 'windsor', 'Torneos y handicap', 'Handicap', 'texto', 'Tomás', 'Pagué el handicap de Inglaterra, 900 dólares.');
+add(5, 10, 'Inscripción torneo de mayo', 2500, 'usd', 'windsor', 'Torneos y handicap', 'Inscripciones', 'texto', 'Tomás', 'Pagué la inscripción del torneo, 2.500 dólares.');
+add(6, 3, '6 tacos', 1300, 'usd', 'windsor', 'Equipo de polo', 'Tacos', 'foto', 'Tomás');
+add(6, 8, 'Inscripción torneo de junio', 2500, 'usd', 'windsor', 'Torneos y handicap', 'Inscripciones', 'texto', 'Tomás', 'Inscripción del torneo de junio, 2.500.');
+add(7, 15, 'Cena con el equipo', 400, 'usd', 'windsor', 'Varios', 'Regalos y extras', 'audio', 'Tomás', 'Invité la cena al equipo, 400 dólares.');
+add(8, 1, 'Pasajes Londres – Málaga', 600, 'eur', 'soto', 'Traslados y viajes', 'Pasajes propios', 'foto', 'Tomás');
+add(8, 2, 'Flete de caballos Windsor – Sotogrande', 9000, 'eur', 'soto', 'Traslados y viajes', 'Fletes de caballos', 'foto', 'Tomás');
+add(8, 8, 'Inscripción torneo en Sotogrande', 3000, 'eur', 'soto', 'Torneos y handicap', 'Inscripciones', 'texto', 'Tomás', 'Pagué la inscripción en Sotogrande, 3 mil euros.');
+add(8, 30, 'Pasaje de vuelta a Buenos Aires', 1400, 'usd', 'pilar', 'Traslados y viajes', 'Pasajes propios', 'foto', 'Tomás');
+add(8, 30, 'Pasajes de vuelta de los petiseros', 2800, 'usd', 'pilar', 'Traslados y viajes', 'Pasajes de los petiseros', 'foto', 'Tomás');
+add(9, 1, 'Invernada en Windsor · 4 caballos', 4250, 'usd', 'windsor', 'Caballerizas y casa', 'Caballerizas', 'foto', 'Tomás');
+add(9, 10, 'Bozales y riendas', 380, 'usd', 'pilar', 'Equipo de polo', 'Bozales y riendas', 'foto', 'Tomás');
+add(9, 25, 'Inscripción torneo de septiembre', 3000, 'usd', 'pilar', 'Torneos y handicap', 'Inscripciones', 'texto', 'Tomás', 'Pagué la inscripción del torneo, 3 mil dólares.');
+/* Octubre, al día 22 */
+add(10, 1, 'Alquiler caballeriza Pilar', 1900, 'usd', 'pilar', 'Caballerizas y casa', 'Caballerizas', 'texto', 'Tomás', 'Pagué el alquiler de la caballeriza, 1.900 dólares.');
+add(10, 1, 'Alquiler de la casa en Pilar', 2500, 'usd', 'pilar', 'Caballerizas y casa', 'Casa', 'texto', 'Tomás', 'Pagué el alquiler de la casa, 2.500 dólares.');
+add(10, 5, 'Sueldos de los petiseros', 3000, 'usd', 'pilar', 'Personal', 'Petiseros', 'texto', 'Tomás', 'Pagué los sueldos de Ramón, Lucho y Juanca.');
+add(10, 5, 'Sueldo del puestero', 600, 'usd', 'campo', 'Personal', 'Petiseros', 'texto', 'Tomás', 'Le pagué a Don Aníbal.');
+add(10, 5, '22 rollos', 640000, 'ars', 'campo', 'Caballos', 'Comida', 'foto', 'Don Aníbal');
+add(10, 8, 'Vacunas y desparasitación de las de doma', 1200, 'usd', 'campo', 'Caballos', 'Veterinario', 'audio', 'Tomás', 'Le pagué 1.200 dólares al veterinario por las vacunas y la desparasitación de las de doma del campo.');
+add(10, 8, 'Despalme y herraje de las 5 de doma', 800, 'usd', 'campo', 'Caballos', 'Herrero', 'audio', 'Tomás', 'Y 800 al herrero por despalmar y herrar a las 5 de doma.');
+add(10, 12, 'Medicamentos de la veterinaria', 250000, 'ars', 'pilar', 'Caballos', 'Veterinario', 'foto', 'Pedro');
+add(10, 13, 'Herraduras y clavos', 150000, 'ars', 'pilar', 'Caballos', 'Herrero', 'foto', 'Nacho');
+add(10, 9, 'Gomas nuevas del trailer', 600000, 'ars', 'pilar', 'Traslados y viajes', 'Nafta y vehículos', 'audio', 'Tomás', 'Cambiamos las cuatro gomas del trailer, 600 mil.');
+add(10, 10, 'Adelanto de sueldo a Lucho', 200, 'usd', 'pilar', 'Personal', 'Petiseros', 'audio', 'Tomás', 'Le adelanté 200 dólares a Lucho.');
+add(10, 11, 'Tacos para la temporada inglesa', 600, 'usd', 'windsor', 'Equipo de polo', 'Tacos', 'texto', 'Tomás', 'Encargué 4 tacos para Inglaterra, 600 dólares.');
+add(10, 12, 'Saldo del flete de la temporada', 2450, 'usd', 'windsor', 'Traslados y viajes', 'Fletes de caballos', 'texto', 'Tomás', 'Pagué el saldo del flete de Inglaterra, 2.450 dólares.');
+add(10, 13, 'Regalo de cumpleaños para Ramón', 120000, 'ars', 'pilar', 'Varios', 'Regalos y extras', 'audio', 'Tomás', 'Le compré un regalo a Ramón por el cumple, 120 mil.');
+add(10, 14, 'Botas y rodilleras', 450, 'usd', 'pilar', 'Equipo de polo', 'Cascos e indumentaria', 'foto', 'Tomás');
+add(10, 15, 'Invernada en Windsor · 4 caballos', 4250, 'usd', 'windsor', 'Caballerizas y casa', 'Caballerizas', 'foto', 'Tomás');
+add(10, 16, 'Seña caballeriza Sotogrande 2027', 4000, 'eur', 'soto', 'Caballerizas y casa', 'Caballerizas', 'texto', 'Tomás', 'Dejé 4 mil euros de seña para la caballeriza de Sotogrande del año que viene.');
+add(10, 17, 'Comida para los petiseros', 160000, 'ars', 'pilar', 'Personal', 'Comida de los petiseros', 'foto', 'Pedro');
+add(10, 18, '200 fardos de alfalfa', 2400000, 'ars', 'pilar', 'Caballos', 'Comida', 'foto', 'Pedro');
+add(10, 19, 'Montura nueva', 2200, 'usd', 'pilar', 'Equipo de polo', 'Monturas', 'texto', 'Tomás', 'Compré una montura nueva, 2.200 dólares.');
+add(10, 19, 'Flete Pilar → campo · 4 caballos', 280000, 'ars', 'pilar', 'Traslados y viajes', 'Fletes de caballos', 'audio', 'Pedro', 'Llevamos 4 caballos al campo en el trailer de Gómez, son 280 mil.');
+add(10, 20, '30 bolsas de avena', 840000, 'ars', 'pilar', 'Caballos', 'Comida', 'foto', 'Pedro');
+add(10, 21, 'Revisión y ecografía de Patria', 320000, 'ars', 'pilar', 'Caballos', 'Veterinario', 'foto', 'Dra. Ibarra');
+add(10, 21, '3 tacos nuevos', 540, 'usd', 'pilar', 'Equipo de polo', 'Tacos', 'foto', 'Tomás');
+add(10, 22, 'Herraje de 4 caballos', 180000, 'ars', 'pilar', 'Caballos', 'Herrero', 'audio', 'Pedro', 'Vino Cacho, herró a la Bruja, la Gitana, la Dinamita y la Lucera. Son 180 lucas, lo pagué yo.');
+add(10, 22, 'Nafta de la camioneta', 85000, 'ars', 'pilar', 'Traslados y viajes', 'Nafta y vehículos', 'foto', 'Tomás');
+add(10, 22, 'Visita del veterinario al campo', 600, 'usd', 'campo', 'Caballos', 'Veterinario', 'audio', 'Tomás', 'Le pagué 600 dólares al veterinario.');
+LEDGER.sort(function (a, b) { return (b.m * 100 + b.d) - (a.m * 100 + a.d); });
+/* Compras de caballos (inversión) y gastos que cubre un patrón */
+add(2, 12, 'Compra de Chispa (potranca)', 9000, 'usd', 'pilar', 'Compra de caballos', 'Compras', 'foto', 'Tomás');
+add(10, 21, 'Compra de Fortuna', 18000, 'usd', 'pilar', 'Compra de caballos', 'Compras', 'foto', 'Tomás');
+LEDGER.sort(function (a, b) { return (b.m * 100 + b.d) - (a.m * 100 + a.d); });
+function patch(m, d, t, o) { LEDGER.forEach(function (g) { if (g.m === m && g.d === d && g.t === t) for (var k in o) g[k] = o[k]; }); }
+patch(4, 20, 'Flete aéreo de 10 caballos a Inglaterra', { cubre: 'a1', reint: 'pendiente' });
+patch(4, 28, 'Pasajes de 2 petiseros a Londres', { cubre: 'a1', reint: 'pendiente' });
+patch(8, 2, 'Flete de caballos Windsor – Sotogrande', { cubre: 'a5', reint: 'cobrado' });
+patch(10, 14, 'Botas y rodilleras', { by: 'Sofía' });
+patch(3, 8, 'Casco nuevo', { by: 'Sofía' });
+patch(10, 22, 'Nafta de la camioneta', { by: 'Sofía' });
+GRUPOS.push(['Compra de caballos', 'Inversión: caballos que compraste', ['Compras'], 'tag']);
+GICON['Compra de caballos'] = 'tag';
+patch(10, 18, '200 fardos de alfalfa', { by: 'Nacho' });
+patch(10, 20, '30 bolsas de avena', { by: 'Nacho' });
+patch(10, 17, 'Comida para los petiseros', { by: 'Nacho' });
+patch(10, 19, 'Flete Pilar → campo · 4 caballos', { by: 'Nacho' });
+patch(10, 22, 'Herraje de 4 caballos', { canal: 'grupo' });
+/* Todo en US$: pesos al dólar blue del día (promedio compra/venta), euros a la cotización del día. Se guarda el original. */
+var BLUE = { 1: 1230, 2: 1250, 3: 1280, 4: 1300, 5: 1330, 6: 1360, 7: 1400, 8: 1450, 9: 1500, 10: 1550 };
+var EURUSD = { 1: 1.08, 2: 1.08, 3: 1.08, 4: 1.09, 5: 1.10, 6: 1.10, 7: 1.10, 8: 1.10, 9: 1.09, 10: 1.09 };
+var EUR_HOY = 1.09;
+function toUsd(cur, amt, m) { return cur === 'usd' ? amt : cur === 'ars' ? Math.round(amt / BLUE[m]) : Math.round(amt * EURUSD[m]); }
+function nfx(n) { return n.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+function convTxt(g) { if (g.cur === 'usd') return ''; return g.cur === 'ars' ? money('ars', g.amt) + ' al dólar blue del ' + g.d + '/' + g.m + ' ($ ' + BLUE[g.m].toLocaleString('es-AR') + ', promedio compra y venta) = ' + money('usd', g.usd) : money('eur', g.amt) + ' al euro del ' + g.d + '/' + g.m + ' (US$ ' + nfx(EURUSD[g.m]) + ') = ' + money('usd', g.usd); }
+LEDGER.forEach(function (g) { g.usd = toUsd(g.cur, g.amt, g.m); });
+var ROL = { 'Tomás': '', Nacho: 'manager', Pedro: 'piloto', 'Sofía': 'te ayuda con los gastos', Juanca: 'petisero', 'Don Aníbal': 'puestero', 'Dra. Ibarra': 'veterinaria' };
+function quien(by) { return by === 'Tomás' ? 'Vos' : by + (ROL[by] ? ', ' + ROL[by] : ''); }
+
+/* Pagos fijos: se cargan una vez y cada mes se confirman por WhatsApp */
+var FIJOS = [
+  ['Sueldos de los petiseros', 3000, 'usd', 5, 'Pilar', 'Personal'],
+  ['Sueldo del puestero', 600, 'usd', 5, 'Campo', 'Personal'],
+  ['Alquiler caballeriza Pilar', 1900, 'usd', 1, 'Pilar', 'Caballerizas y casa'],
+  ['Alquiler de la casa en Pilar', 2500, 'usd', 1, 'Pilar', 'Caballerizas y casa'],
+  ['Invernada en Windsor', 4250, 'usd', 15, 'Windsor', 'Caballerizas y casa']
+];
+
+var RFECHAS = { mes: [1001, 1022], '30d': [923, 1022], arg: [901, 1022], ing: [401, 731], esp: [801, 831], anio: [101, 1022], custom: [801, 1022] };
+function enPeriodo(g) { var r = RFECHAS[rango().k], x = g.m * 100 + g.d; return x >= r[0] && x <= r[1]; }
+function enLugar(g) { return S.dest === 'todos' || g.dest === S.dest; }
+/* gastos(): los del período (todos los lugares). v = monto, para sumar(). */
+function gastos() { return LEDGER.filter(enPeriodo).map(function (g) { g.v = g.amt; return g; }); }
+function sumar(list) { var t = {}; list.forEach(function (g) { t.usd = (t.usd || 0) + g.usd; }); return t; }
+function montos(t) { return t.usd ? [{ cur: 'usd', nombre: 'en dólares', m: money('usd', t.usd) }] : []; }
+function gastoById(id) { for (var i = 0; i < LEDGER.length; i++) if (LEDGER[i].id === id) return LEDGER[i]; }
+var MESES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+var DIAS_SEM = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+function fechaLarga(m, d) { if (m === 10 && d === 22) return 'Hoy'; if (m === 10 && d === 21) return 'Ayer'; var w = DIAS_SEM[new Date(2026, m - 1, d).getDay()]; return w.charAt(0).toUpperCase() + w.slice(1) + ' ' + d + ' de ' + MESES[m - 1]; }
+function fechaCorta(m, d) { return d + '/' + m; }
+function fotoLabel(g) { return /fardos|avena|rollos/i.test(g.t) ? 'Foto del remito' : /nafta|comida/i.test(g.t) ? 'Foto del ticket' : 'Foto de la factura'; }
+function origenLabel(g) { return g.src === 'foto' ? fotoLabel(g) + ' · ' + g.by : g.src === 'audio' ? 'Audio de ' + g.by : 'Mensaje de ' + g.by; }
+var TIPOICON = { audio: 'mic', foto: 'cam', texto: 'chat' };
+
+/* Stock: los días salen del consumo configurado (por caballo y por día) × caballos en ese lugar */
+var SEDE = { pilar: 'Pilar', campo: 'Campo' };
+var STOCK = {
+  pilar: [
+    { k: 'avena', n: 'Avena', stock: 18, u: 'bolsas', pres: 40, cu: 'kg', cab: 16, desc: 'Bolsa de 40 kg' },
+    { k: 'fardos', n: 'Fardos de alfalfa', stock: 140, u: 'fardos', pres: 1, cu: 'fardos', cab: 16, desc: 'Fardo', extra: 'último ingreso 18/10' },
+    { k: 'viruta', n: 'Viruta para cama', stock: 35, u: 'bolsas', pres: 1, cu: 'bolsas', cab: 16, desc: 'Bolsa, por box' },
+    { k: 'balanceado', n: 'Alimento balanceado', stock: 22, u: 'bolsas', pres: 25, cu: 'kg', cab: 16, desc: 'Bolsa de 25 kg' },
+    { k: 'electro', n: 'Electrolitos y suplementos', stock: 4, u: 'potes', pres: 3000, cu: 'g', cab: 16, desc: 'Pote de 3 kg' }
+  ],
+  campo: [
+    { k: 'rollos', n: 'Rollos', stock: 22, u: 'rollos', pres: 400, cu: 'kg', cab: 15, desc: 'Rollo de 400 kg' },
+    { k: 'sal', n: 'Sal mineral', stock: 6, u: 'bolsas', pres: 25000, cu: 'g', cab: 15, desc: 'Bolsa de 25 kg' },
+    { k: 'doma', n: 'Alimento balanceado (doma)', stock: 8, u: 'bolsas', pres: 25, cu: 'kg', cab: 5, desc: 'Bolsa de 25 kg · solo las 5 de doma' }
+  ]
+};
+S.cons = { pilar: { avena: 7.5, fardos: 1, viruta: 0.2, balanceado: 2, electro: 30 }, campo: { rollos: 12, sal: 40, doma: 3 } };
+S.ajuste = false;
+function nf(n) { return (Math.round(n * 10) / 10).toLocaleString('es-AR'); }
+function item(sede, k) { var l = STOCK[sede]; for (var i = 0; i < l.length; i++) if (l[i].k === k) return l[i]; }
+function calc(sede, it) { var daily = (S.cons[sede][it.k] || 0) * it.cab / it.pres; return { daily: daily, dias: daily > 0 ? it.stock / daily : Infinity }; }
+function diasLabel(d) { if (!isFinite(d)) return 'Sin consumo cargado'; if (d >= 60) return 'Más de 2 meses'; if (d >= 30) return '1 mes'; return Math.floor(d) + ' días'; }
+function calcText(sede, it) { var c = calc(sede, it); return '= ' + nf(c.daily) + ' ' + it.u + ' por día · alcanza ' + diasLabel(c.dias).toLowerCase(); }
+function stockHTML(sede) {
+  return STOCK[sede].map(function (it) {
+    var c = calc(sede, it), low = c.dias < 8, pct = isFinite(c.dias) ? Math.max(4, Math.min(100, Math.round(c.dias / 30 * 100))) : 100;
+    return '<div class="col" style="gap:6px"><div class="row" style="justify-content:space-between;align-items:baseline"><span style="font-size:14px;font-weight:700">' + it.n + '</span><span style="font-size:13px;font-weight:800;color:' + (low ? 'var(--saddle)' : 'var(--green)') + '">' + diasLabel(c.dias) + '</span></div><div class="bar"><div style="width:' + pct + '%;background:' + (low ? 'var(--saddle-dot)' : 'var(--green)') + '"></div></div><span class="muted" style="font-size:12px">' + it.stock + ' ' + it.u + ' · se usan ' + nf(c.daily) + ' por día' + (it.extra ? ' · ' + it.extra : '') + '</span></div>';
+  }).join('');
+}
+
+/* ---------------- Piezas ---------------- */
+function pill(estado) { var s = ST[estado]; return '<span class="pill" style="background:' + s.bg + ';color:' + s.c + '">' + s.label + '</span>'; }
+function avatar(h, size, fs, r) { var s = ST[h.estado]; return '<span class="ava" style="width:' + size + 'px;height:' + size + 'px;border-radius:' + r + 'px;font-size:' + fs + 'px;background:' + s.bg + ';color:' + s.c + '">' + h.inicial + '</span>'; }
+function kpis(list) { return '<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:14px">' + list.map(function (k) { return '<div class="card" style="padding:10px 12px"><div class="tnum" style="font-size:19px;font-weight:800">' + k[0] + '</div><div class="muted" style="font-size:11.5px">' + k[1] + '</div></div>'; }).join('') + '</div>'; }
+function rangoBtn() { return '<button ' + A('sheet', 'rango') + ' aria-label="Elegir período de gastos" style="display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-size:12.5px;font-weight:700;cursor:pointer">' + ic('cal', 's') + esc(rango().label) + ic('down', 's') + '</button>'; }
+function chkBtn(on, act, v, label) { return '<button class="chk' + (on ? ' on' : '') + '" ' + A(act, v) + ' aria-label="' + label + '" aria-pressed="' + on + '">' + (on ? ic('check', '', 'width:14px;height:14px') : '') + '</button>'; }
+
+/* ---------------- Inicio ----------------
+   Responde dos preguntas: qué necesita mi atención y qué se viene (agenda y pagos). Más el resumen de gastos. */
+var AGENDA = [['Vie', '23', 'Llamar a Cacho por las herraduras de la Morena', 'Te lo recuerdo por WhatsApp a las 9:00', 'rec'], ['Sáb', '24', 'Partido', 'Cancha 2, Pilar · 16:00'], ['Lun', '26', 'Dra. Ibarra, veterinaria', 'Control de Rockstar · vacunas de las de doma'], ['Jue', '29', 'Cacho, herrero', 'Herraje de Chiquita, Rubia y Malcriada']];
+var PAGOS = [['Dom', '1/11', 'Alquiler caballeriza Pilar', 'US$ 1.900'], ['Dom', '1/11', 'Alquiler de la casa en Pilar', 'US$ 2.500'], ['Jue', '5/11', 'Sueldos de los petiseros', 'US$ 3.000'], ['Jue', '5/11', 'Sueldo del puestero', 'US$ 600']];
+function fechaTile(a, b) { return '<span style="width:46px;height:46px;flex-shrink:0;border-radius:12px;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--muted)">' + a + '</span><span style="font-size:' + (b.length > 2 ? '14' : '17') + 'px;font-weight:800;line-height:1">' + b + '</span></span>'; }
+function vInicio() {
+  var av = calc('pilar', item('pilar', 'avena'));
+  var alertas = [
+    ['Rockstar renguea de la mano izquierda', 'Ramón · hoy 9:40 · con foto', 'var(--saddle-dot)', 'horse', 'pochola'],
+    ['Avena para ' + diasLabel(av.dias).toLowerCase(), '18 bolsas en Pilar · se usan ' + nf(av.daily) + ' por día', 'var(--saddle-dot)', 'insumo', 'avena'],
+    ['Herraje vencido en 3 caballos', 'Chiquita, Rubia y Malcriada · Cacho viene el jueves 29', 'var(--faint)', 'filtroTab', 'jugando']
+  ];
+  var lista = gastos();
+  var agenda = AGENDA.concat(S.extraVis.map(function (v) { return [v[0], v[1], v[2], v[3]]; }));
+  return '<div class="scr">' +
+    '<div class="hero" style="margin:-20px calc(-1 * max(16px,env(safe-area-inset-right,0px))) 22px calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding:22px max(16px,env(safe-area-inset-right,0px)) 20px max(16px,env(safe-area-inset-left,0px));border-radius:0 0 28px 28px">' +
+        '<div class="row" style="justify-content:space-between;margin-bottom:16px"><h1 class="h1" style="color:var(--gold);font-size:28px">Buen día, Tomás</h1><button ' + A('equipo') + ' aria-label="Tu equipo" style="display:inline-flex;align-items:center;gap:6px;height:38px;padding:0 13px;border-radius:999px;background:var(--glass);border:1px solid var(--glass-line);color:#fff;font-weight:800;font-size:13px;cursor:pointer">' + ic('user', 's') + 'Equipo</button></div>' +
+    '<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px">' +
+    '<button class="glass" ' + A('tab', 'gastos') + ' style="text-align:left;cursor:pointer;color:#fff;display:flex;flex-direction:column;gap:3px"><span class="lbl">Gastado · ' + esc(rango().label.toLowerCase()) + '</span>' + montos(sumar(gastos())).map(function (t) { return '<span class="tnum" style="font-size:17px;font-weight:800">' + t.m + '</span>'; }).join('') + '</button>' +
+    '<button class="glass" ' + A('tab', 'ingresos') + ' style="text-align:left;cursor:pointer;color:#fff;display:flex;flex-direction:column;gap:3px"><span class="lbl">Por cobrar</span><span class="tnum" style="font-size:17px;font-weight:800">' + porCobrarUsd().m + '</span></button>' +
+    '</div></div>' +
+    '<div class="lbl" style="margin-bottom:10px">Necesita tu atención</div>' +
+    '<div class="gap8" style="margin-bottom:24px">' + alertas.map(function (a) {
+      return '<button class="alert" ' + A(a[3], a[4]) + '><span class="dot" style="margin-top:6px;background:' + a[2] + '"></span><span class="col" style="gap:3px;flex:1"><span style="font-size:14.5px;font-weight:700;line-height:1.3">' + a[0] + '</span><span class="muted" style="font-size:12.5px;line-height:1.35">' + a[1] + '</span></span>' + ic('chev', 's', 'color:var(--faint);margin-top:3px') + '</button>';
+    }).join('') + '</div>' +
+    '<div class="sec"><span class="lbl">Gastos</span>' + rangoBtn() + '</div>' +
+    '<div class="card" style="padding:0;margin-bottom:24px;overflow:hidden">' +
+    '<button ' + A('tab', 'gastos') + ' style="display:block;width:100%;text-align:left;background:none;border:0;padding:16px;cursor:pointer"><div class="row" style="justify-content:space-between;margin-bottom:10px"><span class="muted" style="font-size:12px;font-weight:700">' + esc(rango().largo) + ' · todos los lugares</span>' + ic('chev', 's', 'color:var(--faint)') + '</div>' +
+    montos(sumar(lista)).map(function (t, i) { return '<div class="row" style="justify-content:space-between;align-items:baseline;' + (i ? 'border-top:1px solid var(--line2);margin-top:8px;padding-top:8px' : '') + '"><span class="tnum" style="font-size:22px;font-weight:800;letter-spacing:-.02em">' + t.m + '</span><span class="muted" style="font-size:12.5px;font-weight:600">' + t.nombre + '</span></div>'; }).join('') + '</button>' +
+    '<div style="border-top:1px solid var(--line);padding:2px 14px 4px"><div class="lbl" style="margin:10px 0 2px">Últimos</div><div class="list" style="padding:0">' + lista.slice(0, 3).map(function (g) { return movRow(g, true); }).join('') + '</div></div></div>' +
+    '<div class="sec"><span class="lbl">Lo que viene</span><button class="btn-o" ' + A('sheet', 'vis') + '>' + ic('plus', 's') + 'Agendar</button></div>' +
+    '<div class="card list" style="margin-bottom:12px">' + agenda.map(function (v) { return '<div class="li" style="align-items:center">' + fechaTile(v[0], v[1]) + '<span class="col" style="gap:2px;flex:1;min-width:0">' + (v[4] === 'rec' ? '<span style="align-self:flex-start;font-size:10.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);padding:2px 7px;border-radius:999px;margin-bottom:2px">Recordatorio</span>' : '') + '<span style="font-size:14px;font-weight:700">' + esc(v[2]) + '</span><span class="muted" style="font-size:12px">' + esc(v[3]) + '</span></span></div>'; }).join('') + '</div>' +
+    '<div class="card" style="padding:4px 14px 12px"><div class="row" style="justify-content:space-between;padding:12px 0 4px"><span class="lbl">Pagos que vienen</span><span class="tnum" style="font-size:13px;font-weight:800">US$ 8.000</span></div><div class="list" style="padding:0">' +
+    PAGOS.map(function (p) { return '<div class="li" style="align-items:center">' + fechaTile(p[0], p[1]) + '<span style="flex:1;font-size:14px;font-weight:700">' + p[2] + '</span><span class="tnum" style="font-size:14px;font-weight:800;white-space:nowrap">' + p[3] + '</span></div>'; }).join('') + '</div>' +
+    '<p class="muted" style="margin:6px 0 0;font-size:12px;line-height:1.4">Los pagos que se repiten todos los meses, según tus gastos cargados.</p></div>' +
+    '</div>';
+}
+
+/* ---------------- Caballos ---------------- */
+function vLista() {
+  var fil = [['todos', 'Todos', HORSES.length], ['jugando', 'Jugando', count('jugando')], ['campo', 'Campo', count('campo')], ['exterior', 'Exterior', count('exterior')], ['recuperacion', 'Recuperación', count('recuperacion')]];
+  var lista = HORSES.filter(function (h) { return S.filtro === 'todos' || h.estado === S.filtro; });
+  return '<div style="padding-top:20px;padding-bottom:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:12px">' +
+    '<div class="row" style="justify-content:space-between"><h1 class="h1">Caballos</h1><button ' + A('sheet', 'add') + ' style="display:inline-flex;align-items:center;gap:6px;height:40px;padding:0 14px;border-radius:999px;background:var(--grad-btn);color:#fff;border:0;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 6px 16px rgba(21,92,63,.28)">' + ic('plus', 's') + 'Agregar</button></div>' +
+    '<label for="buscar" style="display:flex;align-items:center;gap:8px;height:42px;padding:0 12px;border-radius:12px;background:var(--card);border:1px solid var(--line)">' + ic('search', 's', 'color:var(--muted)') + '<input id="buscar" type="search" placeholder="Buscar caballo" aria-label="Buscar caballo" style="border:0;outline:none;flex:1;min-width:0;font:inherit;font-size:16px;background:transparent;color:var(--ink)"></label>' +
+    '<div class="chips">' + fil.map(function (f) { return '<button class="chip' + (S.filtro === f[0] ? ' on' : '') + '" ' + A('filtro', f[0]) + '>' + f[1] + ' · ' + f[2] + '</button>'; }).join('') + '</div></div>' +
+    '<div class="scr" id="lista-caballos" style="padding-top:0;display:flex;flex-direction:column;gap:8px">' + lista.map(function (h) {
+      var pc = pendCount(h.id);
+      return '<button ' + A('horse', h.id) + ' data-name="' + esc(h.nombre.toLowerCase()) + '" style="display:flex;gap:12px;align-items:center;width:100%;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:11px 12px;cursor:pointer">' + avatar(h, 42, 24, 12) +
+        '<span class="col" style="gap:3px;flex:1;min-width:0"><span class="row" style="gap:8px;flex-wrap:wrap"><span style="font-size:15px;font-weight:700">' + h.nombre + '</span>' +
+        (h.novedad ? '<span class="dot" style="width:8px;height:8px;background:var(--saddle-dot)" aria-label="con novedad"></span>' : '') +
+        (pc ? '<span style="font-size:11px;font-weight:700;color:var(--blue);background:var(--blue-soft);padding:2px 7px;border-radius:999px">' + pc + (pc === 1 ? ' pendiente' : ' pendientes') + '</span>' : '') +
+        '</span><span class="muted" style="font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + h.linea + '</span></span>' + pill(h.estado) + '</button>';
+    }).join('') + '<p id="sin-resultados" class="muted" hidden style="font-size:13.5px;margin:8px 2px">Ningún caballo con ese nombre.</p></div>';
+}
+
+/* Actividad por caballo: solo lo que el equipo realmente reporta (vareada, montada, práctica, partido, herraje, vete). */
+var VAREO_HOY = { morena: 'Ramón', tordillo: 'Ramón', negra: 'Lucho', cautiva: 'Ramón', bruja: 'Lucho', lucera: 'Lucho', gitana: 'Ramón', pampa: 'Lucho', malcriada: 'Ramón', dinamita: 'Lucho', chiquita: 'Ramón', tormenta: 'Lucho' };
+var PRACT_HOY = { morena: 2, tordillo: 2, negra: 1, cautiva: 2, lucera: 1, gitana: 2, malcriada: 1, pampa: 1 };
+var HERRADA_HOY = { bruja: 1, gitana: 1, dinamita: 1, lucera: 1 };
+var POOL = [['Mar 20', 'Práctica · 2 chukkers', 'Tomás · audio'], ['Lun 19', 'Vareada', 'Lucho · audio'], ['Dom 18', 'Partido · 1 chukker', 'Tomás · mensaje'], ['Sáb 17', 'Montada en la cancha', 'Ramón · audio'], ['Vie 16', 'Herrada', 'Cacho · cargó Pedro'], ['Jue 15', 'Práctica · 1 chukker', 'Tomás · audio'], ['Mié 14', 'Revisión veterinaria', 'Dra. Ibarra · foto de la orden'], ['Mar 13', 'Vareada', 'Ramón · audio']];
+function actividad(h) {
+  var i = HORSES.indexOf(h), venc = h.linea.indexOf('vencido') >= 0;
+  if (h.estado === 'jugando') {
+    var hoy = [];
+    if (h.id === 'pochola') hoy.push(['Hoy', 'Al box por renguera', 'Ramón · audio y foto']);
+    if (h.id === 'rubia') hoy.push(['Hoy', 'No se vareó', 'Pedro · mensaje']);
+    if (PRACT_HOY[h.id]) hoy.push(['Hoy', 'Práctica · ' + PRACT_HOY[h.id] + (PRACT_HOY[h.id] === 1 ? ' chukker' : ' chukkers'), 'Tomás · audio']);
+    if (HERRADA_HOY[h.id]) hoy.push(['Hoy', 'Herrada', 'Cacho · cargó Pedro']);
+    if (VAREO_HOY[h.id]) hoy.push(['Hoy', 'Vareada', VAREO_HOY[h.id] + ' · audio']);
+    var idx = [i % 8, (i + 3) % 8, (i + 5) % 8].sort(function (a, b) { return a - b; });
+    var past = idx.map(function (k) { return POOL[k]; }).filter(function (p) { return !(venc && p[1] === 'Herrada') && !(HERRADA_HOY[h.id] && p[1] === 'Herrada'); });
+    return hoy.concat(past);
+  }
+  if (h.estado === 'campo') return [['Lun 20', 'Recorrida: bien de estado', 'Don Aníbal · audio'], ['Jue 8', 'Desparasitada', 'Don Aníbal · mensaje'], [i % 2 ? 'Jue 1' : 'Mar 15/9', 'Llegó al campo desde Pilar', 'Pedro · mensaje']];
+  if (h.estado === 'exterior') return [['Ayer', 'Recorrida en el paddock: bien', 'Juanca · audio'], ['Mié 14', 'Desherrada para el invierno', 'Juanca · foto'], ['Mar 1/9', 'Pasó a invernada en Windsor', 'Tomás · mensaje']];
+  return h.id === 'patria' ? [['Ayer', 'Control veterinario: evoluciona bien', 'Dra. Ibarra · audio'], ['Lun 12', 'Ecografía del tendón', 'Dra. Ibarra · foto del informe'], ['Dom 4', 'Entró en reposo', 'Tomás · audio']]
+    : [['Hoy', 'Comió bien, sale a caminar mañana', 'Pedro · mensaje'], ['Mar 20', 'Control veterinario', 'Dra. Ibarra · audio'], ['Sáb 17', 'Cólico · la vio la veterinaria', 'Pedro · audio']];
+}
+/* Datos del caballo (de dónde vienen se define después: carga manual o integración) */
+var PADRES = ['Tapiz Pampero', 'Ombú Caburé', 'Chajá Pirata', 'Ñandubay Lucero', 'Calden Sereno', 'Tala Bravío', 'Espinillo Real'];
+var MADRES = ['Querencia', 'Pampa Mía', 'Tropilla', 'Garúa', 'Torcaza', 'Cortadera', 'Calandria', 'Bandurria', 'Tranquera'];
+var CRIAD = ['Haras El Ceibo', 'Cría Los Talas', 'La Tranquera Polo', 'Haras San Benito', 'Cría propia'];
+function datosCaballo(h) {
+  var i = HORSES.indexOf(h), anio = 2026 - h.edad;
+  var reg = (41200 + i * 137) % 100000;
+  var chip = '032 0981 ' + (5500 + i * 7) + ' ' + (100 + i * 11);
+  var d = [['Padre', PADRES[i % PADRES.length]], ['Madre', MADRES[(i * 2 + 1) % MADRES.length] + ' (por ' + PADRES[(i + 3) % PADRES.length] + ')'], ['Criador', CRIAD[i % CRIAD.length]], ['Nacimiento', 'Temporada ' + (anio - 1) + '/' + String(anio).slice(2)], ['Registro AACCP', 'N.º ' + reg.toLocaleString('es-AR')], ['Microchip', chip], ['Marca', CRIAD[i % CRIAD.length] === 'Cría propia' ? 'Propia (T)' : 'Del criador']];
+  if (h.estado === 'jugando' || h.estado === 'exterior') d.push(['Partidos jugados en 2026', String(6 + (i * 5) % 17)]);
+  if (h.linea.indexOf('doma') >= 0) d.push(['Doma', h.linea.replace('En doma · ', '')]);
+  return d;
+}
+function vFicha() {
+  var h = horse(S.horseId);
+  var venc = h.linea.indexOf('vencido') >= 0;
+  var ok = 'background:var(--green-soft);color:var(--green)', warn = 'background:var(--saddle-soft);color:var(--saddle)', gray = 'background:var(--line2);color:#4A524D';
+  var salud = [
+    ['Herraje', venc ? 'Último hace 7 semanas · Cacho viene el jueves 29' : HERRADA_HOY[h.id] ? 'Herrada hoy' : 'Al día · próximo a fin de noviembre', venc ? 'Vencido' : 'Al día', venc ? warn : ok],
+    ['Vacunas', 'Influenza y encefalomielitis · 10/08', 'Al día', ok],
+    ['Desparasitación', 'Última: 02/09 · próxima en diciembre', 'Al día', ok],
+    ['Veterinaria', h.id === 'pochola' ? 'Control de la mano izquierda: lunes 26/10' : h.estado === 'recuperacion' ? 'En tratamiento' : 'Sin novedades', h.id === 'pochola' || h.estado === 'recuperacion' ? 'Pendiente' : 'OK', h.id === 'pochola' || h.estado === 'recuperacion' ? warn : gray]
+  ];
+  var pend = rems(h.id);
+  var tabs = [['actividad', 'Actividad'], ['salud', 'Salud'], ['datos', 'Datos']];
+  var body = S.fichaTab === 'datos'
+    ? '<div class="card list">' + datosCaballo(h).map(function (e) { return '<div class="li" style="align-items:center;justify-content:space-between;gap:12px"><span class="muted" style="font-size:13px;font-weight:600">' + e[0] + '</span><span class="tnum" style="font-size:14px;font-weight:700;text-align:right">' + e[1] + '</span></div>'; }).join('') + '</div>'
+    : S.fichaTab === 'salud'
+    ? '<div class="card list">' + salud.map(function (e) { return '<div class="li" style="align-items:center"><span class="col" style="gap:2px;flex:1"><span style="font-size:14px;font-weight:600">' + e[0] + '</span><span class="muted" style="font-size:12px">' + e[1] + '</span></span><span class="pill" style="' + e[3] + '">' + e[2] + '</span></div>'; }).join('') + '</div>'
+    : '<div class="card list">' + actividad(h).map(function (e) { return '<div class="li"><span style="width:54px;flex-shrink:0;font-size:12px;font-weight:700;color:var(--muted)">' + e[0] + '</span><span class="col" style="gap:2px"><span style="font-size:14px;font-weight:600">' + e[1] + '</span><span class="muted" style="font-size:12px">' + e[2] + '</span></span></div>'; }).join('') + '</div>';
+  return '<div class="scr" style="padding-top:12px">' +
+    '<button class="back" ' + A('backLista') + '>' + ic('left', 's') + 'Caballos</button>' +
+    '<div class="row" style="gap:14px;margin:6px 0 16px">' + avatar(h, 72, 44, 20) + '<div class="col" style="gap:4px"><h1 style="margin:0;font-family:var(--display);font-weight:400;font-size:36px;line-height:1">' + h.nombre + '</h1><span class="muted" style="font-size:13px">' + h.sexo + ' · ' + h.edad + ' años · ' + h.pelaje + '</span><span class="row" style="gap:6px;flex-wrap:wrap">' + pill(h.estado) + '<span class="muted" style="font-size:12px;font-weight:600">' + UBIC[h.estado] + '</span></span></div></div>' +
+    (h.novedad ? '<div style="display:flex;gap:10px;padding:12px;border-radius:14px;background:var(--saddle-soft);color:var(--saddle-ink);margin-bottom:12px">' + ic('alert', 's', 'margin-top:2px') + '<span style="font-size:13px;line-height:1.4;font-weight:600">' + h.novedad + '</span></div>' : '') +
+    '<div class="card" style="margin-bottom:16px;padding:12px 14px"><div class="row" style="justify-content:space-between;margin-bottom:4px"><span class="lbl">Pendientes</span><button class="btn-o" ' + A('sheet', 'rem') + '>' + ic('plus', 's') + 'Recordatorio</button></div>' +
+    (pend.length ? pend.map(function (p) { var on = !!S.doneRem[p.id]; return '<div class="li" style="align-items:flex-start">' + chkBtn(on, 'rem', p.id, 'Marcar como hecho') + '<span class="col" style="gap:3px;flex:1"><span class="' + (on ? 'done' : '') + '" style="font-size:14px;font-weight:700;line-height:1.35">' + esc(p.que) + '</span><span class="wrap" style="gap:4px 8px;font-size:12px"><span style="font-weight:800;color:var(--blue)">' + esc(p.cuando) + '</span><span class="muted">' + esc(p.quien) + '</span></span></span></div>'; }).join('')
+      : '<p class="muted" style="margin:8px 0 2px;font-size:13px">Sin pendientes.</p>') + '</div>' +
+    '<div class="seg" style="grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:12px">' + tabs.map(function (t) { return '<button class="' + (S.fichaTab === t[0] ? 'on' : '') + '" ' + A('fichaTab', t[0]) + '>' + t[1] + '</button>'; }).join('') + '</div>' +
+    body + '</div>';
+}
+
+/* ---------------- Caballeriza ---------------- */
+var PERS = {
+  nacho: { i: 'N', n: 'Nacho', rol: 'Manager · tu mano derecha', app: true, k: [['5', 'mensajes hoy'], ['38', 'esta semana'], ['4', 'gastos cargados']], m: [['foto', 'Mar 20 · 9:10', '30 bolsas de avena del corralón (foto del remito).', 'Gasto en Comida + 30 bolsas al stock', 'privado'], ['texto', '10:05', '¿Cuánto llevamos gastado en comida de los caballos este mes?', 'Consulta respondida', 'privado'], ['texto', '17:20', 'Les cambié la cama a los 16 boxes, quedan 35 bolsas de viruta.', 'Stock de viruta: 10 días', 'grupo']] },
+  pedro: { i: 'P', n: 'Pedro', rol: 'Piloto · Caballeriza Pilar', k: [['4', 'mensajes hoy'], ['31', 'esta semana'], ['5/6', 'tareas hechas']], m: [['texto', '7:30', 'Ración de la mañana dada, los 16.', 'Tarea tachada', 'privado'], ['audio', '11:02', 'Vino Cacho, herró a la Bruja, la Gitana, la Dinamita y la Lucera. Son 180 lucas, lo pagué yo.', 'Gasto en Herrero + herraje en 4 fichas', 'grupo'], ['foto', '12:18', 'Se está terminando la avena (foto del depósito).', 'Stock de avena: 6 días', 'privado'], ['texto', '12:20', 'Quedan 18 bolsas.', 'Alerta en tu Inicio', 'privado']] },
+  ramon: { i: 'R', n: 'Ramón', rol: 'Petisero · Caballeriza Pilar', k: [['3', 'mensajes hoy'], ['6', 'vareos hoy'], ['19', 'esta semana']], m: [['audio', '9:38', 'Vareé a la Morena, al Tordillo, a la Cautiva y a la Gitana. La Rockstar renguea de la mano izquierda, la dejé en el box.', '4 vareos + novedad de Rockstar', 'grupo'], ['foto', '9:40', 'Así tiene la mano (foto).', 'Guardada en la ficha de Rockstar', 'grupo'], ['audio', '12:05', 'También la Malcriada y la Chiquita.', '2 vareos más', 'grupo']] },
+  lucho: { i: 'L', n: 'Lucho', rol: 'Petisero · Caballeriza Pilar', k: [['2', 'mensajes hoy'], ['6', 'vareos hoy'], ['14', 'esta semana']], m: [['audio', '8:15', 'La Negra no terminó la ración de la mañana.', 'Novedad en la ficha de Negra', 'grupo'], ['audio', '10:30', 'Vareé a la Negra, la Bruja, la Lucera, la Pampa, la Dinamita y la Tormenta.', '6 vareos', 'grupo']] },
+  juanca: { i: 'J', n: 'Juanca', rol: 'Petisero · Windsor, Inglaterra', k: [['0', 'mensajes hoy'], ['1', 'ayer'], ['5', 'esta semana']], m: [['audio', 'Ayer 17:10', 'Recorrí las cuatro en el paddock, todo bien. Mucho barro, les puse las mantas.', 'Actividad en 4 fichas', 'privado']] },
+  anibal: { i: 'A', n: 'Don Aníbal', rol: 'Puestero · Campo, Cnel. Suárez', k: [['0', 'mensajes hoy'], ['2', 'esta semana'], ['15', 'caballos a cargo']], m: [] },
+  sofia: { i: 'S', n: 'Sofía', rol: 'Te ayuda con los gastos', k: [['1', 'mensaje hoy'], ['3', 'esta semana'], ['3', 'gastos cargados']], m: [['foto', '13:20', 'Cargué nafta en la camioneta (foto del ticket).', 'Gasto en Nafta y vehículos: $ 85.000 → US$ 55', 'privado']] },
+  ibarra: { i: 'I', n: 'Dra. Ibarra', rol: 'Veterinaria · también atiende a otros polistas', k: [['2', 'mensajes hoy'], ['6', 'esta semana'], ['3', 'caballos tratados']], m: [['audio', '16:10', 'Patria evoluciona bien, el 5/11 hacemos la eco de control.', 'Novedad en la ficha de Patria', 'grupo'], ['audio', '17:30', 'El domingo le doy el alta a la Nube si sigue comiendo bien.', 'Te preguntó para qué cliente era · ficha de Nube', 'privado']] },
+  cacho: { i: 'C', n: 'Cacho', rol: 'Herrero · también trabaja para otros polistas', k: [['0', 'mensajes hoy'], ['1', 'esta semana'], ['4', 'herrados hoy']], m: [['texto', 'Lun 19 · 18:00', 'El jueves 29 paso por Pilar para la Chiquita, la Rubia y la Malcriada.', 'Visita agendada', 'grupo']] }
+};
+var EQ_APP = ['nacho'];
+var CANAL = { nacho: 'Grupo y privado', pedro: 'Grupo y privado', ramon: 'Grupo', lucho: 'Grupo', juanca: 'Privado', anibal: 'Privado', sofia: 'Privado', ibarra: 'Grupo y privado', cacho: 'Grupo' };
+var EQ_WA = [['pedro', '4 mensajes hoy', 0], ['ramon', '3 mensajes hoy', 0], ['lucho', '2 mensajes hoy', 0], ['juanca', 'Ayer, 1 mensaje', 0], ['anibal', 'Sin mensajes hace 2 días', 1], ['sofia', '1 mensaje hoy', 0], ['ibarra', '2 mensajes hoy', 0], ['cacho', 'Lun 19, 1 mensaje', 0]];
+function personaRow(id, sub, warn) { var p = PERS[id]; return '<button class="li" ' + A('persona', id) + ' style="width:100%;align-items:center;border-left:0;border-right:0;border-top:0;background:none;text-align:left;cursor:pointer"><span style="width:38px;height:38px;flex-shrink:0;border-radius:999px;background:var(--green-soft);color:var(--green);display:flex;align-items:center;justify-content:center;font-weight:800">' + p.i + '</span><span class="col" style="gap:2px;flex:1;min-width:0"><span style="font-size:14px;font-weight:700">' + p.n + '</span><span class="muted" style="font-size:12px">' + p.rol + '</span>' + (CANAL[id] ? '<span style="font-size:11px;font-weight:800;color:var(--blue)">WhatsApp: ' + CANAL[id].toLowerCase() + '</span>' : '') + (accOf(id).tipo === 'parte' ? '<span style="font-size:11px;font-weight:800;color:var(--green)">App: ' + accResumen(accOf(id)).toLowerCase() + '</span>' : '') + '</span><span style="font-size:12px;font-weight:700;text-align:right;max-width:96px;color:' + (warn ? 'var(--saddle)' : 'var(--muted)') + '">' + sub + '</span>' + ic('chev', 's', 'color:var(--faint)') + '</button>'; }
+function vEquipo() {
+  return '<div class="scr" style="padding-top:12px"><button class="back" ' + A('equipoOff') + '>' + ic('left', 's') + 'Inicio</button>' +
+    '<div class="row" style="justify-content:space-between;margin:6px 0 16px"><h1 class="h1">Equipo</h1><button class="btn-o" ' + A('sheet', 'invitar') + '>' + ic('plus', 's') + 'Invitar</button></div>' +
+    '<div class="lbl" style="margin-bottom:10px">Owners · ven todo</div><div class="card list" style="margin-bottom:10px">' +
+    '<div class="li" style="align-items:center"><span style="width:38px;height:38px;flex-shrink:0;border-radius:999px;background:var(--grad);color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:800">T</span><span class="col" style="gap:2px;flex:1"><span style="font-size:14px;font-weight:700">Vos</span><span class="muted" style="font-size:12px">Polista · creaste la organización</span></span><span style="font-size:12px;font-weight:700;color:var(--muted)">Owner</span></div>' +
+    EQ_APP.map(function (id) { return personaRow(id, 'Owner', 0); }).join('') + '</div>' +
+    '<div class="row" style="gap:10px;padding:11px 12px;border-radius:12px;background:var(--seg);margin-bottom:24px">' + ic('lock', 's', 'color:#4A524D') + '<span style="font-size:12.5px;color:#3A423D;line-height:1.4">Los owners ven todo y deciden qué ve cada uno. Gastos e Ingresos, solo los owners.</span></div>' +
+    '<div class="sec"><span class="lbl">El resto del equipo</span><span class="muted" style="font-size:12px;font-weight:600">cargan por WhatsApp</span></div>' +
+    '<div class="card list" style="margin-bottom:12px">' + EQ_WA.map(function (e) { return personaRow(e[0], e[1], e[2]); }).join('') + '</div>' +
+    '<p class="muted" style="margin:0 2px 20px;font-size:12px;line-height:1.45">Lo que mandan queda en la app con su nombre. Por defecto no entran a la app; tocá a alguien para darle acceso a una parte. La veterinaria y el herrero cargan en el grupo; si escriben por privado, el bot les pregunta para qué cliente es.</p>' +
+    '<button ' + A('waChat', 'grupo') + ' class="card" style="width:100%;display:flex;align-items:center;gap:12px;text-align:left;cursor:pointer;padding:12px 14px">' + iconTile('chat') + '<span class="col" style="gap:2px;flex:1;min-width:0"><span style="font-size:14px;font-weight:700">Grupo · Organización Tomás</span><span class="muted" style="font-size:12px">7 personas + el bot</span></span>' + ic('chev', 's', 'color:var(--faint)') + '</button>' +
+    '<button ' + A('waChat', '') + ' class="card" style="width:100%;display:flex;align-items:center;gap:12px;text-align:left;cursor:pointer;padding:12px 14px;margin-top:8px">' + iconTile('chat') + '<span class="col" style="gap:2px;flex:1;min-width:0"><span style="font-size:14px;font-weight:700">Ver todos los chats</span><span class="muted" style="font-size:12px">El grupo y el privado de cada uno con el bot</span></span>' + ic('chev', 's', 'color:var(--faint)') + '</button></div>';
+}
+/* Qué ve en la app cada usuario. Lo configuran los owners (polista y/o manager).
+   tipo: 'nada' = solo WhatsApp · 'todo' = owner · 'parte' = elige secciones y qué caballos. Gastos e Ingresos: solo owners. */
+var MODS = [['novedades', 'Novedades del día', 'Lo que reportan de la caballeriza'], ['caballos', 'Caballos', 'Fichas, salud y pendientes'], ['agenda', 'Lo que viene', 'Visitas del herrero y la veterinaria'], ['caballeriza', 'Caballeriza', 'Stock e insumos']];
+var LUGS = [['pilar', 'Pilar'], ['campo', 'Campo'], ['windsor', 'Windsor']];
+var ACC = { nacho: { tipo: 'todo' }, ibarra: { tipo: 'parte', mods: ['novedades', 'caballos', 'agenda'], alc: 'caballos', lugs: [], cabs: ['pochola', 'patria', 'nube', 'negra'] } };
+function accOf(id) { return ACC[id] || { tipo: 'nada' }; }
+function esProv(rol) { return /veterin|herrer/i.test(rol || ''); }
+function accResumen(a) {
+  if (a.tipo === 'todo') return 'Ve todo · owner';
+  if (a.tipo === 'nada') return 'Solo WhatsApp';
+  var m = MODS.filter(function (x) { return a.mods.indexOf(x[0]) >= 0; }).map(function (x) { return x[1]; });
+  var al = a.alc === 'lugar' ? (!a.lugs.length ? 'ningún lugar elegido' : 'solo ') + LUGS.filter(function (l) { return a.lugs.indexOf(l[0]) >= 0; }).map(function (l) { return l[1]; }).join(' y ') : a.alc === 'caballos' ? a.cabs.length + (a.cabs.length === 1 ? ' caballo' : ' caballos') : 'todos los caballos';
+  return (m.length ? m.join(', ') : 'Nada elegido') + ' · ' + al;
+}
+function accChip(on, act, v, txt, dis) { return '<button class="chip' + (on ? ' on' : '') + '" ' + (dis ? 'disabled style="opacity:.45"' : A(act, v)) + '>' + txt + '</button>'; }
+function accEditor(d, prov) {
+  var tipos = [['nada', 'Nada', 'Solo WhatsApp']].concat(prov ? [] : [['todo', 'Todo', 'Owner: ve y configura todo, también la plata']]).concat([['parte', 'Una parte', 'Elegís qué secciones y qué caballos']]);
+  var out = '<div class="col" style="gap:8px"><span style="font-size:12.5px;font-weight:700">Qué ve en la app</span>' + tipos.map(function (t) {
+    var on = d.tipo === t[0];
+    return '<button ' + A('accTipo', t[0]) + ' style="display:flex;align-items:center;gap:10px;width:100%;padding:11px 12px;border-radius:14px;cursor:pointer;text-align:left;' + (on ? 'background:var(--green-soft);border:1px solid var(--green)' : 'background:var(--card);border:1px solid var(--line)') + '"><span style="width:18px;height:18px;flex-shrink:0;border-radius:999px;border:2px solid ' + (on ? 'var(--green)' : 'var(--faint)') + ';display:flex;align-items:center;justify-content:center">' + (on ? '<span style="width:8px;height:8px;border-radius:999px;background:var(--green)"></span>' : '') + '</span><span class="col" style="gap:2px"><span style="font-size:14px;font-weight:800">' + t[1] + '</span><span class="muted" style="font-size:12px">' + t[2] + '</span></span></button>';
+  }).join('') + '</div>';
+  if (d.tipo !== 'parte') return out + (prov ? '<p class="muted" style="margin:0;font-size:11.5px;line-height:1.4">A un proveedor nunca se le abren Gastos ni Ingresos.</p>' : '');
+  out += '<div class="col" style="gap:6px"><span style="font-size:12.5px;font-weight:700">Secciones</span><div class="card list" style="padding:0 12px">' + MODS.map(function (x) {
+    var on = d.mods.indexOf(x[0]) >= 0;
+    return '<button class="li" ' + A('accMod', x[0]) + ' style="width:100%;align-items:center;border-left:0;border-right:0;border-top:0;background:none;text-align:left;cursor:pointer"><span class="chk' + (on ? ' on' : '') + '" style="pointer-events:none">' + (on ? ic('check', '', 'width:14px;height:14px') : '') + '</span><span class="col" style="gap:2px;flex:1"><span style="font-size:14px;font-weight:700">' + x[1] + '</span><span class="muted" style="font-size:12px">' + x[2] + '</span></span></button>';
+  }).join('') + '<div class="li" style="align-items:center;opacity:.55">' + ic('lock', 's', 'color:var(--muted)') + '<span class="col" style="gap:2px;flex:1"><span style="font-size:14px;font-weight:700">Gastos e Ingresos</span><span class="muted" style="font-size:12px">Solo owners</span></span></div></div></div>';
+  out += '<div class="col" style="gap:6px"><span style="font-size:12.5px;font-weight:700">Qué caballos</span><div class="wrap">' + [['todos', 'Todos'], ['lugar', 'De un lugar'], ['caballos', 'Algunos caballos']].map(function (t) { return accChip(d.alc === t[0], 'accAlc', t[0], t[1]); }).join('') + '</div>';
+  if (d.alc === 'lugar') out += '<div class="wrap">' + LUGS.map(function (l) { return accChip(d.lugs.indexOf(l[0]) >= 0, 'accLug', l[0], l[1]); }).join('') + '</div>';
+  if (d.alc === 'caballos') out += '<div class="wrap" style="max-height:150px;overflow:auto;padding:2px">' + HORSES.map(function (h) { return accChip(d.cabs.indexOf(h.id) >= 0, 'accCab', h.id, h.nombre); }).join('') + '</div><span class="muted" style="font-size:11.5px">' + d.cabs.length + ' elegidos</span>';
+  return out + '<p class="muted" style="margin:0;font-size:11.5px;line-height:1.4">Lo que no elijas no lo ve. ' + (prov ? 'A un proveedor nunca se le abren Gastos ni Ingresos.' : '') + '</p></div>';
+}
+function vPermisosSheet() {
+  var p = PERS[S.persona];
+  return sheet('Qué ve ' + p.n, accEditor(S.accDraft, esProv(p.rol)) + '<button class="btn-g" ' + A('savePerm') + '>Guardar</button>');
+}
+/* Cómo se suma alguien: al grupo de la organización (le llega el link del grupo) y/o por privado (el bot le escribe para que lo agende). */
+var INV_DEF = { Manager: [1, 1], Piloto: [1, 1], Petisero: [1, 0], Puestero: [1, 0], 'Familia o asistente': [0, 1], Veterinaria: [1, 0], Herrero: [1, 0] };
+function invOpt(on, act, titulo, sub) { return '<button ' + A(act) + ' style="display:flex;align-items:flex-start;gap:10px;width:100%;padding:12px;border-radius:14px;cursor:pointer;text-align:left;' + (on ? 'background:var(--green-soft);border:1px solid var(--green)' : 'background:var(--card);border:1px solid var(--line)') + '"><span class="chk' + (on ? ' on' : '') + '" style="pointer-events:none;margin-top:1px">' + (on ? ic('check', '', 'width:14px;height:14px') : '') + '</span><span class="col" style="gap:3px;flex:1"><span style="font-size:14px;font-weight:800">' + titulo + '</span><span class="muted" style="font-size:12px;line-height:1.4">' + sub + '</span></span></button>'; }
+function vInvitarSheet() {
+  var nom = S.invNombre || 'la persona', app = S.accDraft.tipo !== 'nada';
+  if (S.invOk) {
+    var lineas = [];
+    if (S.invGrupo) lineas.push('le mandamos el link para entrar al grupo «Organización Tomás»');
+    if (S.invPriv) lineas.push('el bot le escribe por privado para que lo agende');
+    if (app) lineas.push('le llega el link para entrar a la app (' + accResumen(S.accDraft).toLowerCase() + ')');
+    return sheet('Invitar al equipo', '<div class="row" style="gap:10px;padding:14px;border-radius:14px;background:var(--green-soft);color:var(--green);align-items:flex-start">' + ic('check', 's') + '<span style="font-size:13.5px;font-weight:700;line-height:1.45">Listo: a ' + esc(nom) + ' ' + (lineas.length > 1 ? lineas.slice(0, -1).join(', ') + ' y ' + lineas[lineas.length - 1] : lineas[0]) + '.</span></div><button class="btn-g" ' + A('closeSheet') + '>Listo</button>');
+  }
+  return sheet('Invitar al equipo', '<label class="field" for="inv-nombre">Nombre<input class="inp" id="inv-nombre" data-bind="invNombre" type="text" placeholder="Ej. Ramón" value="' + esc(S.invNombre) + '"></label>' +
+    '<div class="col" style="gap:6px"><span style="font-size:12.5px;font-weight:700">Qué hace</span>' + opts(['Manager', 'Piloto', 'Petisero', 'Puestero', 'Familia o asistente', 'Veterinaria', 'Herrero'], S.invRol, 'invRol') + '</div>' +
+    '<label class="field" for="inv-tel">WhatsApp<input class="inp" id="inv-tel" type="tel" inputmode="tel" placeholder="+54 9 11 …"></label>' +
+    '<div class="col" style="gap:8px"><span style="font-size:12.5px;font-weight:700">Cómo lo sumás</span>' +
+    invOpt(S.invGrupo, 'invGrupo', 'Al grupo de la organización', 'Le mandamos el link del grupo «Organización Tomás». Lo que cuente ahí de los caballos y la caballeriza queda en la app.') +
+    invOpt(S.invPriv, 'invPriv', 'Por privado con el bot', 'El bot le escribe para que lo agende. Sirve para mandar gastos que no tienen que ver los demás o, si es el piloto, para recibir sus tareas.') + '</div>' +
+    accEditor(S.accDraft, esProv(S.invRol)) +
+    '<button class="btn-g" ' + A('invitar') + (S.invGrupo || S.invPriv ? '' : ' disabled style="opacity:.5"') + '>Mandar invitación por WhatsApp</button>');
+}
+function vCaballeriza() {
+  return '<div class="scr"><h1 class="h1" style="margin-bottom:12px">Caballeriza</h1>' +
+    '<div class="seg" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:16px"><button class="' + (S.sede === 'pilar' ? 'on' : '') + '" ' + A('sede', 'pilar') + ' style="font-size:13px">Pilar · 16 caballos</button><button class="' + (S.sede === 'campo' ? 'on' : '') + '" ' + A('sede', 'campo') + ' style="font-size:13px">Campo · 15 caballos</button></div>' +
+    '<div class="sec"><span class="lbl">Stock · para cuántos días alcanza</span><button class="btn-o" ' + A('sheet', 'cons') + '>Consumo</button></div>' +
+    '<div class="card list" style="margin-bottom:24px">' + STOCK[S.sede].map(function (it) {
+      var c = calc(S.sede, it), low = c.dias < 8, pct = isFinite(c.dias) ? Math.max(4, Math.min(100, Math.round(c.dias / 30 * 100))) : 100;
+      return '<button class="li" ' + A('insumo', it.k) + ' style="width:100%;flex-direction:column;gap:6px;border-left:0;border-right:0;border-top:0;background:none;text-align:left;cursor:pointer;padding:12px 0"><span class="row" style="justify-content:space-between;align-items:baseline;width:100%"><span style="font-size:14px;font-weight:700">' + it.n + '</span><span style="font-size:13px;font-weight:800;color:' + (low ? 'var(--saddle)' : 'var(--green)') + '">' + diasLabel(c.dias) + '</span></span><span class="bar" style="display:block;width:100%"><span style="display:block;height:100%;border-radius:999px;width:' + pct + '%;background:' + (low ? 'var(--saddle-dot)' : 'var(--green)') + '"></span></span><span class="muted" style="font-size:12px">' + it.stock + ' ' + it.u + ' · se usan ' + nf(c.daily) + ' por día</span></button>';
+    }).join('') + '</div></div>';
+}
+var ULT_INGRESO = { avena: '30 bolsas el 20/10 · Pedro', fardos: '200 fardos el 18/10 · Pedro', viruta: '40 bolsas el 2/10 · Pedro', balanceado: '25 bolsas el 6/10 · Pedro', electro: '6 potes el 1/9 · Tomás', rollos: '22 rollos el 5/10 · Don Aníbal', sal: '6 bolsas el 1/9 · Don Aníbal', doma: '10 bolsas el 15/10 · Don Aníbal' };
+function vInsumoSheet() {
+  var it = item(S.sede, S.insumo); if (!it) return '';
+  var c = calc(S.sede, it);
+  var fila = function (k, v) { return '<div class="row" style="justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line2);font-size:13.5px"><span class="muted" style="font-weight:600">' + k + '</span><span style="font-weight:700;text-align:right">' + v + '</span></div>'; };
+  var sug = (S.sede === 'pilar' && it.k === 'avena' && !S.ajuste)
+    ? '<div style="display:flex;flex-direction:column;gap:8px;padding:12px;border-radius:14px;background:var(--blue-soft);color:#16324F"><span style="font-size:13px;line-height:1.45;font-weight:600">Según los conteos de Pedro, se están usando <b>3,4 bolsas por día</b>, no 3.</span><button ' + A('ajuste') + ' style="align-self:flex-start;height:36px;padding:0 12px;border-radius:999px;border:0;background:var(--blue);color:#fff;font-size:12.5px;font-weight:800;cursor:pointer">Usar 3,4 por día</button></div>' : '';
+  return sheet(it.n + ' · ' + SEDE[S.sede],
+    '<div class="col" style="gap:2px"><span style="font-size:30px;font-weight:800;letter-spacing:-.02em;color:' + (c.dias < 8 ? 'var(--saddle)' : 'var(--green)') + '">' + diasLabel(c.dias) + '</span><span class="muted" style="font-size:13px">de stock al ritmo actual</span></div>' +
+    '<div>' + fila('Hay', it.stock + ' ' + it.u) + fila('Se usan por día', nf(c.daily) + ' ' + it.u) + fila('Consumo cargado', nf(S.cons[S.sede][it.k]) + ' ' + it.cu + ' por caballo') + fila('Caballos', it.cab) + fila('Último ingreso', ULT_INGRESO[it.k] || '—') + '</div>' +
+    sug + '<button class="btn-g" ' + A('sheet', 'cons') + ' style="background:var(--card);color:var(--green);border:1px solid var(--green)">Cambiar consumo</button>');
+}
+function vPersona() {
+  var p = PERS[S.persona];
+  return '<div class="scr" style="padding-top:12px"><button class="back" ' + A('backPersona') + '>' + ic('left', 's') + 'Equipo</button>' +
+    '<div class="row" style="gap:14px;margin:6px 0 16px"><span style="width:64px;height:64px;border-radius:999px;background:var(--green-soft);color:var(--green);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:24px">' + p.i + '</span><div class="col" style="gap:3px"><h1 class="h1">' + p.n + '</h1><span class="muted" style="font-size:13px">' + p.rol + '</span></div></div>' +
+    (S.equipo ? '<div class="card" style="display:flex;align-items:center;gap:12px;padding:12px 14px;margin-bottom:14px">' + iconTile(accOf(S.persona).tipo === 'nada' ? 'chat' : 'lock') + '<span class="col" style="gap:2px;flex:1;min-width:0"><span class="lbl" style="font-size:10.5px">Qué ve en la app</span><span style="font-size:13.5px;font-weight:700;line-height:1.35">' + accResumen(accOf(S.persona)) + '</span></span><button class="btn-o" ' + A('editPerm') + '>Cambiar</button></div>' : '') +
+    kpis(p.k) + '<div class="lbl" style="margin-bottom:10px">Sus mensajes</div><div class="gap8">' +
+    (p.m.length ? p.m.map(function (m) { return '<div class="card" style="padding:11px 12px;display:flex;gap:10px"><span style="width:32px;height:32px;flex-shrink:0;border-radius:9px;background:var(--bg);color:var(--green);display:flex;align-items:center;justify-content:center">' + ic(TIPOICON[m[0]], 's') + '</span><span class="col" style="gap:4px;flex:1;min-width:0"><span class="row" style="justify-content:space-between;font-size:11.5px;font-weight:700;color:var(--muted)"><span>' + (m[0] === 'audio' ? 'Audio' : m[0] === 'foto' ? 'Foto' : 'Mensaje') + (m[4] ? ' · ' + (m[4] === 'grupo' ? 'en el grupo' : 'por privado') : '') + '</span><span>' + m[1] + '</span></span><span style="font-size:13.5px;line-height:1.4">' + m[2] + '</span><span style="font-size:12px;font-weight:700;color:var(--green)">→ ' + m[3] + '</span></span></div>'; }).join('')
+      : '<div style="padding:12px;border-radius:14px;background:var(--saddle-soft);color:var(--saddle-ink);font-size:13px;font-weight:600">No mandó mensajes hoy. El último fue el lunes 20 a las 18:40.</div>') + '</div></div>';
+}
+
+/* ---------------- Gastos ----------------
+   Resumen → grupo → categoría. Todos los números salen de LEDGER filtrado por período y lugar. */
+function lugarLabel() { return S.dest === 'todos' ? 'Todos los lugares' : DN[S.dest][1]; }
+function filtrosGastos() {
+  return '<div class="row" style="gap:8px;flex-wrap:wrap;margin-bottom:16px">' + rangoBtn() +
+    '<button ' + A('sheet', 'lugar') + ' aria-label="Elegir lugar" style="display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-size:12.5px;font-weight:700;cursor:pointer;max-width:100%">' + ic('pin', 's') + '<span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' + esc(lugarLabel()) + '</span>' + ic('down', 's') + '</button></div>';
+}
+function totalCard(list, titulo) {
+  var t = montos(sumar(list));
+  return '<div class="card hero" style="padding:18px;margin-bottom:12px"><div class="row" style="justify-content:space-between;margin-bottom:10px"><span class="lbl">' + titulo + '</span><span class="muted" style="font-size:12px;font-weight:600">' + list.length + (list.length === 1 ? ' gasto' : ' gastos') + '</span></div>' +
+    (t.length ? t.map(function (x, i) { return '<div class="row" style="justify-content:space-between;align-items:baseline;' + (i ? 'border-top:1px solid var(--line2);margin-top:8px;padding-top:8px' : '') + '"><span class="tnum" style="font-size:24px;font-weight:800;letter-spacing:-.02em">' + x.m + '</span><span class="muted" style="font-size:12.5px;font-weight:600">' + x.nombre + '</span></div>'; }).join('')
+      : '<span class="muted" style="font-size:14px">No hay gastos en este período y lugar.</span>') + '</div>';
+}
+function amounts(list) { return '<span class="col" style="align-items:flex-end;gap:3px;flex-shrink:0">' + list.map(function (z) { return '<span class="tnum" style="font-size:14px;font-weight:800;white-space:nowrap">' + z.m + '</span>'; }).join('') + '</span>'; }
+function iconTile(n) { return '<span style="width:40px;height:40px;flex-shrink:0;border-radius:12px;background:var(--bg);color:var(--green);display:flex;align-items:center;justify-content:center">' + ic(n, 's', 'width:19px;height:19px') + '</span>'; }
+function cubreLabel(g) { if (!g.cubre) return ''; var a = acuerdo(g.cubre); return a ? 'Lo cubre ' + a.equipo : ''; }
+function movRow(g, conFecha) {
+  var cub = cubreLabel(g);
+  return '<button class="li" ' + A('gasto', g.id) + ' style="width:100%;align-items:center;border-left:0;border-right:0;border-top:0;background:none;text-align:left;cursor:pointer">' + iconTile(GICON[g.grupo]) +
+    '<span class="col" style="gap:2px;flex:1;min-width:0"><span style="font-size:14px;font-weight:700;line-height:1.3">' + g.t + '</span><span class="muted" style="font-size:12px">' + (conFecha ? fechaCorta(g.m, g.d) + ' · ' : '') + g.cat + ' · ' + DN[g.dest][2] + '</span>' +
+    (cub ? '<span style="font-size:11.5px;font-weight:800;color:var(--blue)">' + cub + (g.reint === 'cobrado' ? ' · reintegrado' : ' · a reintegrar') + '</span>' : '') + '</span>' +
+    '<span class="col" style="align-items:flex-end;gap:3px"><span class="tnum" style="font-size:14px;font-weight:800;white-space:nowrap">' + money('usd', g.usd) + '</span><span style="color:var(--faint)">' + ic(TIPOICON[g.src], 's', 'width:14px;height:14px') + '</span></span></button>';
+}
+function porDia(list) {
+  if (!list.length) return '';
+  var out = '', key = null;
+  list.forEach(function (g) {
+    var k = g.m * 100 + g.d;
+    if (k !== key) { if (key !== null) out += '</div>'; key = k; out += '<div class="lbl" style="margin:16px 2px 8px">' + fechaLarga(g.m, g.d) + '</div><div class="card list">'; }
+    out += movRow(g);
+  });
+  return out + '</div>';
+}
+function rowBtn(act, v, icon, titulo, sub) {
+  return '<button ' + A(act, v) + ' class="card" style="width:100%;display:flex;align-items:center;gap:12px;text-align:left;cursor:pointer;padding:12px 14px">' + iconTile(icon) + '<span class="col" style="gap:2px;flex:1;min-width:0"><span style="font-size:14px;font-weight:700">' + titulo + '</span><span class="muted" style="font-size:12px">' + sub + '</span></span>' + ic('chev', 's', 'color:var(--faint)') + '</button>';
+}
+
+function vGastos() {
+  if (S.gFijos) return vFijos();
+  var lista = gastos().filter(enLugar);
+
+  if (S.gGrupo && S.gCat) {
+    var dc = lista.filter(function (g) { return g.grupo === S.gGrupo && g.cat === S.gCat; });
+    return '<div class="scr" style="padding-top:12px"><button class="back" ' + A('gCat', '') + '>' + ic('left', 's') + esc(S.gGrupo) + '</button>' +
+      '<h1 class="h1" style="margin:6px 0 14px">' + esc(S.gCat) + '</h1>' + filtrosGastos() + totalCard(dc, 'Total') + porDia(dc) + '</div>';
+  }
+
+  if (S.gGrupo) {
+    var gr = GRUPOS.filter(function (x) { return x[0] === S.gGrupo; })[0];
+    var dg = lista.filter(function (g) { return g.grupo === S.gGrupo; });
+    var cats = gr[2].map(function (c) { var d = dg.filter(function (g) { return g.cat === c; }); return { c: c, m: montos(sumar(d)), n: d.length }; }).filter(function (x) { return x.n; });
+    return '<div class="scr" style="padding-top:12px"><button class="back" ' + A('gGrupo', '') + '>' + ic('left', 's') + 'Gastos</button>' +
+      '<div class="row" style="gap:12px;margin:6px 0 14px">' + iconTile(gr[3]) + '<h1 class="h1">' + gr[0] + '</h1></div>' + filtrosGastos() + totalCard(dg, 'Total') +
+      (cats.length ? '<div class="lbl" style="margin:12px 0 10px">Por categoría</div><div class="card list">' + cats.map(function (x) {
+        return '<button class="li" ' + A('gCat', x.c) + ' style="width:100%;align-items:center;border-left:0;border-right:0;border-top:0;background:none;text-align:left;cursor:pointer"><span class="col" style="gap:2px;flex:1;min-width:0"><span style="font-size:14.5px;font-weight:700">' + x.c + '</span>' + (CATDESC[x.c] ? '<span class="muted" style="font-size:12px;line-height:1.35">' + CATDESC[x.c] + '</span>' : '') + '<span class="muted" style="font-size:11.5px;font-weight:700">' + x.n + (x.n === 1 ? ' gasto' : ' gastos') + '</span></span>' + amounts(x.m) + ic('chev', 's', 'color:var(--faint)') + '</button>';
+      }).join('') + '</div>' : '') + '</div>';
+  }
+
+  var totU = sumar(lista).usd || 1;
+  var grupos = GRUPOS.map(function (gr2) { var d = lista.filter(function (g) { return g.grupo === gr2[0]; }); return { g: gr2, m: montos(sumar(d)), n: d.length, pct: Math.round((sumar(d).usd || 0) / totU * 100) }; }).filter(function (x) { return x.n; });
+  var totFijos = FIJOS.reduce(function (t, f) { return t + f[1]; }, 0);
+  return '<div class="scr"><div class="row" style="justify-content:space-between;margin-bottom:12px"><h1 class="h1">Gastos</h1>' +
+    '<button ' + A('sheet', 'export') + ' style="display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-size:12.5px;font-weight:700;cursor:pointer">' + ic('download', 's') + 'Exportar</button></div>' +
+    filtrosGastos() + totalCard(lista, 'Total gastado') +
+    '<div style="margin-bottom:24px">' + rowBtn('gFijos', '1', 'repeat', 'Pagos fijos', FIJOS.length + ' pagos · ' + money('usd', totFijos) + ' por mes') + '</div>' +
+    (grupos.length ? '<div class="lbl" style="margin-bottom:10px">En qué se fue</div><div class="card list" style="margin-bottom:24px">' +
+      grupos.map(function (x) { return '<button class="li" ' + A('gGrupo', x.g[0]) + ' style="width:100%;align-items:center;border-left:0;border-right:0;border-top:0;background:none;text-align:left;cursor:pointer">' + iconTile(x.g[3]) + '<span class="col" style="gap:4px;flex:1;min-width:0"><span style="font-size:14.5px;font-weight:700">' + x.g[0] + '</span><span class="muted" style="font-size:12px">' + x.n + (x.n === 1 ? ' gasto' : ' gastos') + ' · ' + (x.pct ? x.pct + '% del total' : 'menos del 1%') + '</span><span class="bar" style="display:block;height:5px"><span style="display:block;height:100%;border-radius:999px;width:' + Math.max(2, x.pct) + '%;background:var(--green)"></span></span></span>' + amounts(x.m) + ic('chev', 's', 'color:var(--faint)') + '</button>'; }).join('') + '</div>' : '') +
+    (lista.length ? '<div class="sec"><span class="lbl">Últimos gastos</span>' + (lista.length > 5 ? '<button class="btn-plain" ' + A('gTodos') + ' style="min-height:32px;font-size:13px;font-weight:700;color:var(--green)">Ver los ' + lista.length + '</button>' : '') + '</div>' +
+      '<div class="card list">' + lista.slice(0, 5).map(function (g) { return movRow(g, true); }).join('') + '</div>' : '') + '</div>';
+}
+function vGastosTodos() {
+  var lista = gastos().filter(enLugar);
+  return '<div class="scr" style="padding-top:12px"><button class="back" ' + A('gTodosOff') + '>' + ic('left', 's') + 'Gastos</button>' +
+    '<h1 class="h1" style="margin:6px 0 14px">Todos los gastos</h1>' + filtrosGastos() + totalCard(lista, 'Total') + porDia(lista) + '</div>';
+}
+function vFijos() {
+  return '<div class="scr" style="padding-top:12px"><button class="back" ' + A('gFijosOff') + '>' + ic('left', 's') + 'Gastos</button>' +
+    '<div class="row" style="justify-content:space-between;margin:6px 0 8px"><h1 class="h1">Pagos fijos</h1><button class="btn-o" ' + A('sheet', 'fijo') + '>' + ic('plus', 's') + 'Agregar</button></div>' +
+    '<p class="muted" style="margin:0 0 16px;font-size:13px;line-height:1.45">Los cargás una vez. El día que vence cada uno, PROGRAMON te pregunta por WhatsApp si lo pagaste: respondés «sí» y queda cargado en Gastos.</p>' +
+    '<div class="card list" style="margin-bottom:16px">' + FIJOS.map(function (f) {
+      return '<div class="li" style="align-items:center">' + iconTile(GICON[f[5]]) + '<span class="col" style="gap:2px;flex:1;min-width:0"><span style="font-size:14px;font-weight:700">' + f[0] + '</span><span class="muted" style="font-size:12px">Día ' + f[3] + ' de cada mes · ' + f[4] + '</span></span><span class="tnum" style="font-size:14px;font-weight:800;white-space:nowrap">' + money(f[2], f[1]) + '</span></div>';
+    }).join('') + '</div>' +
+    '<button ' + A('waChat', 'fijos') + ' style="width:100%;height:44px;border-radius:12px;border:1px solid var(--line);background:var(--card);font-size:13.5px;font-weight:700;cursor:pointer">Ver cómo se confirma por WhatsApp</button></div>';
+}
+function vGastoSheet() {
+  var g = gastoById(S.gastoId); if (!g) return '';
+  var comp;
+  if (g.src === 'foto') comp = '<div style="aspect-ratio:4/3;max-width:100%;border-radius:12px;background:#D9D2C3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#4A524D">' + ic('cam') + '<span style="font-size:13px;font-weight:700">' + fotoLabel(g) + '</span><span style="font-size:12px">Tocá para ampliar</span></div>';
+  else if (g.src === 'audio') comp = '<div style="padding:12px;border-radius:12px;background:var(--wa-mine)"><div class="row" style="gap:10px;margin-bottom:8px"><span style="width:34px;height:34px;border-radius:999px;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg class="i s" viewBox="0 0 24 24" aria-hidden="true" style="fill:currentColor;stroke:none"><path d="M8 5v14l11-7z"/></svg></span><span class="row" style="gap:2px;flex:1;height:26px" aria-hidden="true">' + WAVE.map(function (h, i) { return '<span style="width:3px;border-radius:2px;height:' + h + 'px;background:' + (i < 9 ? 'var(--green)' : '#9AA39E') + '"></span>'; }).join('') + '</span></div><div style="font-size:13px;font-style:italic;line-height:1.45;color:#3A423D">«' + g.nota + '»</div></div>';
+  else comp = '<div style="padding:12px;border-radius:12px;background:var(--wa-mine);font-size:14px;line-height:1.45">' + g.nota + '</div>';
+  var fila = function (k, v) { return '<div class="row" style="justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line2);font-size:13.5px"><span class="muted" style="font-weight:600">' + k + '</span><span style="font-weight:700;text-align:right">' + v + '</span></div>'; };
+  var fl = fechaLarga(g.m, g.d);
+  var cub = g.cubre ? acuerdo(g.cubre) : null;
+  return sheet('Detalle del gasto',
+    '<div class="col" style="gap:4px"><span class="tnum" style="font-size:30px;font-weight:800;letter-spacing:-.02em">' + money('usd', g.usd) + '</span><span style="font-size:16px;font-weight:700">' + g.t + '</span>' + (g.cur !== 'usd' ? '<span class="muted tnum" style="font-size:11.5px;line-height:1.4;margin-top:2px">' + convTxt(g) + '</span>' : '') + '</div>' +
+    (cub ? '<div style="padding:11px 12px;border-radius:12px;background:var(--blue-soft);color:#16324F;font-size:13px;font-weight:600;line-height:1.4">Lo cubre ' + cub.equipo + ' (' + cub.patron + '). ' + (g.reint === 'cobrado' ? 'Ya te lo reintegró.' : 'Está sumado a lo que te debe en Ingresos.') + '</div>' : '') +
+    '<div>' + fila('Fecha', fl === 'Hoy' || fl === 'Ayer' ? fl + ', ' + fechaCorta(g.m, g.d) : fl) + fila('Categoría', g.grupo + ' › ' + g.cat) + fila('Lugar', DN[g.dest][1]) + fila('Lo cargó', quien(g.by) + (g.canal === 'grupo' ? ' · en el grupo' : ' · por WhatsApp')) + '</div>' +
+    '<div class="lbl" style="margin-top:4px">' + (g.src === 'foto' ? 'Comprobante' : g.src === 'audio' ? 'Audio original' : 'Mensaje original') + '</div>' + comp +
+    (GCHAT[g.t] && g.m === 10 || GCHAT[g.t] && g.cubre ? '<button ' + A('waChat', GCHAT[g.t]) + ' style="height:44px;border-radius:12px;border:1px solid var(--line);background:var(--card);font-size:13.5px;font-weight:700;cursor:pointer">Ver la conversación de WhatsApp</button>' : ''));
+}
+var GCHAT = { '3 tacos nuevos': 'gasto', 'Herraje de 4 caballos': 'grupo', 'Flete aéreo de 10 caballos a Inglaterra': 'reintegro', 'Nafta de la camioneta': 'sofia', '30 bolsas de avena': 'manager', 'Visita del veterinario al campo': 'tomas' };
+function vExportSheet() {
+  var n = gastos().filter(enLugar), fotos = n.filter(function (g) { return g.src === 'foto'; }).length;
+  if (S.exportOk) return sheet('Exportar gastos', '<div class="row" style="gap:10px;padding:14px;border-radius:14px;background:var(--green-soft);color:var(--green)">' + ic('check', 's') + '<span style="font-size:13.5px;font-weight:700;line-height:1.45">Listo. Le mandamos a ' + esc(S.exportMail) + ' el ' + (S.exportFmt === 'pdf' ? 'PDF' : 'Excel') + ' con ' + n.length + ' gastos' + (S.exportFotos ? ' y ' + fotos + ' comprobantes' : '') + '.</span></div><button class="btn-g" ' + A('closeSheet') + '>Cerrar</button>');
+  return sheet('Exportar gastos',
+    '<div class="card" style="padding:12px 14px;background:var(--bg)"><div style="font-size:14px;font-weight:800">' + esc(rango().largo) + '</div><div class="muted" style="font-size:12.5px">' + esc(lugarLabel()) + ' · ' + n.length + ' gastos · ' + fotos + ' con foto</div></div>' +
+    '<div class="col" style="gap:6px"><span style="font-size:12.5px;font-weight:700">Formato</span><div class="wrap">' + [['excel', 'Excel'], ['pdf', 'PDF']].map(function (f) { return '<button class="chip' + (S.exportFmt === f[0] ? ' on' : '') + '" ' + A('exportFmt', f[0]) + '>' + f[1] + '</button>'; }).join('') + '</div></div>' +
+    '<button ' + A('exportFotos') + ' class="row" style="gap:10px;background:none;border:0;padding:0;cursor:pointer;text-align:left"><span class="chk' + (S.exportFotos ? ' on' : '') + '" style="pointer-events:none">' + (S.exportFotos ? ic('check', '', 'width:14px;height:14px') : '') + '</span><span style="font-size:13.5px;font-weight:600">Incluir las fotos de los comprobantes</span></button>' +
+    '<label class="field" for="exp-mail">Mail de tu contador<input class="inp" id="exp-mail" data-bind="exportMail" type="email" value="' + esc(S.exportMail) + '"></label>' +
+    '<button class="btn-g" ' + A('exportar') + '>Mandar a mi contador</button>');
+}
+function vFijoSheet() {
+  return sheet('Nuevo pago fijo', '<div class="hint">Por WhatsApp: <i>«Todos los 10 le pago 300 dólares al veterinario de cabecera.»</i></div>' +
+    '<label class="field" for="fijo-que">Qué es<input class="inp" id="fijo-que" type="text" placeholder="Ej. Veterinario de cabecera"></label>' +
+    '<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px"><label class="field" for="fijo-monto">Monto<input class="inp" id="fijo-monto" type="text" inputmode="numeric" placeholder="US$ 300"></label><label class="field" for="fijo-dia">Día del mes<input class="inp" id="fijo-dia" type="text" inputmode="numeric" placeholder="10"></label></div>' +
+    '<button class="btn-g" ' + A('closeSheet') + '>Guardar</button>');
+}
+/* ---------------- Ingresos ----------------
+   Patrones y ventas de caballos. Por cobrar = lo acordado − lo cobrado + los gastos que cubre el patrón y todavía no reintegró.
+   Temporadas: lo acordado (más reintegros) contra lo gastado en ese lugar y esas fechas, por moneda. */
+S.acuerdos = [
+  { id: 'a1', tipo: 'patron', equipo: 'Northfield', patron: 'Erik Halvorsen', donde: 'Inglaterra · temporada 2026', cur: 'usd', monto: 250000, pagos: [[5, 15, 100000, 'Transferencia · mensaje de Tomás'], [6, 20, 40000, 'Transferencia · foto del comprobante']] },
+  { id: 'a2', tipo: 'patron', equipo: 'Palm Ridge', patron: 'Daniel Whitmore', donde: 'Estados Unidos · Wellington 2027', cur: 'usd', monto: 180000, pagos: [[10, 10, 30000, 'Seña · mensaje de Tomás']] },
+  { id: 'a3', tipo: 'patron', equipo: 'La Ensenada', patron: 'Pablo Ferrer', donde: 'Argentina · temporada 2026', cur: 'usd', monto: 60000, pagos: [[10, 1, 30000, 'Transferencia · audio de Tomás']] },
+  { id: 'a4', tipo: 'patron', equipo: 'Les Pins', patron: 'Antoine Moreau', donde: 'Francia · Chantilly 2026', cur: 'eur', monto: 45000, pagos: [] },
+  { id: 'a5', tipo: 'patron', equipo: 'Valle Alto', patron: 'Javier Ordóñez', donde: 'España · Sotogrande 2026', cur: 'eur', monto: 80000, pagos: [[8, 10, 50000, 'Transferencia · foto del comprobante'], [8, 31, 30000, 'Transferencia · mensaje de Tomás']] },
+  { id: 'v1', tipo: 'venta', equipo: 'Halcona', patron: 'La compró Erik Halvorsen', donde: 'Inglaterra · julio 2026', cur: 'usd', monto: 85000, pagos: [[7, 25, 50000, 'Transferencia · mensaje de Tomás']] },
+  { id: 'v2', tipo: 'venta', equipo: 'Trueno', patron: 'Lo compró un polista de Wellington', donde: 'Estados Unidos · septiembre 2026', cur: 'usd', monto: 40000, pagos: [[9, 12, 40000, 'Transferencia · foto del comprobante']] }
+];
+S.exportFmt = 'excel'; S.exportFotos = true; S.exportMail = 'contador@estudioruiz.com.ar'; S.exportOk = false; S.gFijos = false;
+S.ingFiltro = 'todos'; S.ingVista = 'acuerdos'; S.acId = ''; S.acTipo = 'patron'; S.acPatron = ''; S.acEquipo = ''; S.acDonde = ''; S.acMonto = ''; S.acCur = 'usd'; S.pagoMonto = '';
+var CURS_ING = [['usd', 'Dólares'], ['eur', 'Euros'], ['gbp', 'Libras'], ['ars', 'Pesos']];
+function cobrado(a) { return a.pagos.reduce(function (t, p) { return t + p[2]; }, 0); }
+function falta(a) { return Math.max(0, a.monto - cobrado(a)); }
+function reintegros(a) { return LEDGER.filter(function (g) { return g.cubre === a.id; }); }
+function reintPend(a) { return reintegros(a).filter(function (g) { return g.reint !== 'cobrado'; }).reduce(function (t, g) { return t + g.amt; }, 0); }
+/* En US$: lo cobrado, a la cotización del día de cada pago; lo que falta, a la de hoy (≈). */
+function pagoUsd(a, p) { return a.cur === 'usd' ? p[2] : Math.round(p[2] * EURUSD[p[0]]); }
+function cobradoUsd(a) { return a.pagos.reduce(function (t, p) { return t + pagoUsd(a, p); }, 0); }
+function hoyUsd(a, v) { return a.cur === 'usd' ? v : Math.round(v * EUR_HOY); }
+function aprox(a) { return a.cur === 'usd' ? '' : '≈ '; }
+function usdTxt(a, v) { return (v ? aprox(a) : '') + money('usd', hoyUsd(a, v)); }
+function eurNota(a, v) { return a.cur === 'usd' ? '' : money(a.cur, v) + ' al euro de hoy (US$ ' + nfx(EUR_HOY) + ')'; }
+function porCobrar(a) { return falta(a) + reintPend(a); }
+function acuerdo(id) { return S.acuerdos.filter(function (a) { return a.id === id; })[0]; }
+function totalesIng(fn, lista) { var t = {}; (lista || S.acuerdos).forEach(function (a) { var v = fn(a); if (v) t[a.cur] = (t[a.cur] || 0) + v; }); return CURS_ING.filter(function (c) { return t[c[0]]; }).map(function (c) { return { nombre: c[1], m: money(c[0], t[c[0]]) }; }); }
+function porCobrarUsd() { var t = 0, ap = false, eu = []; S.acuerdos.forEach(function (a) { var v = porCobrar(a); if (!v) return; t += hoyUsd(a, v); if (a.cur !== 'usd') { ap = true; eu.push(money(a.cur, v) + ' de ' + a.equipo); } }); return { v: t, m: (ap ? '≈ ' : '') + money('usd', t), nota: eu.length ? 'Incluye ' + eu.join(' y ') + ' al euro de hoy (US$ ' + nfx(EUR_HOY) + ')' : '' }; }
+function cobradoTotUsd() { return S.acuerdos.reduce(function (t, a) { return t + cobradoUsd(a); }, 0); }
+function estadoAc(a) { var c = cobrado(a); return porCobrar(a) === 0 ? ['Cobrado', 'background:var(--green-soft);color:var(--green)'] : c === 0 ? ['Sin pagos', 'background:var(--saddle-soft);color:var(--saddle)'] : ['Cobrando', 'background:var(--blue-soft);color:var(--blue)']; }
+function barAc(a) { var pct = Math.round(cobrado(a) / a.monto * 100); return '<div class="bar"><div style="width:' + Math.max(pct ? 3 : 0, pct) + '%;background:' + (pct >= 100 ? 'var(--green)' : 'var(--blue)') + '"></div></div>'; }
+function acCard(a) {
+  var e = estadoAc(a), f = falta(a), r = reintPend(a);
+  return '<button class="card" ' + A('acuerdo', a.id) + ' style="width:100%;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:10px">' +
+    '<div class="row" style="justify-content:space-between;align-items:flex-start;gap:10px;width:100%"><span class="col" style="gap:2px;min-width:0"><span style="font-size:15px;font-weight:800">' + (a.tipo === 'venta' ? 'Venta de ' : '') + a.equipo + '</span><span class="muted" style="font-size:12px">' + a.patron + ' · ' + a.donde + '</span></span><span class="pill" style="' + e[1] + '">' + e[0] + '</span></div>' +
+    '<div style="width:100%">' + barAc(a) + '</div>' +
+    '<div class="row" style="justify-content:space-between;width:100%;font-size:12.5px;gap:8px"><span class="muted tnum">Cobrado ' + money('usd', cobradoUsd(a)) + (a.cur === 'usd' ? ' de ' + money('usd', a.monto) : ' · acordado ' + money(a.cur, a.monto)) + '</span>' + (f ? '<span class="tnum" style="font-weight:800;white-space:nowrap">Faltan ' + usdTxt(a, f) + '</span>' : '') + '</div>' +
+    (r ? '<div style="width:100%;font-size:12px;font-weight:700;color:var(--blue)">+ ' + usdTxt(a, r) + ' de gastos que cubre y no reintegró</div>' : '') +
+    (a.cur !== 'usd' && f ? '<div class="muted" style="width:100%;font-size:11.5px">' + eurNota(a, f) + '</div>' : '') + '</button>';
+}
+
+function vIngresos() {
+  if (S.acId) return vAcuerdo();
+  var head = '<div class="row" style="justify-content:space-between;margin-bottom:14px"><h1 class="h1">Ingresos</h1><button ' + A('sheet', 'acuerdo') + ' style="display:inline-flex;align-items:center;gap:6px;height:40px;padding:0 14px;border-radius:999px;background:var(--grad-btn);color:#fff;border:0;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 6px 16px rgba(21,92,63,.28)">' + ic('plus', 's') + 'Nuevo</button></div>' +
+    '<div class="seg" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:16px">' + [['acuerdos', 'Por cobrar'], ['temporadas', 'Por temporada']].map(function (t) { return '<button class="' + (S.ingVista === t[0] ? 'on' : '') + '" ' + A('ingVista', t[0]) + '>' + t[1] + '</button>'; }).join('') + '</div>';
+  if (S.ingVista === 'temporadas') return '<div class="scr">' + head + vTemporadas() + '</div>';
+  var lista = S.acuerdos.filter(function (a) { return S.ingFiltro === 'todos' || (S.ingFiltro === 'pend' ? porCobrar(a) > 0 : porCobrar(a) === 0); });
+  var pc = porCobrarUsd();
+  var pendientes = S.acuerdos.filter(function (a) { return porCobrar(a) > 0; }).length;
+  var pat = lista.filter(function (a) { return a.tipo === 'patron'; }), ven = lista.filter(function (a) { return a.tipo === 'venta'; });
+  return '<div class="scr">' + head +
+    '<div class="card hero" style="padding:18px;margin-bottom:12px"><div class="row" style="justify-content:space-between;margin-bottom:10px"><span class="lbl">Por cobrar</span><span class="muted" style="font-size:12px;font-weight:600">' + pendientes + ' pendientes</span></div>' +
+    (pc.v ? '<div class="row" style="justify-content:space-between;align-items:baseline"><span class="tnum" style="font-size:24px;font-weight:800;letter-spacing:-.02em">' + pc.m + '</span><span class="muted" style="font-size:12.5px;font-weight:600">en dólares</span></div>' + (pc.nota ? '<div class="muted" style="font-size:11.5px;margin-top:6px;line-height:1.4">' + pc.nota + '</div>' : '') : '<span class="muted" style="font-size:14px">Te pagaron todo.</span>') + '</div>' +
+    '<div class="row" style="gap:8px;flex-wrap:wrap;margin:0 2px 20px;font-size:12.5px"><span class="muted" style="font-weight:600">Ya cobraste</span><span class="tnum" style="font-weight:800">' + money('usd', cobradoTotUsd()) + '</span></div>' +
+    '<div class="chips" style="margin-bottom:14px">' + [['todos', 'Todos'], ['pend', 'Por cobrar'], ['ok', 'Cobrados']].map(function (f) { return '<button class="chip' + (S.ingFiltro === f[0] ? ' on' : '') + '" ' + A('ingFiltro', f[0]) + '>' + f[1] + '</button>'; }).join('') + '</div>' +
+    (pat.length ? '<div class="lbl" style="margin-bottom:10px">Patrones</div><div class="gap8" style="margin-bottom:20px">' + pat.map(acCard).join('') + '</div>' : '') +
+    (ven.length ? '<div class="lbl" style="margin-bottom:10px">Venta de caballos</div><div class="gap8">' + ven.map(acCard).join('') + '</div>' : '') + '</div>';
+}
+
+var TEMPS = [
+  { n: 'Inglaterra 2026', sub: 'Windsor · abril a julio', dest: ['windsor'], from: 401, to: 731, ac: ['a1', 'v1'] },
+  { n: 'Sotogrande 2026', sub: 'España · agosto', dest: ['soto'], from: 801, to: 831, ac: ['a5'] },
+  { n: 'Argentina 2026', sub: 'Pilar y campo · septiembre a hoy', dest: ['pilar', 'campo'], from: 901, to: 1022, ac: ['a3', 'v2'] }
+];
+function vTemporadas() {
+  return '<p class="muted" style="margin:0 2px 14px;font-size:12.5px;line-height:1.45">Lo que arreglaste con patrones y ventas (más los gastos que te reintegran), contra lo que gastaste en ese lugar y esas fechas. Todo en dólares. No incluye compras de caballos.</p>' +
+    '<div class="gap8">' + TEMPS.map(function (t) {
+      var acs = t.ac.map(acuerdo);
+      var ing = 0, ap = false; acs.forEach(function (a) { ing += cobradoUsd(a) + hoyUsd(a, falta(a)) + reintegros(a).reduce(function (t, g) { return t + g.usd; }, 0); if (a.cur !== 'usd' && falta(a)) ap = true; });
+      var gas = 0; LEDGER.forEach(function (g) { var x = g.m * 100 + g.d; if (t.dest.indexOf(g.dest) >= 0 && x >= t.from && x <= t.to && g.grupo !== 'Compra de caballos') gas += g.usd; });
+      var r = ing - gas;
+      var stat = function (k, v, c, big) { return '<span class="col" style="gap:2px;min-width:0"><span class="lbl" style="font-size:10.5px">' + k + '</span><span class="tnum" style="font-size:' + (big ? '19' : '15') + 'px;font-weight:800;white-space:nowrap;' + (c ? 'color:' + c : '') + '">' + v + '</span></span>'; };
+      return '<div class="card" style="padding:14px"><div style="font-size:15px;font-weight:800">' + t.n + '</div><div class="muted" style="font-size:12px;margin-bottom:12px">' + t.sub + ' · ' + acs.map(function (a) { return (a.tipo === 'venta' ? 'venta de ' : '') + a.equipo; }).join(', ') + '</div>' +
+        '<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:10px">' + stat('Ingresos', (ap ? '≈ ' : '') + money('usd', ing)) + stat('Gastos', '−' + money('usd', gas)) + '</div>' +
+        '<div class="row" style="justify-content:space-between;align-items:baseline;border-top:1px solid var(--line2);padding-top:10px"><span class="lbl">Resultado</span><span class="tnum" style="font-size:22px;font-weight:800;white-space:nowrap;color:' + (r >= 0 ? 'var(--green)' : 'var(--saddle)') + '">' + (r >= 0 ? '+' : '−') + money('usd', Math.abs(r)) + '</span></div></div>';
+    }).join('') + '</div>';
+}
+
+function vAcuerdo() {
+  var a = acuerdo(S.acId), c = cobrado(a), f = falta(a), e = estadoAc(a), rs = reintegros(a), rp = reintPend(a);
+  var fila = function (k, v, strong, first) { return '<div class="row" style="justify-content:space-between;align-items:baseline;padding:10px 0;' + (first ? '' : 'border-top:1px solid var(--line2)') + '"><span class="muted" style="font-size:13px;font-weight:600">' + k + '</span><span class="tnum" style="font-size:' + (strong ? '22' : '16') + 'px;font-weight:800">' + v + '</span></div>'; };
+  var pagos = a.pagos.slice().sort(function (x, y) { return (y[0] * 100 + y[1]) - (x[0] * 100 + x[1]); });
+  var esV = a.tipo === 'venta';
+  return '<div class="scr" style="padding-top:12px"><button class="back" ' + A('backIng') + '>' + ic('left', 's') + 'Ingresos</button>' +
+    '<div class="row" style="justify-content:space-between;align-items:flex-start;gap:10px;margin:6px 0 16px"><div class="col" style="gap:3px"><h1 class="h1">' + (esV ? 'Venta de ' : '') + esc(a.equipo) + '</h1><span class="muted" style="font-size:13px">' + esc(a.patron) + ' · ' + esc(a.donde) + '</span></div><span class="pill" style="' + e[1] + '">' + e[0] + '</span></div>' +
+    '<div class="card" style="padding:4px 16px 16px;margin-bottom:20px">' + fila(esV ? 'Precio de venta' : 'Acordado', money(a.cur, a.monto), false, true) + fila('Cobrado', money('usd', cobradoUsd(a))) + (rp ? fila('Gastos a reintegrar', usdTxt(a, rp)) : '') + fila('Te debe', usdTxt(a, f + rp), true) + (a.cur !== 'usd' && f + rp ? '<div class="muted" style="font-size:11.5px;line-height:1.4">' + eurNota(a, f + rp) + '. Lo cobrado, al euro del día de cada pago.</div>' : '') + '<div style="margin-top:6px">' + barAc(a) + '</div></div>' +
+    '<div class="sec"><span class="lbl">Pagos recibidos</span><span class="muted" style="font-size:12px;font-weight:600">' + pagos.length + (pagos.length === 1 ? ' pago' : ' pagos') + '</span></div>' +
+    (pagos.length ? '<div class="card list" style="margin-bottom:20px">' + pagos.map(function (p) { return '<div class="li" style="align-items:center"><span style="width:46px;flex-shrink:0;font-size:13px;font-weight:800">' + p[1] + '/' + p[0] + '</span><span class="col" style="flex:1;gap:2px;min-width:0"><span class="muted" style="font-size:12.5px">' + esc(p[3]) + '</span>' + (a.cur !== 'usd' ? '<span class="muted tnum" style="font-size:11px">' + money(a.cur, p[2]) + ' al euro del ' + p[1] + '/' + p[0] + ' (US$ ' + nfx(EURUSD[p[0]]) + ')</span>' : '') + '</span><span class="tnum" style="font-size:14px;font-weight:800;white-space:nowrap">' + money('usd', pagoUsd(a, p)) + '</span></div>'; }).join('') + '</div>'
+      : '<div class="card" style="margin-bottom:20px"><span class="muted" style="font-size:13.5px">Todavía no te pagó nada.</span></div>') +
+    (rs.length ? '<div class="sec"><span class="lbl">Gastos que cubre el patrón</span></div><div class="card list" style="margin-bottom:20px">' + rs.map(function (g) { return '<button class="li" ' + A('gasto', g.id) + ' style="width:100%;align-items:center;border-left:0;border-right:0;border-top:0;background:none;text-align:left;cursor:pointer"><span class="col" style="gap:2px;flex:1;min-width:0"><span style="font-size:14px;font-weight:700">' + g.t + '</span><span class="muted" style="font-size:12px">' + fechaCorta(g.m, g.d) + ' · ' + (g.reint === 'cobrado' ? 'reintegrado' : 'a reintegrar') + '</span></span><span class="tnum" style="font-size:14px;font-weight:800;white-space:nowrap">' + money('usd', g.usd) + '</span></button>'; }).join('') + '</div>' : '') +
+    (f + rp ? '<button class="btn-g" ' + A('sheet', 'pago') + ' style="margin-bottom:12px">Registrar pago</button><div class="hint">Por WhatsApp: <i>«' + (esV ? 'Me pagaron 20 mil de la venta de ' + esc(a.equipo) : 'Me pagó 40 mil ' + esc(a.patron.split(' ').slice(-1)[0])) + '.»</i></div>' : '') + '</div>';
+}
+function vAcuerdoSheet() {
+  var v = S.acTipo === 'venta';
+  return sheet(v ? 'Nueva venta de caballo' : 'Nuevo acuerdo con un patrón', '<div class="seg" style="grid-template-columns:repeat(2,minmax(0,1fr))">' + [['patron', 'Patrón'], ['venta', 'Venta de caballo']].map(function (t) { return '<button class="' + (S.acTipo === t[0] ? 'on' : '') + '" ' + A('acTipo', t[0]) + '>' + t[1] + '</button>'; }).join('') + '</div>' +
+    '<div class="hint">Por WhatsApp: <i>«' + (v ? 'Vendí a Halcona a Halvorsen, 85 mil dólares.' : 'Cerré con Halvorsen para jugar Inglaterra, 250 mil dólares.') + '»</i></div>' +
+    '<label class="field" for="ac-equipo">' + (v ? 'Caballo' : 'Equipo') + '<input class="inp" id="ac-equipo" data-bind="acEquipo" type="text" placeholder="' + (v ? 'Ej. Halcona' : 'Ej. Northfield') + '" value="' + esc(S.acEquipo) + '"></label>' +
+    '<label class="field" for="ac-patron">' + (v ? 'Comprador' : 'Patrón') + '<input class="inp" id="ac-patron" data-bind="acPatron" type="text" placeholder="Ej. Erik Halvorsen" value="' + esc(S.acPatron) + '"></label>' +
+    '<label class="field" for="ac-donde">Dónde y cuándo<input class="inp" id="ac-donde" data-bind="acDonde" type="text" placeholder="Ej. Inglaterra · temporada 2027" value="' + esc(S.acDonde) + '"></label>' +
+    '<div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:end"><label class="field" for="ac-monto">' + (v ? 'Precio' : 'Lo que arreglaron') + '<input class="inp tnum" id="ac-monto" data-bind="acMonto" type="text" inputmode="numeric" placeholder="250.000" value="' + esc(S.acMonto) + '"></label>' +
+    '<div class="row" style="gap:4px;padding-bottom:4px">' + [['usd', 'US$'], ['eur', '€'], ['gbp', '£']].map(function (c) { return '<button class="chip' + (S.acCur === c[0] ? ' on' : '') + '" ' + A('acCur', c[0]) + ' style="padding:0 10px">' + c[1] + '</button>'; }).join('') + '</div></div>' +
+    '<p class="muted" style="margin:0;font-size:11.5px;line-height:1.4">En la app se ve en dólares. Si es en euros, cada pago se pasa al euro del día que te pagan.</p><button class="btn-g" ' + A('saveAcuerdo') + '>Guardar</button>');
+}
+function vPagoSheet() {
+  var a = acuerdo(S.acId), deb = falta(a) + reintPend(a);
+  return sheet('Pago de ' + a.equipo, '<p class="muted" style="margin:0;font-size:13px">Te debe ' + (a.cur === 'usd' ? money('usd', deb) : money(a.cur, deb) + ' (' + usdTxt(a, deb) + ')') + '.</p>' +
+    '<label class="field" for="pago-monto">Cuánto te pagó<input class="inp tnum" id="pago-monto" data-bind="pagoMonto" type="text" inputmode="numeric" placeholder="' + deb.toLocaleString('es-AR') + '" value="' + esc(S.pagoMonto) + '"></label>' +
+    '<button class="btn-g" ' + A('savePago') + '>Registrar pago</button>');
+}
+function numero(t) { var n = parseFloat(String(t).replace(/\./g, '').replace(',', '.')); return isNaN(n) ? 0 : n; }
+
+/* ---------------- Hojas ---------------- */
+function sheet(title, inner) { return '<div class="scrim" ' + A('closeSheet') + '><div class="sheet" role="dialog" aria-label="' + title + '" data-stop="1"><div class="row" style="justify-content:space-between"><span style="font-size:18px;font-weight:800">' + title + '</span><button class="x" ' + A('closeSheet') + ' aria-label="Cerrar">' + ic('close', 's') + '</button></div>' + inner + '</div></div>'; }
+function opts(list, cur, act) { return '<div class="wrap">' + list.map(function (o) { return '<button class="chip' + (cur === o ? ' on' : '') + '" ' + A(act, o) + '>' + o + '</button>'; }).join('') + '</div>'; }
+function vSheet() {
+  if (S.sheet === 'add') return sheet('Agregar caballo', '<div style="padding:14px;border-radius:14px;background:var(--green-soft);display:flex;flex-direction:column;gap:8px"><span style="font-size:14px;font-weight:800;color:var(--green)">La forma rápida: mandalo por WhatsApp</span><span style="font-size:13px;line-height:1.45;color:#20352A">Un audio o un mensaje con nombre, sexo, edad y pelaje alcanza. Si mandás foto de los papeles, sacamos el microchip de ahí.</span><span style="font-size:12.5px;font-style:italic;color:#20352A;background:var(--card);padding:9px 11px;border-radius:10px">«Nuevo caballo: Fortuna, yegua, 6 años, zaina. Llega el sábado a Pilar.»</span><button class="btn-g" ' + A('waChat', 'alta') + ' style="height:44px">Ver ejemplo en WhatsApp</button></div>' +
+    '<span class="lbl" style="margin-top:4px">O cargalo acá</span><label class="field" for="n-nombre">Nombre<input class="inp" id="n-nombre" type="text" placeholder="Ej. Fortuna"></label><div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px"><label class="field" for="n-sexo">Sexo<input class="inp" id="n-sexo" type="text" placeholder="Yegua"></label><label class="field" for="n-edad">Edad<input class="inp" id="n-edad" type="text" placeholder="6"></label><label class="field" for="n-pelaje">Pelaje<input class="inp" id="n-pelaje" type="text" placeholder="Zaina"></label></div><button class="btn-g" ' + A('closeSheet') + ' style="background:var(--card);color:var(--green);border:1px solid var(--green)">Guardar caballo</button>');
+  if (S.sheet === 'rem') { var h = horse(S.horseId); return sheet('Recordatorio para ' + h.nombre, '<div class="hint">Por WhatsApp: <i>«A ' + h.nombre + ' hay que cambiarle la embocadura mañana, que lo haga Pedro.»</i></div><label class="field" for="rem-txt">Qué hay que hacer<input class="inp" id="rem-txt" data-bind="remTxt" type="text" placeholder="Ej. Revisar la herradura de la mano derecha" value="' + esc(S.remTxt) + '"></label>' +
+    '<div class="col" style="gap:6px"><span style="font-size:12.5px;font-weight:700">Cuándo</span>' + opts(['Hoy', 'Mañana', 'Esta semana', 'Elegir fecha'], S.remCuando, 'remCuando') + '</div>' +
+    '<div class="col" style="gap:6px"><span style="font-size:12.5px;font-weight:700">Quién lo hace</span>' + opts(['Yo', 'Nacho (manager)', 'Pedro (piloto)', 'Veterinaria'], S.remQuien, 'remQuien') + '<span class="muted" style="font-size:11.5px">Si se lo asignás al piloto, le llega por WhatsApp y le aparece en sus tareas.</span></div><button class="btn-g" ' + A('saveRem') + '>Guardar recordatorio</button>'); }
+  if (S.sheet === 'vis') return sheet('Agendar visita', '<div class="hint">Por WhatsApp: <i>«El miércoles viene la veterinaria a ver a la Patria.»</i></div><div class="col" style="gap:6px"><span style="font-size:12.5px;font-weight:700">Quién viene</span>' + opts(['Herrero', 'Veterinaria', 'Proveedor', 'Otro'], S.visQuien, 'visQuien') + '</div><div class="col" style="gap:6px"><span style="font-size:12.5px;font-weight:700">Qué día</span>' + opts(['Vie 23', 'Lun 26', 'Mié 28', 'Elegir fecha'], S.visDia, 'visDia') + '</div><label class="field" for="vis-nota">Para qué<input class="inp" id="vis-nota" data-bind="visNota" type="text" placeholder="Ej. Ver a Patria y vacunar a las de doma" value="' + esc(S.visNota) + '"></label><button class="btn-g" ' + A('saveVis') + '>Agendar</button>');
+  if (S.sheet === 'cons') return sheet('Consumo diario · ' + SEDE[S.sede],
+    '<div class="hint">Por WhatsApp: <i>«Cada caballo come 7 kilos y medio de avena por día.»</i></div>' +
+    '<p class="muted" style="margin:0;font-size:12.5px;line-height:1.45">Cargá cuánto come <b>cada caballo por día</b>. PROGRAMON lo multiplica por los caballos que hay en ' + SEDE[S.sede] + ' y te dice para cuántos días alcanza. Cada caballeriza tiene el suyo.</p>' +
+    STOCK[S.sede].map(function (it) {
+      return '<div style="display:flex;flex-direction:column;gap:6px;padding:12px;border-radius:14px;border:1px solid var(--line)"><div class="row" style="justify-content:space-between;align-items:baseline"><span style="font-size:14px;font-weight:800">' + it.n + '</span><span class="muted" style="font-size:11.5px;font-weight:600">' + it.cab + ' caballos</span></div>' +
+        '<label class="row" for="cons-' + it.k + '" style="gap:8px;font-size:13px;font-weight:600"><input class="inp" id="cons-' + it.k + '" data-cons="' + it.k + '" type="text" inputmode="decimal" value="' + nf(S.cons[S.sede][it.k]) + '" style="width:88px;flex:none;text-align:right">' + it.cu + ' por caballo por día</label>' +
+        '<span class="muted" style="font-size:12px">' + it.desc + '</span><span id="calc-' + it.k + '" style="font-size:12.5px;font-weight:800;color:var(--green)">' + calcText(S.sede, it) + '</span></div>';
+    }).join('') + '<button class="btn-g" ' + A('closeSheet') + '>Listo</button>');
+  if (S.sheet === 'gasto') return vGastoSheet();
+  if (S.sheet === 'insumo') return vInsumoSheet();
+  if (S.sheet === 'acuerdo') return vAcuerdoSheet();
+  if (S.sheet === 'export') return vExportSheet();
+  if (S.sheet === 'fijo') return vFijoSheet();
+  if (S.sheet === 'invitar') return vInvitarSheet();
+  if (S.sheet === 'permisos') return vPermisosSheet();
+  if (S.sheet === 'pago') return vPagoSheet();
+  if (S.sheet === 'lugar') return sheet('Ver gastos de…', [['todos', 'Todos los lugares', 'Argentina, Inglaterra y España']].concat(DEST.map(function (d) { return [d[0], d[1], d[3]]; })).map(function (o) { var on = S.dest === o[0]; return '<button ' + A('lugar', o[0]) + ' style="display:flex;align-items:center;gap:10px;width:100%;min-height:56px;padding:8px 14px;border-radius:14px;cursor:pointer;text-align:left;' + (on ? 'background:var(--green-soft);border:1px solid var(--green)' : 'background:var(--card);border:1px solid var(--line)') + '"><span class="col" style="gap:2px;flex:1"><span style="font-size:14.5px;font-weight:800">' + o[1] + '</span><span class="muted" style="font-size:12px;font-weight:600">' + o[2] + '</span></span>' + (on ? ic('check', '', 'color:var(--green)') : '') + '</button>'; }).join(''));
+  if (S.sheet === 'rango') return sheet('Ver gastos de…', RANGOS.filter(function (r) { return !r.oculto; }).map(function (r) { var on = r.k === S.rango; return '<button ' + A('rango', r.k) + ' style="display:flex;align-items:center;gap:10px;width:100%;min-height:56px;padding:8px 14px;border-radius:14px;cursor:pointer;text-align:left;' + (on ? 'background:var(--green-soft);border:1px solid var(--green)' : 'background:var(--card);border:1px solid var(--line)') + '"><span class="col" style="gap:2px;flex:1"><span style="font-size:14.5px;font-weight:800">' + r.label + '</span><span class="muted" style="font-size:12px;font-weight:600">' + r.largo + '</span></span>' + (on ? ic('check', '', 'color:var(--green)') : '') + '</button>'; }).join('') +
+    '<span class="lbl" style="margin-top:6px">O elegí las fechas</span><div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px"><label class="field" for="r-desde">Desde<input class="inp" id="r-desde" type="date" value="2026-08-01"></label><label class="field" for="r-hasta">Hasta<input class="inp" id="r-hasta" type="date" value="2026-10-22"></label></div><button class="btn-g" ' + A('rango', 'custom') + '>Ver este rango</button>');
+  return '';
+}
+
+/* ---------------- WhatsApp ---------------- */
+var CHATS = {
+  grupo: { label: 'Grupo de la organización', titulo: 'Organización Tomás', sub: 'Tomás, Nacho, Pedro, Ramón, Lucho, Dra. Ibarra, Cacho y PROGRAMON', fecha: 'HOY', msgs: [
+    ['g','a','8:15','La Negra no terminó la ración de la mañana.','0:05','Lucho'],
+    ['b','t','8:15','Anotado en la ficha de Negra. Le aviso a Tomás y a Nacho.'],
+    ['g','a','9:38','Buen día. Vareé a la Morena, al Tordillo, a la Cautiva y a la Gitana, todo bien. La Rockstar la saqué pero renguea un poco de la mano izquierda, la dejé en el box.','0:31','Ramón'],
+    ['b','t','9:38','Listo Ramón, 4 vareos cargados. Rockstar queda en el box con novedad.'],
+    ['g','f','9:40','Así tiene la mano','Foto de la mano de Rockstar','Ramón'],
+    ['b','t','9:40','Guardada en la ficha de Rockstar.'],
+    ['g','a','11:02','Vino Cacho, herró a la Bruja, la Gitana, la Dinamita y la Lucera. Son 180 lucas, lo pagué yo.','0:12','Pedro'],
+    ['b','t','11:02','Herraje de 4 caballos: $ 180.000 → US$ 116 (dólar blue de hoy, $ 1.550). Anotado como pagado por Pedro y el herraje en cada ficha.'],
+    ['g','a','12:05','También la Malcriada y la Chiquita.','0:06','Ramón'],
+    ['b','t','12:05','Sumadas. Van 12 de 14 hoy: faltan Rubia y Rockstar.'],
+    ['g','a','16:10','Patria evoluciona bien, el 5/11 hacemos la eco de control.','0:09','Dra. Ibarra'],
+    ['b','t','16:10','Anotado en la ficha de Patria. La eco del 5/11 ya estaba en sus pendientes.'],
+    ['g','t','17:20','Les cambié la cama a los 16 boxes, quedan 35 bolsas de viruta.',null,'Nacho'],
+    ['b','t','17:20','Stock de viruta en Pilar: 35 bolsas, alcanza 10 días.']],
+    efecto: 'Todo lo que se habla en el grupo entra a la app con el nombre de quien lo mandó: vareos y novedades en las fichas, el stock de viruta y el herraje en Gastos. La plata va en general por privado, pero si se habla en el grupo se registra igual.' },
+  manager: { label: 'Nacho · manager', sub: 'Chat de Nacho, manager, con PROGRAMON', fecha: 'MARTES 20', gastoT: '30 bolsas de avena', msgs: [
+    ['u','f','9:10','Llegó la avena del corralón','Foto del remito'],
+    ['b','t','9:10','30 bolsas de avena, $ 840.000 → US$ 542 (dólar blue de hoy, $ 1.550). Lo anoto en Caballos › Comida, Pilar, y sumo 30 bolsas al stock.'],
+    ['u','t','10:05','¿Cuánto llevamos gastado en comida de los caballos este mes?'],
+    ['b','t','10:05','En octubre, US$ 2.503 en comida: US$ 1.548 de fardos, US$ 542 de avena y US$ 413 de rollos del campo.'],
+    ['u','t','10:06','Perfecto, gracias']],
+    efecto: 'El manager ve y carga lo mismo que el polista. En la app, el gasto figura como «Lo cargó Nacho, manager».' },
+  pedro: { label: 'Pedro · piloto', sub: 'Chat de Pedro, piloto, con PROGRAMON', fecha: 'HOY', msgs: [
+    ['b','t','7:00','Buen día Pedro. Tus tareas de hoy:\n1. Ración de la mañana, los 16\n2. Controlar si la Negra come la ración de la noche\n3. Hielo en la mano de Rockstar, mañana y tarde\n4. Herraje con Cacho: Bruja, Gitana, Dinamita y Lucera\nCuando termines una, avisame y la tacho.'],
+    ['u','t','7:30','Ración de la mañana dada, los 16.'],
+    ['b','t','7:30','Tachada.'],
+    ['u','f','12:18','Se está terminando la avena','Foto del depósito de avena'],
+    ['b','t','12:18','Conté 18 bolsas: alcanzan 6 días. Le aviso a Tomás y a Nacho.'],
+    ['b','t','14:16','Tomás te avisó: mañana a las 7 sale Tormenta al campo en el camión. Ya está en tus tareas.'],
+    ['b','t','17:45','No te olvides: hielo en la mano de Rockstar antes de las 18.'],
+    ['u','t','18:02','Listo, hecho'],
+    ['b','t','18:02','Tachado. Te queda 1 tarea de hoy: la ración de la Negra.']],
+    efecto: 'Al piloto le llegan sus tareas y avisos por privado y las tacha respondiendo. No entra a la app. El herraje lo contó en el grupo y quedó tachado solo.' },
+  tomas: { label: 'Tomás · consultas', sub: 'Tu chat con PROGRAMON', fecha: 'HOY', msgs: [
+    ['u','t','14:10','¿Cuánto llevo gastado en veterinario este mes?'],
+    ['b','t','14:10','En octubre, US$ 1.567: US$ 1.200 de vacunas y desparasitación de las de doma, US$ 206 de la ecografía de Patria y US$ 161 de medicamentos.'],
+    ['u','t','14:11','¿Cuánto gasté en Inglaterra este mes?'],
+    ['b','t','14:11','US$ 7.300 en Windsor: US$ 4.250 de la invernada, US$ 2.450 del saldo del flete y US$ 600 de tacos.'],
+    ['u','t','14:12','¿Qué le falta a la Morena para viajar a Inglaterra?'],
+    ['b','t','14:12','Microchip y vacunas, al día. Falta el AIE (en febrero), la cuarentena desde el 1/3 y el CVI de SENASA.'],
+    ['u','a','14:15','La Tormenta se va al campo mañana.','0:04'],
+    ['b','t','14:15','Anotado: Tormenta pasa de Pilar al campo mañana. ¿Va en el camión de las 7 con Pedro?'],
+    ['u','t','14:15','Sí'],
+    ['b','t','14:15','Listo. Se lo agrego a las tareas de Pedro.'],
+    ['u','a','16:40','Le pagué 600 dólares al veterinario.','0:03'],
+    ['b','t','16:40','US$ 600 de veterinario. ¿Para qué caballos es: Pilar, el campo o Windsor?'],
+    ['u','t','16:41','Las de doma del campo'],
+    ['b','t','16:41','Anotado: US$ 600, veterinario, Campo.'],
+    ['b','t','20:00','Cierre de hoy:\n• 12 de 14 vareados (falta Rubia; Rockstar en el box con hielo)\n• Gastos de hoy: US$ 771 (herraje, nafta y veterinario)\n• Avena para 6 días en Pilar\n• Mañana 7:00: Tormenta al campo\n• Mañana 9:00: te recuerdo llamar a Cacho']],
+    efecto: 'Las respuestas salen de los mismos datos de la app, en dólares. Si no sabe el destino, pregunta. A las 20:00 llega el cierre del día.' },
+  sofia: { label: 'Sofía · gasto en pesos', sub: 'Chat de Sofía con PROGRAMON', fecha: 'HOY', gastoT: 'Nafta de la camioneta', msgs: [
+    ['u','f','13:20','Cargué nafta en la camioneta','Foto del ticket'],
+    ['b','t','13:20','Nafta y vehículos: $ 85.000 → US$ 55 (dólar blue de hoy, $ 1.550). ¿Es para Pilar o para el campo?'],
+    ['u','t','13:21','Pilar'],
+    ['b','t','13:21','Listo, anotado en Pilar. En la app figura que lo cargaste vos.']],
+    efecto: 'Sofía no entra a la app: carga por WhatsApp. El bot pasa los pesos a dólares solo, sin preguntar el tipo de cambio, y en el gasto se ve la conversión en letra chica.' },
+  vete: { label: 'Dra. Ibarra · varios clientes', sub: 'Chat de la Dra. Ibarra con PROGRAMON', fecha: 'HOY', msgs: [
+    ['u','a','17:30','El domingo le doy el alta a la Nube si sigue comiendo bien.','0:06'],
+    ['b','t','17:30','¿Para qué cliente es: Tomás o Juan Pérez?'],
+    ['u','t','17:31','Tomás'],
+    ['b','t','17:31','Anotado en la ficha de Nube (organización de Tomás): alta prevista el domingo 25 si sigue comiendo bien.']],
+    efecto: 'La veterinaria y el herrero trabajan para varios polistas. En el grupo de cada cliente el bot ya sabe de quién es; por privado, pregunta.' },
+  agenda: { label: 'Recordatorios y visitas', sub: 'Tu chat con PROGRAMON', fecha: 'AYER', msgs: [
+    ['u','a','18:20','A la Morena hay que cambiarle la embocadura, probar la de goma. Que lo haga Pedro mañana.','0:07'],
+    ['b','t','18:20','Recordatorio en la ficha de Morena para mañana, asignado a Pedro. Se lo mando con sus tareas a las 7.'],
+    ['u','t','18:24','El jueves que viene viene Cacho a herrar a la Chiquita, la Rubia y la Malcriada'],
+    ['b','t','18:24','Agendado: jueves 29, Cacho, herrero, 3 caballos. Le aviso a Pedro el día antes.'],
+    ['u','t','18:25','Y el lunes la Dra. Ibarra a ver a la Rockstar'],
+    ['b','t','18:25','Agendado: lunes 26, Dra. Ibarra, control de Rockstar. Queda también como pendiente en su ficha.'],
+    ['u','t','21:10','El viernes haceme acordar de llamar a Cacho por las herraduras de la Morena'],
+    ['b','t','21:10','Dale, el viernes 23 a las 9 te lo recuerdo.']],
+    efecto: 'En la app: el recordatorio de Morena en sus pendientes, las visitas y tu recordatorio en «Lo que viene» (Inicio).' },
+  ingresos: { label: 'Acuerdos y cobros', sub: 'Tu chat con PROGRAMON', fecha: 'HOY', acuerdoId: 'a1', msgs: [
+    ['u','a','10:15','Me pagó 40 mil Halvorsen.','0:03'],
+    ['b','t','10:15','Registrado: US$ 40.000 de Northfield (Erik Halvorsen). Llevás cobrado US$ 140.000 de 250.000: faltan US$ 110.000.'],
+    ['u','t','10:20','Cerré con Whitmore para jugar Wellington el año que viene, 180 mil dólares. Me dejó 30 de seña.'],
+    ['b','t','10:20','Acuerdo nuevo: Palm Ridge (Daniel Whitmore), Estados Unidos · Wellington 2027, US$ 180.000. Seña cobrada: US$ 30.000. ¿Confirmás?'],
+    ['u','t','10:21','Sí'],
+    ['b','t','10:21','Listo. En total te deben ≈ US$ 415.250, contando los gastos que te tienen que reintegrar y los € 45.000 de Les Pins al euro de hoy.']],
+    efecto: 'En la app: los acuerdos y cada pago aparecen en Ingresos, en dólares, con lo que falta cobrar de cada patrón.' },
+  reintegro: { label: 'Gasto que cubre el patrón', sub: 'Tu chat con PROGRAMON', fecha: '20 DE ABRIL', acuerdoId: 'a1', msgs: [
+    ['u','f','12:10','Pagué el flete aéreo de los 10 caballos a Inglaterra, 38 mil dólares. Lo cubre Halvorsen.','Foto de la factura del flete'],
+    ['b','t','12:10','Anotado: flete de caballos, US$ 38.000, destino Windsor. Lo marco como gasto que cubre Northfield (Erik Halvorsen) y lo sumo a lo que te debe.'],
+    ['u','t','12:11','Perfecto'],
+    ['b','t','12:11','Northfield te debe ahora US$ 288.000: US$ 250.000 del acuerdo y US$ 38.000 del flete.']],
+    efecto: 'En la app: el flete aparece en Gastos con la marca «Lo cubre Northfield», y en Ingresos se suma a lo que te debe ese patrón.' },
+  fijos: { label: 'Pagos fijos', sub: 'Tu chat con PROGRAMON', fecha: '5 DE OCTUBRE', msgs: [
+    ['b','t','9:00','Hoy vencen los sueldos de los petiseros: US$ 3.000. ¿Los pagaste?'],
+    ['u','t','9:40','Sí'],
+    ['b','t','9:40','Listo, cargado en Gastos › Personal › Petiseros.'],
+    ['b','t','9:41','También vence hoy el sueldo de Don Aníbal: US$ 600. ¿Lo pagaste?'],
+    ['u','t','11:02','Todavía no, mañana'],
+    ['b','t','11:02','Dale, te lo vuelvo a preguntar mañana a las 9.']],
+    efecto: 'Los pagos fijos se cargan una vez. Cada mes, el día que vencen, PROGRAMON pregunta y con un «sí» quedan en Gastos.' },
+  gasto: { label: 'Carga de un gasto', sub: 'Tu chat con PROGRAMON', fecha: 'AYER', gastoT: '3 tacos nuevos', msgs: [
+    ['u','f','18:40','Te paso la factura de los tacos','Foto de la factura de los tacos'],
+    ['b','t','18:40','3 tacos, US$ 540. Lo anoto en Equipo de polo › Tacos. ¿Son para acá o para la temporada de Inglaterra?'],
+    ['u','t','18:41','Para acá'],
+    ['b','t','18:41','Listo, anotado en Pilar con la foto de la factura.']],
+    efecto: 'En la app: aparece en Gastos › Equipo de polo › Tacos, y al abrirlo se ve la foto de la factura.' },
+  alta: { label: 'Alta de un caballo', sub: 'Tu chat con PROGRAMON', fecha: 'AYER', msgs: [
+    ['u','a','19:40','Nuevo caballo: Fortuna, yegua, 6 años, zaina. La compré en Coronel Suárez, 18 mil dólares. Llega el sábado a Pilar.','0:14'],
+    ['u','f','19:41','','Foto de los papeles de Fortuna'],
+    ['b','t','19:41','Alta de Fortuna: yegua, 6 años, zaina, US$ 18.000. Microchip de los papeles: 032 0981 5512 340. Llega el sábado a Pilar. ¿Confirmás?'],
+    ['u','t','19:42','Dale'],
+    ['b','t','19:42','Lista. Ya son 36 caballos. Te aviso el sábado si no me confirman que llegó.']],
+    efecto: 'En la app: Fortuna aparece en Caballos con su ficha, y la compra queda registrada aparte de los gastos del mes.' }
+};
+var WAVE = [6,10,16,9,20,14,8,18,22,12,7,15,19,11,6,13,21,17,9,14,8,18,12,7,16,10,6,9];
+var WHO_C = { Ramón: '#B5552B', Lucho: '#2B6CB5', Pedro: '#7A3FB0', 'Dra. Ibarra': '#B0306A', Nacho: '#1F7A6B', Cacho: '#8A6A12' };
+/* Así se ve en WhatsApp: un grupo de la organización y un chat privado por persona con el bot.
+   El chat privado del polista junta varios ejemplos en días distintos, como en un WhatsApp real. */
+CHATS.recordatorio = { fecha: 'AYER', msgs: CHATS.agenda.msgs.splice(6), efecto: 'Tu recordatorio aparece en «Lo que viene» (Inicio) y el viernes a las 9 te llega el mensaje.' };
+CHATS.agenda.efecto = 'En la app: el recordatorio de Morena en sus pendientes y las visitas en «Lo que viene» (Inicio).';
+var SECC_VOS = ['reintegro', 'fijos', 'agenda', 'gasto', 'alta', 'recordatorio', 'ingresos', 'tomas'];
+var WA_LIST = [
+  ['grupo', 'Organización Tomás', 'Grupo', 'Vos, Nacho, Pedro, Ramón, Lucho, la Dra. Ibarra, Cacho y el bot', 'Nacho: Les cambié la cama a los 16 boxes…', '17:20'],
+  ['vos', 'Vos con el bot', 'Tu chat privado', 'Lo que hablás vos con el bot: gastos, cobros, consultas, recordatorios', 'Cierre de hoy: 12 de 14 vareados…', '20:00'],
+  ['manager', 'Nacho · manager', 'Privado con el bot', 'Lo mismo que vos: carga gastos y consulta', '¿Cuánto llevamos gastado en comida…', 'Mar'],
+  ['pedro', 'Pedro · piloto', 'Privado con el bot', 'Recibe sus tareas y las tacha', 'Tachado. Te queda 1 tarea de hoy…', '18:02'],
+  ['sofia', 'Sofía · te ayuda con los gastos', 'Privado con el bot', 'Carga gastos sin entrar a la app', 'Listo, anotado en Pilar…', '13:21'],
+  ['vete', 'Dra. Ibarra · veterinaria', 'Privado con el bot', 'Atiende a varios polistas: el bot le pregunta para quién es', 'Anotado en la ficha de Nube…', '17:31']
+];
+var WA_HEAD = { vos: ['PROGRAMON', 'Tu chat privado con el bot'], manager: ['PROGRAMON', 'Así lo ve Nacho, el manager, en su WhatsApp'], pedro: ['PROGRAMON', 'Así lo ve Pedro, el piloto, en su WhatsApp'], sofia: ['PROGRAMON', 'Así lo ve Sofía en su WhatsApp'], vete: ['PROGRAMON', 'Así lo ve la Dra. Ibarra en su WhatsApp'] };
+function waBtn(act, v, txt) { return '<button ' + A(act, v) + ' style="align-self:center;height:40px;padding:0 16px;border-radius:999px;border:0;background:var(--green);color:#fff;font-size:13px;font-weight:800;cursor:pointer">' + txt + '</button>'; }
+function bubbles(c, list) {
+  return list.map(function (m) {
+    var me = m[0] === 'u', inner = '', who = m[0] === 'g' ? '<div style="font-size:12px;font-weight:800;color:' + (WHO_C[m[5]] || 'var(--green)') + ';margin-bottom:3px">' + m[5] + '</div>' : '';
+    if (m[1] === 'a') inner = '<div class="row" style="gap:10px;margin-bottom:6px"><span style="width:34px;height:34px;border-radius:999px;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg class="i s" viewBox="0 0 24 24" aria-hidden="true" style="fill:currentColor;stroke:none"><path d="M8 5v14l11-7z"/></svg></span><span class="row" style="gap:2px;flex:1;height:26px" aria-hidden="true">' + WAVE.map(function (h, i) { return '<span style="width:3px;border-radius:2px;height:' + h + 'px;background:' + (i < 9 ? 'var(--green)' : '#9AA39E') + '"></span>'; }).join('') + '</span><span style="font-size:11.5px;font-weight:700;color:#4A524D">' + m[4] + '</span></div><div style="font-size:12.5px;font-style:italic;line-height:1.45;color:#3A423D;border-top:1px solid rgba(0,0,0,.08);padding-top:6px;white-space:normal">«' + m[3] + '»</div>';
+    else if (m[1] === 'f') inner = '<div style="height:150px;border-radius:10px;background:#D9D2C3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:#4A524D;margin-bottom:' + (m[3] ? '6px' : '0') + '">' + ic('cam') + '<span style="font-size:12px;font-weight:700">' + m[4] + '</span></div>' + (m[3] ? m[3] : '');
+    else inner = m[3];
+    return '<div class="bub ' + (me ? 'me' : 'bot') + (m[1] !== 't' ? ' media' : '') + '">' + who + (m[0] === 'b' && c.titulo ? '<div style="font-size:12px;font-weight:800;color:var(--green);margin-bottom:3px">PROGRAMON</div>' : '') + inner + '<div class="time">' + m[2] + '</div></div>';
+  }).join('');
+}
+function vWAList() {
+  var row = function (r) { var g = r[0] === 'grupo'; return '<button ' + A('chat', r[0]) + ' style="display:flex;align-items:center;gap:12px;width:100%;padding:12px 14px;background:var(--card);border:0;border-bottom:1px solid var(--line2);text-align:left;cursor:pointer"><span style="width:46px;height:46px;flex-shrink:0;border-radius:999px;background:' + (g ? 'var(--green)' : 'var(--green-soft)') + ';color:' + (g ? '#fff' : 'var(--green)') + ';display:flex;align-items:center;justify-content:center;font-weight:800">' + (g ? ic('user', 's') : r[1].charAt(0)) + '</span><span class="col" style="gap:2px;flex:1;min-width:0"><span class="row" style="justify-content:space-between;gap:8px"><span style="font-size:15px;font-weight:800">' + r[1] + '</span><span class="muted" style="font-size:11.5px">' + r[5] + '</span></span><span style="font-size:11px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;color:' + (g ? 'var(--green)' : 'var(--blue)') + '">' + r[2] + '</span><span class="muted" style="font-size:12.5px;line-height:1.35">' + r[3] + '</span></span></button>'; };
+  return '<div class="wa-top"><button ' + A('view', 'app') + ' aria-label="Volver a la app" style="width:40px;height:40px;border-radius:999px;border:0;background:none;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center">' + ic('left') + '</button><span class="col" style="gap:1px;flex:1"><span style="font-size:17px;font-weight:800">WhatsApp</span><span style="font-size:12px;opacity:.85">Ejemplos de cómo se usa el bot</span></span></div>' +
+    '<div class="wa-scr" style="padding:0;gap:0;background:var(--bg)">' +
+    '<p style="margin:0;padding:14px 16px;font-size:13px;line-height:1.5;color:#20352A">Hay dos tipos de conversación: <b>el grupo de la organización</b>, donde todos cuentan lo de los caballos y la caballeriza, y <b>los chats privados</b> de cada persona con el bot, para la plata, las tareas y las consultas.</p>' +
+    '<div class="lbl" style="padding:8px 16px">Grupo</div>' + row(WA_LIST[0]) +
+    '<div class="lbl" style="padding:18px 16px 8px">Chats privados con el bot</div>' + WA_LIST.slice(1).map(row).join('') + '<div style="height:24px"></div></div>';
+}
+function vWA() {
+  if (!S.chat) return vWAList();
+  var g = S.chat === 'grupo', secs = S.chat === 'vos' ? SECC_VOS : [S.chat];
+  var head = g ? [CHATS.grupo.titulo, CHATS.grupo.sub] : WA_HEAD[S.chat];
+  var last = null, body = secs.map(function (k) {
+    var c = CHATS[k], out = '';
+    if (c.fecha !== last) { out += '<div style="align-self:center;padding:5px 10px;border-radius:8px;background:var(--card);font-size:11.5px;font-weight:700;color:#4A524D;margin:6px 0 4px">' + c.fecha + '</div>'; last = c.fecha; }
+    out += '<div id="sec-' + k + '" style="display:flex;flex-direction:column;gap:inherit">' + bubbles(CHATS[S.chat === 'vos' ? 'tomas' : S.chat], c.msgs) +
+      '<div style="align-self:center;margin:6px 0 10px;padding:10px 12px;border-radius:12px;background:var(--card);font-size:12.5px;line-height:1.45;color:#20352A;max-width:320px;text-align:center">' + c.efecto + '</div>' +
+      (c.acuerdoId ? waBtn('acuerdo', c.acuerdoId, 'Ver en Ingresos') : '') + (c.gastoT ? waBtn('verGasto', c.gastoT, 'Ver este gasto en la app') : '') + '</div>';
+    return out;
+  }).join('');
+  return '<div class="wa-top"><button ' + A('chat', '') + ' aria-label="Volver a los chats" style="width:40px;height:40px;border-radius:999px;border:0;background:none;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center">' + ic('left') + '</button><span class="brand" style="width:40px;height:40px;border-radius:999px;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:22px;letter-spacing:0">' + (g ? ic('user', 's', 'color:var(--green)') : 'P') + '</span><span class="col" style="gap:1px;flex:1;min-width:0"><span style="font-size:15px;font-weight:800;letter-spacing:.04em">' + head[0] + '</span><span style="font-size:12px;opacity:.85">' + head[1] + '</span></span></div>' +
+    '<div class="wa-scr">' + body + '</div>' +
+    '<div style="flex-shrink:0;display:flex;align-items:center;gap:8px;background:var(--wa-bg);padding-top:8px;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px));padding-left:max(10px,env(safe-area-inset-left,0px));padding-right:max(10px,env(safe-area-inset-right,0px))"><span style="flex:1;height:44px;border-radius:999px;background:var(--card);display:flex;align-items:center;padding:0 16px;font-size:14px;color:#6B746F">Mensaje</span><span style="width:44px;height:44px;border-radius:999px;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center" aria-hidden="true">' + ic('mic') + '</span></div>';
+}
+
+/* ---------------- Render ---------------- */
+function nav() {
+  var t = [['inicio', 'Inicio', 'home'], ['caballos', 'Caballos', 'horse'], ['caballeriza', 'Caballeriza', 'barn'], ['gastos', 'Gastos', 'wallet'], ['ingresos', 'Ingresos', 'cash']];
+  return '<nav class="tabs" aria-label="Secciones">' + t.map(function (x) { return '<button class="' + (S.tab === x[0] ? 'on' : '') + '" ' + A('tab', x[0]) + (S.tab === x[0] ? ' aria-current="page"' : '') + '>' + ic(x[2]) + x[1] + '</button>'; }).join('') + '</nav>';
+}
+function screenKey() { return S.view + '|' + S.chatSec + '|' + S.equipo + '|' + S.tab + '|' + S.horseId + '|' + S.persona + '|' + S.chat + '|' + S.gGrupo + '|' + S.gCat + '|' + S.gTodos + '|' + S.acId + '|' + S.gFijos + '|' + S.ingVista; }
+var root = document.getElementById('app'), lastKey = null;
+function render() {
+  var sc = root.querySelector('.scr,.wa-scr'); var keep = sc ? sc.scrollTop : 0; var key = screenKey();
+  var html;
+  if (S.view === 'wa') html = vWA();
+  else {
+    var main = S.tab === 'inicio' ? (S.equipo ? (S.persona ? vPersona() : vEquipo()) : vInicio()) : S.tab === 'caballos' ? (S.horseId ? vFicha() : vLista()) : S.tab === 'caballeriza' ? vCaballeriza() : S.tab === 'gastos' ? (S.gTodos ? vGastosTodos() : vGastos()) : vIngresos();
+    html = main + nav() + vSheet();
+  }
+  root.innerHTML = html;
+  var sc2 = root.querySelector('.scr,.wa-scr');
+  if (sc2) sc2.scrollTop = key === lastKey ? keep : 0;
+  if (S.view === 'wa' && S.chatSec && key !== lastKey) { var an = document.getElementById('sec-' + S.chatSec); if (an && sc2) sc2.scrollTop = an.offsetTop - sc2.offsetTop - 50; }
+  lastKey = key;
+}
+function set(o) { for (var k in o) S[k] = o[k]; render(); }
+function newDraft(t) { return { tipo: t, mods: ['novedades', 'caballos'], alc: 'todos', lugs: ['pilar'], cabs: [] }; }
+function tog(arr, v) { arr = (arr || []).slice(); var i = arr.indexOf(v); if (i >= 0) arr.splice(i, 1); else arr.push(v); return arr; }
+S.accDraft = newDraft('nada');
+
+root.addEventListener('click', function (e) {
+  var el = e.target.closest('[data-act]');
+  if (!el) return;
+  if (el.classList.contains('scrim') && e.target.closest('[data-stop]')) return;
+  var a = el.getAttribute('data-act'), v = el.getAttribute('data-v');
+  switch (a) {
+    case 'tab': set({ view: 'app', tab: v, horseId: null, persona: null, equipo: false, sheet: null, gGrupo: '', gCat: '', gTodos: false, gFijos: false, acId: '' }); break;
+    case 'filtroTab': set({ tab: 'caballos', horseId: null, filtro: v }); break;
+    case 'filtro': set({ filtro: v }); break;
+    case 'horse': set({ view: 'app', tab: 'caballos', horseId: v, fichaTab: 'actividad', sheet: null }); break;
+    case 'backLista': set({ horseId: null }); break;
+    case 'fichaTab': set({ fichaTab: v }); break;
+    case 'rem': var d = Object.assign({}, S.doneRem); d[v] = !d[v]; set({ doneRem: d }); break;
+    case 'sede': set({ sede: v }); break;
+    case 'persona': set({ persona: v }); break;
+    case 'backPersona': set({ persona: null }); break;
+    case 'dest': set({ dest: v }); break;
+    case 'gasto': set({ sheet: 'gasto', gastoId: v }); break;
+    case 'insumo': set({ view: 'app', tab: 'caballeriza', persona: null, sede: S.tab === 'caballeriza' ? S.sede : 'pilar', sheet: 'insumo', insumo: v }); break;
+    case 'acuerdo': set({ view: 'app', tab: 'ingresos', acId: v, sheet: null }); break;
+    case 'backIng': set({ acId: '' }); break;
+    case 'ingVista': set({ ingVista: v }); break;
+    case 'acTipo': set({ acTipo: v }); break;
+    case 'gFijos': set({ gFijos: true }); break;
+    case 'gFijosOff': set({ gFijos: false }); break;
+    case 'exportFmt': set({ exportFmt: v }); break;
+    case 'exportFotos': set({ exportFotos: !S.exportFotos }); break;
+    case 'exportar': set({ exportOk: true }); break;
+    case 'ingFiltro': set({ ingFiltro: v }); break;
+    case 'acCur': set({ acCur: v }); break;
+    case 'saveAcuerdo':
+      var nid = 'n' + Date.now();
+      S.acuerdos = S.acuerdos.concat([{ id: nid, tipo: S.acTipo, equipo: S.acEquipo || 'Equipo nuevo', patron: S.acPatron || 'Patrón', donde: S.acDonde || 'Temporada 2027', cur: S.acCur, monto: numero(S.acMonto) || 100000, pagos: [] }]);
+      set({ sheet: null, acId: nid, acPatron: '', acEquipo: '', acDonde: '', acMonto: '' }); break;
+    case 'savePago':
+      var ac = acuerdo(S.acId); var deb = falta(ac) + reintPend(ac); var m = Math.min(numero(S.pagoMonto) || Math.min(40000, deb), deb);
+      if (m > falta(ac)) reintegros(ac).forEach(function (g) { g.reint = 'cobrado'; });
+      ac.pagos = ac.pagos.concat([[10, 22, m, 'Cargado en la app']]);
+      set({ sheet: null, pagoMonto: '' }); break;
+    case 'verGasto': var gg = LEDGER.filter(function (x) { return x.t === v; })[0]; set({ view: 'app', tab: 'gastos', gGrupo: '', gCat: '', gTodos: false, sheet: 'gasto', gastoId: gg ? gg.id : '' }); break;
+    case 'gGrupo': set({ gGrupo: v, gCat: '' }); break;
+    case 'gCat': set({ gCat: v }); break;
+    case 'gTodos': set({ gTodos: true }); break;
+    case 'gTodosOff': set({ gTodos: false }); break;
+    case 'lugar': set({ dest: v, sheet: null }); break;
+    case 'pedirProv': set({ pedidoProv: true }); break;
+    case 'rango': set({ rango: v, sheet: null }); break;
+    case 'sheet': set({ sheet: v }); break;
+    case 'closeSheet': set({ sheet: null, exportOk: false, invOk: false, invNombre: '', invRol: 'Petisero', invGrupo: true, invPriv: false, accDraft: newDraft('nada') }); break;
+    case 'remCuando': set({ remCuando: v }); break;
+    case 'remQuien': set({ remQuien: v }); break;
+    case 'visQuien': set({ visQuien: v }); break;
+    case 'visDia': set({ visDia: v }); break;
+    case 'saveRem':
+      var ex = Object.assign({}, S.extraRem); var arr = (ex[S.horseId] || []).slice();
+      arr.push({ id: 'x' + Date.now(), que: S.remTxt || 'Revisar la herradura de la mano derecha', cuando: S.remCuando, quien: S.remQuien, origen: 'vos en la app' });
+      ex[S.horseId] = arr; set({ extraRem: ex, sheet: null, remTxt: '' }); break;
+    case 'saveVis':
+      var dd = S.visDia === 'Elegir fecha' ? 'Vie 30' : S.visDia; var p = dd.split(' ');
+      var nom = { Herrero: 'Cacho, herrero', Veterinaria: 'Dra. Ibarra, veterinaria', Proveedor: 'Proveedor', Otro: 'Visita' };
+      set({ extraVis: S.extraVis.concat([[p[0], p[1], nom[S.visQuien], S.visNota || 'Ver a Patria y vacunar a las de doma', 'En la app']]), sheet: null, visNota: '' }); break;
+    case 'view': set({ view: v, sheet: null }); break;
+    case 'waChat': var sv = SECC_VOS.indexOf(v) >= 0; set({ view: 'wa', chat: sv ? 'vos' : v, chatSec: sv ? v : '', sheet: null }); break;
+    case 'chat': var sv2 = SECC_VOS.indexOf(v) >= 0; set({ chat: sv2 ? 'vos' : v, chatSec: sv2 ? v : '' }); break;
+    case 'equipo': set({ view: 'app', tab: 'inicio', equipo: true, persona: null, sheet: null }); break;
+    case 'equipoOff': set({ equipo: false, persona: null }); break;
+    case 'invRol': set({ invRol: v, invGrupo: !!INV_DEF[v][0], invPriv: !!INV_DEF[v][1], accDraft: newDraft(v === 'Manager' ? 'todo' : 'nada') }); break;
+    case 'accTipo': var dt = Object.assign({}, S.accDraft, { tipo: v }); set({ accDraft: dt }); break;
+    case 'accMod': var dm = Object.assign({}, S.accDraft); dm.mods = tog(dm.mods, v); set({ accDraft: dm }); break;
+    case 'accAlc': var da = Object.assign({}, S.accDraft, { alc: v }); if (v === 'lugar' && !(da.lugs || []).length) da.lugs = ['pilar']; set({ accDraft: da }); break;
+    case 'accLug': var dl = Object.assign({}, S.accDraft); dl.lugs = tog(dl.lugs, v); set({ accDraft: dl }); break;
+    case 'accCab': var dc = Object.assign({}, S.accDraft); dc.cabs = tog(dc.cabs, v); set({ accDraft: dc }); break;
+    case 'editPerm': var cur = accOf(S.persona); set({ sheet: 'permisos', accDraft: Object.assign(newDraft(cur.tipo), JSON.parse(JSON.stringify(cur))) }); break;
+    case 'savePerm': ACC[S.persona] = JSON.parse(JSON.stringify(S.accDraft)); set({ sheet: null }); break;
+    case 'invGrupo': set({ invGrupo: !S.invGrupo }); break;
+    case 'invPriv': set({ invPriv: !S.invPriv }); break;
+    case 'invitar': if (S.invGrupo || S.invPriv) set({ invOk: true }); break;
+    case 'ajuste': S.cons.pilar.avena = 8.5; set({ ajuste: true }); break;
+  }
+});
+root.addEventListener('input', function (e) {
+  if (!e.target.getAttribute) return;
+  if (e.target.id === 'buscar') {
+    var q = e.target.value.trim().toLowerCase(), n = 0;
+    root.querySelectorAll('#lista-caballos [data-name]').forEach(function (b) { var ok = !q || b.getAttribute('data-name').indexOf(q) >= 0; b.hidden = !ok; if (ok) n++; });
+    var sr = document.getElementById('sin-resultados'); if (sr) sr.hidden = n > 0;
+    return;
+  }
+  var b = e.target.getAttribute('data-bind'); if (b) S[b] = e.target.value;
+  var k = e.target.getAttribute('data-cons');
+  if (k) {
+    var n = parseFloat(String(e.target.value).replace(',', '.'));
+    S.cons[S.sede][k] = isNaN(n) ? 0 : n;
+    var out = document.getElementById('calc-' + k); if (out) out.textContent = calcText(S.sede, item(S.sede, k));
+  }
+});
+render();
+})();
+</script>

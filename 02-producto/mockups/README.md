@@ -10,6 +10,7 @@ Mockup navegable para celular, armado por Santi con Claude entre el 22 y el 27/1
 | **Borrador** (donde se edita) | https://claude.ai/artifact/HMnQoyKLWcYgtCTQ8oGmsS · título "PROGRAMON Borrador" | Privado · es la versión maestra |
 | Variante de diseño "Cancha de noche" | https://claude.ai/artifact/KoAUBpqUkvF8TF8pNNyxKk | Ya integrada en borrador y link |
 | Canvas de diseño original (Main, Encargado, WhatsApp) | https://claude.ai/artifact/7rX9atNBuh28Mijf6CSY6Q | **Obsoleto**, no se mantiene (en el celular se veía en blanco) |
+| **Borrador más reciente en este repo** | [`programon-borrador.html`](programon-borrador.html) | **v11 del 2026-11-03**: US$, Equipo con owners y permisos, grupo y chats, Datos del caballo, Veterinario/Herrero. **Es la referencia para el desarrollo** (Claude Code) |
 | Copia en este repo | [`programon.html`](programon.html) | Snapshot del 27/10/2026 (= link v7). Se abre con cualquier navegador |
 | Capturas | [`capturas/`](capturas/) | Generadas del snapshot a 390 px de ancho |
 | Datos ficticios | [`dataset-ficticio.md`](dataset-ficticio.md) | Caballos, gastos, acuerdos |
